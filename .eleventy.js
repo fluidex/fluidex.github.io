@@ -1,4 +1,8 @@
 const { DateTime } = require('luxon');
+const pluginTOC = require('eleventy-plugin-toc')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItHighlightJS = require('markdown-it-highlightjs')
 const readingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -6,6 +10,21 @@ const fs = require('fs');
 const path = require('path');
 
 const isDev = process.env.APP_ENV === 'development';
+
+const mdOptions = {
+  html: true,
+  //xhtmlOut: true,
+  breaks: true,
+  linkify: true,
+  typographer: true
+}
+const mdAnchorOpts = {
+  permalink: true,
+  permalinkBefore: true,
+  permalinkSymbol: '',
+  permalinkClass: 'anchor-link',
+  level: [1]
+}
 
 const manifestPath = path.resolve(
   __dirname,
@@ -22,6 +41,13 @@ const manifest = isDev
   : JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt(mdOptions)
+      .use(markdownItAnchor, mdAnchorOpts)
+      .use(markdownItHighlightJS)
+  )
+  eleventyConfig.addPlugin(pluginTOC, {tags: ['h1']})
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);

@@ -1,8 +1,8 @@
 ---
 layout: home
-title: 'Eleventy Duo'
+title: 'Fluidex'
 ---
 
-# Hello World
+Fluidex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup.
 
-Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs. Checkout the [project's github repo](https://github.com/yinkakun/eleventy-duo) for more info.
+Checkout [this article](/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/) for more info.

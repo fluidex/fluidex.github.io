@@ -1,6 +1,6 @@
 {
-  "name": "Eleventy Duo",
-  "description": "Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs.",
+  "name": "Fluidex",
+  "description": "Building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup",
   "url": "https://eleventyduo.netlify.app",
   "author": {
     "name": "Author Name",
@@ -22,18 +22,23 @@
   ],
   "socialLinks": [
     {
-      "text": "Instagram",
-      "url": "https://instagram.com/",
+      "text": "Medium",
+      "url": "https://fluid-dex.medium.com/",
       "external": true
     },
     {
       "text": "GitHub",
-      "url": "https://github.com/yinkakun/eleventy-duo",
+      "url": "https://github.com/Fluidex",
       "external": true
     },
     {
       "text": "Twitter",
-      "url": "https://twitter.com/",
+      "url": "https://twitter.com/fluid_dex",
+      "external": true
+    },
+    {
+      "text": "Telegram",
+      "url": "https://t.me/fluid_dex",
       "external": true
     }
   ],

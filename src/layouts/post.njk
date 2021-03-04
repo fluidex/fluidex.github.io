@@ -15,6 +15,7 @@ layout: base.njk
   </header>
 
   <main class="post__content">
+    {{ content | toc | safe }}
     {{ content | safe }}
   </main>
 
