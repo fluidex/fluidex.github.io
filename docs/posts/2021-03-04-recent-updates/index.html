@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=https://eleventyduo.netlify.app/posts/2021-03-04-recent-updates/>
+
+    <link href="/assets/main.990a5d292b2eafcd9999.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <title>
+      Fluidex Recent Updates
+      
+         | Fluidex
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href="/images/favicon.ico">
+
+    <meta property="og:title" content="Fluidex Recent Updates">
+    <meta property="og:site_name" content="Fluidex"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://eleventyduo.netlify.app/posts/2021-03-04-recent-updates/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@author_handle"/>
+    
+
+    
+    
+      
+    
+    
+      <meta name="description" content="Fluidex Recent Updates 03 Mar 2021 | 3 min read Technical progress Community Status Financing status Technical contribution to other...">
+      <meta property="og:description" content="Fluidex Recent Updates 03 Mar 2021 | 3 min read Technical progress Community Status Financing status Technical contribution to other...">
+      <meta name="description" content="Fluidex Recent Updates 03 Mar 2021 | 3 min read Technical progress Community Status Financing status Technical contribution to other..."/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="https://eleventyduo.netlify.app/images/default-social-image.png"/>
+      <meta name="twitter:image" content="https://eleventyduo.netlify.app/images/default-social-image.png"/>
+    
+
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/>
+              Fluidex
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog"  >Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        
+<article class="post">
+  <header class="post__header">
+    <h1>Fluidex Recent Updates</h1>
+    <div class="post__details">
+      <time datetime="2021-03-03">
+        03 Mar 2021
+      </time>
+      <span> | </span>
+      <span>3 min read</span>
+    </div>
+  </header>
+
+  <main class="post__content">
+    <nav class="toc">
+        <ol><li><a href="#technical-progress"> Technical progress</a></li><li><a href="#community-status"> Community Status</a></li><li><a href="#financing-status"> Financing status</a></li><li><a href="#technical-contribution-to-other-projects"> Technical contribution to other projects</a></li></ol></nav>
+    <p>About us: The Fluidex team is developing the first order book DEX on Ethereum with permissionless listings. For a complete introduction to the project, please see this article: <a href="http://lispc.github.io/2020/11/28/fluidex">http://lispc.github.io/2020/11/28/fluidex</a>.</p>
+<p>The following introduces some of the team’s work in various aspects since the project was launched in early 2021.</p>
+<h1 id="technical-progress"><a class="anchor-link" href="#technical-progress"></a> Technical progress</h1>
+<h3>Plonkit</h3>
+<p>If a worker wants to do his job well, he must first sharpen his tools.</p>
+<p>Plonkit is a PLONK zero-knowledge proof toolkit developed by the Fluidex team. By using Plonkit, users can use the easier DSL to implement their own zero-knowledge proof circuit code, without the need to learn the complex details of the Rust language and the underlying cryptography library.</p>
+<p>The bottom layer of Plonkit is developed based on the bellman_ce cryptography library. The current functions include local setup (for development use only, formal setup requires MPC), circuit proving and local verification, solidity verification contract generation, etc.</p>
+<p>Plonkit has received a lot of attention from developers since it was open sourced, and it is now the project with the most stars on github by the team.</p>
+<p>We are implementing server mode so that plonkit can be started as a long-running proving service. In the future, we will further implement the cluster proving server feature. In the longer term, we may add custom gates to further increase the performance limit of the system. In addition, we will continue to improve DSL specifically for PLONK and its variants.</p>
+<p>For more, please visit github: <a href="https://github.com/Fluidex/plonkit">https://github.com/Fluidex/plonkit</a></p>
+<h3>Exchange</h3>
+<p>In the past few months, the Fluidex team has completed the first version of the exchange matching engine backend and web frontend. The backend of the matching engine has been open sourced, using Rust language to implement in-memory order matching, which can achieve thousands of TPS. This will ensure the fluency and stability of our trading system in the foreseeable future.  We are still improving this system continuously. (It hasn’t been tempered by real business, it is recommended to be used only for learning and communication at present rather than production).</p>
+<p>Currently, the back end of the exchange has been open sourced, and the front end has not yet been open sourced.<br>
+For more, please visit github: <a href="https://github.com/Fluidex/dingir-exchange">https://github.com/Fluidex/dingir-exchange</a></p>
+<h3>Zero-knowledge proof circuit and smart contract</h3>
+<p>We have completed <a href="https://github.com/Fluidex/rescue-hash-js">the first implementation of Javascript Rescue Hash</a>, and also developed <a href="https://github.com/Fluidex/circuits/blob/master/src/lib/rescue.circom">the first circom implementation of Rescue Hash circuit</a>. Based on the Echarts sunburst chart, we have developed <a href="https://github.com/Fluidex/circuits/blob/master/tools/benchmark/profile_circuit.js">a tool for profiling circuits visually</a>. So users can analyze their own circuit code more conveniently, finding which parts of the circuits have big computation cost, so they can make further optimization accordingly.</p>
+<p>We have completed the most basic circuit code for deposit, withdrawal &amp; transfer &amp; transaction. There are still more functions and performance details that need to be further improved, so we will not introduce it for the time being. Of course, all the code is very early, without any audit, it is not recommended for production use.</p>
+<p>All the above results have been open sourced in our code base. For more, please visit github: <a href="https://github.com/Fluidex/circuits">https://github.com/Fluidex/circuits</a></p>
+<h3>Awesome Plonk</h3>
+<p>This is a collection of high-quality materials about PLONK. It cover various learning materials such as papers, implementations, demos, forums, blog posts, blogs/videos, etc.</p>
+<p>For more, please visit github: <a href="https://github.com/Fluidex/awesome-plonk">https://github.com/Fluidex/awesome-plonk</a></p>
+<h1 id="community-status"><a class="anchor-link" href="#community-status"></a> Community Status</h1>
+<p>Currently we only maintain the English technical community on Telegram. More than 100 developers who are interested in our project have joined in the past two months. In the future, we will continue to update our technological progress there.</p>
+<h1 id="financing-status"><a class="anchor-link" href="#financing-status"></a> Financing status</h1>
+<p>In the past few months, Fluidex has completed a total of more than US$500,000 in financing from several private investors. I would like to thank these seniors in the industry for their financial and other support.</p>
+<p>The money is enough for our current development. We are not seeking further financing for the time being.</p>
+<h1 id="technical-contribution-to-other-projects"><a class="anchor-link" href="#technical-contribution-to-other-projects"></a> Technical contribution to other projects</h1>
+<p>We found a <a href="https://github.com/matter-labs/zksync/pull/284">bug when the number of inputs is greater than 1</a>, in the open sourced PLONK solidity verification contract code of Matters Lab  and submitted an upstream pull request . (The zksync online system does not trigger this code path, and the correctness and safety are not affected by this bug.)</p>
+<p>Fluidex is participating in the phase 2 trusted setup ceremony of the Hermez project, hoping to contribute to the wider Layer2 community through its own strength. (Explanation: What is the “phase 2 trusted setup ceremony”? The zk-rollup project that uses the Groth16 protocol will generally ensure the security of some cryptographic parameters through multi-party calculations before going online. The “phase 2 trusted setup ceremony” is such a multi-party calculation process. As long as at least one of all participants is honest, the overall cryptography system is safe.)</p>
+
+  </main>
+
+  <aside class="post__aside">
+    <div class="post__tags">
+      
+    </div>
+
+    <nav class="post__pagination">
+
+        <a href="/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/">
+          <span>Fluidex: A zkrollup layer2 DEX</span>
+          <span>→</span>
+        </a>
+
+      
+    </nav>
+  </aside>
+
+</article>
+
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://fluid-dex.medium.com/" target="_blank" rel="noopener noreferrer" >Medium</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/Fluidex" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://twitter.com/fluid_dex" target="_blank" rel="noopener noreferrer" >Twitter</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://t.me/fluid_dex" target="_blank" rel="noopener noreferrer" >Telegram</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+      Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>
+        and <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">Eleventy Duo</a>
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/assets/main.31d6cfe0d16ae931b73c.js"></script>
+  </body>
+</html>

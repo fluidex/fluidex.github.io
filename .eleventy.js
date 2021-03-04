@@ -28,7 +28,7 @@ const mdAnchorOpts = {
 
 const manifestPath = path.resolve(
   __dirname,
-  'public',
+  'docs',
   'assets',
   'manifest.json'
 );
@@ -132,7 +132,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: 'src',
-      output: 'public',
+      output: 'docs',
       includes: 'includes',
       data: 'data',
       layouts: 'layouts',
