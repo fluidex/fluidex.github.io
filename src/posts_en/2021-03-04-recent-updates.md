@@ -7,7 +7,7 @@ tags: []
 ---
 
 
-About us: The Fluidex team is developing the first order book DEX on Ethereum with permissionless listings. For a complete introduction to the project, please see this article: <http://lispc.github.io/2020/11/28/fluidex>.
+About us: The Fluidex team is developing the first order book DEX on Ethereum with permissionless listings. For a complete introduction to the project, please see [our previous article](/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/).
 
 The following introduces some of the team's work in various aspects since the project was launched in early 2021.
 
