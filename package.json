@@ -30,7 +30,7 @@
   "scripts": {
     "dev": "run-p dev:*",
     "start": "eleventy --serve",
-    "build": "run-s clean build:assets build:site",
+    "build": "run-s clean build:assets build:site; cp CNAME docs",
     "dev:assets": "APP_ENV=development webpack --mode production --watch",
     "dev:site": "APP_ENV=development eleventy --serve",
     "build:assets": "webpack --mode production",
