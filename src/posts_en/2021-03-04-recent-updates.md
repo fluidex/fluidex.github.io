@@ -25,7 +25,7 @@ The core of Plonkit is developed based on the bellman_ce cryptography library. T
     
 Plonkit has received a lot of attention from developers since being open sourced, and it is now the project with the most stars on github by the team.
 
-We are implementing server mode so that plonkit can serve for continuous-running proving service. In the future, we will further implement the cluster proving server feature. In a longer term, we may add custom gates to further increase the performance of the system. In addition, we will continue to improve DSL specifically for PLONK and its variants.
+We are implementing server mode so that plonkit can serve for continuously-running proving service. In the future, we will further implement the cluster proving server feature. In a longer term, we may add custom gates to further improve the performance of the system. In addition, we will continue to improve DSL specifically for PLONK and its variants.
 
 For more, please visit github: <https://github.com/Fluidex/plonkit>
 
@@ -47,7 +47,7 @@ All the above results have been open sourced in our code base. For more details,
 
 ### Awesome Plonk
 
-This is a collection of high-quality study materials about PLONK. It covers various learning materials such as papers, implementations, demos, forums, blog posts, videos, etc.
+This is a collection of high-quality materials about PLONK. It covers various learning materials such as papers, implementations, demos, forums, blog posts, videos, etc.
 
 For more details, please visit github: <https://github.com/Fluidex/awesome-plonk>
 
@@ -66,4 +66,4 @@ The money is sufficient for our current development. We are not seeking further 
 
 We found a [bug when the number of inputs is greater than 1](https://github.com/matter-labs/zksync/pull/284), in the open sourced PLONK solidity verification contract code of Matters Lab, and submitted an upstream pull request. (The zksync online system does not trigger this code path, and the correctness and safety are not affected by this bug.)
 
-Fluidex is participating into the phase 2 trusted setup ceremony of the Hermez project, hoping to contribute to the wider Layer2 community through its own strength. (Explanation: What is the "phase 2 trusted setup ceremony"? The zk-rollup project that uses the Groth16 protocol need to ensure the security of some cryptographic parameters by using multi-party computations. The "phase 2 trusted setup ceremony" is one of such multi-party computations. As long as at least one of the participants is honest, the entropy and thus randomness can be guaranteed. Provers then cannot forge a proof.)
+Fluidex is participating into the phase 2 trusted setup ceremony of the Hermez project, hoping to contribute to the wider Layer2 community through its own strength. (Explanation: What is the "phase 2 trusted setup ceremony"? The zk-rollup projects that use Groth16 protocol need to ensure the security of some cryptographic parameters by using multi-party computations. The "phase 2 trusted setup ceremony" is one of such multi-party computations. As long as at least one of the participants is honest, the entropy and hence randomness can be guaranteed. Provers then cannot forge a proof.)
