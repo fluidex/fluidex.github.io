@@ -7,7 +7,7 @@ tags: []
 ---
 
 
-About us: The Fluidex team is developing the first order-book DEX with permissionless listings on Ethereum. For a more comprehensive introduction to the project, please see [our previous article](/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/).
+About us: The Fluidex team is developing the first **zk-rollup layer2** order-book DEX with permissionless listings on Ethereum. For a more comprehensive introduction to the project, please see [our previous article](/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/).
 
 In this post, We are happy to explain what we have achieved since the early 2021, at what time the project was launched.
 
