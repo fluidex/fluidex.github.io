@@ -21,7 +21,7 @@ As the saying goes, good tools are prerequisite to the success of a job.
 
 Plonkit is a PLONK zero-knowledge proof toolkit developed by the Fluidex team. By using Plonkit, users can use an easier DSL (Circom) to implement their own zero-knowledge proof circuit code, without the need to learn the underlying cryptography library and how to write circuits in C or Rust (which is way more complicated).
 
-The core of Plonkit is developed based on the bellman_ce cryptography library. The current functions include local setup (for development use only, formal setup requires MPC), circuit proving and verification, solidity verification contract generation, etc.
+The core of Plonkit is developed based on the bellman_ce cryptography library. The current functions include local setup (for development use only, in production better to use MPC ceremony), circuit proving and verification, solidity verification contract generation, etc.
     
 Plonkit has received a lot of attention from developers since being open sourced, and it is now the project with the most stars on github by the team.
 
