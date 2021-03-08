@@ -59,7 +59,7 @@
       <id>https://eleventyduo.netlify.app/posts/2021-03-04-recent-updates/</id>
       <content type="html">
         <![CDATA[
-      <p>About us: The Fluidex team is developing the first <strong>zk-rollup layer2</strong> order-book DEX with permissionless listings on Ethereum. For a more comprehensive introduction to the project, please see <a href="/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/">our previous article</a>.</p>
+      <p>About us: The Fluidex team is developing the first zk-rollup layer2 order-book DEX with permissionless listings on Ethereum. For a more comprehensive introduction to the project, please see <a href="/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/">our previous article</a>.</p>
 <p>In this post, We are happy to explain what we have achieved since the early 2021, at what time the project was launched.</p>
 <h1 id="technical-progress"><a class="anchor-link" href="#technical-progress"></a> Technical progress</h1>
 <h3>Plonkit</h3>
