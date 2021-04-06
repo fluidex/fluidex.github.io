@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Fluidex</title>
   <subtitle></subtitle>
-  <link href="https://eleventyduo.netlify.app/feed.xml" rel="self"/>
-  <link href="https://eleventyduo.netlify.app/"/>
+  <link href="https://www.fluidex.io//feed.xml" rel="self"/>
+  <link href="https://www.fluidex.io//"/>
   
     <updated>2021-03-03T08:00:00+08:00</updated>
   
-  <id>https://eleventyduo.netlify.app</id>
+  <id>https://www.fluidex.io/</id>
   <author>
     <name>Author Name</name>
     <email>author@site.com</email>
@@ -16,9 +16,9 @@
     
     <entry>
       <title>Fluidex: A zkrollup layer2 DEX</title>
-      <link href="https://eleventyduo.netlify.app/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/"/>
+      <link href="https://www.fluidex.io//posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/"/>
       <updated>2020-11-29T08:00:00+08:00</updated>
-      <id>https://eleventyduo.netlify.app/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/</id>
+      <id>https://www.fluidex.io//posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/</id>
       <content type="html">
         <![CDATA[
       <h1 id="what-is-fluidex"><a class="anchor-link" href="#what-is-fluidex"></a> What is FluiDex</h1>
@@ -54,9 +54,9 @@
     
     <entry>
       <title>Fluidex Recent Updates</title>
-      <link href="https://eleventyduo.netlify.app/posts/2021-03-04-recent-updates/"/>
+      <link href="https://www.fluidex.io//posts/2021-03-04-recent-updates/"/>
       <updated>2021-03-03T08:00:00+08:00</updated>
-      <id>https://eleventyduo.netlify.app/posts/2021-03-04-recent-updates/</id>
+      <id>https://www.fluidex.io//posts/2021-03-04-recent-updates/</id>
       <content type="html">
         <![CDATA[
       <p>About us: The Fluidex team is developing the first zk-rollup layer2 order-book DEX with permissionless listings on Ethereum. For a more comprehensive introduction to the project, please see <a href="/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/">our previous article</a>.</p>
