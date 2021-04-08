@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Fluidex: A zkrollup layer2 DEX"
+title: "Fluidex: A ZK-Rollup layer2 DEX on Ethereum"
 description: ""
 category: 
 tags: []
 ---
 
 # What is FluiDex
-For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 0.0001 USD. We will be the first order book exchange on Ethereum to use PLONK based validity proof.
+For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. We will be the first order book exchange on Ethereum to use PLONK based validity proof.
 
 For the general public, FluiDex is a crypto asset exchange similar to Coinbase or Huobi. The advantage is that your assets are absolutely safe. You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The disadvantage is that it will be more difficult to use, for example, transaction fees will be higher in some cases.
 
@@ -39,10 +39,15 @@ I believe that our exchange is a traditional "centralized" exchange, the only di
 
 Based on our understanding of governance philosophy above, FluiDex will not issue "governance tokens" in the foreseeable future, but we are not opposed to issuing tokens with dividend rights for fundraising. For example, it is entirely possible for us to issue a token and guarantee to buy back this token with 10% of the monthly gross profit for the next 3 years.
 
-# Project status & schedule & financing
 
-We have completed a relatively small seed round of financing. According to estimates, we should be able to support us to make a minimal demo. It is estimated that it will take 4-5 months to make this minimum demo, and then we will make a second round of much larger financing to support us in making a complete product. In the next six months, I may continue to contact investors, but in principle, I may not seek further investment unless the valuation and terms are close to the second round price of my expectation.
+# Project status & schedule
 
-# Contract & Recruitment 
+Fluidex project was launched at the end of 2020. It is expected that the MVP/demo will be completed in Q2 of 2021, and the mainnet launch will probably start in Q4 of 2021.
 
-FluiDex Labs is committed to building the next generation of professional decentralized exchanges. We will use PLONK zero-knowledge proof technology on Ethereum to develop a high-performance order book digital asset spot exchange. The core team members are from  several well-known blockchain and exchange teams. Among our investors, there are experienced entrepreneurs who have worked in the cryptocurrency industry for many years, as well as the founders of the traditional high-frequency trading funds. Any friends who are interested in our products, or want to join us or invest in us, are welcome to contact us for further communication. You can join our telegram group: <https://t.me/fluid_dex>
+
+# Contact
+
+Telegram: <https://t.me/fluid_dex>    
+Medium: <https://fluid-dex.medium.com/announcing-fluidex-building-the-first-plonk-layer2-dex-on-ethereum-e19136304a5d>     
+Twitter: <https://twitter.com/fluid_dex>     
+Founder's email: mycinbrin@gmail.com
