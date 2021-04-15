@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "ZK-Rollup 开发经验分享 Part I"
 description: ""
 category:
@@ -8,14 +7,13 @@ tags: []
 
 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。
 
-很多用户期待区块链能进一步扩容，提升性能，降低使用成本。本文将谈到的 ZK-Rollup 是 [以太坊 Layer 2 扩容方案](https://ethereum.org/nl/developers/docs/layer-2-scaling/) 中的一种，它精巧地使用零知识证明(ZK-SNARK)这种密码学技术来完成链上计算资源消耗的压缩，从而能够极大地(~10x-100x)提升 Ethereum的性能。包括 Ethereum 创始人 Vitalik 在内的很多人 认为 ZK-Rollup 是长期来看最重要的 Layer 2 扩容方案。
+很多用户期待区块链能进一步扩容，提升性能，降低使用成本。本文将谈到的 ZK-Rollup 是 [以太坊 Layer 2 扩容方案](https://ethereum.org/nl/developers/docs/layer-2-scaling/) 中的一种，它精巧地使用零知识证明(ZK-SNARK)这种密码学技术来完成链上计算资源消耗的压缩，从而能够极大地(~10x-100x)提升 Ethereum 的性能。包括 Ethereum 创始人 Vitalik 在内的很多人 认为 ZK-Rollup 是长期来看最重要的 Layer 2 扩容方案。
 
 > In general, my own view is that in the short term, optimistic rollups are likely to win out for general-purpose EVM computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use cases, but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves. -- Vitalik
 
-本文会分享一些 ZK-Rollup 开发中的经验。撰写本文的动机在于，互联网有大量高质量的资料介绍 ZK-SNARK （零知识证明）理论本身，这些文章会介绍详细的密码学细节，另一些不太偏向技术的文章则会展望 ZK-Rollup 的作用和前景。较少见有文章会深入地介绍 ZK-Rollup 到底是怎么提升性能的？一个完整的 ZK-Rollup 系统是长什么样的？ZK-Rollup系统中有什么少被人讨论但是重要的常识经验吗？
+本文会分享一些 ZK-Rollup 开发中的经验。撰写本文的动机在于，互联网有大量高质量的资料介绍 ZK-SNARK （零知识证明）理论本身，这些文章会介绍详细的密码学细节，另一些不太偏向技术的文章则会展望 ZK-Rollup 的作用和前景。较少见有文章会深入地介绍 ZK-Rollup 到底是怎么提升性能的？一个完整的 ZK-Rollup 系统是长什么样的？ZK-Rollup 系统中有什么少被人讨论但是重要的常识经验吗？
 
 [Fluidex 团队](https://github.com/Fluidex/) 作为全世界少数几个在独立开发完整 ZK-Rollup 系统的团队，希望能够分享一些自己在开发 ZK-Rollup 系统中的经验，能够反哺业界的其他参与者。我们想分享一些重要但是很少被谈到的话题，比如 ZK-Rollup 系统的性能瓶颈在哪里，它的成本又是如何构成的等。
-
 
 ## ZK-SNARK& ZK-Rollup 概述
 
@@ -44,7 +42,7 @@ function some_function(inputs):
    return outputs
 
 
-// preprocessing only runs once for every 'some_function' 
+// preprocessing only runs once for every 'some_function'
 // we deliberately ignore 'setup' here to make it easier for understanding
 // for a more precise and detailed description, you can have a look at the references at the bottom of this article
 const preprocess_result = zksnark_preprocess(some_function)
@@ -107,8 +105,6 @@ ZK-Rollup 系统至少需要以下几个组件：
 3. State Manager：维护完整的 merkle tree。对于每个 tx，更新 merkle tree 并且为 prover cluster 提供必要的数据（如 merkle proof）。
 4. 其他业务模块：如 L2 浏览器；此外，不同的具体 Rollup 系统还会有自己专门的业务模块，如 Fluidex 会有一个[订单簿撮合引擎](https://github.com/Fluidex/dingir-exchange)，从用户的委托订单生成匹配的交易，发送给 State Manager。
 
-
-
 ## ZK-Rollup 的 TPS 能力上限
 
 一个 ZK-Rollup 系统的 TPS 能力上限被什么制约？
@@ -121,13 +117,13 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte 来估计。对于一般的转账&撮合等交易，每笔交易可以按照 40 bytes 来估计。
 
-每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 zksnark verify 成本为 0.3-0.5 Million gas 推算，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。
+每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 zksnark verify 成本为 0.3-0.5 Million gas 推算，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40\*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。
 
 ### Merkle Tree 全局状态的更新
 
 这是一个很少被讨论但是至关重要的角度，**真实 ZK-Rollup 系统的性能上限实际上更被这个模块限制，而不是上面讨论的证明速度和 gas 限制**。
 
-容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense merkle tree ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致5-10个叶子结点状态的更新，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [Fluidex 团队的测试结果](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算，则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
+容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense merkle tree ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 个叶子结点状态的更新，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [Fluidex 团队的测试结果](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算，则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
 
 因此，必须实现 merkle tree 的 [并行更新](https://github.com/Fluidex/state_keeper/blob/a255043cbe7c899c6a8d9cc46b170a40f20623c9/src/types/merkle_tree.rs#L127)， ZK-Rollup 的 TPS 才会突破 100-300 这个层次。和 zksnark proving 可以完美分布式多机多核并行不同，使用并行加速 merkle tree 的更新需要较精细的代码控制，而且非常难以实现多机分布式加速。这也是个工程上的挑战。
 
@@ -149,9 +145,7 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 当然，以上所有的推算数据，会收系统代码效率和 ETH GAS 价格影响，但是预计可见未来内不太会出现量级偏差。
 
-
 ## 其他开发经验碎片
-
 
 ### ZK-SNARK 的逻辑描述为何被称为“电路”？
 
@@ -167,6 +161,7 @@ function binaryOp(op, arg1, arg2) {
   }
 }
 ```
+
 “不同代码分支下，计算量不会同时发生”对于软件开发似乎是天经地义的，但是对于数字芯片电路的硬件设计却并非如此。在硬件时序电路代码开发中，一般所有“分支”（如果这还叫“分支”的话）的逻辑都会在时序触发时全部执行，开发者需要自己从不同“分支”的计算结果中，正确地选择和维护全局状态。
 
 零知识证明的代码最终会被转换成一些巨大（可能是几亿项）的多项式，零知识证明的每一行代码都会被规约到这些巨大的多项式中。因此零知识证明的代码具有和硬件电路相同的属性：所有分支的代码同时执行。这也就是“零知识证明电路”之所以被称为“电路”的原因。此外，和硬件电路类似，零知识证明电路中，没有递归和复杂循环，循环次数只能是常数（实际上最终这个循环会被作为语法糖展开，即 loop unrolling）。
@@ -180,8 +175,6 @@ function binaryOp(op, arg1, arg2) {
 
 -->
 
-
-
 ### 对于 DSL 的看法
 
 零知识证明电路的开发语言有不同的选择，既可以直接使用 C++/Rust 实现的底层计算库如 [ethsnarks](https://github.com/HarryR/ethsnarks) / [bellman](https://github.com/zkcrypto/bellman)，也可以使用一些 DSL 如 [ZoKrates](https://github.com/Zokrates/ZoKrates) / [Circom](https://github.com/iden3/circom) / [Zinc](https://github.com/matter-labs/zinc)。
@@ -192,25 +185,21 @@ function binaryOp(op, arg1, arg2) {
 
 不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 plookup / custom gate / aggregate & recursive 等特性。
 
-
-
-
 ## 更多阅读材料
 
 ### 技术文章
 
-[vitalik blog on rollup](https://vitalik.ca/general/2021/01/05/rollup.html)     
-[vitalik blog on ZK-SNARK](https://vitalik.ca/general/2021/01/26/snarks.html)     
-[深入浅出零知识证明之ZK-SNARKs](https://www.yuque.com/u428635/scg32w/edmn74)     
-[Stateless Ethereum](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/)     
-
+[vitalik blog on rollup](https://vitalik.ca/general/2021/01/05/rollup.html)
+[vitalik blog on ZK-SNARK](https://vitalik.ca/general/2021/01/26/snarks.html)
+[深入浅出零知识证明之 ZK-SNARKs](https://www.yuque.com/u428635/scg32w/edmn74)
+[Stateless Ethereum](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/)
 
 ### 项目代码
 
 已经上线的 ZK-Rollup 项目：
 
-[zksync](https://github.com/matter-labs/zksync): 最完整的 ZK-Rollup 开源项目代码，涵盖了一个 ZK-Rollup 系统需要的每个组件。使用 PLONK 机制，电路代码使用 bellman，链下代码使用 Rust。   
-[hermez](https://github.com/hermeznetwork/): 和 zksync 类似。使用 Groth16 机制，电路代码使用 circom，链下代码使用 Go。   
+[zksync](https://github.com/matter-labs/zksync): 最完整的 ZK-Rollup 开源项目代码，涵盖了一个 ZK-Rollup 系统需要的每个组件。使用 PLONK 机制，电路代码使用 bellman，链下代码使用 Rust。
+[hermez](https://github.com/hermeznetwork/): 和 zksync 类似。使用 Groth16 机制，电路代码使用 circom，链下代码使用 Go。
 [loopring](https://github.com/Loopring/protocols/tree/master/packages/loopring_v3): 仅开源了电路代码和合约代码，没有开源 State Manager 模块。使用 Groth16 机制，电路代码使用 ethsnark，链下代码不开源。
 
 开发中的 ZK-Rollup 项目：
@@ -219,8 +208,8 @@ function binaryOp(op, arg1, arg2) {
 
 使用 zksnark 技术但是不属于 ZK-Rollup 的项目：
 
-[maci](https://github.com/appliedzkp/maci/)     
-[Tornado Cash](https://github.com/tornadocash)   
+[maci](https://github.com/appliedzkp/maci/)
+[Tornado Cash](https://github.com/tornadocash)
 
 ## 关于我们
 

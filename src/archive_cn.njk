@@ -1,0 +1,13 @@
+---
+layout: base.njk
+permalink: /blog_cn/
+---
+
+<h1>所有博文</h1>
+
+<div class="tags">
+  {% include "tags-list.njk" %}
+</div>
+
+{% set postslist = collections.post_cn %}
+{% include "posts-list.njk" %}
