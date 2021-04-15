@@ -40,10 +40,12 @@ I believe that our exchange is a traditional "centralized" exchange, the only di
 Based on our understanding of governance philosophy above, FluiDex will not issue "governance tokens" in the foreseeable future, but we are not opposed to issuing tokens with dividend rights for fundraising. For example, it is entirely possible for us to issue a token and guarantee to buy back this token with 10% of the monthly gross profit for the next 3 years.
 
 
-# Project status & schedule
+# Project status & schedule & financing
 
 Fluidex project was launched at the end of 2020. It is expected that the MVP/demo will be completed in Q2 of 2021, and the mainnet launch will probably start in Q4 of 2021.
 
+Update 2021.04.15:      
+The project may soon launch a seed round of equity financing, and it is expected to obtain a total of about US$1 million from all participating investors at a valuation of US$7-10 million.
 
 # Contact
 
