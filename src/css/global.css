@@ -68,7 +68,7 @@ hr {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--accent);
   text-decoration: inherit;
   transition: all 200ms linear;
   text-decoration: underline;
@@ -173,10 +173,9 @@ pre {
 
 code,
 kbd {
-  color: var(--accent);
   font-feature-settings: normal;
-  background: color-mod(var(--accent) a(20%));
-  color: var(--accent);
+  background: var(--color);
+  color: var(--background);
   padding: 1px 6px;
   margin: 0 2px;
   font-size: 0.95rem;
@@ -184,11 +183,12 @@ kbd {
 
 pre,
 code {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
 }
 
 pre code {
   background: transparent;
+  color: var(--color);
 }
 
 mark {
