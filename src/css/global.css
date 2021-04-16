@@ -191,6 +191,10 @@ pre code {
   color: var(--color);
 }
 
+pre code .token.comment {
+  color: color-mod(var(--color) lightness(50%));
+}
+
 mark {
   background: var(--accent);
   color: var(--background);

@@ -153,11 +153,11 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 ```js
 function binaryOp(op, arg1, arg2) {
-  if (op == 'add') {
-     return arg1 + arg2;
-  } else  {
-     // assert(op == 'mul');
-     return arg1 * arg2;
+  if (op == "add") {
+    return arg1 + arg2;
+  } else {
+    // assert(op == 'mul');
+    return arg1 * arg2;
   }
 }
 ```
