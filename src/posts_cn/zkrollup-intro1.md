@@ -33,7 +33,7 @@ tags: []
 
 更加精细的伪代码描述：
 
-```
+```js
 // here is the the application code
 // it is usually called 'circuit code'
 function some_function(inputs):
@@ -74,7 +74,7 @@ zksnark 会在数学上保证，每次对于 merkle tree 的更新都满足“�
 
 我们来使用伪代码解释，一个真实世界 ZK-Rollup 系统中的数据流形态：
 
-```
+```js
 // the following code runs as smart contract
 // 'global_merkle_tree_root' is the only state needed to be stored inside smart contract
 let global_merkle_tree_root = ...;
@@ -151,7 +151,7 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 对于任何有软件开发经验的人来说，如下代码中，if 分支和 else 分支只会执行一个，而不是两个都执行后选择其中一个作为结果。
 
-```
+```js
 function binaryOp(op, arg1, arg2) {
   if (op == 'add') {
      return arg1 + arg2;
