@@ -119,7 +119,7 @@
 <p><img src="https://electriccoin.co/wp-content/uploads/2020/09/Halo-puzzle-03-scaled.jpg" alt=""><br>
 图片来自：<a href="https://electriccoin.co/blog/explaining-halo-2/">https://electriccoin.co/blog/explaining-halo-2/</a></p>
 <h2>PlonK 的源起</h2>
-<p><a href="https://aztec.network/">AZTEC</a> 发明并推动了 <a href="https://eprint.iacr.org/2019/953.pdf">PlonK</a>。AZTEC 1.0 中使用的是 sigma protocol，AZTEC 为了想要一个 universal、programmable 的 SNARK 于是研究发明了 PlonK。V 神 的 <a href="https://vitalik.ca/general/2019/09/22/plonk.html">Understanding PLONK</a> 一文是 PlonK 很好的入门文章，更多资源也可以访问 <a href="https://github.com/Fluidex/awesome-plonk">https://github.com/Fluidex/awesome-plonk</a> 。</p>
+<p><a href="https://aztec.network/">AZTEC</a> 发明并推动了 <a href="https://eprint.iacr.org/2019/953.pdf">PlonK</a>。AZTEC 1.0 中使用的是 sigma protocol，AZTEC 为了想要一个 universal、programmable 的 SNARK 于是研究发明了 PlonK。V 神 的 <a href="https://vitalik.ca/general/2019/09/22/plonk.html">Understanding PLONK</a> 一文是 PlonK 很好的入门文章，更多的资料也可以访问 <a href="https://github.com/Fluidex/awesome-plonk">https://github.com/Fluidex/awesome-plonk</a> 。</p>
 <p>PlonK 面世之后很受欢迎，<a href="https://zksync.io/">zkSync</a>、<a href="https://dusk.network/">Dusk Network</a>、<a href="https://minaprotocol.com/">Mina</a>、<a href="https://mirprotocol.org/">Mir</a> 都在使用 PlonK 或者 PlonK 的变种。</p>
 <h2>PlonK 的特点</h2>
 <p>Universal and updateable setup 已是老生常谈，此处不再赘述。</p>
@@ -135,7 +135,7 @@
 <h2>Recursive Proof</h2>
 <p>Recursive-SNARK 的良好特性也被人注意到，越来越多协议想要使用。Recursion 这一特性应该可以认为是从 <a href="https://eprint.iacr.org/2019/1021.pdf">Halo</a> 中开始发展起来的。</p>
 <p>PlonK 对于想要改造并使用 Halo-style recursion 其实也挺友好，因为可以用 custom gate 来做 Halo 中的 prime field operations（质数域算术运算）。</p>
-<p>但值得注意的是，Ethereum 目前支持的和将来将要支持的 pairing-friendly curve（BN254, BLS12-381…），都不是 Halo-friendly 的。这将导致 verify 时的 gas 耗费过高。</p>
+<p>但值得注意的是，Ethereum 目前支持的/将来将要支持的 pairing-friendly curve（BN254, BLS12-381…），都不是 Halo-friendly 的。这将导致 verify 时的 gas 耗费过高。</p>
 <p>这属于 aggregation layer 的优化。</p>
 <h2>Polynomial commitment layer 的优化</h2>
 <p><a href="https://eprint.iacr.org/2020/081.pdf">SHPLONK</a> 是对 polynomial commitment layer 的优化，能结合在 PlonK 上使用，达到更好的 proof size 和 prover run time。别的一些论文也有对 polynomial commitment 进行的优化。但他们的问题是，他们需要的 cryptographic primitives 普遍在 Ethereum 上还没有。</p>
