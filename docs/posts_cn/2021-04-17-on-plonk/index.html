@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=https://www.fluidex.io/posts_cn/2021-04-17-on-plonk/>
+
+    <link href="/assets/main.ba97df8343d87d6470ca.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <title>
+      浅谈提升 PlonK
+      
+         | Fluidex
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href="/images/favicon.ico">
+
+    <meta property="og:title" content="浅谈提升 PlonK">
+    <meta property="og:site_name" content="Fluidex"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.fluidex.io/posts_cn/2021-04-17-on-plonk/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@author_handle"/>
+    
+
+    
+    
+      
+    
+    
+      <meta name="description" content="浅谈提升 PlonK 16 Apr 2021 | 1 min Proof System 的三个 layer Aggregation layer IOP layer (PlonK 在这里) Polynomial commitment layer 各部分之间的关系可以参见...">
+      <meta property="og:description" content="浅谈提升 PlonK 16 Apr 2021 | 1 min Proof System 的三个 layer Aggregation layer IOP layer (PlonK 在这里) Polynomial commitment layer 各部分之间的关系可以参见...">
+      <meta name="description" content="浅谈提升 PlonK 16 Apr 2021 | 1 min Proof System 的三个 layer Aggregation layer IOP layer (PlonK 在这里) Polynomial commitment layer 各部分之间的关系可以参见..."/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="https://www.fluidex.io/images/default-social-image.png"/>
+      <meta name="twitter:image" content="https://www.fluidex.io/images/default-social-image.png"/>
+    
+
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/>
+              Fluidex
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog"  >Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        
+<article class="post">
+  <header class="post__header">
+    <h1>浅谈提升 PlonK</h1>
+    <div class="post__details">
+      <time datetime="2021-04-16">
+        16 Apr 2021
+      </time>
+      <span> | </span>
+      <span>1 min </span>
+    </div>
+  </header>
+
+  <main class="post__content">
+    
+    <h2>Proof System 的三个 layer</h2>
+<ul>
+<li>Aggregation layer</li>
+<li>IOP layer (PlonK 在这里)</li>
+<li>Polynomial commitment layer</li>
+</ul>
+<p>各部分之间的关系可以参见 <a href="https://electriccoin.co/blog/explaining-halo-2/">https://electriccoin.co/blog/explaining-halo-2/</a> (虽然讲的是 Halo 2，但对于理解层级关系有帮助)。</p>
+<p><img src="https://electriccoin.co/wp-content/uploads/2020/09/Halo-puzzle-03-scaled.jpg" alt=""><br>
+图片来自：<a href="https://electriccoin.co/blog/explaining-halo-2/">https://electriccoin.co/blog/explaining-halo-2/</a></p>
+<h2>PlonK 的源起</h2>
+<p><a href="https://aztec.network/">AZTEC</a> 发明并推动了 <a href="https://eprint.iacr.org/2019/953.pdf">PlonK</a>。AZTEC 1.0 中使用的是 sigma protocol，AZTEC 为了想要一个 universal、programmable 的 SNARK 于是研究发明了 PlonK。V 神 的 <a href="https://vitalik.ca/general/2019/09/22/plonk.html">Understanding PLONK</a> 一文是 PlonK 很好的入门文章，更多资源也可以访问 <a href="https://github.com/Fluidex/awesome-plonk">https://github.com/Fluidex/awesome-plonk</a> 。</p>
+<p>PlonK 面世之后很受欢迎，<a href="https://zksync.io/">zkSync</a>、<a href="https://dusk.network/">Dusk Network</a>、<a href="https://minaprotocol.com/">Mina</a>、<a href="https://mirprotocol.org/">Mir</a> 都在使用 PlonK 或者 PlonK 的变种。</p>
+<h2>PlonK 的特点</h2>
+<p>Universal and updateable setup 已是老生常谈，此处不再赘述。</p>
+<p>Groth16 等 non-universal 的 proof system 中使用 rank-1 constraint system (R1CS)，也就是一堆线性的加法乘法，作为 intermediate representation 来对电路进行抽象表示。R1CS 对这些协议很高效，但对于 universal 的协议（比如 PlonK）则并不高效。PlonK 中使用的是 gate 的概念。</p>
+<p>所以如果从 R1CS 到 PlonK 则不能很好地发挥 PlonK 的性能，最好能通过 gate 来实现 PlonK 中的约束。</p>
+<h2>PlonK 的性能还有提升空间</h2>
+<p>在此基础上，PlonK 的性能还有提升的空间。</p>
+<p>如果使用了 custom gate，就可以自定义 bit arithmetic operations，包括 EC point addition、Poseidon hashes、Pedersen hashes、8-bit 逻辑异或。这一切运算会变得很高效。可以将 custom gate 理解为小 gadget。</p>
+<p><a href="https://eprint.iacr.org/2020/315.pdf">PLookup</a> (PlonK with lookup table) 找到了一种方式在 PlonK 的电路中高效实现 lookup table （的访问）。然后就可以构建 dynamic memory，对需要使用 vectors、dynamic array 的场景极为有利。</p>
+<p>简单的理解就是，SNARK 本身对于位运算并不友好：你需要一个个 bit 地操作。但 lookup tables 就可以解决这个问题：你不必再每一位每一位地运算，你可以比如说将你的 8-bit 的计算结果储存在一个大表中进行查找，这样就可以一次运算 8-bit 而不必每一 bit 每一 bit 地运算。</p>
+<p>由于这个原因，lookup tables 可以用来改善原本是 SNARK-unfriendly 的计算。</p>
+<p>AZTEC 的 Turbo-PlonK 就是在 PlonK 的基础上加上 custom gate，然后再在此之上实现 PLookup 就是 AZTEC 的 Ultra-PlonK。</p>
+<h2>Recursive Proof</h2>
+<p>Recursive-SNARK 的良好特性也被人注意到，越来越多协议想要使用。Recursion 这一特性应该可以认为是从 <a href="https://eprint.iacr.org/2019/1021.pdf">Halo</a> 中开始发展起来的。</p>
+<p>PlonK 对于想要改造并使用 Halo-style recursion 其实也挺友好，因为可以用 custom gate 来做 Halo 中的 prime field operations（质数域算术运算）。</p>
+<p>但值得注意的是，Ethereum 目前支持的和将来将要支持的 pairing-friendly curve（BN254, BLS12-381…），都不是 Halo-friendly 的。这将导致 verify 时的 gas 耗费过高。</p>
+<p>这属于 aggregation layer 的优化。</p>
+<h2>Polynomial commitment layer 的优化</h2>
+<p><a href="https://eprint.iacr.org/2020/081.pdf">SHPLONK</a> 是对 polynomial commitment layer 的优化，能结合在 PlonK 上使用，达到更好的 proof size 和 prover run time。别的一些论文也有对 polynomial commitment 进行的优化。但他们的问题是，他们需要的 cryptographic primitives 普遍在 Ethereum 上还没有。</p>
+
+  </main>
+
+  <aside class="post__aside">
+    <div class="post__tags">
+      
+    </div>
+
+    <nav class="post__pagination">
+
+        <a href="/posts_cn/2021-04-17-the-motivation-of-snarkit/">
+          <span>←</span>
+          <span>WASM 在用于 cryptogrphy 时的限制 -- 兼谈我们为什么想开发 snarkit</span>
+        </a>
+
+      
+
+        <a href="/posts_cn/zkrollup-intro1/">
+          <span>ZK-Rollup 开发经验分享 Part I</span>
+          <span>→</span>
+        </a>
+
+      
+    </nav>
+  </aside>
+
+</article>
+
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://fluid-dex.medium.com/" target="_blank" rel="noopener noreferrer" >Medium</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/Fluidex" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://twitter.com/fluid_dex" target="_blank" rel="noopener noreferrer" >Twitter</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://t.me/fluid_dex" target="_blank" rel="noopener noreferrer" >Telegram</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+      Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>
+        and <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">Eleventy Duo</a>
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/assets/main.31d6cfe0d16ae931b73c.js"></script>
+  </body>
+</html>
