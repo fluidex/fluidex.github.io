@@ -82,6 +82,7 @@ const verification_key = ...;
 function init() {
   // set global_merkle_tree_root and verification_key
 }
+
 function verify_txs(proof, txs, old_merkle_root, new_merkle_root) {
    assert(old_merkle_root == global_merkle_tree_root);
    // in fact we will hash of txs/old_merkle_root/new_merkle_root as a single input to 'zksnark_verify' for performance. We will not discuss this detail here as it does not block understanding
@@ -189,27 +190,27 @@ function binaryOp(op, arg1, arg2) {
 
 ### 技术文章
 
-[vitalik blog on rollup](https://vitalik.ca/general/2021/01/05/rollup.html)
-[vitalik blog on ZK-SNARK](https://vitalik.ca/general/2021/01/26/snarks.html)
-[深入浅出零知识证明之 ZK-SNARKs](https://www.yuque.com/u428635/scg32w/edmn74)
-[Stateless Ethereum](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/)
++ [vitalik blog on rollup](https://vitalik.ca/general/2021/01/05/rollup.html)
++ [vitalik blog on ZK-SNARK](https://vitalik.ca/general/2021/01/26/snarks.html)
++ [深入浅出零知识证明之 ZK-SNARKs](https://www.yuque.com/u428635/scg32w/edmn74)
++ [Stateless Ethereum](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/)
 
 ### 项目代码
 
 已经上线的 ZK-Rollup 项目：
 
-[zksync](https://github.com/matter-labs/zksync): 最完整的 ZK-Rollup 开源项目代码，涵盖了一个 ZK-Rollup 系统需要的每个组件。使用 PLONK 机制，电路代码使用 bellman，链下代码使用 Rust。
-[hermez](https://github.com/hermeznetwork/): 和 zksync 类似。使用 Groth16 机制，电路代码使用 circom，链下代码使用 Go。
-[loopring](https://github.com/Loopring/protocols/tree/master/packages/loopring_v3): 仅开源了电路代码和合约代码，没有开源 State Manager 模块。使用 Groth16 机制，电路代码使用 ethsnark，链下代码不开源。
++ [zksync](https://github.com/matter-labs/zksync): 最完整的 ZK-Rollup 开源项目代码，涵盖了一个 ZK-Rollup 系统需要的每个组件。使用 PLONK 机制，电路代码使用 bellman，链下代码使用 Rust。
++ [hermez](https://github.com/hermeznetwork/): 和 zksync 类似。使用 Groth16 机制，电路代码使用 circom，链下代码使用 Go。
++ [loopring](https://github.com/Loopring/protocols/tree/master/packages/loopring_v3): 仅开源了电路代码和合约代码，没有开源 State Manager 模块。使用 Groth16 机制，电路代码使用 ethsnark，链下代码不开源。
 
 开发中的 ZK-Rollup 项目：
 
-[fluidex](https://github.com/Fluidex): 开源了电路代码，State Manager，交易所撮合引擎。 使用 PLONK 机制，电路代码使用 circom，链下代码使用 Rust。
++ [fluidex](https://github.com/Fluidex): 开源了电路代码，State Manager，交易所撮合引擎。 使用 PLONK 机制，电路代码使用 circom，链下代码使用 Rust。
 
 使用 zksnark 技术但是不属于 ZK-Rollup 的项目：
 
-[maci](https://github.com/appliedzkp/maci/)
-[Tornado Cash](https://github.com/tornadocash)
++ [maci](https://github.com/appliedzkp/maci/)
++ [Tornado Cash](https://github.com/tornadocash)
 
 ## 关于我们
 

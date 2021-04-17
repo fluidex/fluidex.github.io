@@ -132,7 +132,7 @@
 <p>为了保证最坏情况下的安全性（即 ZK-Rollup 的运营者在跑路之后，用户的资金能不受损失地提出来），一般要求用户能够重建整棵树(这叫 data availability) ，能够证明 “张三确实有 3 个 ETH 在这颗树中”（通过 merkle proof 等手段）。这要求系统处理的每一笔交易的数据都是完整公开的，存在区块链上。</p>
 <p>我们通常对于数百甚至数千笔交易，按照指定顺序在这颗 merkle tree 上执行完成后，使用 ZK-SNARK 证明执行的结果（即新 merkle tree 的 root）是正确的。这数百或数千是一个预先决定的配置，而不能被动态更改 （实际系统中，会允许多个预先定确定的配置，而不是真的只有一个）。这批交易会被统一地证明和验证，它们被称为一个 “L2 Block”。</p>
 <p>我们来使用伪代码解释，一个真实世界 ZK-Rollup 系统中的数据流形态：</p>
-<pre class="language-js"><code class="hljs language-js"><span class="token comment">// the following code runs as smart contract</span><br><span class="token comment">// 'global_merkle_tree_root' is the only state needed to be stored inside smart contract</span><br><span class="token keyword">let</span> global_merkle_tree_root <span class="token operator">=</span> <span class="token operator">...</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> verification_key <span class="token operator">=</span> <span class="token operator">...</span><span class="token punctuation">;</span><br><span class="token keyword">function</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// set global_merkle_tree_root and verification_key</span><br><span class="token punctuation">}</span><br><span class="token keyword">function</span> <span class="token function">verify_txs</span><span class="token punctuation">(</span><span class="token parameter">proof<span class="token punctuation">,</span> txs<span class="token punctuation">,</span> old_merkle_root<span class="token punctuation">,</span> new_merkle_root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>   <span class="token function">assert</span><span class="token punctuation">(</span>old_merkle_root <span class="token operator">==</span> global_merkle_tree_root<span class="token punctuation">)</span><span class="token punctuation">;</span><br>   <span class="token comment">// in fact we will hash of txs/old_merkle_root/new_merkle_root as a single input to 'zksnark_verify' for performance. We will not discuss this detail here as it does not block understanding</span><br>   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">zksnark_verify</span><span class="token punctuation">(</span>proof<span class="token punctuation">,</span> txs<span class="token punctuation">,</span> old_merkle_root<span class="token punctuation">,</span> new_merkle_root<span class="token punctuation">)</span><span class="token punctuation">;</span><br>   global_merkle_tree_root <span class="token operator">=</span> new_merkle_root<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="hljs language-js"><span class="token comment">// the following code runs as smart contract</span><br><span class="token comment">// 'global_merkle_tree_root' is the only state needed to be stored inside smart contract</span><br><span class="token keyword">let</span> global_merkle_tree_root <span class="token operator">=</span> <span class="token operator">...</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> verification_key <span class="token operator">=</span> <span class="token operator">...</span><span class="token punctuation">;</span><br><span class="token keyword">function</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// set global_merkle_tree_root and verification_key</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">function</span> <span class="token function">verify_txs</span><span class="token punctuation">(</span><span class="token parameter">proof<span class="token punctuation">,</span> txs<span class="token punctuation">,</span> old_merkle_root<span class="token punctuation">,</span> new_merkle_root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>   <span class="token function">assert</span><span class="token punctuation">(</span>old_merkle_root <span class="token operator">==</span> global_merkle_tree_root<span class="token punctuation">)</span><span class="token punctuation">;</span><br>   <span class="token comment">// in fact we will hash of txs/old_merkle_root/new_merkle_root as a single input to 'zksnark_verify' for performance. We will not discuss this detail here as it does not block understanding</span><br>   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">zksnark_verify</span><span class="token punctuation">(</span>proof<span class="token punctuation">,</span> txs<span class="token punctuation">,</span> old_merkle_root<span class="token punctuation">,</span> new_merkle_root<span class="token punctuation">)</span><span class="token punctuation">;</span><br>   global_merkle_tree_root <span class="token operator">=</span> new_merkle_root<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <p>可以看到，合约自身除 merkle root 外，并不储存任何状态。每次状态更新都需要链下模块来准备完整的交易输入和 proof。熟悉 Stateless Ethereum 的读者会意识到 Stateless Ethereum 和 ZK-Rollup 这两者的本质是非常相似的。</p>
 <!---
 这里要不要解释下 witness / merkle proof 这些东西？
@@ -185,20 +185,28 @@
 <p>不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 plookup / custom gate / aggregate &amp; recursive 等特性。</p>
 <h2>更多阅读材料</h2>
 <h3>技术文章</h3>
-<p><a href="https://vitalik.ca/general/2021/01/05/rollup.html">vitalik blog on rollup</a><br>
-<a href="https://vitalik.ca/general/2021/01/26/snarks.html">vitalik blog on ZK-SNARK</a><br>
-<a href="https://www.yuque.com/u428635/scg32w/edmn74">深入浅出零知识证明之 ZK-SNARKs</a><br>
-<a href="https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/">Stateless Ethereum</a></p>
+<ul>
+<li><a href="https://vitalik.ca/general/2021/01/05/rollup.html">vitalik blog on rollup</a></li>
+<li><a href="https://vitalik.ca/general/2021/01/26/snarks.html">vitalik blog on ZK-SNARK</a></li>
+<li><a href="https://www.yuque.com/u428635/scg32w/edmn74">深入浅出零知识证明之 ZK-SNARKs</a></li>
+<li><a href="https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/">Stateless Ethereum</a></li>
+</ul>
 <h3>项目代码</h3>
 <p>已经上线的 ZK-Rollup 项目：</p>
-<p><a href="https://github.com/matter-labs/zksync">zksync</a>: 最完整的 ZK-Rollup 开源项目代码，涵盖了一个 ZK-Rollup 系统需要的每个组件。使用 PLONK 机制，电路代码使用 bellman，链下代码使用 Rust。<br>
-<a href="https://github.com/hermeznetwork/">hermez</a>: 和 zksync 类似。使用 Groth16 机制，电路代码使用 circom，链下代码使用 Go。<br>
-<a href="https://github.com/Loopring/protocols/tree/master/packages/loopring_v3">loopring</a>: 仅开源了电路代码和合约代码，没有开源 State Manager 模块。使用 Groth16 机制，电路代码使用 ethsnark，链下代码不开源。</p>
+<ul>
+<li><a href="https://github.com/matter-labs/zksync">zksync</a>: 最完整的 ZK-Rollup 开源项目代码，涵盖了一个 ZK-Rollup 系统需要的每个组件。使用 PLONK 机制，电路代码使用 bellman，链下代码使用 Rust。</li>
+<li><a href="https://github.com/hermeznetwork/">hermez</a>: 和 zksync 类似。使用 Groth16 机制，电路代码使用 circom，链下代码使用 Go。</li>
+<li><a href="https://github.com/Loopring/protocols/tree/master/packages/loopring_v3">loopring</a>: 仅开源了电路代码和合约代码，没有开源 State Manager 模块。使用 Groth16 机制，电路代码使用 ethsnark，链下代码不开源。</li>
+</ul>
 <p>开发中的 ZK-Rollup 项目：</p>
-<p><a href="https://github.com/Fluidex">fluidex</a>: 开源了电路代码，State Manager，交易所撮合引擎。 使用 PLONK 机制，电路代码使用 circom，链下代码使用 Rust。</p>
+<ul>
+<li><a href="https://github.com/Fluidex">fluidex</a>: 开源了电路代码，State Manager，交易所撮合引擎。 使用 PLONK 机制，电路代码使用 circom，链下代码使用 Rust。</li>
+</ul>
 <p>使用 zksnark 技术但是不属于 ZK-Rollup 的项目：</p>
-<p><a href="https://github.com/appliedzkp/maci/">maci</a><br>
-<a href="https://github.com/tornadocash">Tornado Cash</a></p>
+<ul>
+<li><a href="https://github.com/appliedzkp/maci/">maci</a></li>
+<li><a href="https://github.com/tornadocash">Tornado Cash</a></li>
+</ul>
 <h2>关于我们</h2>
 <p>我们是 <a href="https://www.fluidex.io/posts_cn/2020-11-28-fluidex-/index.html">Fluidex: 基于 ZK-Rollup 的专业去中心化交易所</a> 的开发团队。</p>
 
