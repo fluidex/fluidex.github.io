@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href=https://www.fluidex.io/posts_cn/zkrollup-intro1/>
 
-    <link href="/assets/main.css" rel="stylesheet" />
+    <link href="/assets/main.ba97df8343d87d6470ca.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
@@ -168,7 +168,7 @@
 <h2>其他开发经验碎片</h2>
 <h3>ZK-SNARK 的逻辑描述为何被称为“电路”？</h3>
 <p>对于任何有软件开发经验的人来说，如下代码中，if 分支和 else 分支只会执行一个，而不是两个都执行后选择其中一个作为结果。</p>
-<pre class="language-js"><code class="hljs language-js"><span class="token keyword">function</span> <span class="token function">binaryOp</span><span class="token punctuation">(</span><span class="token parameter">op<span class="token punctuation">,</span> arg1<span class="token punctuation">,</span> arg2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>op <span class="token operator">==</span> <span class="token string">'add'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>     <span class="token keyword">return</span> arg1 <span class="token operator">+</span> arg2<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span>  <span class="token punctuation">{</span><br>     <span class="token comment">// assert(op == 'mul');</span><br>     <span class="token keyword">return</span> arg1 <span class="token operator">*</span> arg2<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="hljs language-js"><span class="token keyword">function</span> <span class="token function">binaryOp</span><span class="token punctuation">(</span><span class="token parameter">op<span class="token punctuation">,</span> arg1<span class="token punctuation">,</span> arg2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>op <span class="token operator">==</span> <span class="token string">"add"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> arg1 <span class="token operator">+</span> arg2<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    <span class="token comment">// assert(op == 'mul');</span><br>    <span class="token keyword">return</span> arg1 <span class="token operator">*</span> arg2<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p>“不同代码分支下，计算量不会同时发生”对于软件开发似乎是天经地义的，但是对于数字芯片电路的硬件设计却并非如此。在硬件时序电路代码开发中，一般所有“分支”（如果这还叫“分支”的话）的逻辑都会在时序触发时全部执行，开发者需要自己从不同“分支”的计算结果中，正确地选择和维护全局状态。</p>
 <p>零知识证明的代码最终会被转换成一些巨大（可能是几亿项）的多项式，零知识证明的每一行代码都会被规约到这些巨大的多项式中。因此零知识证明的代码具有和硬件电路相同的属性：所有分支的代码同时执行。这也就是“零知识证明电路”之所以被称为“电路”的原因。此外，和硬件电路类似，零知识证明电路中，没有递归和复杂循环，循环次数只能是常数（实际上最终这个循环会被作为语法糖展开，即 loop unrolling）。</p>
 <p>因此在开发零知识证明电路代码时，开发者要重新思考自己在编写软件代码时养成的认知和习惯。例如，优化软件时，我们可以专注于代码最常执行的路径，而对于代码少走的分支则可以不优先处理。但是在零知识电路开发中，每一个分支都是会被执行的，因此不常执行的分支也需要投入同样的精力来优化。</p>
@@ -210,6 +210,13 @@
     </div>
 
     <nav class="post__pagination">
+
+        <a href="/posts_cn/2021-04-17-the-motivation-of-snarkit/">
+          <span>←</span>
+          <span>WASM 在用于 cryptogrphy 时的限制 -- 兼谈我们为什么想开发 snarkit</span>
+        </a>
+
+      
 
         <a href="/posts_cn/2021-03-04-joinus/">
           <span>Fluidex 招聘</span>
@@ -300,6 +307,6 @@
 
     </footer>
 
-    <script src="/assets/main.js"></script>
+    <script src="/assets/main.31d6cfe0d16ae931b73c.js"></script>
   </body>
 </html>
