@@ -7,31 +7,31 @@ tags: []
 
 Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.
 
-Currently, major expectations on blockchain technology are further scaling, higher performance and lower costs. In this post, we will dive into ZK-Rollup, which is one of the [Ethereum layer 2 scaling solutions](https://ethereum.org/nl/developers/docs/layer-2-scaling/). It exquisitely applies a zero knowledge proof technique (known as ZK-SNARK) to reduce the on-chain calculation costs, thus, able to improve Ethereum performance extremely (~10x-100x). ZK-Rollup is considered the most important Layer 2 scaling solution in the long term by many people, including Vitalik, the founder of Ethereum.
+Currently, major expectations on blockchain technology are further scaling, higher performance and lower costs. In this post, we will dive into ZK-Rollup, which is one of the [Ethereum layer 2 scaling solutions](https://ethereum.org/nl/developers/docs/layer-2-scaling/). It exquisitely applies a zero knowledge proof technique (known as ZK-SNARK) to reduce the on-chain costs, and thus, is able to improve Ethereum TPS considerably (~10x-100x). ZK-Rollup is considered as the most important Ethereum Layer 2 scaling solution in the long term by many people, including Vitalik, the founder of Ethereum.
 
 > In general, my own view is that in the short term, optimistic rollups are likely to win out for general-purpose EVM computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use cases, but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves. -- Vitalik
 
-We will share some experience on ZK-Rollup system development in this post. The motivation of this post is that, currently there are many high quality resources introducing ZK-SNARK (the proof itself), with a lot of cryptographic details. In the meantime, there are also many non-technical blogs looking into the impact and prospect of ZK-Rollup. Very few will dive into questions like, how does ZK-Rollup boost performance exactly? Or, how does a complete ZK-Rollup system look like? Or, is there any important but usually overlooked details in a ZK-Rollup system?
+In this series of posts, we will share our experience on developing a ZK-Rollup system. The motivation of these posts is that, currently there are many high quality resources introducing the cryptography behind ZK-SNARK, with a lot of math details. In the meantime, there are also many non-technical blogs looking into the impact and prospect of ZK-Rollup. Very few will dive into questions like, how does ZK-Rollup boost performance exactly? Or, how does a complete ZK-Rollup system look like? Or, is there any important but usually overlooked details in a ZK-Rollup system?
 
-[Fluidex](https://github.com/Fluidex/), as one of the very few teams that are independently developing a complete ZK-Rollup system, is hoping to share some experience learnt through ZK-Rollup system development. We hope this could help other developers in the field. We will talk about some important but rarely mentioned topics, like where the performance bottleneck is in a ZK-Rollup system, what does the economic cost contains, etc.
+[Fluidex](https://github.com/Fluidex/), as one of the very few teams that are independently developing a ZK-Rollup system from scratch, is happy to share some experience gained from ZK-Rollup system development. We hope this could benefit other developers in the field. We will talk about some important but rarely mentioned topics, like where the performance bottleneck is in a ZK-Rollup system, where does the economic cost lie, etc.
 
 ## Overview of ZK-SNARK & ZK-Rollup
 
-Again, we won't focus on the cryptographic details of ZK-SNARK proof, because as stated, there are enough high quality resources introducing it. In this chapter, we will briefly answer the following questions: What can ZK-SNARK do? Why does it become the core of ZK-Rollup, and help boost Ethereum performance along with "rollup"? What does "rollup" mean exactly?
+Again, we won't focus on the cryptographic details of ZK-SNARK proof, because as stated, there are enough high quality resources explaining it. In this chapter, we will briefly answer the following questions: What can ZK-SNARK do? Why does it become the core of ZK-Rollup, and help boost Ethereum performance along with "rollup"? What does "rollup" mean exactly?
 
 ### The Nature of ZK-SNARK
 
-Generally speaking, in a blockchain ecosystem, each node will do the same computation for each transaction in the block, then verify that their results are the same as those of other nodes. In other words, for each transaction to be on chain, it will be executed by every node. That's one major reason why blockchain have relatively low performance.
+Generally speaking, in a blockchain ecosystem, each node will execute the same computation for each transaction in the block, then verify that their results are the same as those of other nodes. In other words, for each transaction to be on chain, it will be executed by every node. That's one major reason why blockchain have relatively low performance.
 
 However, is "computing again" the only way to verify a transaction? To put it differently: is it necessary that the cost of verifying is as much as the cost of computing?
 
 The answer is NO. Verifying could be cheaper than computing. Let's take Sudoku for example. The complexity of solving a Sudoku is quite different from that of verifying a Sudoku solution. To "compute again" is the least efficient verification method. If you happen to have a computer science background, just consider the P vs NP problems in computational complexity theory.
 
-Therefore, in blockchain, it's worthwhile to have a technical solution that can lower the verification cost, even by increasing the computation cost. The reason is that, for each transaction, computation will only happen once, while verification will happen on every node. **ZK-SNARK by nature is such a technique that significantly lowers the verification cost.** Generally, ZK-SNARK can make the verification cost several orders of magnitude less than the computational cost. To be precise, reducing the verification complexity from linear to constant (or logarithmic).
+Therefore, in blockchain, it's worthwhile to have a technical solution that can lower the verification cost, even by increasing the computation cost. The reason is that, for each transaction, computation will only happen once, while verification will happen on every node. **ZK-SNARK by nature is such a technique that significantly lowers the verification cost.** Generally, ZK-SNARK can make the verification cost several orders of magnitude less than the computational cost. To be precise, reducing the verification complexity from linear to constant (or logarithmic), that is what "succinctness", the "S" in "SNARK", stands for.
 
 Let's look at how ZK-SNARK works.
 
-For a particular program, it will first preprocess it. After the one-off preprocessing, for each input, it will compute the result of the input, as well as generate a "proof" (usually in form of large prime numbers) with relatively larger costs. Any verifier could use this "proof" and input to quickly verify the correctness of the result without actually running the program.
+For a particular program, it will first be preprocessed. After the one-off preprocessing, for each input, a prover will need to compute the result corresponding to the input, as well as generate a "proof" (usually in form of large prime numbers) with relatively larger costs. Any verifier could use this "proof" and input to quickly verify the correctness of the result without actually running the program.
 
 A more detailed description in pseudo code:
 
@@ -46,7 +46,7 @@ function some_function(inputs):
 
 // preprocessing only runs once for every 'some_function'
 // we deliberately ignore 'setup' here to make it easier for understanding
-// for a more precise and detailed description, you can have a look at the references at the bottom of this article
+// for a more precise and detailed description, you can have a look at the references at the end of this article
 const preprocess_result = zksnark_preprocess(some_function)
 const verification_key = preprocess_result.verification_key;
 const proving_key = preprocess_result.proving_key;
@@ -176,11 +176,11 @@ function binaryOp(op, arg1, arg2) {
 }
 ```
 
-Such concept that "computing won't happen together for different code branches" seems natural for software development, but it's not the case for the design of hardware chip circuits. In development of sequential logic circuits in hardware, logics of all "branches" (if still called "branch") will be executed at the time the sequence is triggered. The developer needs to choose and maintain correct global states from different "branches".
+Such concept that "only one conditional branch will be executed" seems natural for software development, but it's not the case for the design of hardware chip circuits. In development of sequential logic circuits in hardware, logics of all "branches" (if still called "branch") will be executed at the time the sequence is triggered. The developer needs to choose and maintain correct global states from different "branches".
 
-Code for ZF proof will eventually be converted into some immense polynomials (probably with hundreds of millions of terms), such that proving of the program will be converted to proving of the polynomials. Thus, the code has the same property as hardware circuits: code from all branches will be executed together. That's why ZK proof code is called "circuits". In addition, similar to hardware circuits, there are no recursion and complex loops in the ZK proof circuits, and the number of loops can only be constant (actually, loops will be unrolled as syntactic sugars, i.e., loop unrolling).
+Code for ZK proof will eventually be converted into some immense polynomials (probably with hundreds of millions of terms), such that proving of the program will be converted to proving of the polynomials. The polynomials are then constrained in the form of gate circuit. That's also one of the reason why we call ZKP programs as circuits. Thus, the code has the same property as hardware circuits: code from all branches will be executed together. That's why ZK proof code is called "circuits". In addition, similar to hardware circuits, there are no recursion and complex loops in the ZK proof circuits, and the number of loops can only be constant (actually, loops will be unrolled as syntactic sugars, i.e., loop unrolling).
 
-Therefore, when developing ZK proof circuits, developers need to reconsider their habits from software development. For example, when optimizing softwares, we could focus on the most frequently executed branch, and deprioritize the non-frequent ones. But in ZK proof circuits, as all branches will be executed, the non-frequent branches need the same efforts.
+Therefore, when developing ZK proof circuits, developers need to reconsider their habits from software development. For example, when optimizing softwares, we could focus on the most frequently executed branch, and deprioritize the non-frequent ones. But in ZK proof circuits, as all branches will be executed, the non-frequent branches need to be considered as well.
 
 
 ### Opinions on DSL
@@ -189,11 +189,11 @@ There are several choices for ZK proof circuit development, such as low-level co
 
 We chose Circom, which provides a just right level of abstraction. On the one hand, it improves the efficiency of reading/writing code, on the other hand, it doesn't distort the details of the underlying circuits.
 
-In comparison, developing with ethsnarks and bellman has lower efficiency. Also, when the code is being reviewed, no matter internally or externally, too much "syntactic noise" prevents the reviewer from focusing on the core logic. Additionally, ZoKrates and Zinc provide a too high level of abstraction. For example, python-style control flow syntax in ZoKrates conceals the underlying circuits, and is not conducive to lower level optimizations (such as inline assembly of C/Rust).
+In comparison, developing with ethsnarks and bellman is of lower efficiency. Also, when the code is being reviewed, no matter internally or externally, too much "syntactic noise" prevents the reviewer from focusing on the core logic. Additionally, ZoKrates and Zinc provide a too high level of abstraction. For example, python-style control flow syntax in ZoKrates conceals the underlying circuits, and is not conducive to lower level optimizations (such as inline assembly of C/Rust).
 
-As an analogy,  ethsnarks / bellman is like assembly language in traditional development, while cirom is like C, and ZoKrates is like Python. However, ZoKrates toolchain is not as mature as Python interpreter. That's why we'd rather use C as the only development language, instead of maintaining both Python code and CPython interpreter code.
+As an analogy,  ethsnarks / bellman is like assembly language in traditional development, while cirom is like C, and ZoKrates is like Python. However, ZoKrates toolchain is not as mature as Python interpreter. That's why we'd rather use "C" (cirom in this case) as the our development language, instead of maintaining both "Python" (ZoKrates in this case) code and "CPython interpreter" (ZoKrates interpreter in this case) code.
 
-However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better support PLONK's properties like plookup, custom gate, aggregate & recursive, etc.
+However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation & recursion, etc.
 
 ## Read More
 
@@ -201,20 +201,19 @@ However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK pro
 
 + [vitalik blog on rollup](https://vitalik.ca/general/2021/01/05/rollup.html)
 + [vitalik blog on ZK-SNARK](https://vitalik.ca/general/2021/01/26/snarks.html)
-+ [深入浅出零知识证明之 ZK-SNARKs](https://www.yuque.com/u428635/scg32w/edmn74)
 + [Stateless Ethereum](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/)
 
 ### Projects
 
 ZK-Rollup projects launched:
 
-+ [zksync](https://github.com/matter-labs/zksync): the most complete open source code of ZK-Rollup, containing all modules for a ZK-Rollup system. It uses PLONK proof, bellman for circuits, and Rust for off-chain code.
-+ [hermez](https://github.com/hermeznetwork/): similar to zksync. It uses Groth16 proof, Circom for circuits, and Go for off-chain code.
-+ [loopring](https://github.com/Loopring/protocols/tree/master/packages/loopring_v3): only has circuit code and contract in open source. It uses Groth16 proof, ethsnark for circuits. Off-chain code is not open source.
++ [zksync](https://github.com/matter-labs/zksync): the most complete open source code of ZK-Rollup, containing all modules for a ZK-Rollup system. It uses PLONK protocol, bellman for circuits, and Rust for off-chain code.
++ [hermez](https://github.com/hermeznetwork/): similar to zksync. It uses Groth16 protocol, Circom for circuits, and Go for off-chain code.
++ [loopring](https://github.com/Loopring/protocols/tree/master/packages/loopring_v3): only has circuit code and contract in open source. It uses Groth16 protocol, ethsnark for circuits. Off-chain code is not open sourced yet.
 
 ZK-Rollup projects under developing:
 
-+ [fluidex](https://github.com/Fluidex): circuits, State Manager, and matching engine in open source. It uses PLONK proof, circom for circuits, ans Rust for off-chain code.
++ [fluidex](https://github.com/Fluidex): circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, ans Rust for off-chain code.
 
 Non ZK-Rollup projects that use ZK-SNARK:
 
@@ -223,4 +222,4 @@ Non ZK-Rollup projects that use ZK-SNARK:
 
 ## About Us
 
-We are the development team of [Fluidex: A Layer 2 ZK-Rollup DEX on Ethereum](https://www.fluidex.io/posts_cn/2020-11-28-fluidex-/index.html).
+We are the development team of [Fluidex: A Layer 2 ZK-Rollup DEX on Ethereum](https://www.fluidex.io/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/).

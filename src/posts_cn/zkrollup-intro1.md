@@ -44,7 +44,7 @@ function some_function(inputs):
 
 // preprocessing only runs once for every 'some_function'
 // we deliberately ignore 'setup' here to make it easier for understanding
-// for a more precise and detailed description, you can have a look at the references at the bottom of this article
+// for a more precise and detailed description, you can have a look at the references at the end of this article
 const preprocess_result = zksnark_preprocess(some_function)
 const verification_key = preprocess_result.verification_key;
 const proving_key = preprocess_result.proving_key;
@@ -165,7 +165,7 @@ function binaryOp(op, arg1, arg2) {
 
 “不同代码分支下，计算量不会同时发生”对于软件开发似乎是天经地义的，但是对于数字芯片电路的硬件设计却并非如此。在硬件时序电路代码开发中，一般所有“分支”（如果这还叫“分支”的话）的逻辑都会在时序触发时全部执行，开发者需要自己从不同“分支”的计算结果中，正确地选择和维护全局状态。
 
-零知识证明的代码最终会被转换成一些巨大（可能是几亿项）的多项式，于是，问题就从“证明程序”转化为“证明多项式”。因此零知识证明的代码具有和硬件电路相同的属性：所有分支的代码同时执行。这也就是“零知识证明电路”之所以被称为“电路”的原因。此外，和硬件电路类似，零知识证明电路中，没有递归和复杂循环，循环次数只能是常数（实际上最终这个循环会被作为语法糖展开，即 loop unrolling）。
+零知识证明的代码最终会被转换成一些巨大（可能是几亿项）的多项式，于是，问题就从“证明程序”转化为“证明多项式”。而多项式又会以门电路的方式被表达，以进行约束。这也是零知识证明电路被称之为“电路”的原因。因此零知识证明的代码具有和硬件电路相同的属性：所有分支的代码同时执行。这也就是“零知识证明电路”之所以被称为“电路”的原因。此外，和硬件电路类似，零知识证明电路中，没有递归和复杂循环，循环次数只能是常数（实际上最终这个循环会被作为语法糖展开，即 loop unrolling）。
 
 因此在开发零知识证明电路代码时，开发者要重新思考自己在编写软件代码时养成的认知和习惯。例如，优化软件时，我们可以专注于代码最常执行的路径，而对于代码少走的分支则可以不优先处理。但是在零知识电路开发中，每一个分支都是会被执行的，因此不常执行的分支也需要投入同样的精力来优化。
 
@@ -184,7 +184,7 @@ function binaryOp(op, arg1, arg2) {
 
 如果用传统开发来类比，ethsnarks / bellman 更像是汇编，circom 是 C 语言，ZoKrates 是 Python。但是 ZoKrates 的工具链又没有真的成熟到 Python 解释器的程度，因此我们宁愿用 C 来作为唯一的开发语言，也不想自己同时维护 Python 代码和 CPython 解释器代码。
 
-不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 plookup / custom gate / aggregate & recursive 等特性。
+不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 custom gate / plookup / aggregation & recursion 等特性。
 
 ## 更多阅读材料
 
