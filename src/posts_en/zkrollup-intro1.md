@@ -195,7 +195,7 @@ As an analogy,  ethsnarks / bellman is like assembly language in traditional dev
 
 However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation & recursion, etc.
 
-## Read More
+## Further Readings
 
 ### Techinical Blogs
 
@@ -213,7 +213,7 @@ ZK-Rollup projects launched:
 
 ZK-Rollup projects under developing:
 
-+ [fluidex](https://github.com/Fluidex): circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, ans Rust for off-chain code.
++ [fluidex](https://github.com/Fluidex): circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, and Rust for off-chain code.
 
 Non ZK-Rollup projects that use ZK-SNARK:
 
