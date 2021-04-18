@@ -31,7 +31,7 @@ Therefore, in blockchain, it's worthwhile to have a technical solution that can 
 
 Let's look at how ZK-SNARK works.
 
-For a particular program, it will first be preprocessed. After the one-off preprocessing, for each input, a prover will need to compute the result corresponding to the input, as well as generate a "proof" (usually in form of large prime numbers) with relatively larger costs. Any verifier could use this "proof" and input to quickly verify the correctness of the result without actually running the program. The proof is responsible for proving the prover do run the computation honestly.
+For a particular program, it will first be preprocessed. After the one-off preprocessing, for each input, a prover will need to compute the result corresponding to the input, as well as generate a "proof" (usually in form of large prime numbers) with relatively larger costs. Any verifier could use this "proof" and input to quickly verify the correctness of the result without actually running the program.
 
 A more detailed description in pseudo code:
 
@@ -176,11 +176,11 @@ function binaryOp(op, arg1, arg2) {
 }
 ```
 
-Such concept that "computing won't happen together for different code branches" seems natural for software development, but it's not the case for the design of hardware chip circuits. In development of sequential logic circuits in hardware, logics of all "branches" (if still called "branch") will be executed at the time the sequence is triggered. The developer needs to choose and maintain correct global states from different "branches".
+Such concept that "only one conditional branch will be executed" seems natural for software development, but it's not the case for the design of hardware chip circuits. In development of sequential logic circuits in hardware, logics of all "branches" (if still called "branch") will be executed at the time the sequence is triggered. The developer needs to choose and maintain correct global states from different "branches".
 
-Code for ZF proof will eventually be converted into some immense polynomials (probably with hundreds of millions of terms), such that proving of the program will be converted to proving of the polynomials. Thus, the code has the same property as hardware circuits: code from all branches will be executed together. That's why ZK proof code is called "circuits". In addition, similar to hardware circuits, there are no recursion and complex loops in the ZK proof circuits, and the number of loops can only be constant (actually, loops will be unrolled as syntactic sugars, i.e., loop unrolling).
+Code for ZK proof will eventually be converted into some immense polynomials (probably with hundreds of millions of terms), such that proving of the program will be converted to proving of the polynomials. The polynomials are then constrained in the form of gate circuit. That's also one of the reason why we call ZKP programs as circuits. Thus, the code has the same property as hardware circuits: code from all branches will be executed together. That's why ZK proof code is called "circuits". In addition, similar to hardware circuits, there are no recursion and complex loops in the ZK proof circuits, and the number of loops can only be constant (actually, loops will be unrolled as syntactic sugars, i.e., loop unrolling).
 
-Therefore, when developing ZK proof circuits, developers need to reconsider their habits from software development. For example, when optimizing softwares, we could focus on the most frequently executed branch, and deprioritize the non-frequent ones. But in ZK proof circuits, as all branches will be executed, the non-frequent branches need the same efforts.
+Therefore, when developing ZK proof circuits, developers need to reconsider their habits from software development. For example, when optimizing softwares, we could focus on the most frequently executed branch, and deprioritize the non-frequent ones. But in ZK proof circuits, as all branches will be executed, the non-frequent branches need to be considered as well.
 
 
 ### Opinions on DSL
