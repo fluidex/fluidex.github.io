@@ -191,7 +191,7 @@
 <p>In comparison, developing with ethsnarks and bellman is of lower efficiency. Also, when the code is being reviewed, no matter internally or externally, too much “syntactic noise” prevents the reviewer from focusing on the core logic. Additionally, ZoKrates and Zinc provide a too high level of abstraction. For example, python-style control flow syntax in ZoKrates conceals the underlying circuits, and is not conducive to lower level optimizations (such as inline assembly of C/Rust).</p>
 <p>As an analogy,  ethsnarks / bellman is like assembly language in traditional development, while cirom is like C, and ZoKrates is like Python. However, ZoKrates toolchain is not as mature as Python interpreter. That’s why we’d rather use “C” (cirom in this case) as the our development language, instead of maintaining both “Python” (ZoKrates in this case) code and “CPython interpreter” (ZoKrates interpreter in this case) code.</p>
 <p>However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation &amp; recursion, etc.</p>
-<h2>Read More</h2>
+<h2>Further Readings</h2>
 <h3>Techinical Blogs</h3>
 <ul>
 <li><a href="https://vitalik.ca/general/2021/01/05/rollup.html">vitalik blog on rollup</a></li>
@@ -207,7 +207,7 @@
 </ul>
 <p>ZK-Rollup projects under developing:</p>
 <ul>
-<li><a href="https://github.com/Fluidex">fluidex</a>: circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, ans Rust for off-chain code.</li>
+<li><a href="https://github.com/Fluidex">fluidex</a>: circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, and Rust for off-chain code.</li>
 </ul>
 <p>Non ZK-Rollup projects that use ZK-SNARK:</p>
 <ul>
