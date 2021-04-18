@@ -44,7 +44,7 @@ function some_function(inputs):
 
 // preprocessing only runs once for every 'some_function'
 // we deliberately ignore 'setup' here to make it easier for understanding
-// for a more precise and detailed description, you can have a look at the references at the bottom of this article
+// for a more precise and detailed description, you can have a look at the references at the end of this article
 const preprocess_result = zksnark_preprocess(some_function)
 const verification_key = preprocess_result.verification_key;
 const proving_key = preprocess_result.proving_key;
@@ -184,7 +184,7 @@ function binaryOp(op, arg1, arg2) {
 
 如果用传统开发来类比，ethsnarks / bellman 更像是汇编，circom 是 C 语言，ZoKrates 是 Python。但是 ZoKrates 的工具链又没有真的成熟到 Python 解释器的程度，因此我们宁愿用 C 来作为唯一的开发语言，也不想自己同时维护 Python 代码和 CPython 解释器代码。
 
-不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 plookup / custom gate / aggregate & recursive 等特性。
+不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 custom gate / plookup / aggregation & recursion 等特性。
 
 ## 更多阅读材料
 
