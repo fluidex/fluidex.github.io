@@ -31,7 +31,7 @@ Therefore, in blockchain, it's worthwhile to have a technical solution that can 
 
 Let's look at how ZK-SNARK works.
 
-For a particular program, it will first be preprocessed. After the one-off preprocessing, for each input, a prover will need to compute the result corresponding to the input, as well as generate a "proof" (usually in form of large prime numbers) with relatively larger costs. Any verifier could use this "proof" and input to quickly verify the correctness of the result without actually running the program.
+For a particular program, it will first be preprocessed. After the one-off preprocessing, for each input, a prover will need to compute the result corresponding to the input, as well as generate a "proof" (usually in form of large integers) with relatively larger costs. Any verifier could use this "proof" and input to quickly verify the correctness of the result without actually running the program.
 
 A more detailed description in pseudo code:
 
