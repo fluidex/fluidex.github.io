@@ -209,7 +209,7 @@ function binaryOp(op, arg1, arg2) {
 
 使用 zksnark 技术但是不属于 ZK-Rollup 的项目：
 
-+ [maci](https://github.com/appliedzkp/maci/)
++ [MACI](https://github.com/appliedzkp/maci/)
 + [Tornado Cash](https://github.com/tornadocash)
 
 ## 关于我们
