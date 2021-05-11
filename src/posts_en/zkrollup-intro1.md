@@ -217,7 +217,7 @@ ZK-Rollup projects under developing:
 
 Non ZK-Rollup projects that use ZK-SNARK:
 
-+ [maci](https://github.com/appliedzkp/maci/)
++ [MACI](https://github.com/appliedzkp/maci/)
 + [Tornado Cash](https://github.com/tornadocash)
 
 ## About Us
