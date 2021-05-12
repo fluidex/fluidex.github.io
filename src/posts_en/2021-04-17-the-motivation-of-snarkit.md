@@ -11,7 +11,7 @@ But this is just an ideal case. In fact, when it comes to Cryptography, there ar
 
 In modern CPUs, there are many optimizations for Cryptography, but they cannot be utilized inside WASM VMs. Usually running SNARKs inside WASM VMs will be several times slower than on a native CPU.
 
-And there are a couple of limitations when using WASM:
+Moreover, there are a couple of other limitations when using WASM:
 + It doesn't support multi-thread parallelism.
 + Memory is limited. Usually you only have 1~4 G available (If you encounter `[CompileError: WebAssembly.compile(): data segments count of 104626 exceeds internal limit of 100000` when using [circom wasm port](https://github.com/iden3/circom/tree/master/ports/wasm) to compile a large circuit, it's out of this reason). Otherwise you will have to compile your own WASM by yourself, like in [here](https://github.com/emscripten-core/emscripten/issues/8755#issuecomment-499682033). But again, this brings inconvenience for other contributors/developers.
 
