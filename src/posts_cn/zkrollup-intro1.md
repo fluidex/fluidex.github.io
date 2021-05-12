@@ -5,7 +5,7 @@ category:
 tags: []
 ---
 
-_致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！_
+_致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（排名按字母序）_
 
 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。
 
