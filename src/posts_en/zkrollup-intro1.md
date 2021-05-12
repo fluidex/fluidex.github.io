@@ -5,6 +5,8 @@ category:
 tags: []
 ---
 
+_Acknowledgement: we would like to thank barryWhiteHat, Koh Wei Jie for their insightful feedbacks._
+
 Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.
 
 Currently, major expectations on blockchain technology are further scaling, higher performance and lower costs. In this post, we will dive into ZK-Rollup, which is one of the [Ethereum layer 2 scaling solutions](https://ethereum.org/nl/developers/docs/layer-2-scaling/). It exquisitely applies a zero knowledge proof technique (known as ZK-SNARK) to reduce the on-chain costs, and thus, is able to improve Ethereum TPS considerably (~10x-100x). ZK-Rollup is considered as the most important Ethereum Layer 2 scaling solution in the long term by many people, including Vitalik, the founder of Ethereum.

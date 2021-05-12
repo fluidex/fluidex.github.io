@@ -5,6 +5,8 @@ category:
 tags: []
 ---
 
+_致谢：谢谢 barryWhiteHat、Koh Wei Jie 对这篇文章提供的宝贵意见！_
+
 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。
 
 很多用户期待区块链能进一步扩容，提升性能，降低使用成本。本文将谈到的 ZK-Rollup 是 [以太坊 Layer 2 扩容方案](https://ethereum.org/nl/developers/docs/layer-2-scaling/) 中的一种，它精巧地使用零知识证明(ZK-SNARK)这种密码学技术来完成链上计算资源消耗的压缩，从而能够极大地(~10x-100x)提升 Ethereum 的性能。包括 Ethereum 创始人 Vitalik 在内的很多人 认为 ZK-Rollup 是长期来看最重要的 Layer 2 扩容方案。
