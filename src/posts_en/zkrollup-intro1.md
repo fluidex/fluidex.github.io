@@ -1,9 +1,12 @@
 ---
 title: "ZK-Rollup development experience sharing, Part I"
+date:       2021-05-12 09:00:00
 description: ""
 category:
 tags: []
 ---
+
+_Acknowledgement: we would like to thank barryWhiteHat, Koh Wei Jie (in alphabetical order) for their insightful feedbacks._
 
 Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.
 
@@ -123,9 +126,9 @@ What is the main constraint on TPS of a ZK-Rollup system?
 
 Proving is the most resource consuming part of a ZK-Rollup system. Those who are new to ZK-Rollup usually mistakenly believe that speed of proving is the main constraint on TPS. Actually, as the proving of each L2 Block can be done completely in parallel, using a prover cluster with size of hundreds is a common practice. Therefore, although ZK-SNARK proofs do take long, it will mostly lead to a longer latency of withdrawing from L2 to L1, as well as a higher server cost for operators, but not a limitation on TPS.
 
-### Storing data on-chain and ETH GAS limitations
+### Recording data on-chain and ETH GAS limitations
 
-Well this is a real constraint on TPS. Let's look back at the ZK-Rollup overall design. To ensure security/data availability, each transaction should be stored on chain. This part of data will be stored in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte. For a normal transfer/matched order, each transaction is estimated to be 40 bytes.
+Well this is a real constraint on TPS. Let's look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte. For a normal transfer/matched order, each transaction is estimated to be 40 bytes.
 
 Let's try estimating the TPS limit by gas limitations.
 
@@ -135,7 +138,13 @@ It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. 
 
 This is a rarely discussed but crucial perspective. **The TPS of a real-world ZK-Rollup system is actually more limited by this module, rather than proving speed or gas limitations discussed above**.
 
-To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense merkle tree, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause updates on 5-10 leaf nodes, then there'll be ~200 hash calculations in total.
+To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause updates on 5-10 leaf nodes, then there'll be ~200 hash calculations in total.
+
+![](/images/account_merkle_tree.png)
+
+<!-- 
+_(In a transfer-oriented zkRollup, You could indeed combine account leaf and token leaf to reduce the merkle tree depth. However, for building a DEX a account_balance tree might still be more preferable, and since we are focusing on discussing the performance on updating the merkle tree, without the loss of generality, it's fine to discuss the model as account_balance tree here.)_
+ -->
 
 For performance considerations, we won't use normal hash like SHA3 in a ZK-Rollup merkle tree. Instead, we'll use a more ZK-SNARK compatible one like poseidon or rescue. According to [test results from Fluidex](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326), each poseidon hash takes about 30us (tree depth of each test is 20, thus, each hash would be 57ms / 100 / 20 ~= 30us). So estimating from merkle tree perspective, the limit of a ZK-Rollup system would be 1 / 0.00003 / 200 = 160 TPS.
 
