@@ -112,7 +112,7 @@
     <p>More and more projects start to look into including WebAssembly (WASM) into their tech stacks, because there is not much interpretation between WASM instructions and CPU instructions, so that even running WASM codes in a browser we can still achieve similar performance to running native CPU instructions. This could mean huge for supporting multiple platforms while remaining efficient. Nevertheless, we can compile C/C++/Java/Rust/GoLang … into WASM, and therefore reduce the learning curve.</p>
 <p>But this is just an ideal case. In fact, when it comes to Cryptography, there are some more factors needed to be taken into considerations.</p>
 <p>In modern CPUs, there are many optimizations for Cryptography, but they cannot be utilized inside WASM VMs. Usually running SNARKs inside WASM VMs will be several times slower than on a native CPU.</p>
-<p>And there are a couple of limitations when using WASM:</p>
+<p>Moreover, there are a couple of other limitations when using WASM:</p>
 <ul>
 <li>It doesn’t support multi-thread parallelism.</li>
 <li>Memory is limited. Usually you only have 1~4 G available (If you encounter <code>[CompileError: WebAssembly.compile(): data segments count of 104626 exceeds internal limit of 100000</code> when using <a href="https://github.com/iden3/circom/tree/master/ports/wasm">circom wasm port</a> to compile a large circuit, it’s out of this reason). Otherwise you will have to compile your own WASM by yourself, like in <a href="https://github.com/emscripten-core/emscripten/issues/8755#issuecomment-499682033">here</a>. But again, this brings inconvenience for other contributors/developers.</li>
