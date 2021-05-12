@@ -5,7 +5,7 @@ category:
 tags: []
 ---
 
-_Acknowledgement: we would like to thank barryWhiteHat, Koh Wei Jie (alphabetical order) for their insightful feedbacks._
+_Acknowledgement: we would like to thank barryWhiteHat, Koh Wei Jie (in alphabetical order) for their insightful feedbacks._
 
 Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.
 
