@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=https://www.fluidex.io/posts/2021-04-17-the-motivation-of-snarkit/>
+
+    <link href="/assets/main.ba97df8343d87d6470ca.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <title>
+      The inconveniences in developing Cryptography using WASM, and the motivation of snarkit
+      
+         | Fluidex
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href="/images/favicon.ico">
+
+    <meta property="og:title" content="The inconveniences in developing Cryptography using WASM, and the motivation of snarkit">
+    <meta property="og:site_name" content="Fluidex"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.fluidex.io/posts/2021-04-17-the-motivation-of-snarkit/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@author_handle"/>
+    
+
+    
+    
+      
+    
+    
+      <meta name="description" content="The inconveniences in developing Cryptography using WASM, and the motivation of snarkit 16 Apr 2021 | 2 min read More and more projects...">
+      <meta property="og:description" content="The inconveniences in developing Cryptography using WASM, and the motivation of snarkit 16 Apr 2021 | 2 min read More and more projects...">
+      <meta name="description" content="The inconveniences in developing Cryptography using WASM, and the motivation of snarkit 16 Apr 2021 | 2 min read More and more projects..."/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="https://www.fluidex.io/images/default-social-image.png"/>
+      <meta name="twitter:image" content="https://www.fluidex.io/images/default-social-image.png"/>
+    
+
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/>
+              Fluidex
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog"  >Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        
+<article class="post">
+  <header class="post__header">
+    <h1>The inconveniences in developing Cryptography using WASM, and the motivation of snarkit</h1>
+    <div class="post__details">
+      <time datetime="2021-04-16">
+        16 Apr 2021
+      </time>
+      <span> | </span>
+      <span>2 min read</span>
+    </div>
+  </header>
+
+  <main class="post__content">
+    
+    <p>More and more projects start to look into including WebAssembly (WASM) into their tech stacks, because there is not much interpretation between WASM instructions and CPU instructions, so that even running WASM codes in a browser we can still achieve similar performance to running native CPU instructions. This could mean huge for supporting multiple platforms while remaining efficient. Nevertheless, we can compile C/C++/Java/Rust/GoLang … into WASM, reducing the learning curve.</p>
+<p>But this is just an ideal case. In fact, when it comes to Cryptography, there are some more factors needed to be taken into considerations.</p>
+<p>In modern CPUs, there are many optimizations for Cryptography, but they cannot be utilized inside WASM VMs. Usually running SNARKs inside WASM VMs will be several times slower than on a native CPU.</p>
+<p>And there are a couple of limitations when using WASM:</p>
+<ul>
+<li>It doesn’t support multi-thread parallelism.</li>
+<li>Memory is limited. Usually you only have 1~4 G available (If you encounter <code>[CompileError: WebAssembly.compile(): data segments count of 104626 exceeds internal limit of 100000</code> when using <a href="https://github.com/iden3/circom/tree/master/ports/wasm">circom wasm port</a> to compile a large circuit, it’s because of this reason). Otherwise you will have to compile your own WASM by yourself, like in <a href="https://github.com/emscripten-core/emscripten/issues/8755#issuecomment-499682033">here</a>. But again, this brings inconvenience for other contributors/developers.</li>
+</ul>
+<p>When we develop large circuits using <a href="https://github.com/iden3/circom/tree/master/ports/wasm">circom wasm port</a> 和 <a href="https://github.com/iden3/snarkjs">snarkjs</a> we often encounter error messages like <code>data segments count exceeds internal limit</code> or <code>insufficient memory</code>, which bother our developments (the latter problem is not caused by WASM, but <code>node.js</code> default configurations though). It’s true that we can use <a href="https://github.com/iden3/circom/tree/master/ports/c">circom c port</a> to solve this kind of problems. But there is no good wrapper existed, we would have to write a script to make use of <a href="https://github.com/iden3/circom/tree/master/ports/c">circom c port</a> to compile the circuit and generate the witness. This may not be convenient for other developers who do not have this script.</p>
+<p>Due to the reasons mentioned above, we decide to develop and open-source <a href="https://github.com/Fluidex/snarkit">https://github.com/Fluidex/snarkit</a>. It’s a wrapper for <a href="https://github.com/iden3/circom/tree/master/ports/c">circom c port</a>, but it also adds better error detection. With <a href="https://github.com/Fluidex/snarkit">https://github.com/Fluidex/snarkit</a>, people can use <a href="https://github.com/iden3/circom">circom</a> to develop large circuits, the witness generation speed can also be boosted up. We believe this can make <a href="https://github.com/iden3/circom">circom</a> circuit developments more friendly, and thus benefit zk-SNARKs ecosystem.</p>
+<p>We hope you all enjoy using it!</p>
+
+  </main>
+
+  <aside class="post__aside">
+    <div class="post__tags">
+      
+    </div>
+
+    <nav class="post__pagination">
+
+        <a href="/posts/zkrollup-intro1/">
+          <span>←</span>
+          <span>ZK-Rollup development experience sharing, Part I</span>
+        </a>
+
+      
+
+        <a href="/posts/2021-03-04-recent-updates/">
+          <span>Fluidex Recent Updates</span>
+          <span>→</span>
+        </a>
+
+      
+    </nav>
+  </aside>
+
+</article>
+
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://fluid-dex.medium.com/" target="_blank" rel="noopener noreferrer" >Medium</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/Fluidex" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://twitter.com/fluid_dex" target="_blank" rel="noopener noreferrer" >Twitter</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://t.me/fluid_dex" target="_blank" rel="noopener noreferrer" >Telegram</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+      Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">Eleventy</a>
+        and <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">Eleventy Duo</a>
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/assets/main.31d6cfe0d16ae931b73c.js"></script>
+  </body>
+</html>
