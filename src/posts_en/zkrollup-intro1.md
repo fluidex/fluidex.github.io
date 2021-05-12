@@ -137,7 +137,13 @@ It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. 
 
 This is a rarely discussed but crucial perspective. **The TPS of a real-world ZK-Rollup system is actually more limited by this module, rather than proving speed or gas limitations discussed above**.
 
-To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense merkle tree, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause updates on 5-10 leaf nodes, then there'll be ~200 hash calculations in total.
+To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause updates on 5-10 leaf nodes, then there'll be ~200 hash calculations in total.
+
+![](/images/account_merkle_tree.png)
+
+<!-- 
+_(In a transfer-oriented zkRollup, You could indeed combine account leaf and token leaf to reduce the merkle tree depth. However, for building a DEX a account_balance tree might still be more preferable, and since we are focusing on discussing the performance on updating the merkle tree, without the loss of generality, it's fine to discuss the model as account_balance tree here.)_
+ -->
 
 For performance considerations, we won't use normal hash like SHA3 in a ZK-Rollup merkle tree. Instead, we'll use a more ZK-SNARK compatible one like poseidon or rescue. According to [test results from Fluidex](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326), each poseidon hash takes about 30us (tree depth of each test is 20, thus, each hash would be 57ms / 100 / 20 ~= 30us). So estimating from merkle tree perspective, the limit of a ZK-Rollup system would be 1 / 0.00003 / 200 = 160 TPS.
 
