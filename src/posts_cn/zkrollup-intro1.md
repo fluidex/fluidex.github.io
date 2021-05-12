@@ -5,7 +5,7 @@ category:
 tags: []
 ---
 
-_致谢：谢谢 barryWhiteHat、Koh Wei Jie 对这篇文章提供的宝贵意见！_
+_致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！_
 
 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。
 
@@ -118,7 +118,7 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 ### 数据上链和 ETH GAS 限制
 
-这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte 来估计。对于一般的转账&撮合等交易，每笔交易可以按照 40 bytes 来估计。
+这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔 layer 2 的交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte 来估计。对于一般的转账&撮合等交易，每笔交易可以按照 40 bytes 来估计。
 
 每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 zksnark verify 成本为 0.3-0.5 Million gas 推算，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40\*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。
 

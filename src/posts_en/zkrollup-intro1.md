@@ -125,9 +125,9 @@ What is the main constraint on TPS of a ZK-Rollup system?
 
 Proving is the most resource consuming part of a ZK-Rollup system. Those who are new to ZK-Rollup usually mistakenly believe that speed of proving is the main constraint on TPS. Actually, as the proving of each L2 Block can be done completely in parallel, using a prover cluster with size of hundreds is a common practice. Therefore, although ZK-SNARK proofs do take long, it will mostly lead to a longer latency of withdrawing from L2 to L1, as well as a higher server cost for operators, but not a limitation on TPS.
 
-### Storing data on-chain and ETH GAS limitations
+### Recording data on-chain and ETH GAS limitations
 
-Well this is a real constraint on TPS. Let's look back at the ZK-Rollup overall design. To ensure security/data availability, each transaction should be stored on chain. This part of data will be stored in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte. For a normal transfer/matched order, each transaction is estimated to be 40 bytes.
+Well this is a real constraint on TPS. Let's look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte. For a normal transfer/matched order, each transaction is estimated to be 40 bytes.
 
 Let's try estimating the TPS limit by gas limitations.
 
