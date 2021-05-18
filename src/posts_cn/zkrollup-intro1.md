@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 
-_致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（排名按字母序）_
+_致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）_
 
 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。
 
@@ -119,15 +119,15 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 ### 数据上链和 ETH GAS 限制
 
-这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔 layer 2 的交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte 来估计。对于一般的转账&撮合等交易，每笔交易可以按照 40 bytes 来估计。
+这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔 layer 2 的交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte (EIP-2028: [[1]](https://eips.ethereum.org/EIPS/eip-2028), [[2]](https://blog.iden3.io/istanbul-zkrollup-ethereum-throughput-limits-analysis.html)) 来估计。对于一般的转账&撮合等交易，每笔交易可以按照 40 bytes 来估计（[[1]](https://vitalik.ca/general/2021/01/05/rollup.html), [[2]](https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#data-availability)）。
 
-每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 zksnark verify 成本为 0.3-0.5 Million gas 推算，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40\*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。
+每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 Groth16/Plonk zksnark verify 成本为 0.3-0.5 Million gas 推算 ([[1]](https://github.com/matter-labs/awesome-zero-knowledge-proofs), [[2]](https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff), [[3]](https://blog.kyber.network/research-trade-offs-in-rollup-solutions-a1084d2b444), [[4]](https://zksync.io/), [[5]](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477), [[6]](https://ethresear.ch/t/roll-up-roll-back-snark-side-chain-17000-tps/3675/12))，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40\*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。
 
 ### Merkle Tree 全局状态的更新
 
 这是一个很少被讨论但是至关重要的角度，**真实 ZK-Rollup 系统的性能上限实际上更被这个模块限制，而不是上面讨论的证明速度和 gas 限制**。
 
-容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense account_balance merkle tree (如下图所示) ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 个叶子结点状态的更新，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [Fluidex 团队的测试结果](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算（每个test的树深度为20，故每个hash操作是57ms / 100 / 20 ~= 30us），则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
+容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense account_balance merkle tree (如下图所示) ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 次 merkle proof 的验证，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [Fluidex 团队的测试结果](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算（每个test的树深度为20，故每个hash操作是57ms / 100 / 20 ~= 30us），则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
 
 ![](/images/account_merkle_tree.png)
 

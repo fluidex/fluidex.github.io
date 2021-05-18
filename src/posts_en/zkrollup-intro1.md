@@ -128,17 +128,17 @@ Proving is the most resource consuming part of a ZK-Rollup system. Those who are
 
 ### Recording data on-chain and ETH GAS limitations
 
-Well this is a real constraint on TPS. Let's look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte. For a normal transfer/matched order, each transaction is estimated to be 40 bytes.
+Well this is a real constraint on TPS. Let's look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte (EIP-2028: [[1]](https://eips.ethereum.org/EIPS/eip-2028), [[2]](https://blog.iden3.io/istanbul-zkrollup-ethereum-throughput-limits-analysis.html)). For a normal transfer/matched order, each transaction is estimated to be 40 bytes ([[1]](https://vitalik.ca/general/2021/01/05/rollup.html), [[2]](https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#data-availability)).
 
 Let's try estimating the TPS limit by gas limitations.
 
-It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. Suppose a ZK-SNARK verify costs 0.3-0.5 Million gas, then each ETH block could contain at most 12,000,000 / (40\*16) ~= 20,000 transactions. So in this way, the TPS limit of ZK-Rollup would be 1500-2000. This is also the performance upper-bound claimed by many Rollup systems in whitepapers.
+It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. Suppose a Groth16/Plonk ZK-SNARK verification costs 0.3-0.5 Million gas ([[1]](https://github.com/matter-labs/awesome-zero-knowledge-proofs), [[2]](https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff), [[3]](https://blog.kyber.network/research-trade-offs-in-rollup-solutions-a1084d2b444), [[4]](https://zksync.io/), [[5]](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477), [[6]](https://ethresear.ch/t/roll-up-roll-back-snark-side-chain-17000-tps/3675/12)), then each ETH block could contain at most 12,000,000 / (40\*16) ~= 20,000 transactions. So in this way, the TPS limit of ZK-Rollup would be 1500-2000. This is also the performance upper-bound claimed by many Rollup systems in whitepapers.
 
 ### Global state update on Merkle Tree
 
 This is a rarely discussed but crucial perspective. **The TPS of a real-world ZK-Rollup system is actually more limited by this module, rather than proving speed or gas limitations discussed above**.
 
-To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause updates on 5-10 leaf nodes, then there'll be ~200 hash calculations in total.
+To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause 5-10 times of verifications on the merkle proofs, then there'll be ~200 hash calculations in total.
 
 ![](/images/account_merkle_tree.png)
 
@@ -160,7 +160,7 @@ Let's still take [PLONK](https://github.com/fluidex/awesome-plonk) [circuits](ht
 
 ### On-chain gas cost much higher than off-chain server cost
 
-The cost of off-chain calculations mentioned above is actually a drop in the bucket compared to the on-chain GAS cost. Assuming each Layer 2 transaction needs 40 bytes of on-chain data, ETH is ~2000 USD, GAS price is 200 Gwei, then the cost of each transaction on-chain is ~2.6USD. This is much higher than the 0.001 USD off-chain. However, this is also much lower than a complex Layer 1 transaction, where GAS cost is normally tens of USD. That's why we often say ZK-Rollup could bring at least two orders of magnitude cost saving.
+The cost of off-chain calculations mentioned above is actually a drop in the bucket compared to the on-chain GAS cost. Assuming each Layer 2 transaction needs 40 bytes of on-chain data, ETH is ~2000 USD, GAS price is 200 Gwei, then the cost of each transaction on-chain is ~2.6USD. This is much higher than the 0.001 USD off-chain. However, this is also much lower than a complex Layer 1 transaction, where GAS cost is usually at least tens of USD. That's why we often say ZK-Rollup could bring at least two orders of magnitude cost saving.
 
 ### Low cost-efficiency Cloud GPU services
 
