@@ -34,9 +34,9 @@
       
     
     
-      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 10 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei...">
-      <meta property="og:description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 10 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei...">
-      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 10 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei..."/>
+      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei...">
+      <meta property="og:description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei...">
+      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei..."/>
     
 
     
@@ -103,7 +103,7 @@
         12 May 2021
       </time>
       <span> | </span>
-      <span>10 min read</span>
+      <span>11 min read</span>
     </div>
   </header>
 
@@ -162,12 +162,12 @@
 <h3>Speed of proving</h3>
 <p>Proving is the most resource consuming part of a ZK-Rollup system. Those who are new to ZK-Rollup usually mistakenly believe that speed of proving is the main constraint on TPS. Actually, as the proving of each L2 Block can be done completely in parallel, using a prover cluster with size of hundreds is a common practice. Therefore, although ZK-SNARK proofs do take long, it will mostly lead to a longer latency of withdrawing from L2 to L1, as well as a higher server cost for operators, but not a limitation on TPS.</p>
 <h3>Recording data on-chain and ETH GAS limitations</h3>
-<p>Well this is a real constraint on TPS. Let’s look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte. For a normal transfer/matched order, each transaction is estimated to be 40 bytes.</p>
+<p>Well this is a real constraint on TPS. Let’s look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte (EIP-2028: <a href="https://eips.ethereum.org/EIPS/eip-2028">[1]</a>, <a href="https://blog.iden3.io/istanbul-zkrollup-ethereum-throughput-limits-analysis.html">[2]</a>). For a normal transfer/matched order, each transaction is estimated to be 40 bytes (<a href="https://vitalik.ca/general/2021/01/05/rollup.html">[1]</a>, <a href="https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#data-availability">[2]</a>).</p>
 <p>Let’s try estimating the TPS limit by gas limitations.</p>
-<p>It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. Suppose a ZK-SNARK verify costs 0.3-0.5 Million gas, then each ETH block could contain at most 12,000,000 / (40*16) ~= 20,000 transactions. So in this way, the TPS limit of ZK-Rollup would be 1500-2000. This is also the performance upper-bound claimed by many Rollup systems in whitepapers.</p>
+<p>It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. Suppose a Groth16/Plonk ZK-SNARK verification costs 0.3-0.5 Million gas (<a href="https://github.com/matter-labs/awesome-zero-knowledge-proofs">[1]</a>, <a href="https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff">[2]</a>, <a href="https://blog.kyber.network/research-trade-offs-in-rollup-solutions-a1084d2b444">[3]</a>, <a href="https://zksync.io/">[4]</a>, <a href="https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477">[5]</a>, <a href="https://ethresear.ch/t/roll-up-roll-back-snark-side-chain-17000-tps/3675/12">[6]</a>), then each ETH block could contain at most 12,000,000 / (40*16) ~= 20,000 transactions. So in this way, the TPS limit of ZK-Rollup would be 1500-2000. This is also the performance upper-bound claimed by many Rollup systems in whitepapers.</p>
 <h3>Global state update on Merkle Tree</h3>
 <p>This is a rarely discussed but crucial perspective. <strong>The TPS of a real-world ZK-Rollup system is actually more limited by this module, rather than proving speed or gas limitations discussed above</strong>.</p>
-<p>To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause updates on 5-10 leaf nodes, then there’ll be ~200 hash calculations in total.</p>
+<p>To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause 5-10 times of verifications on the merkle proofs, then there’ll be ~200 hash calculations in total.</p>
 <p><img src="/images/account_merkle_tree.png" alt=""></p>
 <!-- 
 _(In a transfer-oriented zkRollup, You could indeed combine account leaf and token leaf to reduce the merkle tree depth. However, for building a DEX a account_balance tree might still be more preferable, and since we are focusing on discussing the performance on updating the merkle tree, without the loss of generality, it's fine to discuss the model as account_balance tree here.)_
