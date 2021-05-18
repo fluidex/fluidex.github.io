@@ -138,7 +138,7 @@ It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. 
 
 This is a rarely discussed but crucial perspective. **The TPS of a real-world ZK-Rollup system is actually more limited by this module, rather than proving speed or gas limitations discussed above**.
 
-To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause updates on 5-10 leaf nodes, then there'll be ~200 hash calculations in total.
+To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause 5-10 times of verifications on the merkle proofs, then there'll be ~200 hash calculations in total.
 
 ![](/images/account_merkle_tree.png)
 
