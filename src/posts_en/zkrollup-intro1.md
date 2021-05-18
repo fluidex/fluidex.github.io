@@ -160,7 +160,7 @@ Let's still take [PLONK](https://github.com/fluidex/awesome-plonk) [circuits](ht
 
 ### On-chain gas cost much higher than off-chain server cost
 
-The cost of off-chain calculations mentioned above is actually a drop in the bucket compared to the on-chain GAS cost. Assuming each Layer 2 transaction needs 40 bytes of on-chain data, ETH is ~2000 USD, GAS price is 200 Gwei, then the cost of each transaction on-chain is ~2.6USD. This is much higher than the 0.001 USD off-chain. However, this is also much lower than a complex Layer 1 transaction, where GAS cost is normally tens of USD. That's why we often say ZK-Rollup could bring at least two orders of magnitude cost saving.
+The cost of off-chain calculations mentioned above is actually a drop in the bucket compared to the on-chain GAS cost. Assuming each Layer 2 transaction needs 40 bytes of on-chain data, ETH is ~2000 USD, GAS price is 200 Gwei, then the cost of each transaction on-chain is ~2.6USD. This is much higher than the 0.001 USD off-chain. However, this is also much lower than a complex Layer 1 transaction, where GAS cost is usually at least tens of USD. That's why we often say ZK-Rollup could bring at least two orders of magnitude cost saving.
 
 ### Low cost-efficiency Cloud GPU services
 
