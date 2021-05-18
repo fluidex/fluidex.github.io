@@ -128,11 +128,11 @@ Proving is the most resource consuming part of a ZK-Rollup system. Those who are
 
 ### Recording data on-chain and ETH GAS limitations
 
-Well this is a real constraint on TPS. Let's look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte. For a normal transfer/matched order, each transaction is estimated to be 40 bytes.
+Well this is a real constraint on TPS. Let's look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte (EIP-2028: [[1]](https://eips.ethereum.org/EIPS/eip-2028), [[2]](https://blog.iden3.io/istanbul-zkrollup-ethereum-throughput-limits-analysis.html)). For a normal transfer/matched order, each transaction is estimated to be 40 bytes.
 
 Let's try estimating the TPS limit by gas limitations.
 
-It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. Suppose a ZK-SNARK verify costs 0.3-0.5 Million gas, then each ETH block could contain at most 12,000,000 / (40\*16) ~= 20,000 transactions. So in this way, the TPS limit of ZK-Rollup would be 1500-2000. This is also the performance upper-bound claimed by many Rollup systems in whitepapers.
+It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. Suppose a ZK-SNARK verify costs 0.3-0.5 Million gas ([[1]](https://github.com/matter-labs/awesome-zero-knowledge-proofs), [[2]](https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff), [[3]](https://blog.kyber.network/research-trade-offs-in-rollup-solutions-a1084d2b444), [[4]](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477), [[5]](https://ethresear.ch/t/roll-up-roll-back-snark-side-chain-17000-tps/3675/12)), then each ETH block could contain at most 12,000,000 / (40\*16) ~= 20,000 transactions. So in this way, the TPS limit of ZK-Rollup would be 1500-2000. This is also the performance upper-bound claimed by many Rollup systems in whitepapers.
 
 ### Global state update on Merkle Tree
 

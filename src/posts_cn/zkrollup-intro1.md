@@ -119,9 +119,9 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 ### 数据上链和 ETH GAS 限制
 
-这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔 layer 2 的交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte 来估计。对于一般的转账&撮合等交易，每笔交易可以按照 40 bytes 来估计。
+这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔 layer 2 的交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte (EIP-2028: [[1]](https://eips.ethereum.org/EIPS/eip-2028), [[2]](https://blog.iden3.io/istanbul-zkrollup-ethereum-throughput-limits-analysis.html)) 来估计。对于一般的转账&撮合等交易，每笔交易可以按照 40 bytes 来估计。
 
-每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 zksnark verify 成本为 0.3-0.5 Million gas 推算，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40\*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。
+每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 Groth16/Plonk zksnark verify 成本为 0.3-0.5 Million gas 推算 ([[1]](https://github.com/matter-labs/awesome-zero-knowledge-proofs), [[2]](https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff), [[3]](https://blog.kyber.network/research-trade-offs-in-rollup-solutions-a1084d2b444), [[4]](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477), [[5]](https://ethresear.ch/t/roll-up-roll-back-snark-side-chain-17000-tps/3675/12))，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40\*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。
 
 ### Merkle Tree 全局状态的更新
 
