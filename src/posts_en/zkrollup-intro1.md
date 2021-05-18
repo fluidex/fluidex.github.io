@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 
-_Acknowledgement: we would like to thank barryWhiteHat, Koh Wei Jie (in alphabetical order) for their insightful feedbacks._
+_Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks._
 
 Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.
 
@@ -203,6 +203,20 @@ In comparison, developing with ethsnarks and bellman is of lower efficiency. Als
 As an analogy,  ethsnarks / bellman is like assembly language in traditional development, while cirom is like C, and ZoKrates is like Python. However, ZoKrates toolchain is not as mature as Python interpreter. That's why we'd rather use "C" (cirom in this case) as the our development language, instead of maintaining both "Python" (ZoKrates in this case) code and "CPython interpreter" (ZoKrates interpreter in this case) code.
 
 However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation & recursion, etc.
+
+### It's not easy to handle deposit / withdrawal
+
+It's not easy to handle deposit / withdrawal correctly at all: for example, we need to consider block reverting, operations with different priorities, contract migrations, and so on. 
+
+And we should always deal with deposit & withdrawal carefully, because it affects users' assets on Ethereum layer 1 for real.
+
+The following list of things we need to take into consideration is not exhaustive:
++ If a committed L2 block is not verified in time, state should be reverted.
++ If the rollup fails to commit L2 blocks or submit proofs in time, or a priority operation is not processed for a long time, the rollup needs to be suspended and we should provide a way for user to withdraw funds.
++ For a deposit, user should be able to withdraw the deposited amount if the deposit is not processed after a given time.
++ Loopring also describes an interesting [Withdrawal Fee Griefing Attack](https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing), and an solution to it.
+
+Hermez uses _WithdrawalDelayer_ to manage withdrawals, to leave time for handling unexpected situations.
 
 ## Further Readings
 

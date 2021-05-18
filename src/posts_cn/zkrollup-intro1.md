@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 
-_致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）_
+_致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）_
 
 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。
 
@@ -190,6 +190,20 @@ function binaryOp(op, arg1, arg2) {
 如果用传统开发来类比，ethsnarks / bellman 更像是汇编，circom 是 C 语言，ZoKrates 是 Python。但是 ZoKrates 的工具链又没有真的成熟到 Python 解释器的程度，因此我们宁愿用 C 来作为唯一的开发语言，也不想自己同时维护 Python 代码和 CPython 解释器代码。
 
 不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 custom gate / plookup / aggregation & recursion 等特性。
+
+### 处理充提的复杂性
+
+处理充提要格外小心，因为这涉及了用户在以太坊主网上真实资金的改变。如果没处理好，用户/交易所则会蒙受真实资金的损失。
+
+要考虑的东西很多，比如区块可能发生回滚，不同的请求可能需要不同的处理优先级，合约的升级，等等。
+
+下面这个表列了一些需要考虑的情况（但不局限于以下这几条）：
++ 如果一个 block 已经 commit 但是没有及时被 verify，那么应该将状态回滚到之前的状态。
++ 如果 rollup 一直不能 commit L2 blocks 或者提交对 L2 blocks 的 proof，又或者高优先的 (L1) 请求迟迟得不到处理，那么 rollup 应该被停机，并允许用户提走自己的资产。
++ 对于充值交易，如果充值一直得不到处理，应该允许用户在一段时间后提走自己的这笔充值。
++ 路印中也描述了一种 [Withdrawal Fee Griefing Attack](https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing) 以及应对的方法。
+
+Hermez 中为了防止因为逻辑考虑不完善而导致资金被盗，设计了 _WithdrawalDelayer_，辅以对资金异常情况的监控，以便进行对提现的管理。
 
 ## 更多阅读材料
 
