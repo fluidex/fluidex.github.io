@@ -34,9 +34,9 @@
       
     
     
-      <meta name="description" content="ZK-Rollup 开发经验分享 Part I 12 May 2021 | 4 min 致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序） 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。...">
-      <meta property="og:description" content="ZK-Rollup 开发经验分享 Part I 12 May 2021 | 4 min 致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序） 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。...">
-      <meta name="description" content="ZK-Rollup 开发经验分享 Part I 12 May 2021 | 4 min 致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序） 对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。..."/>
+      <meta name="description" content="ZK-Rollup 开发经验分享 Part I 12 May 2021 | 4 min 致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）...">
+      <meta property="og:description" content="ZK-Rollup 开发经验分享 Part I 12 May 2021 | 4 min 致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）...">
+      <meta name="description" content="ZK-Rollup 开发经验分享 Part I 12 May 2021 | 4 min 致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）..."/>
     
 
     
@@ -109,7 +109,7 @@
 
   <main class="post__content">
     
-    <p><em>致谢：感谢 barryWhiteHat、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）</em></p>
+    <p><em>致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）</em></p>
 <p>对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。</p>
 <p>很多用户期待区块链能进一步扩容，提升性能，降低使用成本。本文将谈到的 ZK-Rollup 是 <a href="https://ethereum.org/nl/developers/docs/layer-2-scaling/">以太坊 Layer 2 扩容方案</a> 中的一种，它精巧地使用零知识证明(ZK-SNARK)这种密码学技术来完成链上计算资源消耗的压缩，从而能够极大地(~10x-100x)提升 Ethereum 的性能。包括 Ethereum 创始人 Vitalik 在内的很多人 认为 ZK-Rollup 是长期来看最重要的 Layer 2 扩容方案。</p>
 <blockquote>
@@ -185,6 +185,19 @@
 <p>我们最终的选择是 circom。 Circom 提供了恰到好处的抽象，一方面提升了读写代码的效率，另一方面也没有扭曲底层的真实细节。相比起来，ethsnarks 和 bellman 编写电路代码开发效率略低一点，而且代码被团队内部或者外部审计时，很多代码上的“语法噪音”会不利于代码读者的注意力集中到真正的核心逻辑上。ZoKrates 和 Zinc 提供的抽象层次又太高，例如 ZoKrates 中的类似 python 的控制流语法，掩盖了底层电路的本质，也不利于做一些深入底层的优化（好比 C/Rust 中内嵌汇编）。</p>
 <p>如果用传统开发来类比，ethsnarks / bellman 更像是汇编，circom 是 C 语言，ZoKrates 是 Python。但是 ZoKrates 的工具链又没有真的成熟到 Python 解释器的程度，因此我们宁愿用 C 来作为唯一的开发语言，也不想自己同时维护 Python 代码和 CPython 解释器代码。</p>
 <p>不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 custom gate / plookup / aggregation &amp; recursion 等特性。</p>
+<h3>处理充提的复杂性</h3>
+<p>处理充提要格外小心，因为这涉及了用户在以太坊主网上真实资金的改变。如果没处理好，用户/交易所则会蒙受真实资金的损失。</p>
+<p>要考虑的东西很多，比如区块可能发生回滚，不同的请求可能需要不同的处理优先级，合约的升级，等等。</p>
+<p>下面这个表列了一些需要考虑的情况（但不局限于以下这几条）：</p>
+<ul>
+<li>如果一个 block 已经 commit 但是没有及时被 verify，那么应该将状态回滚到之前的状态。</li>
+<li>如果 rollup 一直不能 commit L2 blocks 或者提交对 L2 blocks 的 proof，又或者高优先的 (L1) 请求迟迟得不到处理，那么 rollup 应该被停机，并允许用户提走自己的资产。</li>
+</ul>
+<!-- + 对于充值交易，如果充值一直得不到处理，应该允许用户在一段时间后提走自己的这笔充值。 -->
+<ul>
+<li>路印中也描述了一种 <a href="https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing">Withdrawal Fee Griefing Attack</a> 以及应对的方法。</li>
+</ul>
+<p>Hermez 中为了防止因为逻辑考虑不完善而导致资金被盗，设计了 <em>WithdrawalDelayer</em>，辅以对资金异常情况的监控，以便进行对提现的管理。</p>
 <h2>更多阅读材料</h2>
 <h3>技术文章</h3>
 <ul>

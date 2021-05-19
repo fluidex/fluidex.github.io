@@ -34,9 +34,9 @@
       
     
     
-      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei...">
-      <meta property="og:description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei...">
-      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Koh Wei..."/>
+      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Jordi...">
+      <meta property="og:description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Jordi...">
+      <meta name="description" content="ZK-Rollup development experience sharing, Part I 12 May 2021 | 11 min read Acknowledgement: we would like to thank barryWhiteHat, Jordi..."/>
     
 
     
@@ -109,7 +109,7 @@
 
   <main class="post__content">
     
-    <p><em>Acknowledgement: we would like to thank barryWhiteHat, Koh Wei Jie (in alphabetical order) for their insightful feedbacks.</em></p>
+    <p><em>Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks.</em></p>
 <p>Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.</p>
 <p>Currently, major expectations on blockchain technology are further scaling, higher performance and lower costs. In this post, we will dive into ZK-Rollup, which is one of the <a href="https://ethereum.org/nl/developers/docs/layer-2-scaling/">Ethereum layer 2 scaling solutions</a>. It exquisitely applies a zero knowledge proof technique (known as ZK-SNARK) to reduce the on-chain costs, and thus, is able to improve Ethereum TPS considerably (~10x-100x). ZK-Rollup is considered as the most important Ethereum Layer 2 scaling solution in the long term by many people, including Vitalik, the founder of Ethereum.</p>
 <blockquote>
@@ -196,6 +196,19 @@ _(In a transfer-oriented zkRollup, You could indeed combine account leaf and tok
 <p>In comparison, developing with ethsnarks and bellman is of lower efficiency. Also, when the code is being reviewed, no matter internally or externally, too much “syntactic noise” prevents the reviewer from focusing on the core logic. Additionally, ZoKrates and Zinc provide a too high level of abstraction. For example, python-style control flow syntax in ZoKrates conceals the underlying circuits, and is not conducive to lower level optimizations (such as inline assembly of C/Rust).</p>
 <p>As an analogy,  ethsnarks / bellman is like assembly language in traditional development, while cirom is like C, and ZoKrates is like Python. However, ZoKrates toolchain is not as mature as Python interpreter. That’s why we’d rather use “C” (cirom in this case) as the our development language, instead of maintaining both “Python” (ZoKrates in this case) code and “CPython interpreter” (ZoKrates interpreter in this case) code.</p>
 <p>However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation &amp; recursion, etc.</p>
+<h3>It’s not easy to handle deposit / withdrawal</h3>
+<p>It’s not easy to handle deposit / withdrawal correctly at all: for example, we need to consider block reverting, operations with different priorities, contract migrations, and so on.</p>
+<p>And we should always deal with deposit &amp; withdrawal carefully, because it affects users’ assets on Ethereum layer 1 for real.</p>
+<p>The following is a non-exhaustive list of things we need to take into consideration:</p>
+<ul>
+<li>If a committed L2 block is not verified in time, state should be reverted.</li>
+<li>If the rollup fails to commit L2 blocks or submit proofs in time, or a priority operation is not processed for a long time, the rollup needs to be suspended and we should provide a way for user to withdraw funds.</li>
+</ul>
+<!-- + For a deposit, user should be able to withdraw the deposited amount if the deposit is not processed after a given time. -->
+<ul>
+<li>Loopring also describes an interesting <a href="https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing">Withdrawal Fee Griefing Attack</a>, and an solution to it.</li>
+</ul>
+<p>Hermez uses <em>WithdrawalDelayer</em> to manage withdrawals, to leave time for handling unexpected situations.</p>
 <h2>Further Readings</h2>
 <h3>Techinical Blogs</h3>
 <ul>
