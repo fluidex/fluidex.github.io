@@ -200,7 +200,7 @@ function binaryOp(op, arg1, arg2) {
 下面这个表列了一些需要考虑的情况（但不局限于以下这几条）：
 + 如果一个 block 已经 commit 但是没有及时被 verify，那么应该将状态回滚到之前的状态。
 + 如果 rollup 一直不能 commit L2 blocks 或者提交对 L2 blocks 的 proof，又或者高优先的 (L1) 请求迟迟得不到处理，那么 rollup 应该被停机，并允许用户提走自己的资产。
-+ 对于充值交易，如果充值一直得不到处理，应该允许用户在一段时间后提走自己的这笔充值。
+<!-- + 对于充值交易，如果充值一直得不到处理，应该允许用户在一段时间后提走自己的这笔充值。 -->
 + 路印中也描述了一种 [Withdrawal Fee Griefing Attack](https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing) 以及应对的方法。
 
 Hermez 中为了防止因为逻辑考虑不完善而导致资金被盗，设计了 _WithdrawalDelayer_，辅以对资金异常情况的监控，以便进行对提现的管理。

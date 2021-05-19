@@ -210,10 +210,10 @@ It's not easy to handle deposit / withdrawal correctly at all: for example, we n
 
 And we should always deal with deposit & withdrawal carefully, because it affects users' assets on Ethereum layer 1 for real.
 
-The following list of things we need to take into consideration is not exhaustive:
+The following is a non-exhaustive list of things we need to take into consideration:
 + If a committed L2 block is not verified in time, state should be reverted.
 + If the rollup fails to commit L2 blocks or submit proofs in time, or a priority operation is not processed for a long time, the rollup needs to be suspended and we should provide a way for user to withdraw funds.
-+ For a deposit, user should be able to withdraw the deposited amount if the deposit is not processed after a given time.
+<!-- + For a deposit, user should be able to withdraw the deposited amount if the deposit is not processed after a given time. -->
 + Loopring also describes an interesting [Withdrawal Fee Griefing Attack](https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing), and an solution to it.
 
 Hermez uses _WithdrawalDelayer_ to manage withdrawals, to leave time for handling unexpected situations.
