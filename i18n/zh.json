@@ -1,0 +1,27 @@
+{
+    "translation": {
+        "blog": "博客",
+        "about": "关于我们",
+        "contact": "联系我们",
+        "copyright": "版权所有 \u00A9 {{year}} Fluidex团队 保留所有权利",
+        "404NotFound": "404 页面不存在",
+        "oops404": "<0>噢...</0><1>404. 页面不存在</1>",
+        "viewAllTags": "查看全部标签",
+        "allTags": "全部标签",
+        "name": "名字",
+        "nameIsRequired": "请填写名字",
+        "email": "邮箱地址",
+        "emailIsRequired": "请填写邮箱地址",
+        "emailIsNotValid": "请填写有效邮箱地址",
+        "yourMessage": "留言",
+        "messageIsRequired": "请填写留言",
+        "messageSentSuccessfully": "成功发送留言",
+        "failedToSendMessage": "留言发送失败，请重试",
+        "sendMessage": "发送留言",
+        "viewAllPosts": "查看全部文章",
+        "postsTagged": "标签：",
+        "numberOfPostsTagged": "共有{{ totalCount }}篇文章带有标签 \"{{ tag }}\"",
+        "timeToRead": "阅读需 {{timeToRead}} 分钟",
+        "timeToRead_plural": "阅读需 {{timeToRead}} 分钟"
+    }
+}
