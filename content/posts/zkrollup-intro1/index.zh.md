@@ -1,9 +1,7 @@
 ---
 title: "ZK-Rollup 开发经验分享 Part I"
-date:       2021-05-12 09:00:00
-description: ""
-category:
-tags: []
+date: 2021-05-12 09:00:00
+tags: [technical]
 ---
 
 _致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）_

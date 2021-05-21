@@ -1,7 +1,7 @@
 ---
 title: "WASM 在用于 cryptogrphy 时的限制 -- 兼谈我们为什么想开发 snarkit"
 date: 2021-04-17
-tags: []
+tags: [technical]
 ---
 
 现在许多项目开始喜欢使用用 WebAssembly (WASM)，因为可以在浏览器中达到像运行 native CPU 指令一样快的效率：WASM 指令和 真正 CPU 指令之间不需要太多的 解释 (interpretation) 和转换。这对于支持多平台大有裨益。并且 WASM 支持从 C/C++/Jave/Rust/GoLang... 等语言编译过去，方便现有开发人员迁移。

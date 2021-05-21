@@ -1,7 +1,7 @@
 ---
 title: "Differential AMM: 一种基于微观指标设计的灵活 AMM 算法"
 date: 2021-05-19
-tags: []
+tags: [technical]
 ---
 
 

@@ -1,9 +1,7 @@
 ---
 title: "ZK-Rollup development experience sharing, Part I"
-date:       2021-05-12 09:00:00
-description: ""
-category:
-tags: []
+date: 2021-05-12 09:00:00
+tags: [technical]
 ---
 
 _Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks._

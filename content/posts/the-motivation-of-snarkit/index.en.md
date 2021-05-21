@@ -1,7 +1,7 @@
 ---
 title: The inconveniences in developing Cryptography using WASM, and the motivation of snarkit
 date: 2021-04-17
-tags: []
+tags: [technical]
 ---
 
 More and more projects start to look into including WebAssembly (WASM) into their tech stacks, because there is not much interpretation between WASM instructions and CPU instructions, so that even running WASM codes in a browser we can still achieve similar performance to running native CPU instructions. This could mean huge for supporting multiple platforms while remaining efficient. Nevertheless, we can compile C/C++/Java/Rust/GoLang, and etc., into WASM, and therefore reduce the learning curve.
