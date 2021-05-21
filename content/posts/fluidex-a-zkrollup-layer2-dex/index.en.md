@@ -14,7 +14,7 @@ For the general public, FluiDex is a crypto asset exchange similar to Coinbase o
 
 “Build a safe, professional and easy-to-use digital asset trading platform" is our long-term vision.
 
-In the scope of technology products that exist today, "security" means Ethereum, which requires almost no explanation. I will talk about how FluiDex understands "professional trading" in the below paragraph.
+I think we all agree that to date Ethereum is probably the most decentralized and hence secure platform supporting DEX. In the following sections I will talk about what is "professional trading" in FluiDex's understanding.
 
 We roughly divide the traders in the market into two categories. One category is called "speculative retail investors". The feature is that they don’t care about miners’ fees and handling fees, and don’t care about the slippage loss of market orders. They just want to be able to easily buy certain assets. Because they bet that this asset will increase several times, the other type, we call it "professional traders", they care about miners' fees and handling fees, they are skilled in using derivative hedging, they can arbitrage through different exchanges, and they are skilled in using limit/market/stoploss/FOK/IOC/AON order as a tool for different purposes, may use a program to do automatic trading.
 
