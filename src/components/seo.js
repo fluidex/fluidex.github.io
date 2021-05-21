@@ -49,6 +49,10 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `https://raw.githubusercontent.com/Fluidex/fluidex.github.io/master/static/media/square.png`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -63,6 +67,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: `https://raw.githubusercontent.com/Fluidex/fluidex.github.io/master/static/media/wide.png`,
         },
       ].concat(meta)}
     />
