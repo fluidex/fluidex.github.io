@@ -1,6 +1,6 @@
 ---
 title: Fluidex Recent Updates
-date: 2021-03-03
+date: 2021-03-04
 tags: [updates]
 ---
 
