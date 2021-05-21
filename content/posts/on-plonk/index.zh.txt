@@ -8,7 +8,7 @@ tags: []
 
 + Aggregation layer
 + Interactive oracle proofs (IOP) layer (PlonK 在这里)
-+ Polynomial commitment layer
++ KCA / Polynomial commitment layer
 
 各部分之间的关系可以参见 https://electriccoin.co/blog/explaining-halo-2/ (虽然讲的是 Halo 2，但对于理解层级关系有帮助)。
 
