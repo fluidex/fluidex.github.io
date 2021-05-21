@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Fluidex]]></title><description><![CDATA[The website of the Fluidex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 21 May 2021 12:24:49 GMT</lastBuildDate><item><title><![CDATA[About Fluidex]]></title><description><![CDATA[What is FluiDex For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK…]]></description><link>https://www.fluidex.io/en/about/</link><guid isPermaLink="false">https://www.fluidex.io/en/about/</guid><content:encoded>&lt;h2&gt;What is FluiDex&lt;/h2&gt;
+&lt;p&gt;For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. We will be the first order book exchange on Ethereum to use PLONK based validity proof.&lt;/p&gt;
+&lt;p&gt;For the general public, FluiDex is a crypto asset exchange similar to Coinbase or Huobi. The advantage is that your assets are absolutely safe. You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The disadvantage is that it will be more difficult to use, for example, transaction fees will be higher in some cases.&lt;/p&gt;
+&lt;h2&gt;Why build FluiDex&lt;/h2&gt;
+&lt;p&gt;“Build a safe, professional and easy-to-use digital asset trading platform” is our long-term vision.&lt;/p&gt;
+&lt;p&gt;In the scope of technology products that exist today, “security” means Ethereum, which requires almost no explanation. I will talk about how FluiDex understands “professional trading” in the below paragraph.&lt;/p&gt;
+&lt;p&gt;We roughly divide the traders in the market into two categories. One category is called “speculative retail investors”. The feature is that they don’t care about miners’ fees and handling fees, and don’t care about the slippage loss of market orders. They just want to be able to easily buy certain assets. Because they bet that this asset will increase several times, the other type, we call it “professional traders”, they care about miners’ fees and handling fees, they are skilled in using derivative hedging, they can arbitrage through different exchanges, and they are skilled in using limit/market/stoploss/FOK/IOC/AON order as a tool for different purposes, may use a program to do automatic trading.&lt;/p&gt;
+&lt;p&gt;On today’s Ethereum, exchanges such as Uniswap based on algorithm-based automated market making have gained high popularity. Except higher miner fees, such exchanges generally meet the needs of “speculative retail investors”. However, for this type of exchange, liquidity takers can only list market price orders. For liquidity maker, there will be profit due to rebates when the price is stable, and losses when the price fluctuates sharply. The above shortcomings can be tolerated for “speculative retail investors”, but they are unimaginable for “professional traders”. For every trader with a traditional financial background, if you tell them “there is no order book, you can’t place an order for rebates; you can only place a market order, and set a slippage threshold at most”, they will be shocked.&lt;/p&gt;
+&lt;p&gt;We expect that more and more real assets will circulate in a decentralized manner in the future, and more and more types of traders will participate in trading. Too simple swap exchanges will not be able to meet the needs of quite a few advanced traders. The traditional order book exchange will be a much easier solution.&lt;/p&gt;
+&lt;p&gt;So why hasn’t the order book decentralized exchange exploded in the past few years? On the one hand, it is the ecological environment. In the early years, there were not many assets carried on Ethereum. The USDT stablecoin, which is well-known to traders, did not circulate on Ethereum two years ago. On the other hand, technology. The early and simple implementation of order book exchanges will make the cost of miners’ fees for each commission and transaction comparable to swap exchanges. Expensive order and transaction costs constrain the explosion of order book exchanges. Today Thanks to the springing up of zero-knowledge proof technology in the past two years, we are finally able to provide a trading experience with zero-cost listing orders and 0.0001$-cost transaction.&lt;/p&gt;
+&lt;p&gt;In summary, the development of a decentralized economy has brought more and more traders and trading needs, and order book exchanges can better meet the needs of professional traders. In the past few years, the development of cryptography technology has made it possible for high-performance, low-cost and secure order book transactions. Therefore, it is time to build FluiDex now.&lt;/p&gt;
+&lt;h2&gt;Similar products and projects&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Traditional centralized exchange. For quite a few, even more than half of the people, this type of exchange is good enough to use. However, for some people who have high requirements for fund security &amp;#x26; anonymity, the hidden danger of black swan always exists in centralized exchanges. Even for a big exchange like OKEx, it happened not long ago that the exchange was unable to withdraw the coin because the founder lost contact for more than a month.&lt;/li&gt;
+&lt;li&gt;Algorithmic automated market making exchange. Typical is Uniswap, which sets the price of buying and selling assets by always ensuring that the number of asset A * the number of asset B == the fixed value. In the previous paragraph, we believe that such exchanges are not enough for professional traders. But it must be acknowledged that the composability of such swap exchanges is an advantage that Layer2 DEX does not have, and Layer2 DEX is more difficult to become part of the “Defi building block”.&lt;/li&gt;
+&lt;li&gt;Order book exchange based on optimistic rollup technology. This type of exchange has high performance and is easy to develop, but it has two major disadvantages. The first is that withdrawing from such exchanges requires confirmation time of weeks, which is completely unacceptable for many traders. Second, the security of optimistic rollup is not as good as “as safe as L1” zk rollup.&lt;/li&gt;
+&lt;li&gt;Other products with similar technical decisions, such as diversifi and loopring. Yes, in a nutshell, FluiDex will compete head-to-head with them. That there are already one or two players in a potential big market, is not a reason why new players should not enter. It is not true that since OKEx is running well, Binance should not start a business. In addition, FluiDex and these projects will have some different decisions both in technology and product. For example, from a technical perspective, we will use PLONK as the protocol of zero-knowledge proof, which will bring faster product iteration, from a product perspective, we are likely to implement permissionless token listing.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Decentralized Governance &amp;#x26; Token&lt;/h2&gt;
+&lt;p&gt;I believe that our exchange is a traditional “centralized” exchange, the only difference is the self-custody of assets. There are many interpretations of “decentralization”, the decentralization of assets, the decentralization of control (“governance”), and even the decentralization of teams. Based on our vision, the decentralization of assets (ie, the self-custody of assets) is necessary for us. But, at least today, we believe that decentralization of governance is neither necessary nor sufficient for building a great product. Any team that does a product will investigate users and markets, but no team will decide the future of product only through user votes. Customers and shareholders are two kinds of people. You should not force or expect customers to become shareholders. For the FluiDex team, the customer is supreme, but there will be no so-called “decentralized” governance in the future. The decision-making power of the future of the product will always be in the hands of the management team, and users are expected to vote for our success or failure with their feet.&lt;/p&gt;
+&lt;p&gt;Based on our understanding of governance philosophy above, FluiDex will not issue “governance tokens” in the foreseeable future, but we are not opposed to issuing tokens with dividend rights for fundraising. For example, it is entirely possible for us to issue a token and guarantee to buy back this token with 10% of the monthly gross profit for the next 3 years.&lt;/p&gt;
+&lt;h2&gt;Project status &amp;#x26; schedule &amp;#x26; financing&lt;/h2&gt;
+&lt;p&gt;Fluidex project was launched at the end of 2020. It is expected that the MVP/demo will be completed in Q2 of 2021, and the mainnet launch will probably start in Q4 of 2021.&lt;/p&gt;
+&lt;p&gt;Update 2021.04.15:
+The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million, at a valuation of US$7-10 million, from all participating investors.&lt;/p&gt;
+&lt;h2&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Founder’s email: &lt;a href=&quot;mailto:mycinbrin@gmail.com&quot;&gt;mycinbrin@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[关于我们]]></title><description><![CDATA[什么是 Fluidex For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK…]]></description><link>https://www.fluidex.io/zh/about/</link><guid isPermaLink="false">https://www.fluidex.io/zh/about/</guid><content:encoded>&lt;h2&gt;什么是 Fluidex&lt;/h2&gt;
+&lt;p&gt;For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. We will be the first order book exchange on Ethereum to use PLONK based validity proof.&lt;/p&gt;
+&lt;p&gt;For the general public, FluiDex is a crypto asset exchange similar to Coinbase or Huobi. The advantage is that your assets are absolutely safe. You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The disadvantage is that it will be more difficult to use, for example, transaction fees will be higher in some cases.&lt;/p&gt;
+&lt;h2&gt;Why build FluiDex&lt;/h2&gt;
+&lt;p&gt;“Build a safe, professional and easy-to-use digital asset trading platform” is our long-term vision.&lt;/p&gt;
+&lt;p&gt;In the scope of technology products that exist today, “security” means Ethereum, which requires almost no explanation. I will talk about how FluiDex understands “professional trading” in the below paragraph.&lt;/p&gt;
+&lt;p&gt;We roughly divide the traders in the market into two categories. One category is called “speculative retail investors”. The feature is that they don’t care about miners’ fees and handling fees, and don’t care about the slippage loss of market orders. They just want to be able to easily buy certain assets. Because they bet that this asset will increase several times, the other type, we call it “professional traders”, they care about miners’ fees and handling fees, they are skilled in using derivative hedging, they can arbitrage through different exchanges, and they are skilled in using limit/market/stoploss/FOK/IOC/AON order as a tool for different purposes, may use a program to do automatic trading.&lt;/p&gt;
+&lt;p&gt;On today’s Ethereum, exchanges such as Uniswap based on algorithm-based automated market making have gained high popularity. Except higher miner fees, such exchanges generally meet the needs of “speculative retail investors”. However, for this type of exchange, liquidity takers can only list market price orders. For liquidity maker, there will be profit due to rebates when the price is stable, and losses when the price fluctuates sharply. The above shortcomings can be tolerated for “speculative retail investors”, but they are unimaginable for “professional traders”. For every trader with a traditional financial background, if you tell them “there is no order book, you can’t place an order for rebates; you can only place a market order, and set a slippage threshold at most”, they will be shocked.&lt;/p&gt;
+&lt;p&gt;We expect that more and more real assets will circulate in a decentralized manner in the future, and more and more types of traders will participate in trading. Too simple swap exchanges will not be able to meet the needs of quite a few advanced traders. The traditional order book exchange will be a much easier solution.&lt;/p&gt;
+&lt;p&gt;So why hasn’t the order book decentralized exchange exploded in the past few years? On the one hand, it is the ecological environment. In the early years, there were not many assets carried on Ethereum. The USDT stablecoin, which is well-known to traders, did not circulate on Ethereum two years ago. On the other hand, technology. The early and simple implementation of order book exchanges will make the cost of miners’ fees for each commission and transaction comparable to swap exchanges. Expensive order and transaction costs constrain the explosion of order book exchanges. Today Thanks to the springing up of zero-knowledge proof technology in the past two years, we are finally able to provide a trading experience with zero-cost listing orders and 0.0001$-cost transaction.&lt;/p&gt;
+&lt;p&gt;In summary, the development of a decentralized economy has brought more and more traders and trading needs, and order book exchanges can better meet the needs of professional traders. In the past few years, the development of cryptography technology has made it possible for high-performance, low-cost and secure order book transactions. Therefore, it is time to build FluiDex now.&lt;/p&gt;
+&lt;h2&gt;Similar products and projects&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Traditional centralized exchange. For quite a few, even more than half of the people, this type of exchange is good enough to use. However, for some people who have high requirements for fund security &amp;#x26; anonymity, the hidden danger of black swan always exists in centralized exchanges. Even for a big exchange like OKEx, it happened not long ago that the exchange was unable to withdraw the coin because the founder lost contact for more than a month.&lt;/li&gt;
+&lt;li&gt;Algorithmic automated market making exchange. Typical is Uniswap, which sets the price of buying and selling assets by always ensuring that the number of asset A * the number of asset B == the fixed value. In the previous paragraph, we believe that such exchanges are not enough for professional traders. But it must be acknowledged that the composability of such swap exchanges is an advantage that Layer2 DEX does not have, and Layer2 DEX is more difficult to become part of the “Defi building block”.&lt;/li&gt;
+&lt;li&gt;Order book exchange based on optimistic rollup technology. This type of exchange has high performance and is easy to develop, but it has two major disadvantages. The first is that withdrawing from such exchanges requires confirmation time of weeks, which is completely unacceptable for many traders. Second, the security of optimistic rollup is not as good as “as safe as L1” zk rollup.&lt;/li&gt;
+&lt;li&gt;Other products with similar technical decisions, such as diversifi and loopring. Yes, in a nutshell, FluiDex will compete head-to-head with them. That there are already one or two players in a potential big market, is not a reason why new players should not enter. It is not true that since OKEx is running well, Binance should not start a business. In addition, FluiDex and these projects will have some different decisions both in technology and product. For example, from a technical perspective, we will use PLONK as the protocol of zero-knowledge proof, which will bring faster product iteration, from a product perspective, we are likely to implement permissionless token listing.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Decentralized Governance &amp;#x26; Token&lt;/h2&gt;
+&lt;p&gt;I believe that our exchange is a traditional “centralized” exchange, the only difference is the self-custody of assets. There are many interpretations of “decentralization”, the decentralization of assets, the decentralization of control (“governance”), and even the decentralization of teams. Based on our vision, the decentralization of assets (ie, the self-custody of assets) is necessary for us. But, at least today, we believe that decentralization of governance is neither necessary nor sufficient for building a great product. Any team that does a product will investigate users and markets, but no team will decide the future of product only through user votes. Customers and shareholders are two kinds of people. You should not force or expect customers to become shareholders. For the FluiDex team, the customer is supreme, but there will be no so-called “decentralized” governance in the future. The decision-making power of the future of the product will always be in the hands of the management team, and users are expected to vote for our success or failure with their feet.&lt;/p&gt;
+&lt;p&gt;Based on our understanding of governance philosophy above, FluiDex will not issue “governance tokens” in the foreseeable future, but we are not opposed to issuing tokens with dividend rights for fundraising. For example, it is entirely possible for us to issue a token and guarantee to buy back this token with 10% of the monthly gross profit for the next 3 years.&lt;/p&gt;
+&lt;h2&gt;Project status &amp;#x26; schedule &amp;#x26; financing&lt;/h2&gt;
+&lt;p&gt;Fluidex project was launched at the end of 2020. It is expected that the MVP/demo will be completed in Q2 of 2021, and the mainnet launch will probably start in Q4 of 2021.&lt;/p&gt;
+&lt;p&gt;Update 2021.04.15:
+The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million, at a valuation of US$7-10 million, from all participating investors.&lt;/p&gt;
+&lt;h2&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com/&quot;&gt;https://fluid-dex.medium.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Founder’s email: &lt;a href=&quot;mailto:mycinbrin@gmail.com&quot;&gt;mycinbrin@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex]]></title><description><![CDATA[FluiDex FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见这里。]]></description><link>https://www.fluidex.io/zh/index/</link><guid isPermaLink="false">https://www.fluidex.io/zh/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
+&lt;p&gt;FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Contact]]></title><description><![CDATA[Contact Telegram: https://t.me/fluid_dex Medium: https://fluid-dex.medium.com Twitter: https://twitter.com/fluid_dex Founder’s email…]]></description><link>https://www.fluidex.io/en/contact/</link><guid isPermaLink="false">https://www.fluidex.io/en/contact/</guid><content:encoded>&lt;h2&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Founder’s email: &lt;a href=&quot;mailto:mycinbrin@gmail.com&quot;&gt;mycinbrin@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[联系我们]]></title><description><![CDATA[联系我们 Telegram: https://t.me/fluid_dex Medium: https://fluid-dex.medium.com Twitter: https://twitter.com/fluid_dex Founder’s email: mycinbrin…]]></description><link>https://www.fluidex.io/zh/contact/</link><guid isPermaLink="false">https://www.fluidex.io/zh/contact/</guid><content:encoded>&lt;h2&gt;联系我们&lt;/h2&gt;
+&lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Founder’s email: &lt;a href=&quot;mailto:mycinbrin@gmail.com&quot;&gt;mycinbrin@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex]]></title><description><![CDATA[Hello! Fluidex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup. Checkout this article…]]></description><link>https://www.fluidex.io/en/index/</link><guid isPermaLink="false">https://www.fluidex.io/en/index/</guid><content:encoded>&lt;h1&gt;Hello!&lt;/h1&gt;
+&lt;p&gt;Fluidex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup.&lt;/p&gt;
+&lt;p&gt;Checkout &lt;a href=&quot;/en/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;this article&lt;/a&gt; for more info.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Differential AMM: 一种基于微观指标设计的灵活 AMM 算法]]></title><description><![CDATA[AMM 策略通常使用宏观指标来定义，宏观指标是指描述总量的指标，包括 AMM 池中的交易币种数量(base amount)和计价币种数量(quote amount)等。例如，最常见的 AMM 做市算法——恒定乘积算法——要求 base 数量 和 quote…]]></description><link>https://www.fluidex.io/zh/blog/damm/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/damm/</guid><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;AMM 策略通常使用宏观指标来定义，宏观指标是指描述总量的指标，包括 AMM 池中的交易币种数量(base amount)和计价币种数量(quote amount)等。例如，最常见的 AMM 做市算法——恒定乘积算法——要求 base 数量 和 quote 数量的乘积在每次交易前后相等。但是实际上对于每个具体交易者而言，微观指标对单次的交易行为更有意义。微观指标是指刻画变化，或者叫刻画边际效应的指标，如当前的买卖盘口价和盘口深度。盘口价格刻画了当前状态下做一笔小交易的平均成交价格，而盘口深度刻画了指定交易价格内最大的成交量。盘口深度可以通俗解释为，假设现在 ETH-USDT 价格为 3450，我希望以不超过 3451 的价格购买尽可能多的 ETH，我最多能买到多少 ETH？&lt;/p&gt;
+&lt;p&gt;盘口价格和盘口深度也是 orderbook 视角下更直观的指标。我们希望能从这两个微观指标出发，更好地理解和设计 AMM 算法。&lt;/p&gt;
+&lt;h1&gt;数学原理-宏观指标和微观指标的关系&lt;/h1&gt;
+&lt;p&gt;本章节会给出价格和深度这两个指标，和 base/quote 量的关系。我们将会看到，价格和深度函数，都可以从 base/quote 函数经过若干次求导/反函数变换推导出来。&lt;/p&gt;
+&lt;p&gt;假设交易池中 base 数量和 quote 数量满足如下关系:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;则显然有 quote &gt; 0, base &gt; 0. f 单调递减，即 f’ &amp;#x3C; 0（因为交易中，一种 token 增多，另一种当然减少）&lt;/p&gt;
+&lt;p&gt;按照定义，价格就是 f 的导数的绝对值（正负原因需要取相反数）。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;price = abs(f&amp;#39;(base)) = -f&amp;#39;(base)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;一般我们要求价格(即 -f’)单调递减，即 base 越少，价格越高。因此 f” &gt; 0。综上，合理的 f，必然是一个定义在第一象限的下凸的单调递减函数。&lt;/p&gt;
+&lt;p&gt;相应的，盘口深度(depth)实际上是总 base 量对于价格的导数。 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;depth = f2&amp;#39;(price)
+f2 = Inverse(f&amp;#39;) 
+
+Inverse 表示反函数&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上式中，f2 是价格函数的反函数，它的导数就是深度对于价格的函数。&lt;/p&gt;
+&lt;p&gt;以上就是 盘口价格/盘口深度 和 base/quote 函数的关系。&lt;/p&gt;
+&lt;h1&gt;数学原理-求解&lt;/h1&gt;
+&lt;p&gt;对于 AMM 交易池的创建者而言，他最关心的是初始的价格(price0)和深度(depth0)。数学上看，他需要给出一个形如 quote = f(base) 的 AMM 函数，使得这个函数存在一点能够同时满足价格为 price0 且深度为 depth0。  &lt;/p&gt;
+&lt;p&gt;换言之，创建者需要解以下的式子：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;已知 depth0, price0。
+f 是描述 base 和 quote 数量的函数 quote = f(base)，求 f ，使其能够满足：
+
+存在 base0 使得 f&amp;#39;(base0) = price0
+(Inverse(f&amp;#39;))&amp;#39;(price0) = depth0
+
+此外要求 f &amp;gt; 0 且 f&amp;#39; &amp;lt; 0 且 f&amp;#39;&amp;#39; &amp;gt; 0，即 f 为第一象限的下凸的单减函数。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上面式子约束太少，实际上有无数组解。f 可以是倒数函数，f 可以是更一般的双曲函数，f 可以是指数函数，f 可以是幂函数。但是下一节我们会看到，如果我们指定某种具体的 f 形式并且控制可以改变的系数，则可能可以确定函数的唯一解。&lt;/p&gt;
+&lt;h3&gt;一种解：f 为平移倒数函数时的解&lt;/h3&gt;
+&lt;p&gt;如果 f 为倒数函数，形式如下&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA 
+
+或者等价地，用多个变量表示
+vQuote = C / vBase
+vQoute = quote + QUOTE_DELTA
+vBase = base + BASE_DELTA
+其中 C BASE_DELTA QUOTE_DELTA 为正的常数&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;f 为这种形式时，求导得到价格和深度为&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;price = -f&amp;#39;(base) = C / (vBase**2) = vQuote / vBase
+depth = vBase**2 / (2 * vQuote)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;按照 price0 处深度为 depth0 的条件，可以解得：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;C = vBase0 * vQuote0 = 4 * price0**3 * depth0**2
+vQuote0 = 2 * price0**2 * depth0 = quote0 + QUOTE_DELTA
+vBase0 = 2 * price0 * depth0 = base0 + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;则最终 AMM 函数 quote = f(base) 为&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA,
+其中 C = 4 * price0**3 * depth0**2, BASE_DELTA QUOTE_DELTA 为任意常数。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;综上，我们展示了如果指定 f 为倒数函数，则可以通过 price 和 depth 得到唯一函数解。虽然 f 实际上可以是无数多种函数类型，但是简化起见，我们后文都将使用倒数函数来作为我们的最终 AMM 函数。&lt;/p&gt;
+&lt;h1&gt;Differential AMM 的公式定义&lt;/h1&gt;
+&lt;p&gt;将上一节中所有的推导汇集在一起，我们可以得到 Differential AMM 的完整定义：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;DAMM 所有相关参数含义：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;price0&lt;/td&gt;
+&lt;td&gt;初始盘口价&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;depth0&lt;/td&gt;
+&lt;td&gt;初始盘口深度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;lowPrice&lt;/td&gt;
+&lt;td&gt;最低自动做市价，最低可以是0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;highPrice&lt;/td&gt;
+&lt;td&gt;最高自动做市价，最高可以是正无穷&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;quote0&lt;/td&gt;
+&lt;td&gt;初始真实 quote 资金量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;base0&lt;/td&gt;
+&lt;td&gt;初始真实 base 资金量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;QUOTE_DELTA&lt;/td&gt;
+&lt;td&gt;虚拟 quote 资金量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BASE_DELTA&lt;/td&gt;
+&lt;td&gt;虚拟 base 资金量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;恒定乘积&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vQoute0&lt;/td&gt;
+&lt;td&gt;初始总体 quote 量，真实加虚拟&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vBase0&lt;/td&gt;
+&lt;td&gt;初始总体 base 量，真实加虚拟&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;相关参数关系：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(1) C = 4 * price0**3 * depth0**2
+(2) lowPrice = QUOTE_DELTA**2 / C
+(3) highPrice = C / BASE_DELTA**2
+(4) price0 = vQuote0 / vBase0
+(5) depth0 = vBase**2 / (2 * vQuote)
+(6) vQoute0 = 2 * price0**2 * depth0
+(7) vBase0 = 2 * price0 * depth0
+(8) vQoute0 = quote0 + QUOTE_DELTA
+(9) vBase0 = base0 + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;注意1: 值得指出的是，上述式子中，(4)(5) 和 (6)(7) 是等价的。&lt;/p&gt;
+&lt;p&gt;注意2: 同等 price0 depth0 时，QUOTE_DELTA 和 BASE_DELTA 越小，base0 quote0 越大，即提供同样盘口流动性的资金量越大，所谓“资金效率”越低，但是做市的价格范围（lowPrice到highPrice）也越大。极端地，当 QUOTE_DELTA 和 BASE_DELTA 为 0 时，lowPrice 将为 0，highPrice 为无穷大，此时 DAMM 蜕化为普通恒定乘积 AMM。我们可以通过调节 lowPrice highPrice，任意地调节资金效率。&lt;/p&gt;
+&lt;p&gt;实际使用中，我们对于以下三组六个参数 (A) depth price (2) lowPrice highPrice (3) quote0 base0，已知任意两组，都可以推导出第三组参数和完整的做市函数。&lt;/p&gt;
+&lt;p&gt;下面三种不同初始条件对应的 DAMM 应用场景。&lt;/p&gt;
+&lt;h3&gt;给定盘口价格深度，和初始做市资金量&lt;/h3&gt;
+&lt;p&gt;即在方程组中，已知 price0 depth0, 和 quote0，base0，需要计算做市价格范围和其他所有剩余参数。&lt;/p&gt;
+&lt;p&gt;具体求解见： &lt;a href=&quot;https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39&quot;&gt;https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;给定盘口价格深度，和做市价格范围&lt;/h3&gt;
+&lt;p&gt;即在方程组中，已知 price0 depth0, 和 lowPrice（可以为 0），highPrice（可以为  Infinity），需要计算出初始做市资金量和其他所有剩余参数。&lt;/p&gt;
+&lt;p&gt;具体求解见：&lt;a href=&quot;https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53&quot;&gt;https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;给定做市价格范围，和初始做市资金量&lt;/h3&gt;
+&lt;p&gt;此种情况最为复杂。实际上等价于解一个二元二次方程。通过解这个方程我们也可以得到所有剩余参数。&lt;/p&gt;
+&lt;p&gt;具体求解：&lt;a href=&quot;https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72&quot;&gt;https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从上面三种应用场景可以看到 DAMM 具有极大的灵活性。灵活性一方面体现在，不同的场景可能有不同的做市需求和不同的初始条件，在以上三种不同的初始条件情况下，我们都能求解出一个正确的 DAMM 策略。灵活性另一方面体现在，&lt;strong&gt;我们可以通过价格范围或初始资金量，任意调节做市资金效率&lt;/strong&gt;。&lt;/p&gt;
+&lt;h1&gt;其他&lt;/h1&gt;
+&lt;h2&gt;从 AMM 到 orderbook 的转化&lt;/h2&gt;
+&lt;p&gt;将 AMM 曲线分段近似，就可以得到一份离散化 orderbook。在 &lt;a href=&quot;https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156&quot;&gt;参考实现代码&lt;/a&gt; 中，我们可以指定价格 interval 和 order 数量，通过计算 base delta 和 quote delta，得到订单大小和平均价格。&lt;/p&gt;
+&lt;h2&gt;数学等价性&lt;/h2&gt;
+&lt;p&gt;容易看出 DAMM 在数学上等价于 (x + a)(y + b) = k 的做市算法。不同之处在于我们给了很多的微观诠释，也指出了多种不同的从初识条件求解的可能性。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ZK-Rollup 开发经验分享 Part I]]></title><description><![CDATA[致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie…]]></description><link>https://www.fluidex.io/zh/blog/zkrollup-intro1/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/zkrollup-intro1/</guid><pubDate>Wed, 12 May 2021 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的宝贵意见！（名字按字母序排序）&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;对读者的期待：需要有基础的编程知识和区块链知识，可以没有任何密码学背景。&lt;/p&gt;
+&lt;p&gt;很多用户期待区块链能进一步扩容，提升性能，降低使用成本。本文将谈到的 ZK-Rollup 是 &lt;a href=&quot;https://ethereum.org/nl/developers/docs/layer-2-scaling/&quot;&gt;以太坊 Layer 2 扩容方案&lt;/a&gt; 中的一种，它精巧地使用零知识证明(ZK-SNARK)这种密码学技术来完成链上计算资源消耗的压缩，从而能够极大地(~10x-100x)提升 Ethereum 的性能。包括 Ethereum 创始人 Vitalik 在内的很多人 认为 ZK-Rollup 是长期来看最重要的 Layer 2 扩容方案。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In general, my own view is that in the short term, optimistic rollups are likely to win out for general-purpose EVM computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use cases, but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves. — Vitalik&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本文会分享一些 ZK-Rollup 开发中的经验。撰写本文的动机在于，互联网有大量高质量的资料介绍 ZK-SNARK （零知识证明）理论本身，这些文章会介绍详细的密码学细节，另一些不太偏向技术的文章则会展望 ZK-Rollup 的作用和前景。较少见有文章会深入地介绍 ZK-Rollup 到底是怎么提升性能的？一个完整的 ZK-Rollup 系统是长什么样的？ZK-Rollup 系统中有什么少被人讨论但是重要的常识经验吗？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Fluidex/&quot;&gt;Fluidex 团队&lt;/a&gt; 作为全世界少数几个在独立开发完整 ZK-Rollup 系统的团队，希望能够分享一些自己在开发 ZK-Rollup 系统中的经验，能够反哺业界的其他参与者。我们想分享一些重要但是很少被谈到的话题，比如 ZK-Rollup 系统的性能瓶颈在哪里，它的成本又是如何构成的等。&lt;/p&gt;
+&lt;h2&gt;ZK-SNARK&amp;#x26; ZK-Rollup 概述&lt;/h2&gt;
+&lt;p&gt;本文重点不会在于零知识证明（ZK-SNARK） 的理论本身，因为这个话题你可以在互联网上搜到足够多高质量的资料，在此不多重复。本章节会简要介绍：ZK-SNARK 能做什么？它何以能够成为 ZK-Rollup 的核心部分，和 “rollup” 一起协助以太坊提升性能？rollup 又是什么意思？&lt;/p&gt;
+&lt;h3&gt;ZK-SNARK 本质是什么？&lt;/h3&gt;
+&lt;p&gt;在区块链系统中，一般而言每个节点会做完全相同的计算，每个节点都会执行区块中每个交易，并且验证它自己的执行结果和其他节点的执行结果完全相同。换言之，每个链上交易，都会被区块链的每一个参与节点执行一遍，这是为什么区块链系统性能较低的一个重要原因。&lt;/p&gt;
+&lt;p&gt;只有重新计算一遍才能验证交易吗？换言之，验证的计算量一定得等于计算吗？&lt;/p&gt;
+&lt;p&gt;不是的，验证可以比计算容易。举个例子，对于数独游戏而言，解数独的复杂性和验证数独游戏解的复杂性是完全不同的。“把计算重做一遍”是最差的验证方式。如果读者有计算机科学的背景，你可以回忆计算复杂度中 P vs NP 的问题。&lt;/p&gt;
+&lt;p&gt;所以，在区块链中，如果有一种技术，能够降低验证的代价，即使增加了计算的代价，也是值得的。因为计算只发生一次，而验证会发生在每个节点上。&lt;strong&gt;ZK-SNARK 的本质正是这样一种压缩验证计算量的技术&lt;/strong&gt;，通常 ZK-SNARK 能够使得验证交易的计算量比执行交易少几个数量级，准确地说，是把验证的复杂度从线性变成常数(或对数)。&lt;/p&gt;
+&lt;p&gt;对于一段特定的程序，ZK-SNARK 首先对这段程序做预处理，一次预处理完成之后，对于每份输入(input)，都首先计算输入的执行结果，再花费较大的计算资源生成一份 proof ( proof 实际上是很多大数 )。任何验证者，可以通过这份 proof 和本次执行使用的 input，快速验证执行的结果是正确的。&lt;/p&gt;
+&lt;p&gt;更加精细的伪代码描述：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// here is the the application code&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// it is usually called &apos;circuit code&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;some_function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// no global vars allowed here&lt;/span&gt;
+   outputs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;some_calculation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;inputs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; outputs
+
+
+&lt;span class=&quot;token comment&quot;&gt;// preprocessing only runs once for every &apos;some_function&apos;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// we deliberately ignore &apos;setup&apos; here to make it easier for understanding&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// for a more precise and detailed description, you can have a look at the references at the end of this article&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; preprocess_result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zksnark_preprocess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;some_function&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; verification_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; preprocess_result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;verification_key&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; proving_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; preprocess_result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proving_key&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// for every &apos;inputs&apos;, generate &apos;proof&apos;. The following codes run off chain&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// we deliberately ignore &apos;witness&apos; here to make it easier for understanding&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// we will make more explanation on what consists of inputs/outputs of a realworld ZK-Rollup system in the following sections&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; outputs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;some_function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// the &apos;prove&apos; will need a lot of computing resource to finish&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; proof &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zksnark_prove&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;proving_key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; output&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// verify the input/output is correct&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// The following codes usually run on chain&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; is_correct &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zksnark_verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;verification_key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; output&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; proof&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;is_correct &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;真实世界 Rollup 系统的设计&lt;/h3&gt;
+&lt;p&gt;在一般 Rollup 系统的设计中，我们会维护一颗全局的 merkle tree。Rollup 系统中的所有状态（一般至少包括每个账户每种 token 的余额，账户的 nonce 等）都会成为这棵树中的一个叶子结点。&lt;/p&gt;
+&lt;p&gt;zksnark 会在数学上保证，每次对于 merkle tree 的更新都满足“预定规则”。这些“预定规则”是由 ZK-Rollup 的开发者的代码决定的。例如，对于一个 ZK-Rollup 转账系统，开发者可以在代码中要求，1. 转账金额小于转账发起账户的余额 2. 转账发起账户签名有效且 nonce 正确 3. 转账发起账户减少的金额等于转账接收账户增加的金额 ，此外，根结点的hash会从新的叶子结点重新计算出来。&lt;/p&gt;
+&lt;p&gt;为了保证最坏情况下的安全性（即 ZK-Rollup 的运营者在跑路之后，用户的资金能不受损失地提出来），一般要求用户能够重建整棵树(这叫 data availability) ，能够证明 “张三确实有 3 个 ETH 在这颗树中”（通过 merkle proof 等手段）。这要求系统处理的每一笔交易的数据都是完整公开的，存在区块链上。&lt;/p&gt;
+&lt;p&gt;我们通常对于数百甚至数千笔交易，按照指定顺序在这颗 merkle tree 上执行完成后，使用 ZK-SNARK 证明执行的结果（即新 merkle tree 的 root）是正确的。这数百或数千是一个预先决定的配置，而不能被动态更改。这批交易会被统一地证明和验证，它们被称为一个 “L2 Block”。&lt;/p&gt;
+&lt;p&gt;我们来使用伪代码解释，一个真实世界 ZK-Rollup 系统中的数据流形态：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// the following code runs as smart contract&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// &apos;global_merkle_tree_root&apos; is the only state needed to be stored inside smart contract&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; global_merkle_tree_root &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; verification_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// set global_merkle_tree_root and verification_key&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;verify_txs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;proof&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; txs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; old_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; new_merkle_root&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;old_merkle_root &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; global_merkle_tree_root&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// in fact we will hash of txs/old_merkle_root/new_merkle_root as a single input to &apos;zksnark_verify&apos; for performance. We will not discuss this detail here as it does not block understanding&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;zksnark_verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;proof&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; txs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; old_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; new_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   global_merkle_tree_root &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; new_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;可以看到，合约自身除 merkle root 外，并不储存任何状态。每次状态更新都需要链下模块来准备完整的交易输入和 proof。熟悉 Stateless Ethereum 的读者会意识到 Stateless Ethereum 和 ZK-Rollup 这两者的本质是非常相似的。&lt;/p&gt;
+&lt;!---
+这里要不要解释下 witness / merkle proof 这些东西？
+--&gt;
+&lt;h2&gt;ZK-Rollup 系统架构&lt;/h2&gt;
+&lt;p&gt;ZK-Rollup 系统至少需要以下几个组件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;链上智能合约：负责验证 Merkle tree 的每次状态更新都是有效的，维护正确的 merkle tree root；在 Rollup 系统完全停机时，能够保证用户可以直接调用合约提取自己应有的资产；协调 L1 和 L2，保证用户向合约的充值能被及时处理并被更新在 Merkle tree 中。&lt;/li&gt;
+&lt;li&gt;Prover Cluster：对每个 L2 Block 做大量密码学计算获得 zksnark proof。通常需要一个大规模集群，会占用了系统中超过 99% 的计算资源。&lt;/li&gt;
+&lt;li&gt;State Manager：维护完整的 merkle tree。对于每个 tx，更新 merkle tree 并且为 prover cluster 提供必要的数据（如 merkle proof）。&lt;/li&gt;
+&lt;li&gt;其他业务模块：如 L2 浏览器；此外，不同的具体 Rollup 系统还会有自己专门的业务模块，如 Fluidex 会有一个&lt;a href=&quot;https://github.com/Fluidex/dingir-exchange&quot;&gt;订单簿撮合引擎&lt;/a&gt;，从用户的委托订单生成匹配的交易，发送给 State Manager。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;ZK-Rollup 的 TPS 能力上限&lt;/h2&gt;
+&lt;p&gt;一个 ZK-Rollup 系统的 TPS 能力上限被什么制约？&lt;/p&gt;
+&lt;h3&gt;证明速度&lt;/h3&gt;
+&lt;p&gt;证明是 ZK-Rollup 系统中最消耗计算资源的部分。刚刚接触 ZK-Rollup 的人常常会误认为证明速度限制了 TPS 的上限。实际上每个 L2 Block 的证明是可以完全并行的，使用几百台服务器来搭建证明集群是 common practice。zksnark 证明耗时长，会使得从 L2 向 L1 提现完成需要的时间更久，会给运营方造成更高的服务器成本，但不会限制 TPS。&lt;/p&gt;
+&lt;h3&gt;数据上链和 ETH GAS 限制&lt;/h3&gt;
+&lt;p&gt;这是一个真正限制 ZK-Rollup TPS 的因素。我们回顾刚才介绍的 ZK-Rollup 整体设计，可以看到为了安全性/data availability，每笔 layer 2 的交易都要有数据会上链。这部分数据会作为 CALLDATA 存入 ETH 的交易历史中，平均价格可以按照 16gas/byte (EIP-2028: &lt;a href=&quot;https://eips.ethereum.org/EIPS/eip-2028&quot;&gt;[1]&lt;/a&gt;, &lt;a href=&quot;https://blog.iden3.io/istanbul-zkrollup-ethereum-throughput-limits-analysis.html&quot;&gt;[2]&lt;/a&gt;) 来估计。对于一般的转账&amp;#x26;撮合等交易，每笔交易可以按照 40 bytes 来估计（&lt;a href=&quot;https://vitalik.ca/general/2021/01/05/rollup.html&quot;&gt;[1]&lt;/a&gt;, &lt;a href=&quot;https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#data-availability&quot;&gt;[2]&lt;/a&gt;）。&lt;/p&gt;
+&lt;p&gt;每个 ETH 块大约需要 13s，最高允许 gas 为 12.5 Million。按照单次 Groth16/Plonk zksnark verify 成本为 0.3-0.5 Million gas 推算 (&lt;a href=&quot;https://github.com/matter-labs/awesome-zero-knowledge-proofs&quot;&gt;[1]&lt;/a&gt;, &lt;a href=&quot;https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff&quot;&gt;[2]&lt;/a&gt;, &lt;a href=&quot;https://blog.kyber.network/research-trade-offs-in-rollup-solutions-a1084d2b444&quot;&gt;[3]&lt;/a&gt;, &lt;a href=&quot;https://zksync.io/&quot;&gt;[4]&lt;/a&gt;, &lt;a href=&quot;https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477&quot;&gt;[5]&lt;/a&gt;, &lt;a href=&quot;https://ethresear.ch/t/roll-up-roll-back-snark-side-chain-17000-tps/3675/12&quot;&gt;[6]&lt;/a&gt;)，单个 ETH block 内能容纳的 tx 数量上限为 12,000,000 / (40*16) ~= 20000。因此按照链上 gas 限制估算的 ZK-Rollup TPS 上限约为 1500-2000。这也是很多 Rollup 系统在白皮书中声称的性能上限。&lt;/p&gt;
+&lt;h3&gt;Merkle Tree 全局状态的更新&lt;/h3&gt;
+&lt;p&gt;这是一个很少被讨论但是至关重要的角度，&lt;strong&gt;真实 ZK-Rollup 系统的性能上限实际上更被这个模块限制，而不是上面讨论的证明速度和 gas 限制&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense account_balance merkle tree (如下图所示) ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 次 merkle proof 的验证，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 &lt;a href=&quot;https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326&quot;&gt;Fluidex 团队的测试结果&lt;/a&gt;，单次 poseidon hash 按照 30us 计算（每个test的树深度为20，故每个hash操作是57ms / 100 / 20 ~= 30us），则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/54e1727768d29bc1b328dc1cc1dda2fc/94829/account-merkle-tree.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 85.44303797468356%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQ4y5WSV6rDQAxFZ/9rCok3EBLyk0ac3nvv1uMIZMZ5dopgGDNGV7fIyYeKoihxU8vlUmq1mtTrdalUKnK5XOJ/Tr4oA7vdbnI4HKTf70uz2ZThcCitVksGg4Hsdju5Xq/vAQHywWBG43g8lul0qu+r1UqB9/u9NBqNzwx9qYvFQmazmYLO53N9W6/Xst1uFTAMw/+APiu7z+eznE4nlQrg/X5P/H88HrGP7htmm81Ger2egnU6HZWZ1ePeJWqT8YiDZPzjRirAsPX7XBqYfbMWpVJJisWiMvOLlHmbTCaasvW4LJlMJrVyuSzValUZPp/PhA2EQyCwTTD0WSEHKSSGPEuy3W5rsqyOhYIlNsQw3KtvJAkQzaPRSN8IgzfACIedpADjGFiCoV800uQPg80rozSrYobIYNdgYJ6kDcsKMA7FPvANk7nxEXC/6fVkDXPmA55hfLfb1UCOx+PH5rRyMAKMnWIFaCQMpNtq/ARYKBQkn89LEASaJsUy53I5PSywJfpN/QENgim6OEM80QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;account merkle tree&quot;
+        title=&quot;account merkle tree&quot;
+        src=&quot;/static/54e1727768d29bc1b328dc1cc1dda2fc/f058b/account-merkle-tree.png&quot;
+        srcset=&quot;/static/54e1727768d29bc1b328dc1cc1dda2fc/c26ae/account-merkle-tree.png 158w,
+/static/54e1727768d29bc1b328dc1cc1dda2fc/6bdcf/account-merkle-tree.png 315w,
+/static/54e1727768d29bc1b328dc1cc1dda2fc/f058b/account-merkle-tree.png 630w,
+/static/54e1727768d29bc1b328dc1cc1dda2fc/94829/account-merkle-tree.png 878w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;因此，必须实现 merkle tree 的 &lt;a href=&quot;https://github.com/Fluidex/state_keeper/blob/a255043cbe7c899c6a8d9cc46b170a40f20623c9/src/types/merkle_tree.rs#L127&quot;&gt;并行更新&lt;/a&gt;， ZK-Rollup 的 TPS 才会突破 100-300 这个层次。和 zksnark proving 可以完美分布式多机多核并行不同，使用并行加速 merkle tree 的更新需要较精细的代码控制，而且非常难以实现多机分布式加速。这也是个工程上的挑战。&lt;/p&gt;
+&lt;p&gt;上面推算的 100-300 TPS，接近不少实际运行中的 ZK-Rollup 系统的真实性能上限。&lt;/p&gt;
+&lt;h2&gt;经济成本分析&lt;/h2&gt;
+&lt;h3&gt;ZK-Rollup 一般需要几千个 CPU cores 做 proving&lt;/h3&gt;
+&lt;p&gt;我仍然拿 Fluidex 的 &lt;a href=&quot;https://github.com/fluidex/awesome-plonk&quot;&gt;PLONK&lt;/a&gt; &lt;a href=&quot;https://github.com/Fluidex/circuits&quot;&gt;电路&lt;/a&gt; 作为一个典型 ZK-Rollup 系统的例子。在我们最新的一次性能测试中，每个包含 100 个交易的 L2 Block 的单次电路证明需要在 24core 服务器上消耗约 20min。因此如果需要达到 100 TPS 的性能，需要大约 300 台 EC2 c5.12xlarge，这意味着每小时 500 USD 左右的成本。此时每个 Layer 2 tx 链下计算成本为 0.001 USD。不过目前我们做性能优化的投入还很少，预计未来有较多提升空间。&lt;/p&gt;
+&lt;h3&gt;链上的 gas 成本比链下服务器成本至少高两个数量级&lt;/h3&gt;
+&lt;p&gt;以上所说的链下计算成本，比起链上的 GAS 成本来说是九牛一毛。假设每个 Layer 2 tx 需要 40 bytes 的上链数据，ETH 价格 2000USD，GAS 价格 200GWEI，则每个 tx 需要的链上 GAS 成本约为 2.6 USD。这个成本远远高于链下 0.001 USD 的成本，但是又远远低于链上 Layer 1 复杂交易动则几十 USD 的 GAS 成本，这也是我们常常说 ZK-Rollup 能够带来至少两个数量级成本下降的数字来源。&lt;/p&gt;
+&lt;h3&gt;云服务中 GPU 非常没有性价比&lt;/h3&gt;
+&lt;p&gt;不少开发者会关心 GPU 带来的计算能力提升。在 zk snark prove 上，GPU 能带来的计算加速常在 3x-5x 这个层次。但是另一方面，由于虚拟化的不成熟，云服务商的 GPU 成本比起 CPU 成本会不成比例的昂贵，以至于出现了训练深度学习模型，&lt;a href=&quot;https://minimaxir.com/2017/07/cpu-or-gpu/&quot;&gt;CPU 比起 GPU 更便宜的奇观&lt;/a&gt;。因此，如果不是自建数据中心而是使用云服务，那么使用 GPU 来加速零知识电路证明是边际效用不高的选择。&lt;/p&gt;
+&lt;p&gt;当然，以上所有的推算数据，会收系统代码效率和 ETH GAS 价格影响，但是预计可见未来内不太会出现量级偏差。&lt;/p&gt;
+&lt;h2&gt;其他开发经验碎片&lt;/h2&gt;
+&lt;h3&gt;ZK-SNARK 的逻辑描述为何被称为“电路”？&lt;/h3&gt;
+&lt;p&gt;对于任何有软件开发经验的人来说，如下代码中，if 分支和 else 分支只会执行一个，而不是两个都执行后选择其中一个作为结果。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;binaryOp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;op&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;add&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; arg1 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; arg2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// assert(op == &apos;mul&apos;);&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; arg1 &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; arg2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;“不同代码分支下，计算量不会同时发生”对于软件开发似乎是天经地义的，但是对于数字芯片电路的硬件设计却并非如此。在硬件时序电路代码开发中，一般所有“分支”（如果这还叫“分支”的话）的逻辑都会在时序触发时全部执行，开发者需要自己从不同“分支”的计算结果中，正确地选择和维护全局状态。&lt;/p&gt;
+&lt;p&gt;在零知识证明系统中，代码逻辑会被转换成一些巨大（可能是几亿项）的多项式（称之为“算术化”），于是，问题就从“证明程序”转化为“证明多项式”。而多项式又会以门电路的方式被表达，以进行约束。这也是零知识证明电路被称之为“电路”的原因。因此零知识证明的代码具有和硬件电路相同的属性：所有分支的代码同时执行。这也就是“零知识证明电路”之所以被称为“电路”的原因。此外，和硬件电路类似，零知识证明电路中，没有递归和复杂循环，循环次数只能是常数（实际上最终这个循环会被作为语法糖展开，即 loop unrolling）。&lt;/p&gt;
+&lt;p&gt;因此在开发零知识证明电路代码时，开发者要重新思考自己在编写软件代码时养成的认知和习惯。例如，优化软件时，我们可以专注于代码最常执行的路径，而对于代码少走的分支则可以不优先处理。但是在零知识电路开发中，每一个分支都是会被执行的，因此不常执行的分支也需要投入同样的精力来优化。&lt;/p&gt;
+&lt;!---
+这里有必要说吗？
+
+在零知识证明电路中，最重要的元素是所谓“约束”，即我们要求一个多项式的值为0。在电路中常会有不同的模块，例如充值/转账等，他们各自有不同的约束条件，https://github.com/Fluidex/circuits/blob/aaa488149c293b1e847c732e93f9841d5715d141/src/lib/binary_merkle_tree.circom#L76
+
+--&gt;
+&lt;h3&gt;对于 DSL 的看法&lt;/h3&gt;
+&lt;p&gt;零知识证明电路的开发语言有不同的选择，既可以直接使用 C++/Rust 实现的底层计算库如 &lt;a href=&quot;https://github.com/HarryR/ethsnarks&quot;&gt;ethsnarks&lt;/a&gt; / &lt;a href=&quot;https://github.com/zkcrypto/bellman&quot;&gt;bellman&lt;/a&gt;，也可以使用一些 DSL 如 &lt;a href=&quot;https://github.com/Zokrates/ZoKrates&quot;&gt;ZoKrates&lt;/a&gt; / &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;Circom&lt;/a&gt; / &lt;a href=&quot;https://github.com/matter-labs/zinc&quot;&gt;Zinc&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;我们最终的选择是 circom。 Circom 提供了恰到好处的抽象，一方面提升了读写代码的效率，另一方面也没有扭曲底层的真实细节。相比起来，ethsnarks 和 bellman 编写电路代码开发效率略低一点，而且代码被团队内部或者外部审计时，很多代码上的“语法噪音”会不利于代码读者的注意力集中到真正的核心逻辑上。ZoKrates 和 Zinc 提供的抽象层次又太高，例如 ZoKrates 中的类似 python 的控制流语法，掩盖了底层电路的本质，也不利于做一些深入底层的优化（好比 C/Rust 中内嵌汇编）。&lt;/p&gt;
+&lt;p&gt;如果用传统开发来类比，ethsnarks / bellman 更像是汇编，circom 是 C 语言，ZoKrates 是 Python。但是 ZoKrates 的工具链又没有真的成熟到 Python 解释器的程度，因此我们宁愿用 C 来作为唯一的开发语言，也不想自己同时维护 Python 代码和 CPython 解释器代码。&lt;/p&gt;
+&lt;p&gt;不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 custom gate / plookup / aggregation &amp;#x26; recursion 等特性。&lt;/p&gt;
+&lt;h3&gt;处理充提的复杂性&lt;/h3&gt;
+&lt;p&gt;处理充提要格外小心，因为这涉及了用户在以太坊主网上真实资金的改变。如果没处理好，用户/交易所则会蒙受真实资金的损失。&lt;/p&gt;
+&lt;p&gt;要考虑的东西很多，比如区块可能发生回滚，不同的请求可能需要不同的处理优先级，合约的升级，等等。&lt;/p&gt;
+&lt;p&gt;下面这个表列了一些需要考虑的情况（但不局限于以下这几条）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果一个 block 已经 commit 但是没有及时被 verify，那么应该将状态回滚到之前的状态。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果 rollup 一直不能 commit L2 blocks 或者提交对 L2 blocks 的 proof，又或者高优先的 (L1) 请求迟迟得不到处理，那么 rollup 应该被停机，并允许用户提走自己的资产。&lt;/p&gt;
+&lt;!-- + 对于充值交易，如果充值一直得不到处理，应该允许用户在一段时间后提走自己的这笔充值。 --&gt;
+&lt;/li&gt;
+&lt;li&gt;路印中也描述了一种 &lt;a href=&quot;https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing&quot;&gt;Withdrawal Fee Griefing Attack&lt;/a&gt; 以及应对的方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hermez 中为了防止因为逻辑考虑不完善而导致资金被盗，设计了 &lt;em&gt;WithdrawalDelayer&lt;/em&gt;，辅以对资金异常情况的监控，以便进行对提现的管理。&lt;/p&gt;
+&lt;h2&gt;更多阅读材料&lt;/h2&gt;
+&lt;h3&gt;技术文章&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://vitalik.ca/general/2021/01/05/rollup.html&quot;&gt;vitalik blog on rollup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vitalik.ca/general/2021/01/26/snarks.html&quot;&gt;vitalik blog on ZK-SNARK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.yuque.com/u428635/scg32w/edmn74&quot;&gt;深入浅出零知识证明之 ZK-SNARKs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/&quot;&gt;Stateless Ethereum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;项目代码&lt;/h3&gt;
+&lt;p&gt;已经上线的 ZK-Rollup 项目：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/zksync&quot;&gt;zksync&lt;/a&gt;: 最完整的 ZK-Rollup 开源项目代码，涵盖了一个 ZK-Rollup 系统需要的每个组件。使用 PLONK 机制，电路代码使用 bellman，链下代码使用 Rust。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hermeznetwork/&quot;&gt;hermez&lt;/a&gt;: 和 zksync 类似。使用 Groth16 机制，电路代码使用 circom，链下代码使用 Go。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Loopring/protocols/tree/master/packages/loopring_v3&quot;&gt;loopring&lt;/a&gt;: 仅开源了电路代码和合约代码，没有开源 State Manager 模块。使用 Groth16 机制，电路代码使用 ethsnark，链下代码不开源。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开发中的 ZK-Rollup 项目：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Fluidex&quot;&gt;fluidex&lt;/a&gt;: 开源了电路代码，State Manager，交易所撮合引擎。 使用 PLONK 机制，电路代码使用 circom，链下代码使用 Rust。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用 zksnark 技术但是不属于 ZK-Rollup 的项目：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/appliedzkp/maci/&quot;&gt;MACI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tornadocash&quot;&gt;Tornado Cash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;关于我们&lt;/h2&gt;
+&lt;p&gt;我们是 &lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;“FluiDex: 基于 ZK-Rollup 的专业去中心化交易所”&lt;/a&gt; 的开发团队。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ZK-Rollup development experience sharing, Part I]]></title><description><![CDATA[Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks…]]></description><link>https://www.fluidex.io/en/blog/zkrollup-intro1/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/zkrollup-intro1/</guid><pubDate>Wed, 12 May 2021 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.&lt;/p&gt;
+&lt;p&gt;Currently, major expectations on blockchain technology are further scaling, higher performance and lower costs. In this post, we will dive into ZK-Rollup, which is one of the &lt;a href=&quot;https://ethereum.org/nl/developers/docs/layer-2-scaling/&quot;&gt;Ethereum layer 2 scaling solutions&lt;/a&gt;. It exquisitely applies a zero knowledge proof technique (known as ZK-SNARK) to reduce the on-chain costs, and thus, is able to improve Ethereum TPS considerably (~10x-100x). ZK-Rollup is considered as the most important Ethereum Layer 2 scaling solution in the long term by many people, including Vitalik, the founder of Ethereum.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In general, my own view is that in the short term, optimistic rollups are likely to win out for general-purpose EVM computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use cases, but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves. — Vitalik&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this series of posts, we will share our experience on developing a ZK-Rollup system. The motivation of these posts is that, currently there are many high quality resources introducing the cryptography behind ZK-SNARK, with a lot of math details. In the meantime, there are also many non-technical blogs looking into the impact and prospect of ZK-Rollup. Very few will dive into questions like, how does ZK-Rollup boost performance exactly? Or, how does a complete ZK-Rollup system look like? Or, is there any important but usually overlooked details in a ZK-Rollup system?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Fluidex/&quot;&gt;Fluidex&lt;/a&gt;, as one of the very few teams that are independently developing a ZK-Rollup system from scratch, is happy to share some experience gained from ZK-Rollup system development. We hope this could benefit other developers in the field. We will talk about some important but rarely mentioned topics, like where the performance bottleneck is in a ZK-Rollup system, where does the economic cost lie, etc.&lt;/p&gt;
+&lt;h2&gt;Overview of ZK-SNARK &amp;#x26; ZK-Rollup&lt;/h2&gt;
+&lt;p&gt;Again, we won’t focus on the cryptographic details of ZK-SNARK proof, because as stated, there are enough high quality resources explaining it. In this chapter, we will briefly answer the following questions: What can ZK-SNARK do? Why does it become the core of ZK-Rollup, and help boost Ethereum performance along with “rollup”? What does “rollup” mean exactly?&lt;/p&gt;
+&lt;h3&gt;The Nature of ZK-SNARK&lt;/h3&gt;
+&lt;p&gt;Generally speaking, in a blockchain ecosystem, each node will execute the same computation for each transaction in the block, then verify that their results are the same as those of other nodes. In other words, for each transaction to be on chain, it will be executed by every node. That’s one major reason why blockchain have relatively low performance.&lt;/p&gt;
+&lt;p&gt;However, is “computing again” the only way to verify a transaction? To put it differently: is it necessary that the cost of verifying is as much as the cost of computing?&lt;/p&gt;
+&lt;p&gt;The answer is NO. Verifying could be cheaper than computing. Let’s take Sudoku for example. The complexity of solving a Sudoku is quite different from that of verifying a Sudoku solution. To “compute again” is the least efficient verification method. If you happen to have a computer science background, just consider the P vs NP problems in computational complexity theory.&lt;/p&gt;
+&lt;p&gt;Therefore, in blockchain, it’s worthwhile to have a technical solution that can lower the verification cost, even by increasing the computation cost. The reason is that, for each transaction, computation will only happen once, while verification will happen on every node. &lt;strong&gt;ZK-SNARK by nature is such a technique that significantly lowers the verification cost.&lt;/strong&gt; Generally, ZK-SNARK can make the verification cost several orders of magnitude less than the computational cost. To be precise, reducing the verification complexity from linear to constant (or logarithmic), that is what “succinctness”, the “S” in “SNARK”, stands for.&lt;/p&gt;
+&lt;p&gt;Let’s look at how ZK-SNARK works.&lt;/p&gt;
+&lt;p&gt;For a particular program, it will first be preprocessed. After the one-off preprocessing, for each input, a prover will need to compute the result corresponding to the input, as well as generate a “proof” (usually in form of big integers) with relatively larger costs. Any verifier could use this “proof” and input to quickly verify the correctness of the result without actually running the program.&lt;/p&gt;
+&lt;p&gt;A more detailed description in pseudo code:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// here is the the application code&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// it is usually called &apos;circuit code&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;some_function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// no global vars allowed here&lt;/span&gt;
+   outputs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;some_calculation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;inputs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; outputs
+
+
+&lt;span class=&quot;token comment&quot;&gt;// preprocessing only runs once for every &apos;some_function&apos;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// we deliberately ignore &apos;setup&apos; here to make it easier for understanding&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// for a more precise and detailed description, you can have a look at the references at the end of this article&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; preprocess_result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zksnark_preprocess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;some_function&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; verification_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; preprocess_result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;verification_key&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; proving_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; preprocess_result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proving_key&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// for every &apos;inputs&apos;, generate &apos;proof&apos;. The following codes run off chain&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// we deliberately ignore &apos;witness&apos; here to make it easier for understanding&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// we will make more explanation on what consists of inputs/outputs of a realworld ZK-Rollup system in the following sections&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; outputs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;some_function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// the &apos;prove&apos; will need a lot of computing resource to finish&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; proof &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zksnark_prove&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;proving_key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; output&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// verify the input/output is correct&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// The following codes usually run on chain&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; is_correct &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zksnark_verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;verification_key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; output&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; proof&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;is_correct &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Real-world Design of a Rollup System&lt;/h3&gt;
+&lt;p&gt;In a normal Rollup system, we will maintain a global merkle tree. All states in the Rollup system (including the balance of each token of the account, nonce of the account, etc.) will become a leaf node on the tree.&lt;/p&gt;
+&lt;p&gt;ZK-SNARK will guarantee mathematically that every update to the merkle tree satisfies some “predetermined rules”. Those rules are determined by the ZK-Rollup developers’ settings. For example, for a ZK-Rollup transfer system, the developers could demand that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Transfer amount is less than the balance of the sender account;&lt;/li&gt;
+&lt;li&gt;The signature of the sender account is valid, and nonce is correct;&lt;/li&gt;
+&lt;li&gt;The amount reduced in the sender account equals the amount increased in the receiver account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Additionally, the hash of the merkle root will be computed from the new leaf.&lt;/p&gt;
+&lt;p&gt;To guarantee security in the worst case (that is, even if the operators of the Rollup system run off, users can still withdraw their assets in one piece), the system should make sure users are able to rebuild the tree from scratch (known as “data availability”), and are able to make assertions  like “Alice actually has 3 ETH in this tree” by merkle proof. To achieve this, the system should make the data of each transaction public, and stored on chain.&lt;/p&gt;
+&lt;p&gt;For a batch of hundreds or thousands of transactions, after we executed them in a particular order and updated the merkle tree, we will use ZK-SNARK to prove the correctness of the result (i.e., the new root of the merkle tree). Note that the number of transactions here is determined by a predefined config, which is fixed during runtime. This batch of transactions will be proved and verified together, known as a “L2 Block”.&lt;/p&gt;
+&lt;p&gt;Again, let’s use pseudo code to demonstrate the data flow in a real-world ZK-Rollup system:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// the following code runs as smart contract&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// &apos;global_merkle_tree_root&apos; is the only state needed to be stored inside smart contract&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; global_merkle_tree_root &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; verification_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// set global_merkle_tree_root and verification_key&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;verify_txs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;proof&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; txs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; old_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; new_merkle_root&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;old_merkle_root &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; global_merkle_tree_root&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// in fact we will hash of txs/old_merkle_root/new_merkle_root as a single input to &apos;zksnark_verify&apos; for performance. We will not discuss this detail here as it does not block understanding&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;zksnark_verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;proof&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; txs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; old_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; new_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   global_merkle_tree_root &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; new_merkle_root&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can see that apart from the merkle root, the contract won’t store any states. For every state update, it needs the off-chain module to prepare the complete transaction input and proof. For those who are familiar with Stateless Ethereum, ZK-Rollup is actually very similar to Stateless Ethereum in this way.&lt;/p&gt;
+&lt;h2&gt;System Architecture of ZK-Rollup&lt;/h2&gt;
+&lt;p&gt;One ZK-Rollup system needs at least the following modules:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Smart Contract on Chain:&lt;/li&gt;
+&lt;li&gt;To verify the validity of each merkle tree update, and maintain the correct merkle tree root;&lt;/li&gt;
+&lt;li&gt;In a situation where Rollup system is down, to make sure users are able to withdraw their rightful assets by directly calling the contract;&lt;/li&gt;
+&lt;li&gt;To coordinate between L1 and L2, ensuring users’ deposits can be processed in time and updated into the merkle tree.&lt;/li&gt;
+&lt;li&gt;Prover Cluster: To do immense cryptographic calculations to generate ZK-SNARK proof for each L2 Block. Usually a large-scale cluster is required, which consumes more than 99% of the computing resources in the system.&lt;/li&gt;
+&lt;li&gt;State Manager: To maintain the complete merkle tree. For each transaction, it updates the merkle tree and provides necessary data for Prover Cluster (e.g., merkle proof).&lt;/li&gt;
+&lt;li&gt;Other Business Modules: like a L2 browser. Besides, each Rollup system has their own specialized business modules. For example, Fluidex has a &lt;a href=&quot;https://github.com/Fluidex/dingir-exchange&quot;&gt;order matching engine&lt;/a&gt;, which generates matched transactions from users’ orders, then sends them to the State Manager.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;TPS limit of ZK-Rollup&lt;/h2&gt;
+&lt;p&gt;What is the main constraint on TPS of a ZK-Rollup system?&lt;/p&gt;
+&lt;h3&gt;Speed of proving&lt;/h3&gt;
+&lt;p&gt;Proving is the most resource consuming part of a ZK-Rollup system. Those who are new to ZK-Rollup usually mistakenly believe that speed of proving is the main constraint on TPS. Actually, as the proving of each L2 Block can be done completely in parallel, using a prover cluster with size of hundreds is a common practice. Therefore, although ZK-SNARK proofs do take long, it will mostly lead to a longer latency of withdrawing from L2 to L1, as well as a higher server cost for operators, but not a limitation on TPS.&lt;/p&gt;
+&lt;h3&gt;Recording data on-chain and ETH GAS limitations&lt;/h3&gt;
+&lt;p&gt;Well this is a real constraint on TPS. Let’s look back at the overall ZK-Rollup design. To ensure security/data availability, each layer-2 transaction should be recorded on chain. This part of data will be recorded in ETH transaction history as CALLDATA, with an average cost of 16 gas/byte (EIP-2028: &lt;a href=&quot;https://eips.ethereum.org/EIPS/eip-2028&quot;&gt;[1]&lt;/a&gt;, &lt;a href=&quot;https://blog.iden3.io/istanbul-zkrollup-ethereum-throughput-limits-analysis.html&quot;&gt;[2]&lt;/a&gt;). For a normal transfer/matched order, each transaction is estimated to be 40 bytes (&lt;a href=&quot;https://vitalik.ca/general/2021/01/05/rollup.html&quot;&gt;[1]&lt;/a&gt;, &lt;a href=&quot;https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#data-availability&quot;&gt;[2]&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Let’s try estimating the TPS limit by gas limitations.&lt;/p&gt;
+&lt;p&gt;It takes ~13s for each ETH block to be mined, with maximum gas of 12.5 Million. Suppose a Groth16/Plonk ZK-SNARK verification costs 0.3-0.5 Million gas (&lt;a href=&quot;https://github.com/matter-labs/awesome-zero-knowledge-proofs&quot;&gt;[1]&lt;/a&gt;, &lt;a href=&quot;https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff&quot;&gt;[2]&lt;/a&gt;, &lt;a href=&quot;https://blog.kyber.network/research-trade-offs-in-rollup-solutions-a1084d2b444&quot;&gt;[3]&lt;/a&gt;, &lt;a href=&quot;https://zksync.io/&quot;&gt;[4]&lt;/a&gt;, &lt;a href=&quot;https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477&quot;&gt;[5]&lt;/a&gt;, &lt;a href=&quot;https://ethresear.ch/t/roll-up-roll-back-snark-side-chain-17000-tps/3675/12&quot;&gt;[6]&lt;/a&gt;), then each ETH block could contain at most 12,000,000 / (40*16) ~= 20,000 transactions. So in this way, the TPS limit of ZK-Rollup would be 1500-2000. This is also the performance upper-bound claimed by many Rollup systems in whitepapers.&lt;/p&gt;
+&lt;h3&gt;Global state update on Merkle Tree&lt;/h3&gt;
+&lt;p&gt;This is a rarely discussed but crucial perspective. &lt;strong&gt;The TPS of a real-world ZK-Rollup system is actually more limited by this module, rather than proving speed or gas limitations discussed above&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To support a large number of users and assets, we need the Merkle Tree to have a certain depth. Assuming we are using a binary dense account_balance merkle tree as follows, and we intend to support 1 Million users and 1000 types of assets, then the depth of the merkle tree is required to be 30. Suppose each transaction will cause 5-10 times of verifications on the merkle proofs, then there’ll be ~200 hash calculations in total.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/54e1727768d29bc1b328dc1cc1dda2fc/94829/account-merkle-tree.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 85.44303797468356%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQ4y5WSV6rDQAxFZ/9rCok3EBLyk0ac3nvv1uMIZMZ5dopgGDNGV7fIyYeKoihxU8vlUmq1mtTrdalUKnK5XOJ/Tr4oA7vdbnI4HKTf70uz2ZThcCitVksGg4Hsdju5Xq/vAQHywWBG43g8lul0qu+r1UqB9/u9NBqNzwx9qYvFQmazmYLO53N9W6/Xst1uFTAMw/+APiu7z+eznE4nlQrg/X5P/H88HrGP7htmm81Ger2egnU6HZWZ1ePeJWqT8YiDZPzjRirAsPX7XBqYfbMWpVJJisWiMvOLlHmbTCaasvW4LJlMJrVyuSzValUZPp/PhA2EQyCwTTD0WSEHKSSGPEuy3W5rsqyOhYIlNsQw3KtvJAkQzaPRSN8IgzfACIedpADjGFiCoV800uQPg80rozSrYobIYNdgYJ6kDcsKMA7FPvANk7nxEXC/6fVkDXPmA55hfLfb1UCOx+PH5rRyMAKMnWIFaCQMpNtq/ARYKBQkn89LEASaJsUy53I5PSywJfpN/QENgim6OEM80QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;account merkle tree&quot;
+        title=&quot;account merkle tree&quot;
+        src=&quot;/static/54e1727768d29bc1b328dc1cc1dda2fc/f058b/account-merkle-tree.png&quot;
+        srcset=&quot;/static/54e1727768d29bc1b328dc1cc1dda2fc/c26ae/account-merkle-tree.png 158w,
+/static/54e1727768d29bc1b328dc1cc1dda2fc/6bdcf/account-merkle-tree.png 315w,
+/static/54e1727768d29bc1b328dc1cc1dda2fc/f058b/account-merkle-tree.png 630w,
+/static/54e1727768d29bc1b328dc1cc1dda2fc/94829/account-merkle-tree.png 878w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;!-- 
+_(In a transfer-oriented zkRollup, You could indeed combine account leaf and token leaf to reduce the merkle tree depth. However, for building a DEX a account_balance tree might still be more preferable, and since we are focusing on discussing the performance on updating the merkle tree, without the loss of generality, it&apos;s fine to discuss the model as account_balance tree here.)_
+ --&gt;
+&lt;p&gt;For performance considerations, we won’t use normal hash like SHA3 in a ZK-Rollup merkle tree. Instead, we’ll use a more ZK-SNARK compatible one like poseidon or rescue. According to &lt;a href=&quot;https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326&quot;&gt;test results from Fluidex&lt;/a&gt;, each poseidon hash takes about 30us (tree depth of each test is 20, thus, each hash would be 57ms / 100 / 20 ~= 30us). So estimating from merkle tree perspective, the limit of a ZK-Rollup system would be 1 / 0.00003 / 200 = 160 TPS.&lt;/p&gt;
+&lt;p&gt;Therefore, &lt;a href=&quot;https://github.com/Fluidex/state_keeper/blob/a255043cbe7c899c6a8d9cc46b170a40f20623c9/src/types/merkle_tree.rs#L127&quot;&gt;parallel updating&lt;/a&gt; on the merkle tree is essential to break through the 100-300 TPS level. Unlike computing ZK-SNARK proofs, which could be parallelized completely, to parallelize merkle tree updates requires more discretion, and is very hard to apply distributed computing on it. This is also a technical challenge.&lt;/p&gt;
+&lt;p&gt;The 100-300 TPS calculated above is close to many real-world ZK-Rollup system’s actual performance upper-bound.&lt;/p&gt;
+&lt;h2&gt;Economic Cost Analysis&lt;/h2&gt;
+&lt;h3&gt;ZK-Rollup normally needs thousands of CPU cores for proving&lt;/h3&gt;
+&lt;p&gt;Let’s still take &lt;a href=&quot;https://github.com/fluidex/awesome-plonk&quot;&gt;PLONK&lt;/a&gt; &lt;a href=&quot;https://github.com/Fluidex/circuits&quot;&gt;circuits&lt;/a&gt; used by Fluidex as a typical ZK-Rollup case. In our latest test, for each L2 Block with 100 transactions, it takes ~20min to run a proof on a 24 core server. To reach 100 TPS performance, we will need ~300 EC2 c5.12xlarge instances, which costs ~500 USD/h. This means each Layer 2 transaction will cost 0.001 USD in off-chain calculations. Note that we haven’t invested a lot on performance optimization yet, we expect there’ll be a lot to improve here in the future.&lt;/p&gt;
+&lt;h3&gt;On-chain gas cost much higher than off-chain server cost&lt;/h3&gt;
+&lt;p&gt;The cost of off-chain calculations mentioned above is actually a drop in the bucket compared to the on-chain GAS cost. Assuming each Layer 2 transaction needs 40 bytes of on-chain data, ETH is ~2000 USD, GAS price is 200 Gwei, then the cost of each transaction on-chain is ~2.6USD. This is much higher than the 0.001 USD off-chain. However, this is also much lower than a complex Layer 1 transaction, where GAS cost is usually at least tens of USD. That’s why we often say ZK-Rollup could bring at least two orders of magnitude cost saving.&lt;/p&gt;
+&lt;h3&gt;Low cost-efficiency Cloud GPU services&lt;/h3&gt;
+&lt;p&gt;Many developers might wonder what GPU could bring to computing power. In ZK-SNARK proving, GPUs could accelerate computing by ~3x-5x. But on the other hand, due to immaturity of virtualization, GPU from cloud services are disproportionately expensive compared to the cost of CPU. Such that there are even cases where &lt;a href=&quot;https://minimaxir.com/2017/07/cpu-or-gpu/&quot;&gt;CPU is cheaper than GPU&lt;/a&gt; in deep learning model training. Therefore, if you are not building your own data center but using cloud services, using GPU for ZK proofs would be a low marginal utility choice.&lt;/p&gt;
+&lt;p&gt;Of course, all the above analysis data will be affected by system efficiency and ETH GAS price, but unlikely to deviate in orders of magnitude in a foreseeable future.&lt;/p&gt;
+&lt;h2&gt;Miscellaneous development experience&lt;/h2&gt;
+&lt;h4&gt;Why are ZK-SNARK logic descriptions called “circuits”?&lt;/h4&gt;
+&lt;p&gt;For anyone with software engineer experience, in the following code, only one of the if- branch and else- branch will be executed, rather than both executed and only one chosen.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;binaryOp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;op&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;add&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; arg1 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; arg2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// assert(op == &apos;mul&apos;);&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; arg1 &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; arg2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Such concept that “only one conditional branch will be executed” seems natural for software development, but it’s not the case for the design of hardware chip circuits. In development of sequential logic circuits in hardware, logics of all “branches” (if still called “branch”) will be executed at the time the sequence is triggered. The developer needs to choose and maintain correct global states from different “branches”.&lt;/p&gt;
+&lt;p&gt;In a ZKP system, program logic will eventually be converted into some immense polynomials (probably with hundreds of millions of terms), which is called arithmetization, such that proving of the program will be converted to proving of the polynomials. The polynomials are then constrained in the form of gate circuit. That’s also one of the reason why we call ZKP programs as circuits. Thus, the code has the same property as hardware circuits: code from all branches will be executed together. That’s why ZK proof code is called “circuits”. In addition, similar to hardware circuits, there are no recursion and complex loops in the ZK proof circuits, and the number of loops can only be constant (actually, loops will be unrolled as syntactic sugars, i.e., loop unrolling).&lt;/p&gt;
+&lt;p&gt;Therefore, when developing ZK proof circuits, developers need to reconsider their habits from software development. For example, when optimizing softwares, we could focus on the most frequently executed branch, and deprioritize the non-frequent ones. But in ZK proof circuits, as all branches will be executed, the non-frequent branches need to be considered as well.&lt;/p&gt;
+&lt;h3&gt;Some thoughts on DSL&lt;/h3&gt;
+&lt;p&gt;There are several choices for ZK proof circuit development, such as low-level computing libraries like &lt;a href=&quot;https://github.com/HarryR/ethsnarks&quot;&gt;ethsnarks&lt;/a&gt; / &lt;a href=&quot;https://github.com/zkcrypto/bellman&quot;&gt;bellman&lt;/a&gt;, or DSL like &lt;a href=&quot;https://github.com/Zokrates/ZoKrates&quot;&gt;ZoKrates&lt;/a&gt; / &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;Circom&lt;/a&gt; / &lt;a href=&quot;https://github.com/matter-labs/zinc&quot;&gt;Zinc&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We chose Circom, which provides a just right level of abstraction. On the one hand, it improves the efficiency of reading/writing code, on the other hand, it doesn’t distort the details of the underlying circuits.&lt;/p&gt;
+&lt;p&gt;In comparison, developing with ethsnarks and bellman is of lower efficiency. Also, when the code is being reviewed, no matter internally or externally, too much “syntactic noise” prevents the reviewer from focusing on the core logic. Additionally, ZoKrates and Zinc provide a too high level of abstraction. For example, python-style control flow syntax in ZoKrates conceals the underlying circuits, and is not conducive to lower level optimizations (such as inline assembly of C/Rust).&lt;/p&gt;
+&lt;p&gt;As an analogy,  ethsnarks / bellman is like assembly language in traditional development, while cirom is like C, and ZoKrates is like Python. However, ZoKrates toolchain is not as mature as Python interpreter. That’s why we’d rather use “C” (cirom in this case) as the our development language, instead of maintaining both “Python” (ZoKrates in this case) code and “CPython interpreter” (ZoKrates interpreter in this case) code.&lt;/p&gt;
+&lt;p&gt;However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation &amp;#x26; recursion, etc.&lt;/p&gt;
+&lt;h3&gt;It’s not easy to handle deposit / withdrawal&lt;/h3&gt;
+&lt;p&gt;It’s not easy to handle deposit / withdrawal correctly at all: for example, we need to consider block reverting, operations with different priorities, contract migrations, and so on. &lt;/p&gt;
+&lt;p&gt;And we should always deal with deposit &amp;#x26; withdrawal carefully, because it affects users’ assets on Ethereum layer 1 for real.&lt;/p&gt;
+&lt;p&gt;The following is a non-exhaustive list of things we need to take into consideration:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a committed L2 block is not verified in time, state should be reverted.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the rollup fails to commit L2 blocks or submit proofs in time, or a priority operation is not processed for a long time, the rollup needs to be suspended and we should provide a way for user to withdraw funds.&lt;/p&gt;
+&lt;!-- + For a deposit, user should be able to withdraw the deposited amount if the deposit is not processed after a given time. --&gt;
+&lt;/li&gt;
+&lt;li&gt;Loopring also describes an interesting &lt;a href=&quot;https://github.com/Loopring/protocols/blob/master/packages/loopring_v3/DESIGN.md#withdrawal-fee-griefing&quot;&gt;Withdrawal Fee Griefing Attack&lt;/a&gt;, and an solution to it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hermez uses &lt;em&gt;WithdrawalDelayer&lt;/em&gt; to manage withdrawals, to leave time for handling unexpected situations.&lt;/p&gt;
+&lt;h2&gt;Further Readings&lt;/h2&gt;
+&lt;h3&gt;Techinical Blogs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://vitalik.ca/general/2021/01/05/rollup.html&quot;&gt;vitalik blog on rollup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vitalik.ca/general/2021/01/26/snarks.html&quot;&gt;vitalik blog on ZK-SNARK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/stateless-clients/&quot;&gt;Stateless Ethereum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Projects&lt;/h3&gt;
+&lt;p&gt;ZK-Rollup projects launched:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/zksync&quot;&gt;zksync&lt;/a&gt;: the most complete open source code of ZK-Rollup, containing all modules for a ZK-Rollup system. It uses PLONK protocol, bellman for circuits, and Rust for off-chain code.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hermeznetwork/&quot;&gt;hermez&lt;/a&gt;: similar to zksync. It uses Groth16 protocol, Circom for circuits, and Go for off-chain code.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Loopring/protocols/tree/master/packages/loopring_v3&quot;&gt;loopring&lt;/a&gt;: only has circuit code and contract in open source. It uses Groth16 protocol, ethsnark for circuits. Off-chain code is not open sourced yet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ZK-Rollup projects under developing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Fluidex&quot;&gt;fluidex&lt;/a&gt;: circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, and Rust for off-chain code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Non ZK-Rollup projects that use ZK-SNARK:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/appliedzkp/maci/&quot;&gt;MACI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tornadocash&quot;&gt;Tornado Cash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;About Us&lt;/h2&gt;
+&lt;p&gt;We are the development team of &lt;a href=&quot;/en/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;Fluidex: A Layer 2 ZK-Rollup DEX on Ethereum&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The inconveniences in developing Cryptography using WASM, and the motivation of snarkit]]></title><description><![CDATA[More and more projects start to look into including WebAssembly (WASM) into their tech stacks, because there is not much interpretation…]]></description><link>https://www.fluidex.io/en/blog/the-motivation-of-snarkit/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/the-motivation-of-snarkit/</guid><pubDate>Sat, 17 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;More and more projects start to look into including WebAssembly (WASM) into their tech stacks, because there is not much interpretation between WASM instructions and CPU instructions, so that even running WASM codes in a browser we can still achieve similar performance to running native CPU instructions. This could mean huge for supporting multiple platforms while remaining efficient. Nevertheless, we can compile C/C++/Java/Rust/GoLang, and etc., into WASM, and therefore reduce the learning curve.&lt;/p&gt;
+&lt;p&gt;But this is just an ideal case. In fact, when it comes to Cryptography, there are some more factors needed to be taken into considerations. &lt;/p&gt;
+&lt;p&gt;In modern CPUs, there are many optimizations for Cryptography, but they cannot be utilized inside WASM VMs. Usually running SNARKs inside WASM VMs will be several times slower than on a native CPU.&lt;/p&gt;
+&lt;p&gt;Moreover, there are a couple of other limitations when using WASM:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It doesn’t support multi-thread parallelism.&lt;/li&gt;
+&lt;li&gt;Memory is limited. Usually you only have 1~4 G available (If you encounter &lt;code class=&quot;language-text&quot;&gt;[CompileError: WebAssembly.compile(): data segments count of 104626 exceeds internal limit of 100000&lt;/code&gt; when using &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/wasm&quot;&gt;circom wasm port&lt;/a&gt; to compile a large circuit, it’s out of this reason). Otherwise you will have to compile your own WASM by yourself, like in &lt;a href=&quot;https://github.com/emscripten-core/emscripten/issues/8755#issuecomment-499682033&quot;&gt;here&lt;/a&gt;. But again, this brings inconvenience for other contributors/developers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When we develop large circuits using &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/wasm&quot;&gt;circom wasm port&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/iden3/snarkjs&quot;&gt;snarkjs&lt;/a&gt; we often encounter error messages like &lt;code class=&quot;language-text&quot;&gt;data segments count exceeds internal limit&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;insufficient memory&lt;/code&gt;, which bother our developments (the latter problem is not caused by WASM, but &lt;code class=&quot;language-text&quot;&gt;node.js&lt;/code&gt; default configurations though). It’s true that we can use &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/c&quot;&gt;circom c port&lt;/a&gt; to solve this kind of problems. But there is no good wrapper existed, we would have to write a script to make use of &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/c&quot;&gt;circom c port&lt;/a&gt; to compile the circuit and generate the witness. This may not be convenient for other developers who do not have this script.&lt;/p&gt;
+&lt;p&gt;Due to the reasons mentioned above, we decide to develop and open-source &lt;a href=&quot;https://github.com/Fluidex/snarkit&quot;&gt;https://github.com/Fluidex/snarkit&lt;/a&gt;. It’s a wrapper for &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/c&quot;&gt;circom c port&lt;/a&gt;, but it also adds better error detection. With &lt;a href=&quot;https://github.com/Fluidex/snarkit&quot;&gt;https://github.com/Fluidex/snarkit&lt;/a&gt;, people can use &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;circom&lt;/a&gt; to develop large circuits, the witness generation speed can also be boosted up. We believe this can make &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;circom&lt;/a&gt; circuit developments more friendly, and thus benefit zk-SNARKs ecosystem. &lt;/p&gt;
+&lt;p&gt;We hope you all enjoy using it!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[WASM 在用于 cryptogrphy 时的限制 -- 兼谈我们为什么想开发 snarkit]]></title><description><![CDATA[现在许多项目开始喜欢使用用 WebAssembly (WASM)，因为可以在浏览器中达到像运行 native CPU 指令一样快的效率：WASM 指令和 真正 CPU 指令之间不需要太多的 解释 (interpretation) 和转换。这对于支持多平台大有裨益。并且 WASM…]]></description><link>https://www.fluidex.io/zh/blog/the-motivation-of-snarkit/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/the-motivation-of-snarkit/</guid><pubDate>Sat, 17 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;现在许多项目开始喜欢使用用 WebAssembly (WASM)，因为可以在浏览器中达到像运行 native CPU 指令一样快的效率：WASM 指令和 真正 CPU 指令之间不需要太多的 解释 (interpretation) 和转换。这对于支持多平台大有裨益。并且 WASM 支持从 C/C++/Jave/Rust/GoLang… 等语言编译过去，方便现有开发人员迁移。&lt;/p&gt;
+&lt;p&gt;但这只是理想的情况，事实上对于密码学相关代码来说这一切并没有那么美好：因为现代 CPU 有很多针对密码学的黑魔法/优化，如果在 WebAssembly 虚拟机里则无法利用这一点。一般来说在 WASM 里面跑 SNARK 会比在 native CPU 上慢 8 倍。&lt;/p&gt;
+&lt;p&gt;而且 WASM 还有各种各样的限制：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不支持多线程并行。&lt;/li&gt;
+&lt;li&gt;能使用的内存有限制。一般来说 最多提供 1-4 G 内存供使用。否则的话你就要编译你自己版本的 WASM，像&lt;a href=&quot;https://github.com/emscripten-core/emscripten/issues/8755#issuecomment-499682033&quot;&gt;这样&lt;/a&gt;。但这又会造成移植和使用上的不便。一般来说如果你在使用 &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/wasm&quot;&gt;circom wasm port&lt;/a&gt; 编译 大型电路时遇到 &lt;code class=&quot;language-text&quot;&gt;[CompileError: WebAssembly.compile(): data segments count of 104626 exceeds internal limit of 100000&lt;/code&gt; 的话就是这个问题导致的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面的种种原因使我们下定决心开发并开源 &lt;a href=&quot;https://github.com/Fluidex/snarkit&quot;&gt;https://github.com/Fluidex/snarkit&lt;/a&gt; 。我们在使用 &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/wasm&quot;&gt;circom wasm port&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/iden3/snarkjs&quot;&gt;snarkjs&lt;/a&gt; 开发大型电路时总是遇到 data segments 或者 内存不够 等类似的报错，电路开发无法继续进行。使用 &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/c&quot;&gt;circom c port&lt;/a&gt; 可以解决这样的问题。但 &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/c&quot;&gt;circom c port&lt;/a&gt; 并没有得到很好的封装，每次都需要写脚本以调用来编译电路和生成 witness，这其实对于其他没有这些脚本的开发者并不方便。（有一些问题并不是 WASM 带来的，而是 node 默认参数带来的，但使用 snarkit 正好一并解决了这些问题。）&lt;a href=&quot;https://github.com/Fluidex/snarkit&quot;&gt;https://github.com/Fluidex/snarkit&lt;/a&gt; 对 &lt;a href=&quot;https://github.com/iden3/circom/tree/master/ports/c&quot;&gt;circom c port&lt;/a&gt; 进行了封装，使得开发者终于可以方便地使用 &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;circom 语言&lt;/a&gt; 开发大型电路，witness generation 也可以更加快。&lt;/p&gt;
+&lt;p&gt;这就是我们开发 &lt;a href=&quot;https://github.com/Fluidex/snarkit&quot;&gt;https://github.com/Fluidex/snarkit&lt;/a&gt; 的初衷，欢迎大家使用。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex 招聘]]></title><description><![CDATA[FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见 这里。 我们的办公室在北京国贸附近，时间要求是 9:00 - 19:00。五天工作制。每年最低 1…]]></description><link>https://www.fluidex.io/zh/blog/joinus/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/joinus/</guid><pubDate>Thu, 04 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见 &lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;我们的办公室在北京国贸附近，时间要求是 9:00 - 19:00。五天工作制。每年最低 13 薪，平均 14 薪。&lt;/p&gt;
+&lt;p&gt;下面描述的所有报酬，如果你更喜欢期权/数字货币，我们也可以调整。&lt;/p&gt;
+&lt;h2&gt;为什么选择我们？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;你能接触最前沿的区块链技术。我们使用前沿的零知识证明技术，来提升交易所的性能。我们拥抱开源，和技术社区一起探索技术的边界。你将会和极优秀的技术团队 (见 &lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;“FluiDex: 基于 ZK-Rollup 的专业去中心化交易所”&lt;/a&gt;) 中的 “创始人&amp;#x26;团队” 章节) 一起工作。&lt;/li&gt;
+&lt;li&gt;你会工作得很舒服。团队推崇 长期价值/坦诚/正直/共赢 的文化。我们相信 用户/团队/投资人 共赢是可期的。&lt;/li&gt;
+&lt;li&gt;你会作为早期员工分享项目成长的所有收益，无论是体验上的，还是经济上的。当然，也有可能一两年后项目解散，创始人和你一起找工作。：）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;全职部分&lt;/h2&gt;
+&lt;p&gt;我们暂时只开放全职职位如下，近期可能会开放更多职位，欢迎关注。如果你对其他职位有兴趣（产品，设计，市场，运营等非技术职位），也欢迎和我们直接联系，看看有没有合作的可能。&lt;/p&gt;
+&lt;p&gt;对下面的所有职位，我们都希望你能有快速的学习能力，良好的技术英文读写能力。有出色的开源项目都是很大的加分项。&lt;/p&gt;
+&lt;h3&gt;区块链开发工程师&lt;/h3&gt;
+&lt;p&gt;工作内容：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 Solidity 语言开发以太坊上的智能合约&lt;/li&gt;
+&lt;li&gt;开发零知识证明电路系统，包括具体的交易所业务编码和 DSL 的持续改进&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我们相关开源代码库：&lt;a href=&quot;https://github.com/Fluidex/circuits&quot;&gt;Fludiex 零知识证明电路&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/Fluidex/plonkit&quot;&gt;一个 Plonk DSL 工具包&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;技能需求：熟悉区块链/智能合约等基础知识；对区块链相关技术有强烈兴趣；&lt;/p&gt;
+&lt;p&gt;加分项：设计开发过任何 DSL 编译器；&lt;/p&gt;
+&lt;p&gt;工资：35k-50k 到手。&lt;/p&gt;
+&lt;h3&gt;高级 Rust 后端工程师&lt;/h3&gt;
+&lt;p&gt;工作内容：设计开发我们的交易所后端，如撮合，行情，交易历史，数据统计等功能。目前我们的代码是开源的，可以去看一下我们的日常开发内容 &lt;a href=&quot;https://github.com/Fluidex/dingir-exchange&quot;&gt;https://github.com/Fluidex/dingir-exchange&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;技能需求：有常见后端开发技能，如数据库，消息队列，缓存，非阻塞 IO 等。熟悉 Rust 语言。&lt;/p&gt;
+&lt;p&gt;工资：35k-50k 到手。&lt;/p&gt;
+&lt;h3&gt;高级前端工程师&lt;/h3&gt;
+&lt;p&gt;工作内容：设计开发我们的交易所网页，如下单，行情，交易历史，数据统计等功能。&lt;/p&gt;
+&lt;p&gt;技能需求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;熟练掌握前端基础知识，如 HTML JavaScript CSS 等。&lt;/li&gt;
+&lt;li&gt;熟悉 React 生态。熟悉常见状态管理和 UI 组件。&lt;/li&gt;
+&lt;li&gt;两年工作经验，或者相似工作量的项目经验。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;加分项：有以太坊相关开发经验；有一定的跨端能力。&lt;/p&gt;
+&lt;p&gt;工资：30k-40k 到手。&lt;/p&gt;
+&lt;h2&gt;实习部分&lt;/h2&gt;
+&lt;p&gt;工作内容：和全职部分相同。对于实习生，我们不需要有相关的经验，但是期待你能在几周内上手一个陌生领域。&lt;/p&gt;
+&lt;p&gt;能力要求：学习能力强（英文是日常技术读写语言，善用搜索引擎，拥有一定的技术广度，能够举一反三猜出陌生领域的要点），有计算机的基础知识（系统编程语言如 C/C++，Linux 常用命令行，脚本语言如 JS/Python），有基本的数学敏锐度。举个例子，这个 &lt;a href=&quot;https://github.com/Fluidex/plonkit/pull/2/commits/de055afb6a4f49f4d1ee1bd10cead7e3f204d84d&quot;&gt;commit&lt;/a&gt; 修复了一个 solidity 语言实现的有限域 batch 除法的 bug。我们对实习生能力的预期是，在我们指导下，你能速成 solidity 基本语法，再速成一下有限域除法，然后通过 backtrace 看出 bug 原因并且修复。&lt;/p&gt;
+&lt;p&gt;报酬：100-150 每小时。一般来说大部分人实际拿到的，更接近于这个取值范围的左边而非右边。当然，如果实习生工作几周后，表现非常出色，报酬甚至不局限在这个范围内。&lt;/p&gt;
+&lt;h2&gt;兼职部分&lt;/h2&gt;
+&lt;p&gt;工作内容：和全职部分相同。主要针对有工作经验，在工作之余愿意赚点外快的人。&lt;/p&gt;
+&lt;p&gt;报酬：200 每小时。略高于全职员工，是因为对于兼职，我们一方面更难保证有持续不断的兼职工作需求，因此这部分溢价算是风险补偿，另一方面，我们期待兼职员工有更成熟的经验，需要更少的学习上手时间。&lt;/p&gt;
+&lt;h2&gt;联系方式&lt;/h2&gt;
+&lt;p&gt;我们的 telegram 群：&lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt; (目前英文技术话题为主)
+我的 Telegram: &lt;a href=&quot;https://t.me/lispczz&quot;&gt;https://t.me/lispczz&lt;/a&gt;
+我的微信：lispcz
+我的邮件：mycinbrin@gmail.com&lt;/p&gt;
+&lt;h2&gt;招聘哲学 &amp;#x26; 薪酬谈判 &amp;#x26; 激励 &amp;#x26; 工作强度&lt;/h2&gt;
+&lt;p&gt;整个团队的合作氛围是“开诚布公，将心比心”。因此我们会提前写明期待的薪资范围（当然你如果确实够出色，我们也可以适度上调），而不是写“有竞争力的薪酬，上不封顶”这种无意义甚至不诚实的话。我们更喜欢用高一些的薪酬换员工更好的能力和稳定性，我们认为这是双赢。我们相信在公司人数少的时候，在薪酬上压三瓜俩枣得不偿失。&lt;/p&gt;
+&lt;p&gt;我们认同 &lt;a href=&quot;https://open.leancloud.cn/salary-2018/&quot;&gt;这里&lt;/a&gt; 对于薪酬谈判的观点。不过客观上我们还没有 “什么样的人在市场该值多少钱” 的系统性知识，所以在未来一段时期内，我们还是会问候选人 “你上一份工作拿多少钱？”来积累数据点。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;在招聘时，很多公司往往会根据候选人之前的薪酬以及他/她的期望值在可接受的范围内确定 offer。
+这样的方式事实上惩罚了之前薪酬偏低的人和不善于薪酬谈判的人，而有利于之前薪酬偏高或者善于薪酬谈判的人，
+造成了能力和贡献相似的人薪酬产生较大差别，也就导致了组织内部的不公平。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我们目前倾向于 bonus 按照季度尺度发放(除非碰到什么未预期的障碍)。这一方面能给员工更快的绩效反馈，帮助他们成长，另一方面，我们不想鸡贼地通过年终奖到年底甚至更迟才发放，来套牢白嫖员工几个月。&lt;/p&gt;
+&lt;p&gt;我们不要求员工陪创始人加班。创始人愿意 996 是因为自己就是大股东，不是大股东不要求加班:)&lt;/p&gt;
+&lt;!--
+## FAQ
+
+Q: 上面很多工资单位都是时薪，为什么是时薪，而不是日薪或者按照开发任务来结算？时薪怎么保证诚实？
+A: 对于兼职开发者来说，不用以开发任务为单位结算，是因为我们想让感兴趣的求职者能很快地估算出自己的回报，而不需要花很多时间来深入到我们代码中评估。对于实习生来说，我们用时薪而不是常见的日薪，是想说明我们更能接受领灵活的工作方式，我们欢迎来公司干一天，也接受在宿舍里干几个小时。只要非全职开发者的实际工作耗时不是太不合理，我们都将按照他统计的时间来结算报酬。当然，最坏情况，公司有中止兼职/实习关系的权利。
+
+Q: 我在海淀上学，感觉去朝阳太远了。
+A: 你在路上的两个小时会被作为工作时间，算进报酬中。你也是可以远程工作的，当然我们还是更希望能来办公室。
+
+Q: 为什么只开放这几个全职职位？其他职位没坑了吗？
+A: 本着对公司和候选人双方负责的原则，我们每完全想清楚了一个职位的工作内容/能力要求/薪资范围，才会正式开放职位。其他职位我们还在最终确定工作内容和能力要求中，应该会很快出正式的职位描述。很欢迎提前和我们联系，期待听到你对职位的理解。
+
+Q: 我联系你了，你们怎么不回复我？你们觉得我太菜吗，你们太没礼貌了。
+A: 我绝对不会不回复的。没收到回复肯定是通信渠道出了问题，或者漏了消息，建议再试一次。
+
+Q: 我觉得我有点菜，可以更低一些工资实习吗？
+A: 我至少现在更倾向于维持小而精的团队。当然，如果过几周我们被现实打脸，搭建不起来小而精的团队，我们也许会考虑给更接近市场价的工资，找更普通的人。
+--&gt;</content:encoded></item><item><title><![CDATA[Fluidex Recent Updates]]></title><description><![CDATA[About us: The Fluidex team is developing the first zk-rollup layer2 order-book DEX with permissionless listings on Ethereum. For a more…]]></description><link>https://www.fluidex.io/en/blog/2021-03-03-updates/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/2021-03-03-updates/</guid><pubDate>Thu, 04 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;About us: The Fluidex team is developing the first zk-rollup layer2 order-book DEX with permissionless listings on Ethereum. For a more comprehensive introduction to the project, please see &lt;a href=&quot;/en/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;our previous article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this post, We are happy to explain what we have achieved since the early 2021, at what time the project was launched.&lt;/p&gt;
+&lt;h1&gt;Technical progress&lt;/h1&gt;
+&lt;h3&gt;Plonkit&lt;/h3&gt;
+&lt;p&gt;As the saying goes, good tools are prerequisite to the success of a job.&lt;/p&gt;
+&lt;p&gt;Plonkit is a PLONK zero-knowledge proof toolkit developed by the Fluidex team. By using Plonkit, users can use an easier DSL (Circom) to implement their own zero-knowledge proof circuit code, without the need to learn the underlying cryptography library and how to write circuits in C or Rust (which is way more complicated).&lt;/p&gt;
+&lt;p&gt;The core of Plonkit is developed based on the bellman_ce cryptography library. The current functions include local setup (for development use only, in production better to use MPC ceremony), circuit proving and verification, solidity verification contract generation, etc.&lt;/p&gt;
+&lt;p&gt;Plonkit has received a lot of attention from developers since being open sourced, and it is now the project with the most stars on github by the team.&lt;/p&gt;
+&lt;p&gt;We are implementing server mode so that plonkit can serve for continuously-running proving service. In the future, we will further implement the cluster proving server feature. In a longer term, we may add custom gates to further improve the performance of the system. In addition, we will continue to improve DSL specifically for PLONK and its variants.&lt;/p&gt;
+&lt;p&gt;For more, please visit github: &lt;a href=&quot;https://github.com/Fluidex/plonkit&quot;&gt;https://github.com/Fluidex/plonkit&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Exchange&lt;/h3&gt;
+&lt;p&gt;In the past a few months, the Fluidex team has finished the first version of the exchange matching engine backend and web frontend. The backend of the matching engine has been open sourced, using Rust language to implement in-memory order matching, which can achieve thousands of TPS. This will ensure the fluency and stability of our trading system in the foreseeable future. We are still improving this system continuously. (It hasn’t been tempered by real business, so it is only recommended to be used only for learning and communication at present rather than production).&lt;/p&gt;
+&lt;p&gt;Currently, the back end of the exchange has been open sourced, and the front end has not yet been open sourced.
+For more details, please visit github: &lt;a href=&quot;https://github.com/Fluidex/dingir-exchange&quot;&gt;https://github.com/Fluidex/dingir-exchange&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Zero-knowledge proof circuit and smart contract&lt;/h3&gt;
+&lt;p&gt;We have delivered &lt;a href=&quot;https://github.com/Fluidex/rescue-hash-js&quot;&gt;the first implementation of Javascript Rescue Hash&lt;/a&gt;, and also developed &lt;a href=&quot;https://github.com/Fluidex/circuits/blob/master/src/lib/rescue.circom&quot;&gt;the first circom implementation of Rescue Hash circuit&lt;/a&gt;. Based on the Echarts sunburst chart, we have developed &lt;a href=&quot;https://github.com/Fluidex/circuits/blob/master/tools/benchmark/profile_circuit.js&quot;&gt;a tool for profiling circuits visually&lt;/a&gt;. So users can analyze their own circuit code more conveniently, finding which parts of the circuits lead to the major computation overhead, so they can make further optimization accordingly.&lt;/p&gt;
+&lt;p&gt;We have prototyped the most basic circuit code for deposit, withdrawal &amp;#x26; transfer &amp;#x26; trading. There are still many functions and performance details that need to be further improved, so we will not introduce it for the time being. Of course, all the code is at a very early stage, without any audit, it is not recommended for production use.&lt;/p&gt;
+&lt;p&gt;All the above results have been open sourced in our code base. For more details, please visit github: &lt;a href=&quot;https://github.com/Fluidex/circuits&quot;&gt;https://github.com/Fluidex/circuits&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Awesome Plonk&lt;/h3&gt;
+&lt;p&gt;This is a collection of high-quality materials about PLONK. It covers various learning materials such as papers, implementations, demos, forums, blog posts, videos, etc.&lt;/p&gt;
+&lt;p&gt;For more details, please visit github: &lt;a href=&quot;https://github.com/Fluidex/awesome-plonk&quot;&gt;https://github.com/Fluidex/awesome-plonk&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Community Status&lt;/h1&gt;
+&lt;p&gt;Currently we only maintain the English technical community on Telegram. More than 100 developers who are interested in our project have joined in the past two months. In the future, we will continue to update our technological progress there.&lt;/p&gt;
+&lt;h1&gt;Financing status&lt;/h1&gt;
+&lt;p&gt;In the past few months, Fluidex has raised a total of more than US$500,000 from several private investors. We would like to thank these seniors in the industry for their financial and other support.&lt;/p&gt;
+&lt;p&gt;The money is sufficient for our current development. We are not seeking further financing for the time being.&lt;/p&gt;
+&lt;h1&gt;Technical contribution to other projects&lt;/h1&gt;
+&lt;p&gt;We found a &lt;a href=&quot;https://github.com/matter-labs/solidity_plonk_verifier/pull/3&quot;&gt;bug when the number of inputs is greater than 1&lt;/a&gt; (&lt;a href=&quot;https://github.com/matter-labs/zksync/pull/284&quot;&gt;this code is also used in zksync&lt;/a&gt;), in the open sourced PLONK solidity verification contract code of Matters Lab, and submitted an upstream pull request. (The zksync online system does not trigger this code path, and the correctness and safety are not affected by this bug.)&lt;/p&gt;
+&lt;p&gt;Fluidex is participating into the phase 2 trusted setup ceremony of the Hermez project, hoping to contribute to the wider Layer2 community through its own strength. (Explanation: What is the “phase 2 trusted setup ceremony”? The zk-rollup projects that use Groth16 protocol need to ensure the security of some cryptographic parameters by using multi-party computations. The “phase 2 trusted setup ceremony” is one of such multi-party computations. As long as at least one of the participants is honest, the entropy and hence randomness can be guaranteed. Provers then cannot forge a proof.)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex 近况更新]]></title><description><![CDATA[关于我们：Fluidex 团队正在开发 Ethereum 上第一个无许可上币的 zk-rollup layer2 订单簿 DEX。项目的完整介绍可以看这篇文章。 下面介绍从 2021 年初项目启动以来，团队在各方面的一些工作。 技术进展 Plonkit…]]></description><link>https://www.fluidex.io/zh/blog/2021-03-03-updates/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/2021-03-03-updates/</guid><pubDate>Wed, 03 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;关于我们：Fluidex 团队正在开发 Ethereum 上第一个无许可上币的 zk-rollup layer2 订单簿 DEX。项目的完整介绍可以看&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;下面介绍从 2021 年初项目启动以来，团队在各方面的一些工作。&lt;/p&gt;
+&lt;h1&gt;技术进展&lt;/h1&gt;
+&lt;h3&gt;Plonkit&lt;/h3&gt;
+&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
+&lt;p&gt;Plonkit 是一个 Fluidex 团队开发的 PLONK 零知识证明工具包。通过使用 Plonkit，用户可以使用更容易上手的 DSL 来实现自己的零知识证明电路代码，而不需要学习 Rust 语言和底层密码学库的复杂细节。&lt;/p&gt;
+&lt;p&gt;Plonkit 底层基于 bellman_ce 密码学库开发。目前的功能有，本地 setup（仅限开发使用，正式的 setup 最好还是进行 MPC ceremony），电路证明和本地验证，solidity 验证合约生成等。&lt;/p&gt;
+&lt;p&gt;Plonkit 开源以来收到了很多开发者的关注，现在是团队在 github 上获得标星最多的项目。&lt;/p&gt;
+&lt;p&gt;我们正在实现 server 模式，以便 plonkit 能够被作为长期运行的证明服务启动。未来我们会进一步实现集群证明服务功能。更长远地，我们可能会加入 custom gates 来进一步提升系统的性能上限，此外我们还会专门为 PLONK 及其变种持续改进 DSL。&lt;/p&gt;
+&lt;p&gt;更多请访问 github: &lt;a href=&quot;https://github.com/Fluidex/plonkit&quot;&gt;https://github.com/Fluidex/plonkit&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;交易所&lt;/h3&gt;
+&lt;p&gt;Fluidex 团队在过去几个月中，完成了交易所撮合引擎后端和网页端的第一个版本。后端撮合引擎部分已经开源，使用 Rust 语言实现了纯内存撮合，能够达到数千 TPS 的性能，这将保证我们交易系统在可见未来系统的流畅性和稳定性。项目已经在 github 开源。我们仍在持续完善中。（没有经过真实业务的锤炼，目前建议仅作学习交流使用）。&lt;/p&gt;
+&lt;p&gt;目前交易所后端已经开源，前端暂未开源。
+更多请访问 github: &lt;a href=&quot;https://github.com/Fluidex/dingir-exchange&quot;&gt;https://github.com/Fluidex/dingir-exchange&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;零知识证明电路和智能合约&lt;/h3&gt;
+&lt;p&gt;我们完成了&lt;a href=&quot;https://github.com/Fluidex/rescue-hash-js&quot;&gt;第一个 Javascript Rescue Hash 的实现&lt;/a&gt;，也开发了&lt;a href=&quot;https://github.com/Fluidex/circuits/blob/master/src/lib/rescue.circom&quot;&gt;第一个 circom 语言版本的 Rescue Hash 电路代码&lt;/a&gt;。基于 Echarts 旭日图，我们开发了&lt;a href=&quot;https://github.com/Fluidex/circuits/blob/master/tools/benchmark/profile_circuit.js&quot;&gt;可视化 profile 电路的工具&lt;/a&gt;，用户可以快速分析出自己电路代码中 cost 最大的是哪部分，便于进一步做细致的优化。&lt;/p&gt;
+&lt;p&gt;我们完成了最基础的充提&amp;#x26;转账&amp;#x26;交易的电路代码，尚有较多功能和性能细节需要进一步完善，暂不展开介绍。当然，所有代码都在很早期，没有任何审计，不建议生产使用。&lt;/p&gt;
+&lt;p&gt;上述所有成果都已经开源在我们的代码库中。更多请访问 github: &lt;a href=&quot;https://github.com/Fluidex/circuits&quot;&gt;https://github.com/Fluidex/circuits&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Awesome Plonk&lt;/h3&gt;
+&lt;p&gt;这是我们收集的 PLONK 相关的优质资料的汇编。涵盖论文，实现，Demo，论坛，博客文章， 博客/视频等多方面的学习资料。&lt;/p&gt;
+&lt;p&gt;更多请访问 github: &lt;a href=&quot;https://github.com/Fluidex/awesome-plonk&quot;&gt;https://github.com/Fluidex/awesome-plonk&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;社群状态&lt;/h1&gt;
+&lt;p&gt;目前我们仅在 Telegram 上维护了英文技术社群。两个月来已经有 100 多位对我们感兴趣的开发者加入。未来我们会在那里持续更新我们的技术进展。&lt;/p&gt;
+&lt;h1&gt;融资状态&lt;/h1&gt;
+&lt;p&gt;过去几个月，Fluidex 从几位私人投资者中已经完成共计超过 50 万美元的融资。在此感谢这些业界前辈在财务和其他方面给予我们的支持。&lt;/p&gt;
+&lt;p&gt;这些钱够我们目前的开发使用。我们暂时不寻求进一步的融资。&lt;/p&gt;
+&lt;h1&gt;对其他项目的技术贡献&lt;/h1&gt;
+&lt;p&gt;我们发现了 matters lab 开源的 PLONK solidity 验证合约代码中 &lt;a href=&quot;https://github.com/matter-labs/solidity_plonk_verifier/pull/3&quot;&gt;当输入个数大于 1 时的 bug&lt;/a&gt; (&lt;a href=&quot;https://github.com/matter-labs/zksync/pull/284&quot;&gt;这个代码也用在 zksync 中&lt;/a&gt;)，并且提交了上游 pull request。（zksync 线上系统不触发这条代码路径，正确性和安全性不受这个 bug 影响。）&lt;/p&gt;
+&lt;p&gt;Fluidex 正在参与 Hermez 项目的 phase 2 trusted setup ceremony，希望通过自己的力量，为更广泛的 Layer2 社区做出贡献。（解释：“phase 2 trusted setup ceremony”是什么？ 使用 Groth16 协议的 zk-rollup 的项目在上线前，一般会通过多方计算保证一些密码学参数的安全，“phase 2 trusted setup ceremony” 就是这样一个多方计算的过程。只要所有参与的用户有一个是不作恶的，整体的密码学系统就是安全的。）&lt;/p&gt;
+&lt;h1&gt;其他&lt;/h1&gt;
+&lt;p&gt;在国贸租了个小办公室～ 可以开心刷夜干活啦～
+欢迎对我们项目有兴趣的朋友&lt;a href=&quot;/zh/blog/joinus/&quot;&gt;加入团队&lt;/a&gt;～&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex: A ZK-Rollup layer2 DEX on Ethereum]]></title><description><![CDATA[What is FluiDex For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK…]]></description><link>https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/</guid><pubDate>Mon, 30 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;What is FluiDex&lt;/h1&gt;
+&lt;p&gt;For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. We will be the first order book exchange on Ethereum to use PLONK based validity proof.&lt;/p&gt;
+&lt;p&gt;For the general public, FluiDex is a crypto asset exchange similar to Coinbase or Huobi. The advantage is that your assets are absolutely “SAFU”. You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The disadvantage is that it will be more difficult to use, for example, transaction fees will be higher in some cases.&lt;/p&gt;
+&lt;h1&gt;Why build FluiDex&lt;/h1&gt;
+&lt;p&gt;“Build a safe, professional and easy-to-use digital asset trading platform” is our long-term vision.&lt;/p&gt;
+&lt;p&gt;I think we all agree that to date Ethereum is probably the most decentralized and hence secure platform supporting DEX. In the following sections I will talk about what is “professional trading” in FluiDex’s understanding.&lt;/p&gt;
+&lt;p&gt;We roughly divide the traders in the market into two categories. One category is called “speculative retail investors”. The feature is that they don’t care about miners’ fees and handling fees, and don’t care about the slippage loss of market orders. They just want to be able to easily buy certain assets. Because they bet that the value this asset will “pump” several times; the other type, we call it “professional traders”, they care about miners’ fees and handling fees, they are skilled in using derivative hedging, they can arbitrage through different exchanges, and they are skilled in using limit/market/stoploss/FOK/IOC/AON order as a tool for different purposes, and may use a program to do automatic trading.&lt;/p&gt;
+&lt;p&gt;On Ethereum today, exchanges based on algorithm-based automated market making, such as Uniswap, have gained high popularity. Except higher miner fees, such exchanges generally meet the needs of “speculative retail investors”. However, for this type of exchange, liquidity takers can only list market price orders. For liquidity maker, there will be profit due to rebates when the price is stable, and losses when the price fluctuates sharply. The above shortcomings can be tolerated for “speculative retail investors”, but they are unacceptable for “professional traders”. For every trader with a traditional financial background, if you tell them “there is no order book, you can’t place an order for rebates; you can only place a market order, and set a slippage threshold at most”, they will be shocked.&lt;/p&gt;
+&lt;p&gt;We expect that more and more real assets will circulate in a decentralized manner in the future, and more and more types of traders will participate in trading. A simple swap exchanges will not be able to meet the needs of quite a few advanced traders. The traditional order book exchange will be a much easier solution.&lt;/p&gt;
+&lt;p&gt;So why hasn’t the order book decentralized exchange exploded in the past few years? One of the reasons is ecology. In the early years, there were not many assets on Ethereum. The USDT stablecoin, which is well-known to traders, did not circulate on Ethereum two years ago. Another reason is technology development. Early-phase order-book exchanges make the cost of miners’ fees for each commission and transaction non-negligible to swap exchanges. Expensive order and transaction costs hurdle the explosion of order book exchanges. Today thanks to the springing up of zero-knowledge proof technology in the past two years, we are finally able to provide a trading experience with zero-cost listing orders and 0.0001$-cost transaction.&lt;/p&gt;
+&lt;p&gt;In summary, the development of a decentralized economy has brought more and more traders and trading needs, and order book exchanges can better meet the needs of professional traders. In the past few years, the development of cryptography technology has made it possible for high-performance, low-cost and secure order book transactions. Therefore, it is time to build FluiDex now.&lt;/p&gt;
+&lt;h1&gt;Similar products and projects&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Traditional centralized exchange. For quite a lot, maybe more than half of the people, this type of exchange is good enough to use. However, for some people who have high requirements for fund security &amp;#x26; anonymity, the hidden danger of black swan always exists in centralized exchanges. Even for a big exchange like OKEx, it happened not long ago that the exchange was unable to withdraw the coin because the founder lost contact for more than a month.&lt;/li&gt;
+&lt;li&gt;Algorithmic automated market making exchange. A typical example is Uniswap, which sets the price of buying and selling assets by always ensuring that the number of asset A * the number of asset B == the fixed value. In the previous paragraph, we explain that such exchanges are not enough for professional traders.&lt;/li&gt;
+&lt;li&gt;Order book exchange based on optimistic rollup technology. This type of exchange has high performance and is easy to develop, but it has two major disadvantages. The first is that withdrawing from such exchanges requires confirmation time of weeks, which is completely unacceptable for many traders. Second, the security of optimistic rollup is not as good as “as safe as L1” zk rollup.&lt;/li&gt;
+&lt;li&gt;Other products with similar technical decisions, such as diversifi and loopring. Yes, in a nutshell, FluiDex will compete head-to-head with them. That there are already one or two players in a potential big market, is not a reason why new players should not enter. It is not true that since OKEx is running well, Binance should not start a business. In addition, FluiDex and these projects will have some different decisions both in technology and product. For example, from a technical perspective, we will use PLONK as the protocol of zero-knowledge proof, which will bring faster product iteration, from a product perspective, we are likely to implement permissionless token listing.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Decentralized Governance &amp;#x26; Token&lt;/h1&gt;
+&lt;p&gt;I believe that our exchange is a traditional “centralized” exchange, the only difference is the self-custody of assets. There are many interpretations of “decentralization”, the decentralization of assets, the decentralization of control (“governance”), and even the decentralization of teams. Based on our vision, the decentralization of assets (ie, the self-custody of assets) is the must-have. But, at least today, we believe that decentralization of governance is neither necessary nor sufficient for building a great product. Any product team should investigate users and markets, but no team should decide the future of product only base on users’ votes. Customers and shareholders are two kinds of people. You should not force or expect customers to become shareholders. For the FluiDex team, “the customer is always right“, but there will be no so-called “decentralized” governance in the future. The decision-making power of the future of the product will always be in the hands of the management team, and users will vote for our success or failure with their feet.&lt;/p&gt;
+&lt;p&gt;Based on our understanding of governance philosophy above, FluiDex will not issue “governance tokens” in the foreseeable future, but we are not opposed to issuing tokens with dividend rights for fundraising. For example, it is entirely possible for us to issue a token and buy back this token with 10% of the monthly gross profit for the next 3 years.&lt;/p&gt;
+&lt;h1&gt;Project status &amp;#x26; schedule &amp;#x26; financing&lt;/h1&gt;
+&lt;p&gt;Fluidex project was launched at the end of 2020. It is expected that the MVP/demo will be completed in Q2 of 2021, and the mainnet launch will probably start in Q4 of 2021.&lt;/p&gt;
+&lt;p&gt;Update 2021.04.15:
+The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million, at a valuation of US$7-10 million, from all participating investors.&lt;/p&gt;
+&lt;h1&gt;Contact&lt;/h1&gt;
+&lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Founder’s email: mycinbrin@gmail.com&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex: 基于 ZK-Rollup 的专业去中心化交易所]]></title><description><![CDATA[FluiDex 是什么 对于熟悉前沿技术的人来说，FluiDex 是一个在以太坊上的 Layer2 去中心化交易所。我们将使用基于 PLONK 的 zkrollup 技术来实现高性能交易，同时能够将每笔交易的成本压缩到传统去中心化交易所的 1/10…]]></description><link>https://www.fluidex.io/zh/blog/fluidex-a-zkrollup-layer2-dex/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/fluidex-a-zkrollup-layer2-dex/</guid><pubDate>Sat, 28 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;FluiDex 是什么&lt;/h1&gt;
+&lt;p&gt;对于熟悉前沿技术的人来说，FluiDex 是一个在以太坊上的 Layer2 去中心化交易所。我们将使用基于 PLONK 的 zkrollup 技术来实现高性能交易，同时能够将每笔交易的成本压缩到传统去中心化交易所的 1/100 以下。我们将会是以太坊上第一个使用 PLONK 的基于 validity proof 的订单簿交易所。&lt;/p&gt;
+&lt;p&gt;对于普通大众来说，FluiDex 是一个类似 Coinbase 或者 火币 的加密资产交易所，优点是你的资产绝对安全，你不需要信任交易所创始人有道德或守法律，你只需要信任密码学和代码。缺点是会更不好用一些，例如交易费用在一些情况下会更高。&lt;/p&gt;
+&lt;h1&gt;为什么要做 FluiDex&lt;/h1&gt;
+&lt;p&gt;“做一个安全专业好用的数字资产交易平台” 是我们长期的愿景。&lt;/p&gt;
+&lt;p&gt;在今天存在的技术产品范围内看，“安全”就意味着以太坊，这个几乎不用解释。下面我会讲讲 FluiDex 怎么理解“专业的交易”。&lt;/p&gt;
+&lt;p&gt;我们把市场中的交易者粗略分为两类，一类我们叫“投机散户”，特点是不在乎矿工费和手续费，不在乎市价单的滑点损失，只是希望能够方便地买入某种资产，因为他们赌这种资产会涨几倍，另一类，我们称“专业交易员”，他们在乎矿工费和手续费，熟练使用衍生品套保，能够通过不同交易所价差套利，熟练使用限价/止损/市价/FOK/IOC/AON 单作为自己不同目的的工具，可能会使用程序做自动交易。&lt;/p&gt;
+&lt;p&gt;在今天的以太坊上，Uniswap 这类基于算法自动化做市的交易所获得了很高的热度。这类交易所除了矿工费较高外，大体上满足了“投机散户”的需求。但是，这类交易所，对 liquidity taker 来说，只能挂市价单，对 liquidity maker 来说，价格稳定时有返佣盈利，价格剧烈波动时有损失。以上这些缺点，对于 “投机散户” 是可以容忍的，但是对于“专业交易员”是无法想象的。对于每一个传统金融出身的交易者，你如果告诉他们“这里没有订单簿，你也不能挂单吃返佣；你们只能下市价单，最多设置一下滑点”，他们都会惊掉下巴。&lt;/p&gt;
+&lt;p&gt;我们预期未来会有越来越多的真实资产会以去中心化的方式流通，也会有越来越多类型的交易者参与交易。过于简单的 swap 类交易所，将无法满足相当多的高级交易者的需求。传统的订单簿交易所，将是一个好用得多的解决方案。&lt;/p&gt;
+&lt;p&gt;那过去几年为什么订单簿去中心化交易所没有爆发呢？一方面是生态环境，早几年以太坊上承载的资产还不算特别多，要知道炒币者皆知的 USDT 稳定币，两年前都没有在以太坊上流通。另一方面是技术，订单簿交易所的早期简单实现，会使得每笔委托和交易的矿工费成本和 swap 类交易所相当，昂贵的挂单和交易成本束缚了订单簿交易所的爆发，而今天，得益于过去两年零知识证明技术雨后春笋般地爆发，我们终于能提供 0 成本挂单，0.0001 成本成交的交易体验。&lt;/p&gt;
+&lt;p&gt;综上，去中心化经济的发展，带来越来越多的交易者和交易需求，订单簿交易所才能较好地满足专业交易者的需求。而过去几年密码学技术的进展，使得高性能低成本安全的订单簿交易所成为可能。因此，现在做 FluiDex，恰逢其时。&lt;/p&gt;
+&lt;h1&gt;怎么看待类似的产品和项目&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;传统中心化交易所。对于相当多，甚至是一大半的人来说，这类交易所已经足够好用了。不过对于一些对资金安全 &amp;#x26; 匿名性要求较高的人来说，中心化交易所始终存在黑天鹅的隐患，是不够的。即使是 OKEx 这样的大交易所，不久前也发生了因为创始人失联一个多月没法提币的事情。&lt;/li&gt;
+&lt;li&gt;算法自动化做市交易所。典型的是 Uniswap，通过始终保证资金池中 资产 A 的数量 * 资产 B 的数量 == 定值，来确认买卖资产的价格。上一段中，我们解释了我们为什么认为这类交易所对于专业交易者是不够用的。&lt;/li&gt;
+&lt;li&gt;基于 optimistic rollup 技术的订单簿交易所。这类交易所性能较高，而且开发容易，但是有两个重大缺点。第一是，资金从这种交易所提出，需要周尺度的确认时间，这对很多资金是完全没法接受的。第二，optimistic rollup 的安全性是有假设有牺牲的，和 zk rollup 的“绝对安全“不同。&lt;/li&gt;
+&lt;li&gt;其他类似技术路线的产品，如 diversifi 和 loopring。是的，概括地说，FluiDex 将和他们硬碰硬头对头地竞争。因为我们觉得，一个潜在的大赛道已经有了一两个玩家，不是后面玩家不该进入的理由。不能说 OKEx 运行很好，Binance 就不该创业了。此外，FluiDex 和这些项目还会有一些具体的技术和产品路线区分，例如技术角度，我们会使用 PLONK 作为零知识证明的底层，这会带来更快的产品迭代效率，产品角度，我们很可能会实现无许可上币。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;控制权 &amp;#x26; 去中心化治理 &amp;#x26; 发币&lt;/h1&gt;
+&lt;p&gt;我内心更倾向认为，我们的交易所就是一个传统的“中心化”交易所，唯一的不同是资产的自托管。“去中心化”有很多种解读，资产的去中心化，控制权（“治理”）的去中心化，甚至团队的去中心化。基于我们的愿景来看，资产的去中心化（即资产的自托管），对我们是必需的。但是，至少今天，我们认为控制权的去中心化对于构建一个伟大产品而言，既非必要，也不充分。任何团队做产品都会调研，但是不会有团队仅仅通过用户的投票来决定未来。从古至今，客户和股东就是两种人，你不应该强迫或者期待客户成为股东。对于 FluiDex 团队来说，客户至上，但可见未来不会有所谓“去中心化”治理，产品的未来的决策权始终会在团队管理层手中，期待用户用脚来给我们的成败投票。&lt;/p&gt;
+&lt;p&gt;基于以上我们对控制权的认知，FluiDex 在可见未来不会发行有投票权的 “治理代币”，但是我们不反对发行有分红权的代币来做募资。比如，我们完全有可能发行一种代币，保证用今后 3 年每月毛利的 10%来回购这种代币。&lt;/p&gt;
+&lt;h1&gt;项目状态 &amp;#x26; 时间表 &amp;#x26; 融资&lt;/h1&gt;
+&lt;p&gt;Fluidex 项目在 2020 年底启动，预期在 2021 年 Q2 完成最小 Demo 开发，在 2021 年 Q4 能够部署主网。&lt;/p&gt;
+&lt;p&gt;Update 2021.04.15:
+项目可能很快会启动种子轮股权融资，期待按照 700-1000 万美元的估值从所有参与的投资者处共计获得 100 万美元左右融资。&lt;/p&gt;
+&lt;h1&gt;创始人 &amp;#x26; 团队&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;#team&quot;&gt;创始团队&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;CEO: 张卓。毕业于清华大学计算机系，曾任人工智能独角兽依图科技的语音识别负责人，曾负责 IOST 公链的研发。&lt;/p&gt;
+&lt;p&gt;CTO: 林浩宇。VRF-mining, RandChain, fair-atomic-swap 共同发明人。ZenGo 研究员。曾负责比原链研发。&lt;/p&gt;
+&lt;h1&gt;招聘&lt;/h1&gt;
+&lt;p&gt;我们正在招聘全职/兼职/实习工程师。完整的招聘信息在 &lt;a href=&quot;https://github.com/Fluidex/we_are_hiring&quot;&gt;we are hiring&lt;/a&gt;。我们的开源项目在 &lt;a href=&quot;https://github.com/Fluidex&quot;&gt;Fluidex&lt;/a&gt; 下面，目前有 &lt;a href=&quot;https://github.com/Fluidex/plonkit&quot;&gt;零知识证明工具包 Plonkit&lt;/a&gt;，&lt;a href=&quot;https://github.com/Fluidex/dingir-exchange&quot;&gt;交易所撮合引擎 dingir-exchange&lt;/a&gt;，&lt;a href=&quot;https://github.com/Fluidex/circuits&quot;&gt;零知识证明电路 DSL 代码&lt;/a&gt;。我们团队 Base 在北京，希望新成员尽量在北京，但也可以接受 remote 工作。&lt;/p&gt;
+&lt;h1&gt;联系方式&lt;/h1&gt;
+&lt;p&gt;Telegram 技术群: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;公众号: 搜索 “Fluidex”.&lt;/p&gt;
+&lt;p&gt;创始人邮箱：mycinbrin@gmail.com&lt;/p&gt;</content:encoded></item></channel></rss>
