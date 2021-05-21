@@ -50,7 +50,7 @@ The project may soon launch a seed round of equity financing, and is looking for
 
 Telegram: <https://t.me/fluid_dex>
 
-Medium: <https://fluid-dex.medium.com/announcing-fluidex-building-the-first-plonk-layer2-dex-on-ethereum-e19136304a5d>
+Medium: <https://fluid-dex.medium.com/>
 
 Twitter: <https://twitter.com/fluid_dex>
 

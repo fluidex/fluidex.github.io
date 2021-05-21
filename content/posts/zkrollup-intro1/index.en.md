@@ -245,4 +245,4 @@ Non ZK-Rollup projects that use ZK-SNARK:
 
 ## About Us
 
-We are the development team of [Fluidex: A Layer 2 ZK-Rollup DEX on Ethereum](https://www.fluidex.io/posts/2020-11-30-fluidex-a-zkrollup-layer2-dex/).
+We are the development team of [Fluidex: A Layer 2 ZK-Rollup DEX on Ethereum](/en/blog/fluidex-a-zkrollup-layer2-dex/).

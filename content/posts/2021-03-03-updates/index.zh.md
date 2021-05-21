@@ -4,7 +4,7 @@ date: 2021-03-03
 tags: [updates]
 ---
 
-关于我们：Fluidex 团队正在开发 Ethereum 上第一个无许可上币的 zk-rollup layer2 订单簿 DEX。项目的完整介绍可以看[这篇文章](/posts_cn/2020-11-28-fluidex-/index.html)。
+关于我们：Fluidex 团队正在开发 Ethereum 上第一个无许可上币的 zk-rollup layer2 订单簿 DEX。项目的完整介绍可以看[这篇文章](/zh/blog/fluidex-a-zkrollup-layer2-dex/)。
 
 下面介绍从 2021 年初项目启动以来，团队在各方面的一些工作。
 

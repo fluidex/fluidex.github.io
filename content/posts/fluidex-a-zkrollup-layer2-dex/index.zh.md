@@ -61,7 +61,11 @@ CTO: 林浩宇。VRF-mining, RandChain, fair-atomic-swap 共同发明人。ZenGo
 # 联系方式
 
 Telegram 技术群: <https://t.me/fluid_dex>
-Medium: <https://fluid-dex.medium.com/announcing-fluidex-building-the-first-plonk-layer2-dex-on-ethereum-e19136304a5d>
+
+Medium: <https://fluid-dex.medium.com>
+
 Twitter: <https://twitter.com/fluid_dex>
+
 公众号: 搜索 "Fluidex".
+
 创始人邮箱：mycinbrin@gmail.com
