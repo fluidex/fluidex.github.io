@@ -57,6 +57,6 @@ The money is sufficient for our current development. We are not seeking further 
 
 # Technical contribution to other projects
 
-We found a [bug when the number of inputs is greater than 1](https://github.com/matter-labs/zksync/pull/284), in the open sourced PLONK solidity verification contract code of Matters Lab, and submitted an upstream pull request. (The zksync online system does not trigger this code path, and the correctness and safety are not affected by this bug.)
+We found a [bug when the number of inputs is greater than 1](https://github.com/matter-labs/solidity_plonk_verifier/pull/3) ([this code is also used in zksync](https://github.com/matter-labs/zksync/pull/284)), in the open sourced PLONK solidity verification contract code of Matters Lab, and submitted an upstream pull request. (The zksync online system does not trigger this code path, and the correctness and safety are not affected by this bug.)
 
 Fluidex is participating into the phase 2 trusted setup ceremony of the Hermez project, hoping to contribute to the wider Layer2 community through its own strength. (Explanation: What is the "phase 2 trusted setup ceremony"? The zk-rollup projects that use Groth16 protocol need to ensure the security of some cryptographic parameters by using multi-party computations. The "phase 2 trusted setup ceremony" is one of such multi-party computations. As long as at least one of the participants is honest, the entropy and hence randomness can be guaranteed. Provers then cannot forge a proof.)

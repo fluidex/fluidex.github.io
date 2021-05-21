@@ -57,7 +57,7 @@ Fluidex 团队在过去几个月中，完成了交易所撮合引擎后端和网
 
 # 对其他项目的技术贡献
 
-我们发现了 matters lab 开源的 PLONK solidity 验证合约代码中 [当输入个数大于 1 时的 bug](https://github.com/matter-labs/zksync/pull/284)，并且提交了上游 pull request。（zksync 线上系统不触发这条代码路径，正确性和安全性不受这个 bug 影响。）
+我们发现了 matters lab 开源的 PLONK solidity 验证合约代码中 [当输入个数大于 1 时的 bug](https://github.com/matter-labs/solidity_plonk_verifier/pull/3) ([这个代码也用在 zksync 中](https://github.com/matter-labs/zksync/pull/284))，并且提交了上游 pull request。（zksync 线上系统不触发这条代码路径，正确性和安全性不受这个 bug 影响。）
 
 Fluidex 正在参与 Hermez 项目的 phase 2 trusted setup ceremony，希望通过自己的力量，为更广泛的 Layer2 社区做出贡献。（解释：“phase 2 trusted setup ceremony”是什么？ 使用 Groth16 协议的 zk-rollup 的项目在上线前，一般会通过多方计算保证一些密码学参数的安全，“phase 2 trusted setup ceremony” 就是这样一个多方计算的过程。只要所有参与的用户有一个是不作恶的，整体的密码学系统就是安全的。）
 
