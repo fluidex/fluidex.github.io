@@ -127,7 +127,7 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 这是一个很少被讨论但是至关重要的角度，**真实 ZK-Rollup 系统的性能上限实际上更被这个模块限制，而不是上面讨论的证明速度和 gas 限制**。
 
-容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense account_balance merkle tree (如下图所示) ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 次 merkle proof 的验证，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [Fluidex 团队的测试结果](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算（每个test的树深度为20，故每个hash操作是57ms / 100 / 20 ~= 30us），则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
+容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense account\_balance merkle tree (如下图所示) ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 次 merkle proof 的验证，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [Fluidex 团队的测试结果](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算（每个test的树深度为20，故每个hash操作是57ms / 100 / 20 ~= 30us），则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
 
 <!-- ![](/blog/zkrollup-intro1/account_merkle_tree.png) -->
 

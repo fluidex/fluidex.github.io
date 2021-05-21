@@ -192,7 +192,7 @@ In a ZKP system, program logic will eventually be converted into some immense po
 Therefore, when developing ZK proof circuits, developers need to reconsider their habits from software development. For example, when optimizing softwares, we could focus on the most frequently executed branch, and deprioritize the non-frequent ones. But in ZK proof circuits, as all branches will be executed, the non-frequent branches need to be considered as well.
 
 
-### Opinions on DSL
+### Some thoughts on DSL
 
 There are several choices for ZK proof circuit development, such as low-level computing libraries like [ethsnarks](https://github.com/HarryR/ethsnarks) / [bellman](https://github.com/zkcrypto/bellman), or DSL like [ZoKrates](https://github.com/Zokrates/ZoKrates) / [Circom](https://github.com/iden3/circom) / [Zinc](https://github.com/matter-labs/zinc).
 
