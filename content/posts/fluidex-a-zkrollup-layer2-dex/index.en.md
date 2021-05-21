@@ -8,7 +8,7 @@ tags: [introduction]
 
 For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. We will be the first order book exchange on Ethereum to use PLONK based validity proof.
 
-For the general public, FluiDex is a crypto asset exchange similar to Coinbase or Huobi. The advantage is that your assets are absolutely safe. You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The disadvantage is that it will be more difficult to use, for example, transaction fees will be higher in some cases.
+For the general public, FluiDex is a crypto asset exchange similar to Coinbase or Huobi. The advantage is that your assets are absolutely "SAFU". You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The disadvantage is that it will be more difficult to use, for example, transaction fees will be higher in some cases.
 
 # Why build FluiDex
 
