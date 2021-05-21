@@ -20,20 +20,12 @@ const AboutTemplate = ({ data, pageContext }) => {
 export default AboutTemplate;
 
 const AboutWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 100%;
-  @media screen and (max-width: 1000px) {
-    & {
-      flex-direction: column;
-    }
-    & > * {
-      margin-top: 2rem;
-      width: 100%;
-      text-align: center;
-    }
-  }
+  padding-top: var(--size-900);
+  padding-bottom: var(--size-900);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70ch;
+  word-wrap: break-word;
 `;
 
 const AboutImageWrapper = styled(GatsbyImage)`
@@ -44,9 +36,61 @@ const AboutImageWrapper = styled(GatsbyImage)`
 `;
 
 const AboutCopy = styled.div`
-  max-width: 60ch;
-  & p {
-    font-size: var(--size-400);
+  padding-top: var(--size-800);
+
+  & > * + * {
+    margin-top: var(--size-300);
+  }
+
+  & > p + p {
+    margin-top: var(--size-700);
+  }
+
+  * + h1,
+  * + h2,
+  * + h3 {
+    margin-top: var(--size-900);
+  }
+
+  h1 {
+    font-size: var(--size-700);
+  }
+
+  h2 {
+    font-size: var(--size-600);
+  }
+
+  h3 {
+    font-size: var(--size-500);
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+  }
+
+  blockquote {
+    padding-left: var(--size-400);
+    border-left: 5px solid;
+    font-style: italic;
+  }
+
+  code {
+    font-family: "Source Sans Pro", monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+
+  pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    max-width: 100%;
   }
 `;
 
