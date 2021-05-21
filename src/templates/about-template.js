@@ -11,8 +11,6 @@ const AboutTemplate = ({ data, pageContext }) => {
   return (
     <Layout title={frontmatter.title} langKey={pageContext.langKey}>
       <AboutWrapper>
-        <AboutImageWrapper image={profileImage} alt="" />
-
         <AboutCopy dangerouslySetInnerHTML={{ __html: html }} />
       </AboutWrapper>
     </Layout>
@@ -26,12 +24,10 @@ const AboutWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   height: 100%;
-
   @media screen and (max-width: 1000px) {
     & {
       flex-direction: column;
     }
-
     & > * {
       margin-top: 2rem;
       width: 100%;
@@ -49,7 +45,6 @@ const AboutImageWrapper = styled(GatsbyImage)`
 
 const AboutCopy = styled.div`
   max-width: 60ch;
-
   & p {
     font-size: var(--size-400);
   }

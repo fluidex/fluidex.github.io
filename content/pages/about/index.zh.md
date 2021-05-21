@@ -1,7 +1,6 @@
 ---
 title: "关于我们"
-profile_image: "/media/profile-image.jpg"
-template: "about-template"
+template: "post-template"
 ---
 
 ## 什么是 Fluidex

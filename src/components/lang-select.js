@@ -30,7 +30,7 @@ const LangSelect = ({ value }) => {
       value: "en",
       label: (
         <div style={{ display: "flex" }}>
-          <img src={usFlag} alt="US Flag" /> English
+          English
         </div>
       ),
     },
@@ -38,7 +38,7 @@ const LangSelect = ({ value }) => {
       value: "zh",
       label: (
         <div style={{ display: "flex" }}>
-          <img src={cnFlag} alt="CN Flag" /> 简体中文
+          简体中文
         </div>
       ),
     },
