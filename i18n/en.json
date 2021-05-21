@@ -1,0 +1,27 @@
+{
+    "translation": {
+        "blog": "Blog",
+        "about": "About",
+        "contact": "Contact",
+        "copyright": "Copyright \u00A9 {{year}} Team Fluidex. All rights reserved.",
+        "404NotFound": "404 Not Found",
+        "oops404": "<0>OOPS...</0><1>404. Page not found</1>",
+        "viewAllTags": "View all tags",
+        "allTags": "All Tags",
+        "name": "Name",
+        "nameIsRequired": "Name is required",
+        "email": "Email",
+        "emailIsRequired": "Email is required",
+        "emailIsNotValid": "Email is not valid",
+        "yourMessage": "Your message",
+        "messageIsRequired": "Message is required",
+        "messageSentSuccessfully": "Message sent successfully",
+        "failedToSendMessage": "Something went wrong, please try again",
+        "sendMessage": "Send Message",
+        "viewAllPosts": "View all posts",
+        "postsTagged": "Posts tagged",
+        "numberOfPostsTagged": "{{ totalCount }} posts tagged \"{{ tag }}\"",
+        "timeToRead": "{{timeToRead}} min",
+        "timeToRead_plural": "{{timeToRead}} mins"
+    }
+}
