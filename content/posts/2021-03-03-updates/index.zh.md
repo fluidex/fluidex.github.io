@@ -64,4 +64,4 @@ Fluidex 正在参与 Hermez 项目的 phase 2 trusted setup ceremony，希望通
 # 其他
 
 在国贸租了个小办公室～ 可以开心刷夜干活啦～
-欢迎对我们项目有兴趣的朋友加入团队～ <https://www.fluidex.io/posts_cn/2021-03-04-joinus/index.html>
+欢迎对我们项目有兴趣的朋友[加入团队](/zh/blog/joinus/)～
