@@ -18,7 +18,7 @@ module.exports = {
       {
         name: "medium",
         url:
-          "https://fluid-dex.medium.com/announcing-fluidex-building-the-first-plonk-layer2-dex-on-ethereum-e19136304a5d",
+          "https://fluid-dex.medium.com/",
       },
     ],
   },
