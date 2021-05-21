@@ -11,8 +11,6 @@ const AboutTemplate = ({ data, pageContext }) => {
   return (
     <Layout title={frontmatter.title} langKey={pageContext.langKey}>
       <AboutWrapper>
-        <AboutImageWrapper image={profileImage} alt="" />
-
         <AboutCopy dangerouslySetInnerHTML={{ __html: html }} />
       </AboutWrapper>
     </Layout>
