@@ -154,7 +154,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     if (fileNode.sourceInstanceName === "posts" && node.fields.slug) {
       const slugWithoutLangKey = node.fields.slug.split(/\/[a-z]{2}\//).pop();
-      node.fields.slug = `/${node.fields.langKey}/blog${slugWithoutLangKey}`;
+      node.fields.slug = `/${node.fields.langKey}/blog/${slugWithoutLangKey}`;
     }
   }
 };

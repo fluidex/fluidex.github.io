@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { navigate } from "gatsby";
 import Select from "react-select";
 
@@ -7,11 +6,8 @@ import cnFlag from "../images/cn_flag.png";
 import usFlag from "../images/us_flag.png";
 
 const LangSelect = ({ value }) => {
-  const { i18n } = useTranslation();
-
   const handleChange = (option) => {
     const langKey = option.value;
-    i18n.changeLanguage(langKey);
 
     const path = window.location.pathname;
     if (path === "/") {
