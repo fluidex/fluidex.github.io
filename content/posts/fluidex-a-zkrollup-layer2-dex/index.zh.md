@@ -1,5 +1,5 @@
 ---
-title: "FluiDex: 下一代专业的去中心化交易所"
+title: "FluiDex: 基于 ZK-Rollup 的专业去中心化交易所"
 date: 2020-11-28
 tags: [introduction]
 ---
