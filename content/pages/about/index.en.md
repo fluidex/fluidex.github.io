@@ -1,6 +1,7 @@
 ---
 title: "About Fluidex"
-template: "post-template"
+profile_image: '/media/profile-image.jpg'
+template: "about-template"
 ---
 
 ## What is FluiDex
