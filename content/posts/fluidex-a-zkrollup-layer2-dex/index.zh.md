@@ -1,5 +1,5 @@
 ---
-title: "FluiDex: A Layer2 ZK-Rollup DEX on Ethereum"
+title: "FluiDex: 下一代专业的去中心化交易所"
 date: 2020-11-28
 tags: [introduction]
 ---

@@ -3,8 +3,6 @@ template: "index-template"
 title: "Fluidex"
 ---
 
-#你好!
+# FluiDex
 
-Fluidex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup.
-
-Checkout [this article](/zh/blogfluidex-a-zkrollup-layer2-dex/) for more info.
+FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见[这里](/zh/blog/fluidex-a-zkrollup-layer2-dex/)。
