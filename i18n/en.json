@@ -5,7 +5,7 @@
         "contact": "Contact",
         "copyright": "Copyright \u00A9 {{year}} Team Fluidex. All rights reserved.",
         "404NotFound": "404 Not Found",
-        "oops404": "<0>OOPS...</0><1>404. Page not found</1>",
+        "oops404": "<0>OOPS...</0><1>404. Page not found.</1><1>Redirecting to home page...</1>",
         "viewAllTags": "View all tags",
         "allTags": "All Tags",
         "name": "Name",
