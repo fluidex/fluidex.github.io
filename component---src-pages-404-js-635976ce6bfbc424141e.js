@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_glass=self.webpackChunkgatsby_starter_glass||[]).push([[883],{9616:function(e,t,n){"use strict";n.r(t);var a=n(7294),l=n(5444),s=n(5917);t.default=function(){return a.createElement(s.Z,null,a.createElement("h1",null,"Page not found"),a.createElement("p",null,a.createElement(l.Link,{to:"https://www.fluidex.io/"},"Head home")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-635976ce6bfbc424141e.js.map
