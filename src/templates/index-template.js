@@ -63,6 +63,12 @@ const Intro = styled.div`
       font-size: var(--size-700);
     }
   }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+  }
 `;
 
 export const pageQuery = graphql`
