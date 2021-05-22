@@ -12,6 +12,14 @@ module.exports = {
     },
     socialLinks: [
       {
+        name: "github",
+        url: "https://github.com/Fluidex",
+      },
+      {
+        name: "telegram",
+        url: "https://t.me/fluid_dex",
+      },
+      {
         name: "twitter",
         url: "https://twitter.com/fluid_dex",
       },
