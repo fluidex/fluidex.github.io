@@ -86,7 +86,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-track {
-    background: transparent;
+    background: #aaa;
 }
 
 :root {
