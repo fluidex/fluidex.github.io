@@ -55,6 +55,9 @@ Fluidex 团队在过去几个月中，完成了交易所撮合引擎后端和网
 
 这些钱够我们目前的开发使用。我们暂时不寻求进一步的融资。
 
+__2021.04.15 更新:__
+项目最近会寻求规模为 US$1M （估值 US$7-10 M）左右的融资。
+
 # 对其他项目的技术贡献
 
 我们发现了 matters lab 开源的 PLONK solidity 验证合约代码中 [当输入个数大于 1 时的 bug](https://github.com/matter-labs/solidity_plonk_verifier/pull/3) ([这个代码也用在 zksync 中](https://github.com/matter-labs/zksync/pull/284))，并且提交了上游 pull request。（zksync 线上系统不触发这条代码路径，正确性和安全性不受这个 bug 影响。）

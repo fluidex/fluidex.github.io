@@ -55,6 +55,9 @@ In the past few months, Fluidex has raised a total of more than US$500,000 from 
 
 The money is sufficient for our current development. We are not seeking further financing for the time being.
 
+__Update 2021.04.15:__
+The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million at a valuation of US$7-10 million.
+
 # Technical contribution to other projects
 
 We found a [bug when the number of inputs is greater than 1](https://github.com/matter-labs/solidity_plonk_verifier/pull/3) ([this code is also used in zksync](https://github.com/matter-labs/zksync/pull/284)), in the open sourced PLONK solidity verification contract code of Matters Lab, and submitted an upstream pull request. (The zksync online system does not trigger this code path, and the correctness and safety are not affected by this bug.)
