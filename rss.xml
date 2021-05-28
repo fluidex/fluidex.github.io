@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Fluidex]]></title><description><![CDATA[The website of the Fluidex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 24 May 2021 05:49:26 GMT</lastBuildDate><item><title><![CDATA[About Fluidex]]></title><description><![CDATA[What is FluiDex For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK…]]></description><link>https://www.fluidex.io/en/about/</link><guid isPermaLink="false">https://www.fluidex.io/en/about/</guid><content:encoded>&lt;h2&gt;What is FluiDex&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Fluidex]]></title><description><![CDATA[The website of the Fluidex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 28 May 2021 10:37:14 GMT</lastBuildDate><item><title><![CDATA[About Fluidex]]></title><description><![CDATA[What is FluiDex For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK…]]></description><link>https://www.fluidex.io/en/about/</link><guid isPermaLink="false">https://www.fluidex.io/en/about/</guid><content:encoded>&lt;h2&gt;What is FluiDex&lt;/h2&gt;
 &lt;p&gt;For those familiar with cutting-edge technology, FluiDex is a Layer 2 decentralized exchange on Ethereum. We will use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. We will be the first order book exchange on Ethereum to use PLONK based validity proof.&lt;/p&gt;
 &lt;p&gt;For the general public, FluiDex is a crypto asset exchange similar to Coinbase or Huobi. The advantage is that your assets are absolutely safe. You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The disadvantage is that it will be more difficult to use, for example, transaction fees will be higher in some cases.&lt;/p&gt;
 &lt;h2&gt;Why build FluiDex&lt;/h2&gt;
@@ -67,7 +67,41 @@ The project may soon launch a seed round of equity financing, and is looking for
 &lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Founder’s email: &lt;a href=&quot;mailto:mycinbrin@gmail.com&quot;&gt;mycinbrin@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Differential AMM: 一种基于微观指标设计的灵活 AMM 算法]]></title><description><![CDATA[AMM 策略通常使用宏观指标来定义，宏观指标是指描述总量的指标，包括 AMM 池中的交易币种数量(base amount)和计价币种数量(quote amount)等。例如，最常见的 AMM 做市算法——恒定乘积算法——要求 base 数量 和 quote…]]></description><link>https://www.fluidex.io/zh/blog/damm/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/damm/</guid><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;AMM 策略通常使用宏观指标来定义，宏观指标是指描述总量的指标，包括 AMM 池中的交易币种数量(base amount)和计价币种数量(quote amount)等。例如，最常见的 AMM 做市算法——恒定乘积算法——要求 base 数量 和 quote 数量的乘积在每次交易前后相等。但是实际上对于每个具体交易者而言，微观指标对单次的交易行为更有意义。微观指标是指刻画变化，或者叫刻画边际效应的指标，如当前的买卖盘口价和盘口深度。盘口价格刻画了当前状态下做一笔小交易的平均成交价格，而盘口深度刻画了指定交易价格内最大的成交量。盘口深度可以通俗解释为，假设现在 ETH-USDT 价格为 3450，我希望以不超过 3451 的价格购买尽可能多的 ETH，我最多能买到多少 ETH？&lt;/p&gt;
+&lt;p&gt;Founder’s email: &lt;a href=&quot;mailto:mycinbrin@gmail.com&quot;&gt;mycinbrin@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex 5月开发进展]]></title><description><![CDATA[关于我们：Fluidex 团队正在开发 Ethereum 上第一个无许可上币的 ZK-Rollup layer2 订单簿 DEX…]]></description><link>https://www.fluidex.io/zh/blog/2021-05-27-updates/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/2021-05-27-updates/</guid><pubDate>Fri, 28 May 2021 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;关于我们：Fluidex 团队正在开发 Ethereum 上第一个无许可上币的 ZK-Rollup layer2 订单簿 DEX。项目的完整介绍可以看&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;下面介绍最近两个月，团队在各方面的工作进展。&lt;/p&gt;
+&lt;!--
+# 新版官网上线
+
+我们重新设计了 Fluidex 项目的风格样式，新的官网已经更新在了 &lt;https://www.fluidex.io/&gt;
+
+![](/media/new_website_0528.png)
+
+--&gt;
+&lt;h1&gt;更多的零知识证明开发工具&lt;/h1&gt;
+&lt;p&gt;我们开发了一些新的开发工具包，这些工具已经成为 Fluidex 团队日常开发流程的一部分，极大地提升了团队的开发效率。&lt;/p&gt;
+&lt;h3&gt;电路开发调试工具 snarkit&lt;/h3&gt;
+&lt;p&gt;我们希望零知识证明电路的开发最终能够像普通软件开发一样简单，例如代码能够允许较高层次的复用和抽象，出错时能够给出准确的报错位置和原因。这就是我们开发 snarkit 的初衷。snarkit 目前仅支持 circom 语言，最重要的功能是电路测试，即给定电路代码和预期的输入输出，检查输入是否满足电路约束，输出是否满足预期。如果出现任何未预期的错误，则会显示出报错的模块和行号，也会显示报错位置相关的具体变量值。&lt;/p&gt;
+&lt;p&gt;snarkit 支持两种 backend，wasm 的 backend 不需要安装任何依赖方便快速上手使用，c++ 的 backend 支持大型电路并且性能更高，仅支持较新的 x64 CPU。（感谢circom/ffwasm/ffiasm 的高性能底层有限域代码）&lt;/p&gt;
+&lt;p&gt;代码位置：&lt;a href=&quot;https://github.com/Fluidex/snarkit&quot;&gt;https://github.com/Fluidex/snarkit&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;零知识证明集群 PLONK Prover Cluster&lt;/h3&gt;
+&lt;p&gt;ZK-Rollup 系统一般会需要 &lt;a href=&quot;https://www.fluidex.io/zh/blog/zkrollup-intro1/&quot;&gt;多达几百台服务器来完成证明计算&lt;/a&gt;。这需要一个完善的资源编排调度平台。我们开发了 Plonk Prover Cluster，能够按照配置启动一个大规模的集群完成证明计算。系统采用了单 master + 多 slave 的架构设计，基于 k8s 完成动态伸缩和调度，也支持本地使用 docker-compose 来做单机开发调试。目前较适合于部署在 Aliyun Serverless Kubernetes 这种弹性平台上，我们未来会进一步考虑使用 cloud platform native API (如 EC2 Auto Scaling） 来实现更灵活和有性价比的方案。&lt;/p&gt;
+&lt;p&gt;Plonk Prover Cluster 适合结合 Fluidex 团队之前的 PLONK DSL 开发工具 &lt;a href=&quot;https://github.com/Fluidex/plonkit&quot;&gt;Plonkit&lt;/a&gt; 使用。&lt;/p&gt;
+&lt;p&gt;代码位置：&lt;a href=&quot;https://github.com/Fluidex/prover-cluster&quot;&gt;https://github.com/Fluidex/prover-cluster&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Fluidex 交易所的开发&lt;/h1&gt;
+&lt;h3&gt;电路&lt;/h3&gt;
+&lt;p&gt;充值/转账/交易/提币 等基础功能已经基本完成。我们通过把不同 l2 交易中共用的计算逻辑（如 merkle proof）提取到外层，优化掉了超过 1/3 的电路规模。对于一个一百万(2**20)用户数量，一百万 token (2**20)数量的 ZK-Rollup 系统，2**28 个 plonk 门约束的容量下能够容纳超过 600 个 l2 交易，单个交易需要的门约束目前为 420k 门约束。我们未来会进一步优化 layer2 tx 的资源消耗量。&lt;/p&gt;
+&lt;p&gt;代码位置：&lt;a href=&quot;https://github.com/Fluidex/circuits&quot;&gt;https://github.com/Fluidex/circuits&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Rollup Operator&lt;/h3&gt;
+&lt;p&gt;Rollup 需要一个半中心化的后台节点，用来收集所有的 layer2 交易，更新状态，并且生成 layer2 block，一般可以被称为 Operator / Sequencer / StateUpdater 等。我们使用 Rust 实现了配合 Fluidex 电路使用的 Operator，目前在 2**20 个用户和 token 的系统中，通过 &lt;a href=&quot;https://github.com/Fluidex/rollup-state-manager/blob/b6c049208e17a4916b12ff0ab23e7699df7f231e/src/state/global.rs#L270&quot;&gt;并行更新 merkle tree&lt;/a&gt; 能够达到约 250 TPS。&lt;/p&gt;
+&lt;p&gt;代码位置：&lt;a href=&quot;https://github.com/Fluidex/rollup-state-manager&quot;&gt;https://github.com/Fluidex/rollup-state-manager&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;撮合引擎&lt;/h3&gt;
+&lt;p&gt;增加了 post-only order 以允许做市商限制自己的做市订单类型，避免因为盘口价格波动造成返佣和手续费损失。
+增加了 inner transfer 功能。&lt;/p&gt;
+&lt;p&gt;代码位置：&lt;a href=&quot;https://github.com/Fluidex/dingir-exchange&quot;&gt;https://github.com/Fluidex/dingir-exchange&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;算法设计研究&lt;/h1&gt;
+&lt;p&gt;我们完成了&lt;a href=&quot;https://www.fluidex.io/zh/blog/damm/&quot;&gt;《Differential AMM: 一种基于微观指标设计的灵活 AMM 算法》&lt;/a&gt;。这是一种从微观指标（如盘口中间价和盘口深度）入手的灵活 AMM 设计，AMM 资金池的创建者能够任意调整设定 自动做市价格范围/流动性深度/做市资金量/资金效率 等指标。我们还给出了 DAMM 转化为订单簿的参考代码实现。Fluidex 最终完成版本中将会集成 DAMM，每种交易对的流动性都由 Orderbook 和 AMM 混合而成 。&lt;/p&gt;
+&lt;h1&gt;社区交流&lt;/h1&gt;
+&lt;p&gt;在 4 月 20 日的 上海前沿技术研讨会 以零知识证明为专题。Fluidex 创始人张卓和安比实验室创始人郭宇，Mina 亚洲技术大使姚翔分别做了题目《ZK-Rollup 工程实践》《ZKCP+ 零知识证明与公平数据交易协议》和 《Snapps架构和应用》三场分享。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Differential AMM: 一种基于微观指标设计的灵活 AMM 算法]]></title><description><![CDATA[AMM 策略通常使用宏观指标来定义，宏观指标是指描述总量的指标，包括 AMM 池中的交易币种数量(base amount)和计价币种数量(quote amount)等。例如，最常见的 AMM 做市算法——恒定乘积算法——要求 base 数量 和 quote…]]></description><link>https://www.fluidex.io/zh/blog/damm/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/damm/</guid><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;AMM 策略通常使用宏观指标来定义，宏观指标是指描述总量的指标，包括 AMM 池中的交易币种数量(base amount)和计价币种数量(quote amount)等。例如，最常见的 AMM 做市算法——恒定乘积算法——要求 base 数量 和 quote 数量的乘积在每次交易前后相等。但是实际上对于每个具体交易者而言，微观指标对单次的交易行为更有意义。微观指标是指刻画变化，或者叫刻画边际效应的指标，如当前的买卖盘口价和盘口深度。盘口价格刻画了当前状态下做一笔小交易的平均成交价格，而盘口深度刻画了指定交易价格内最大的成交量。盘口深度可以通俗解释为，假设现在 ETH-USDT 价格为 3450，我希望以不超过 3451 的价格购买尽可能多的 ETH，我最多能买到多少 ETH？&lt;/p&gt;
 &lt;p&gt;盘口价格和盘口深度也是 orderbook 视角下更直观的指标。我们希望能从这两个微观指标出发，更好地理解和设计 AMM 算法。&lt;/p&gt;
 &lt;h1&gt;数学原理-宏观指标和微观指标的关系&lt;/h1&gt;
 &lt;p&gt;本章节会给出价格和深度这两个指标，和 base/quote 量的关系。我们将会看到，价格和深度函数，都可以从 base/quote 函数经过若干次求导/反函数变换推导出来。&lt;/p&gt;
