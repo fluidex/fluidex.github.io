@@ -6,7 +6,7 @@ tags: [technical]
 
 Automatic Market-Making (AMM) strategies are usually defined by macro indicators. Macro indicators refer to indicators that describe the total amount, including the base amount (BA) and the quote amount (QA) of the trading tokens in the AMM pool. For example, the most common AMM algorithm - the Constant Product Algorithm - requires the product of BA and QA to be equal both before and after each transaction. But in fact, for a real-world trader, micro indicators are more informative for each trade decision making. Micro indicators refer to indicators that characterize market changes, or marginal effects of transactions, such as current market price and market depth. The market price describes the average deal price of a relatively small-volume transaction in the current state, and the market depth describes the largest potential trading volume within an offered price. In plain language, assume that the price of ETH is now 3450 USDT, if I want to buy as much ETH as possible at a price not exceeding 3451, the amount of ETH I could buy can be regarded as the market depth.
 
-From the orderbook perspective, both price and depth are more intuitive than macro indicators. We hope that we can better understand and design the AMM algorithm based on these two micro indicators. 
+From the orderbook perspective, both price and depth are more intuitive than macro indicators. We here try to design a better AMM algorithm based on these two micro indicators. 
 
 # Mathematical Background - Relationship between macro and micro indicators
 
