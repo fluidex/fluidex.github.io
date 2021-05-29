@@ -141,7 +141,7 @@ DAMM 所有相关参数含义：
 
 注意2: 同等 price0 depth0 时，QUOTE\_DELTA 和 BASE\_DELTA 越小，base0 quote0 越大，即提供同样盘口流动性的资金量越大，所谓“资金效率”越低，但是做市的价格范围（lowPrice到highPrice）也越大。极端地，当 QUOTE\_DELTA 和 BASE\_DELTA 为 0 时，lowPrice 将为 0，highPrice 为无穷大，此时 DAMM 蜕化为普通恒定乘积 AMM。我们可以通过调节 lowPrice highPrice，任意地调节资金效率。
 
-实际使用中，我们对于以下三组六个参数 (A) depth price (2) lowPrice highPrice (3) quote0 base0，已知任意两组，都可以推导出第三组参数和完整的做市函数。
+实际使用中，我们对于以下三组六个参数 (1) depth price (2) lowPrice highPrice (3) quote0 base0，已知任意两组，都可以推导出第三组参数和完整的做市函数。
 
 下面三种不同初始条件对应的 DAMM 应用场景。
 

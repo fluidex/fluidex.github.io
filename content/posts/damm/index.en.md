@@ -8,9 +8,9 @@ Automatic Market-Making (AMM) strategies are usually defined by macro indicators
 
 From the orderbook perspective, both price and depth are more intuitive than macro indicators. We here try to design a better AMM algorithm based on these two micro indicators. 
 
-# Mathematical Background - Relationship between macro and micro indicators
+# Mathematical Background - The relationship between macro and micro indicators
 
-In this section, we will state the relationship between the micro indicators (price and depth) and the base/quote amount. As we will see, the functions of price and depth can both be derived from the base/quote function by several derivative/inverse function transformations.
+In this section, we will explain the relationship between the micro indicators (price and depth) and the base/quote amount (pool size). As we will see, the formulas of price and depth can both be derived from the base/quote amount formulas by several derivative/inverse function transformations.
 
 Assume that base amount and quote amount in AMM pool satisfy the following relationship:
 
@@ -18,7 +18,7 @@ Assume that base amount and quote amount in AMM pool satisfy the following relat
 quote = f(base)
 ```
 
-Obviously, we have quote > 0, base > 0. f is monotonically decreasing, i.e., f' < 0 (as in trading, when amount of one token increases, the other will of course decrease).
+Obviously, we have quote > 0, base > 0. f is monotonically decreasing, i.e., f' < 0 (as in each trade in an AMM pool, a token is turned into another token; if the amount of one token increases, the other will of course decrease).
 
 By definition, price is the absolute value of the derivative of f (as f' is negative, it's actually the reverse value of f'):
 
@@ -26,7 +26,7 @@ By definition, price is the absolute value of the derivative of f (as f' is nega
 price = abs(f'(base)) = -f'(base)
 ```
 
-Normally we demand the price (-f') to be monotonically decreasing, i.e., the smaller the base amount, the higher the price. Thus, f'' > 0. In summary, a reasonable f should be: a convex downward and monotonically decreasing function defined in the first quadrant.
+Normally we require the price, -f', to be monotonically decreasing, i.e., the smaller the base amount, the higher the price. Thus, f'' > 0. In a word, a reasonable f should be: a convex downward and monotonically decreasing function defined in the first quadrant.
 
 Correspondingly, market depth is actually the derivative of base amount w.r.t. price.
 
@@ -42,13 +42,13 @@ That concludes the relationship between market price/depth and base/quote functi
 
 # Mathematical Background - Solving
 
-For a creator of AMM pool, they care the most about the initial price (price0) and initial depth (depth0). From mathematic perspective, they need to give an AMM function of the form `quote = f(base)`, so that there's one point in this function satisfying `price = price0` and `depth = depth0`.
+For a creator of AMM pool, they care the most about the initial price (price0) and initial depth (depth0). From mathematic perspective, they need to give an AMM function of the form `quote = f(base)`, so that there's a coordinate satisfying `price = price0` and `depth = depth0`.
 
 In other words, they need to solve the following equation:
 
 ```
-Knowing depth0, price0,
-f is the function describing relationship between base and quote amount, quote = f(base). Find f that satisfies:
+Given depth0, price0,
+f is the function describing the relationship between base and quote amount, quote = f(base). Find a f that satisfies:
 
 * There's base0, such that f'(base0) = price0
 * (Inverse(f'))'(price0) = depth0
@@ -56,11 +56,11 @@ f is the function describing relationship between base and quote amount, quote =
 Additionally, it's required that f > 0, f' < 0 and f'' > 0, that is, f is a convex downward and monotonically decreasing function defined in the first quadrant.
 ```
 
-Actually, as the above equation has too few constraints, there are infinite number of solutions. f could be a reciprocal function, a more general hyperbolic function, an exponential function, or a power function. However from the next section, we will see that if we specify a certain form of f and control the changeable parameters, we may be able to determine a unique solution.
+Actually, as the above equations has too few constraints, there are infinite number of solutions. f could be a reciprocal function, a more general hyperbolic function, an exponential function, or a power function. However in the next section, we will see that if we specify a certain form of f and limit its coefficients, we may be able to determine a unique solution.
 
-### One solution - when f is a translated reciprocal function
+### One of the solutions - when f is a translated reciprocal function
 
-If f is a reciprocal function in form:
+If f is a reciprocal function in form of:
 
 ```
 quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA 
@@ -96,7 +96,7 @@ quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA,
 ```
 where `C = 4 * price0**3 * depth0**2`, `BASE_DELTA` and `QUOTE_DELTA` are random constants.
 
-To conclude, we demonstrated that if specified f as reciprocal function, the unique solution of f could be obtained by price and depth. Although f can actually be any types of functions, for simplicity, we will use reciprocal function as our final AMM function in the rest of the post.
+To conclude, we demonstrated that if specifying f as an reciprocal function, an unique solution of f could be obtained from price and depth. Although f can actually be any types of functions, for simplicity and without the loss of generality, we will use reciprocal function as our AMM function in the rest of the post.
 
 # Formula definition of Differential AMM
 
@@ -106,19 +106,19 @@ Synthesizing all the derivations in the previous section, we can get the complet
 quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA
 ```
 
-Meaning of all related parameters of DAMM:
+The meanings of all related parameters of DAMM:
 
 | Name | Meaning |
 | --- | --- | 
 | price0 | initial market price |
-| depth0 |  initial market depth |
-| lowPrice |  lowest automatic market-making price, minimum is 0 |
-| highPrice |  highest automatic market-making price, maximum is positive inifinite |
-| quote0 |  initial actual quote amount |
-| base0 |  initial actual base amount |
-| QUOTE_DELTA |  virtual quote amount |
-| BASE_DELTA |  virtual base amount |
-| C |  constant product |
+| depth0 | initial market depth |
+| lowPrice | the lowest automatic market-making price, minimum is 0 |
+| highPrice | the highest automatic market-making price, maximum is positive inifinite |
+| quote0 | initial actual quote amount |
+| base0 | initial actual base amount |
+| QUOTE_DELTA | virtual quote amount |
+| BASE_DELTA | virtual base amount |
+| C | constant product |
 | vQoute0  | initial total quote amount, including actual and virtual |
 | vBase0 | initial total base amount, including actual and virtual |
 
@@ -146,31 +146,31 @@ Here are the three scenarios corresponding to three initial conditions:
 
 ### Given price and depth (A), and initial amounts (C)
 
-That is, in the equations, given `price0`, `depth0`, and `quote0`, `base0`, need to calculate market-making price range and other parameters.
+That is, in the equations, given `price0`, `depth0`, and `quote0`, `base0`, we then want to calculate market-making price range and other parameters.
 
-Solving process refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39>
+For step-by-step solution please refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39>
 
 ### Given price and depth (A), and market-making price range (B)
 
 That is, in the equations, given `price0`, `depth0`, and `lowPrice` (could be 0), `highPrice` (could be inifinity), need to calculate initial amount and other parameters.
 
-Solving process refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53>
+For step-by-step solution please refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53>
 
 ### Given market-making price range (B), and initial amounts (C)
 
-This is the most complex scenario. Actually it is equivalant to solving a two-dimensional quadratic equation. By solving the equation we could get all other parameters.
+This is the most complex scenario. Actually it is equivalant to solving a binary quadratic equation. By solving the equation we could get all other parameters.
 
-Solving process refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72>
+For step-by-step solution please refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72>
 
-From the above three scenarios, we could see that DAMM has great flexibility. On the one hand, different scenarios may have different requirements and initial conditions. Under the above three initial conditions, we are all able to solve a correct DAMM strategy. On the other hand, **we can abitrarily adjust capital efficiency through the price range or initial amount**.
+From the above three scenarios, we could see that DAMM has great flexibility. On the one hand, different scenarios may have different requirements and different initial conditions. Under the above three initial conditions, we are still able to solve a correct DAMM strategy. On the other hand, **we can abitrarily adjust capital efficiency through the price range or initial amount**.
 
 # Miscellaneous
 
 ## Converting AAM to orderbook
 
-By approximating the AMM curve section by section, we can get a discretized orderbook. In the [implementation code](https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156), we could specify price interval and the number of orders, by calculating BASE_DELTA and QUOTE_DELTA, we could get order amount and average price.
+By approximating the AMM curve section by section, we can get a discretized orderbook. In our [reference implementation](https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156), we could specify price interval and the number of orders, and get order size and average price by calculating BASE_DELTA and QUOTE_DELTA.
 
 ## Mathematical equivalance
 
-It's easy to see that DAMM is mathematically equivalant to the market maker algorithm (x + a)(y + b) = k. The difference is that we provided many micro interpretations, as well as possibilities to solve from different initial conditions.
+It's easy to see that DAMM is mathematically equivalant to the market maker algorithm (x + a)(y + b) = k. The difference is that we interpret it in a micro perspective way, as well as possibilities to solve from different initial conditions.
 
