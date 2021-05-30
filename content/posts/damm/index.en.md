@@ -106,7 +106,7 @@ Synthesizing all the derivations in the previous section, we can get the complet
 quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA
 ```
 
-The meanings of all related parameters of DAMM:
+Terminology:
 
 | Name | Meaning |
 | --- | --- | 
