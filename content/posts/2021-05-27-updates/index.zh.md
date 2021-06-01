@@ -9,7 +9,7 @@ tags: [updates]
 下面介绍最近两个月，团队在各方面的工作进展。
 
 <!--
-# 新版官网上线
+## 新版官网上线
 
 我们重新设计了 Fluidex 项目的风格样式，新的官网已经更新在了 <https://www.fluidex.io/>
 
@@ -17,7 +17,7 @@ tags: [updates]
 
 -->
 
-# 更多的零知识证明开发工具
+## 更多的零知识证明开发工具
 
 我们开发了一些新的开发工具包，这些工具已经成为 Fluidex 团队日常开发流程的一部分，极大地提升了团队的开发效率。
 
@@ -31,13 +31,13 @@ snarkit 支持两种 backend，wasm 的 backend 不需要安装任何依赖方�
 
 ### 零知识证明集群 PLONK Prover Cluster
 
-ZK-Rollup 系统一般会需要 [多达几百台服务器来完成证明计算](https://www.fluidex.io/zh/blog/zkrollup-intro1/)。这需要一个完善的资源编排调度平台。我们开发了 Plonk Prover Cluster，能够按照配置启动一个大规模的集群完成证明计算。系统采用了单 master + 多 slave 的架构设计，基于 k8s 完成动态伸缩和调度，也支持本地使用 docker-compose 来做单机开发调试。目前较适合于部署在 Aliyun Serverless Kubernetes 这种弹性平台上，我们未来会进一步考虑使用 cloud platform native API (如 EC2 Auto Scaling） 来实现更灵活和有性价比的方案。
+ZK-Rollup 系统一般会需要 [多达几百台服务器来完成证明计算](/zh/blog/zkrollup-intro1/)。这需要一个完善的资源编排调度平台。我们开发了 Plonk Prover Cluster，能够按照配置启动一个大规模的集群完成证明计算。系统采用了单 master + 多 slave 的架构设计，基于 k8s 完成动态伸缩和调度，也支持本地使用 docker-compose 来做单机开发调试。目前较适合于部署在 Aliyun Serverless Kubernetes 这种弹性平台上，我们未来会进一步考虑使用 cloud platform native API (如 EC2 Auto Scaling） 来实现更灵活和有性价比的方案。
 
 Plonk Prover Cluster 适合结合 Fluidex 团队之前的 PLONK DSL 开发工具 [Plonkit](https://github.com/Fluidex/plonkit) 使用。
 
 代码位置：<https://github.com/Fluidex/prover-cluster>
 
-# Fluidex 交易所的开发
+## Fluidex 交易所的开发
 
 ### 电路
 
@@ -60,11 +60,11 @@ Rollup 需要一个半中心化的后台节点，用来收集所有的 layer2 �
 
 
 
-# 算法设计研究
+## 算法设计研究
 
-我们完成了[《Differential AMM: 一种基于微观指标设计的灵活 AMM 算法》](https://www.fluidex.io/zh/blog/damm/)。这是一种从微观指标（如盘口中间价和盘口深度）入手的灵活 AMM 设计，AMM 资金池的创建者能够任意调整设定 自动做市价格范围/流动性深度/做市资金量/资金效率 等指标。我们还给出了 DAMM 转化为订单簿的参考代码实现。Fluidex 最终完成版本中将会集成 DAMM，每种交易对的流动性都由 Orderbook 和 AMM 混合而成 。
+我们完成了[《Differential AMM: 一种基于微观指标设计的灵活 AMM 算法》](/zh/blog/damm/)。这是一种从微观指标（如盘口中间价和盘口深度）入手的灵活 AMM 设计，AMM 资金池的创建者能够任意调整设定 自动做市价格范围/流动性深度/做市资金量/资金效率 等指标。我们还给出了 DAMM 转化为订单簿的参考代码实现。Fluidex 最终完成版本中将会集成 DAMM，每种交易对的流动性都由 Orderbook 和 AMM 混合而成 。
 
-# 社区交流
+## 社区交流
 
 在 4 月 20 日的 上海前沿技术研讨会 以零知识证明为专题。Fluidex 创始人张卓和安比实验室创始人郭宇，Mina 亚洲技术大使姚翔分别做了题目《ZK-Rollup 工程实践》《ZKCP+ 零知识证明与公平数据交易协议》和 《Snapps架构和应用》三场分享。
 
