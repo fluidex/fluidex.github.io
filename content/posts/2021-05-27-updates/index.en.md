@@ -19,6 +19,8 @@ Github link: https://github.com/Fluidex/snarkit
 ### PLONK Prover Cluster
 A ZK-Rollup system usually [needs hundred of servers to perform cryptography computations when proving](/en/blog/zkrollup-intro1/). Such a burden of computation asks for a comprehensive platform for task coordination. In this context, we developed __PLONK Prover Cluster__, to deploy a mass cluster of nodes for proving tasks according to specific settings. __PLONK Prover Cluster__ uses “master-slaves” architecture and uses k8s for coordination and resilience; it also support debugging using docker-compose locally. For now it suits the best with elastic cloud services such as Aliyun Serverless Kubernetes. But we are also considering applying cloud platform native API (such as EC2 Auto Scaling) for more flexible and cost-effective solutions.
 
+Better cooperate with [Plonkit](https://github.com/Fluidex/plonkit) BTW.
+
 Github link: https://github.com/Fluidex/prover-cluster
 
 ## Progress on Fluidex Exchange
@@ -38,7 +40,7 @@ We integrated "post-only order" feature so that market-makers can avoid undesira
 Github link: https://github.com/Fluidex/dingir-exchange
 
 ## Research 
-We published an aricle ["Differential AMM: a highly flexible AMM algorithm based on micro indicators"](/zh/blog/damm/). To put it simply, DAMM is a flexible AMM design that built from micro-indicators, such as the average market price and market depth. Creators of the AMM pool can freely adjust the market-making parameters (such as price range, liquidity depth, market cap, capital efficiency) according to their strategies. Besides, we gave out a reference implementation (only an PoC) on translating DAMM into orderbook. Fluidex will integrate this DAMM feature, and the liquidity of each trade pair will be supported by both orderbook and AMM.
+We published an aricle ["Differential AMM: a highly flexible AMM algorithm based on micro indicators"](/zh/blog/damm/). To put it simply, DAMM is a flexible AMM design that built from micro-indicators, such as the average market price and market depth. Creators of the AMM pool can freely adjust the market-making parameters (such as price range, liquidity depth, market cap, capital efficiency) according to their strategies. Besides, we gave out a reference implementation (only an PoC) on translating DAMM into orderbook. Fluidex will embed this DAMM feature at the end, and the liquidity of each trade pair will be supported by both orderbook and AMM.
 
 ## Community Activities
 On April 20th, Shanghai Advanced Technology Seminar was held under the theme of “Zero-Knowledge Proof”. Zhuo ZHANG, Founder of the Fuildex, was invited to deliver a keynote on "ZK-Rollup Development Experience Sharing". Also invited to the seminar were Yu GUO, Founder of the SECBIT Labs, and YAO Xiang, Tech Ambassador of Mina in Asia. Guo and Yao talked about “ZKCP+ Zero-knowledge Proof and Fair (Data) Exchange Protocol" and “Snapps Architecture and its Application”, respectively.
