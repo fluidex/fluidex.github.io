@@ -6,7 +6,7 @@ tags: [technical]
 
 现在许多项目开始喜欢使用用 WebAssembly (WASM)，因为可以在浏览器中达到像运行 native CPU 指令一样快的效率：WASM 指令和 真正 CPU 指令之间不需要太多的 解释 (interpretation) 和转换。这对于支持多平台大有裨益。并且 WASM 支持从 C/C++/Jave/Rust/GoLang... 等语言编译过去，方便现有开发人员迁移。
 
-但这只是理想的情况，事实上对于密码学相关代码来说这一切并没有那么美好：因为现代 CPU 有很多针对密码学的黑魔法/优化，如果在 WebAssembly 虚拟机里则无法利用这一点。一般来说在 WASM 里面跑 SNARK 会比在 native CPU 上慢 8 倍。
+但这只是理想的情况，事实上对于密码学相关代码来说这一切并没有那么美好：因为现代 CPU 有很多针对密码学的黑魔法/优化，如果在 WebAssembly 虚拟机里则无法利用这一点。一般来说在 WASM 里面跑 SNARK 会比在 native CPU 上慢好几倍。
 
 而且 WASM 还有各种各样的限制：
 + 不支持多线程并行。
