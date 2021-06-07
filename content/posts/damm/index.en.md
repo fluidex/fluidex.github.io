@@ -4,6 +4,8 @@ date: 2021-05-19
 tags: [technical]
 ---
 
+__TL;DR:__ We propose a Differential Automated Market Makers strategy equivalent to Constant-Function Market Makers (CFMM) strategy, yet described using micro indicators. The one of three parameter sets (A. price and depth, B. price range, and C. initial amounts) can be solved while the other two are given. 
+
 Automatic Market-Making (AMM) strategies are usually defined by macro indicators. Macro indicators refer to indicators that describe the total amount, including the base amount (BA) and the quote amount (QA) of the trading tokens in the AMM pool. For example, the most common AMM algorithm - the Constant Product Algorithm - requires the product of BA and QA to be equal both before and after each transaction. But in fact, for a real-world trader, micro indicators are more informative for each trade decision making. Micro indicators refer to indicators that characterize market changes, or marginal effects of transactions, such as current market price and market depth. The market price describes the average deal price of a relatively small-volume transaction in the current state, and the market depth describes the largest potential trading volume within an offered price. In plain language, assume that the price of ETH is now 3450 USDT, if I want to buy as much ETH as possible at a price not exceeding 3451, the amount of ETH I could buy can be regarded as the market depth.
 
 From the orderbook perspective, both price and depth are more intuitive than macro indicators. We here try to design a better AMM algorithm based on these two micro indicators. 
@@ -66,7 +68,7 @@ If f is a reciprocal function in form of:
 quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA 
 ```
 
-Or equivalantly, using multiple variables:
+Or equivalently, using multiple variables:
 ```
 vQuote = C / vBase
 vQoute = quote + QUOTE_DELTA
@@ -136,7 +138,7 @@ Relationships between the parameters:
 (9) vBase0 = base0 + BASE_DELTA
 ```
 
-Note1: Among the above formulas, (4)(5) and (6)(7) are equivalant.
+Note1: Among the above formulas, (4)(5) and (6)(7) are equivalent.
 
 Note2: With the same `price0` and `depth0`, the smaller `QUOTE_DELTA` and `BASE_DELTA` are, the larger `base0` and `quote0` are. That is, when providing the same market liquidity, a greater amount of fund will lead to a lower so-called "capital efficiency", but a wider market-making price range (i.e., from `lowPrice` to `highPrice`). Extremely, when `QUOTE_DELTA` and `BASE_DELTA` are both 0, `lowPrice` will be 0 and `highPrice` will be inifinite. In this situation, DAMM degenerates into Constant Product AMM. We could adjust capital efficiency arbitrarily by adjusting `lowPrice` and `highPrice`.
 
@@ -158,7 +160,7 @@ For step-by-step solution please refer to: <https://github.com/Fluidex/different
 
 ### Given market-making price range (B), and initial amounts (C)
 
-This is the most complex scenario. Actually it is equivalant to solving a binary quadratic equation. By solving the equation we could get all other parameters.
+This is the most complex scenario. Actually it is equivalent to solving a binary quadratic equation. By solving the equation we could get all other parameters.
 
 For step-by-step solution please refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72>
 
@@ -172,5 +174,5 @@ By approximating the AMM curve section by section, we can get a discretized orde
 
 ## Mathematical equivalance
 
-It's easy to see that DAMM is mathematically equivalant to the market maker algorithm (x + a)(y + b) = k. The difference is that we interpret it in a micro perspective way, as well as possibilities to solve from different initial conditions.
+It's easy to see that DAMM is mathematically equivalent to the market maker algorithm (x + a)(y + b) = k. The difference is that we interpret it in a micro perspective way, as well as possibilities to solve from different initial conditions.
 
