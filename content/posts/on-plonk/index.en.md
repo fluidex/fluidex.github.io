@@ -1,6 +1,6 @@
 ---
 title: "On the optimization of PlonK"
-date: 2021-04-17
+date: 2021-06-15
 tags: [technical]
 ---
 
@@ -14,7 +14,7 @@ In this article we focus on polynomial interactive oracle proofs (IOP) zkSNARK s
 
 + Accumulation layer: _for Recursive Proof Composition_
 + IOP layer: _PlonK core is here_
-+ Polynomial commitment layer: 
++ Polynomial commitment layer: checking a batch of 
 
 Readers can gain a basic idea on the relationships between each layers from https://electriccoin.co/blog/explaining-halo-2/ (although it's about Halo 2, it's still helpful for understanding the relationships), so we would like to skip redundant explanations here.
 
