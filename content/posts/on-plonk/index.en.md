@@ -4,8 +4,6 @@ date: 2021-06-15
 tags: [technical]
 ---
 
-# On the optimization of PlonK
-
 _Acknowledgement: we thank Ariel Gabizon, Daira Hopwood, Kobi Gurkan, Pratyush Mishra (in alphabetical order) for their kindly reviews and insightful comments._
 
 In this article we focus on polynomial interactive oracle proofs (IOP) zkSNARK systems, proof systems other than using IOP also exist, for comparisons please refer to: [A Survey of Progress in Succinct Zero-Knowledge Proofs](https://telaviv2019.scalingbitcoin.org/files/a-survey-of-progress-in-succinct-zero-knowledge-proofs-towards-trustless-snarks.pptx).
