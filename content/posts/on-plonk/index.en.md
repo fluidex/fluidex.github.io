@@ -73,4 +73,4 @@ PlonK can use custom gate for prime field arithmetic, which means it will be qui
 
 ## Optimization on polynomial commitment layer
 
-[SHPLONK](https://eprint.iacr.org/2020/081.pdf) is an optimization on polynomial commitment layer, which can work with PlonK to achieve smaller proof size and shorter proving time. Other protocols aiming at optimizing polynomial commitment also exist. (Or alternatively, inspired by FRI, [REDSHIFT](https://eprint.iacr.org/2019/1400.pdf) uses List Polynomial Commitment to turn PlonK into a zkSTARK, which increase the proof size but reduce the proving time and remove the need for a trusted setup.)
+[SHPLONK](https://eprint.iacr.org/2020/081.pdf) is an optimization on polynomial commitment layer, which can work with PlonK to achieve smaller proof size and shorter proving time. Other protocols aiming at optimizing polynomial commitment also exist. (Or alternatively, inspired by FRI, [REDSHIFT](https://eprint.iacr.org/2019/1400.pdf) uses List Polynomial Commitment to turn PlonK into a zkSTARK, which increases the proof size but reduces the proving time and removes the need for a trusted setup.)
