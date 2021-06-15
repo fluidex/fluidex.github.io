@@ -35,10 +35,16 @@ PlonK supports universal and updateable setup, so
 Groth16 and other non-universal proof systems use rank-1 constraint system (R1CS) as the intermediate representation for their zkp circuits. PlonK is gate-based instead of R1CS-based, and transpiling from R1CS will likely be inefficient if using PlonK. For example, addition gates are cheap in R1CS-based systems, however which is not the case in gate-based systems.
 
 R1CS has the form (see the definitions in [[WZC+ 18]](https://eprint.iacr.org/2018/691.pdf) or [[CWC+ 21]](https://eprint.iacr.org/2021/651.pdf)):
+<!-- 
 $$\sum_{i\in [N]}(a_{i,j}\ x_i) \cdot \sum_{i\in [N]}(b_{i,j}\ x_i) = \sum_{i\in [N]}(c_{i,j}\ x_i)$$
+ -->
+<img src="https://latex.codecogs.com/svg.image?\sum_{i\in&space;[N]}(a_{i,j}\&space;x_i)&space;\cdot&space;\sum_{i\in&space;[N]}(b_{i,j}\&space;x_i)&space;=&space;\sum_{i\in&space;[N]}(c_{i,j}\&space;x_i)" title="\sum_{i\in [N]}(a_{i,j}\ x_i) \cdot \sum_{i\in [N]}(b_{i,j}\ x_i) = \sum_{i\in [N]}(c_{i,j}\ x_i)" />
 
 However, PlonK using a constraint system in the form of:
+<!-- 
 $$(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_i \cdot (x_{a_i} x_{b_i}) + (q_C)_i = 0$$
+ -->
+<img src="https://latex.codecogs.com/svg.image?(q_L)_i&space;\cdot&space;x_{a_i}&space;&plus;&space;(q_R)_i&space;\cdot&space;x_{b_i}&space;&plus;&space;(q_O)_i&space;\cdot&space;x_{c_i}&space;&plus;&space;(q_M)_i&space;\cdot&space;(x_{a_i}&space;x_{b_i})&space;&plus;&space;(q_C)_i&space;=&space;0" title="(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_i \cdot (x_{a_i} x_{b_i}) + (q_C)_i = 0" />
 
 PlonK focuses on constant fan-in circuits, and its linear constraints can be reduced to a permutation check, which can be more simply combined than general linear constraints. [From AIRs to RAPs - how PLONK-style arithmetization works](https://hackmd.io/@aztec-network/plonk-arithmetiization-air#How-does-all-this-relate-to-R1CS) discusses the advantanges and disadvantanges of them. In a word, PlonK is more flexible (e.g., it allows constraints of degree larger than two, comparing to R1CS) and allows writing application-specific programs.
 
