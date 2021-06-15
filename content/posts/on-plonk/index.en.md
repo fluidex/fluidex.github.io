@@ -14,9 +14,9 @@ In this article we focus on polynomial interactive oracle proofs (IOP) zkSNARK s
 
 + Accumulation layer: _for Recursive Proof Composition_
 + IOP layer: _PlonK core is here_
-+ Polynomial commitment layer: checking a batch of 
++ Polynomial commitment layer: _for efficiently verifying polynomials_
 
-Readers can gain a basic idea on the relationships between each layers from https://electriccoin.co/blog/explaining-halo-2/ (although it's about Halo 2, it's still helpful for understanding the relationships), so we would like to skip redundant explanations here.
+Readers can gain a basic idea on the relationships between each layer from https://electriccoin.co/blog/explaining-halo-2/ (although it's about Halo 2, it's still helpful for understanding the relationships), so we would like to skip redundant explanations here.
 
 
 ## The origin of PlonK
@@ -46,9 +46,9 @@ $$(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_
  -->
 <img src="https://latex.codecogs.com/svg.image?(q_L)_i&space;\cdot&space;x_{a_i}&space;&plus;&space;(q_R)_i&space;\cdot&space;x_{b_i}&space;&plus;&space;(q_O)_i&space;\cdot&space;x_{c_i}&space;&plus;&space;(q_M)_i&space;\cdot&space;(x_{a_i}&space;x_{b_i})&space;&plus;&space;(q_C)_i&space;=&space;0" title="(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_i \cdot (x_{a_i} x_{b_i}) + (q_C)_i = 0" />
 
-PlonK focuses on constant fan-in circuits, and its linear constraints can be reduced to a permutation check, which can be more simply combined than general linear constraints. [From AIRs to RAPs - how PLONK-style arithmetization works](https://hackmd.io/@aztec-network/plonk-arithmetiization-air#How-does-all-this-relate-to-R1CS) discusses the advantanges and disadvantanges of them. In a word, PlonK is more flexible (e.g., it allows constraints of degree larger than two, comparing to R1CS) and allows writing application-specific programs.
+PlonK focuses on constant fan-in circuits, and its linear constraints can be reduced to a permutation check, which can be more simply combined than general linear constraints. [From AIRs to RAPs - how PLONK-style arithmetization works](https://hackmd.io/@aztec-network/plonk-arithmetiization-air#How-does-all-this-relate-to-R1CS) discusses the advantages and disadvantages of them. In a word, PlonK is more flexible (e.g., it allows constraints of degree larger than two, comparing to R1CS) and allows writing application-specific programs.
 
-Therefore, it'd be more efficient if construting from gates in PlonK, instead of transpiling from R1CS.
+Therefore, it'd be more efficient if constructing from gates in PlonK, instead of transpiling from R1CS.
 
 
 
@@ -58,7 +58,7 @@ We could also work from the three layers mentioned above to optimize PlonK.
 
 For example, on the IOP layer, we could use custom gates (in Plonk you could flexibly DIY constraints) to define bit arithmetic operations, including EC point addition, Poseidon hashes, Pedersen hashes, 8-bit XOR, and so on, to save the proving computations.
 
-[Plookup](https://eprint.iacr.org/2020/315.pdf) (PlonK with lookup table) is a further optimization. It enables lookup table in PlonK circuits, so that you can precompute a lookup table of the legitimate (input, output) combinations, and prove a witness existing in the table, instead of proving the witness itself. This means we can use lookup tables to help the computations that were SNARK-unfriendly originally. For example, without lookup tables, SNARKs is not friendly to bit operations: because we will have to compute bit-by-bit; but with lookup tables, we can now store the result of an 8-bit operation in a table to lookup and access, avoiding computing bit-by-bit again. (You can think it as compute 8 bits at a time.)
+[Plookup](https://eprint.iacr.org/2020/315.pdf) (PlonK with lookup table) is a further optimization. It enables lookup table in PlonK circuits, so that you can precompute a lookup table of the legitimate (input, output) combinations, and prove a witness existing in the table, instead of proving the witness itself. This means we can use lookup tables to help the computations that were SNARK-unfriendly originally. For example, without lookup tables, SNARKs is not friendly to bit operations: because we will have to compute bit-by-bit; but with lookup tables, we can now store the result of an 8-bit operation in a table to lookup and access, avoiding computing bit-by-bit again. (You can think of it as compute 8 bits at a time.)
 
 Plookup can also be extended to vector lookups and multiple tables, bringing huge benefits to circuit programming models involving dynamic memory (e.g., vectors & dynamic array).
 
@@ -75,4 +75,4 @@ PlonK can use custom gate for prime field arithmetic, which means it will be qui
 
 ## Optimization on polynomial commitment layer
 
-[SHPLONK](https://eprint.iacr.org/2020/081.pdf) is an optimization on polynomial commitment layer, which can work with PlonK to acheive smaller proof size and shorter proving time. Other protocols aiming at optimizing polynomial commitment also exist. (Or alternatively, inspired by FRI, [REDSHIFT](https://eprint.iacr.org/2019/1400.pdf) use List Polynomial Commitment to turn PlonK into a zkSTARK, which increase the proof size but reduce the proving time and remove the need for a trusted setup.)
+[SHPLONK](https://eprint.iacr.org/2020/081.pdf) is an optimization on polynomial commitment layer, which can work with PlonK to achieve smaller proof size and shorter proving time. Other protocols aiming at optimizing polynomial commitment also exist. (Or alternatively, inspired by FRI, [REDSHIFT](https://eprint.iacr.org/2019/1400.pdf) uses List Polynomial Commitment to turn PlonK into a zkSTARK, which increase the proof size but reduce the proving time and remove the need for a trusted setup.)
