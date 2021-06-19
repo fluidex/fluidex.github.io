@@ -26,11 +26,27 @@ PlonK 面世之后很受欢迎，[zkSync](https://zksync.io/)、[Dusk Network](h
 
 ## PlonK 的特点
 
-Universal and updateable setup 已是老生常谈，此处不再赘述。
+PlonK 的特点就是可以支持 通用的 和 可更新的设置。
 
-Groth16 等 non-universal 的 proof system 中使用 rank-1 constraint system (R1CS)，也就是一堆线性的加法乘法，作为 intermediate representation 来对电路进行抽象表示。R1CS 对这些协议很高效，但对于 universal 的协议（比如 PlonK）则并不高效。PlonK 中使用的是 gate 的概念。
+> 这意味着两点：首先，你不需要再为每一个想要证明的程序进行单独的可信设置，而只需要进行一次可信设置，然后就可以用于任何（不超过一定大小的）程序。第二，在可信设置中可以有多方参与，那么只要有一个人是诚实的，协议就是安全的。并且这个多方参与的过程可以是一个个来的：首先第一个人参与进来，然后第二个，然后第三个......事先不需要知道都有谁参与进来；新的加入者完全可以加入到队伍的末尾。这就使得可信设置能很简单地就能有很多参与者，使得实践中达到很高的安全度。 --- 译 [Vitalik 的博客](https://vitalik.ca/general/2019/09/22/plonk.html)
 
-所以如果从 R1CS 到 PlonK 则不能很好地发挥 PlonK 的性能，最好能通过 gate 来实现 PlonK 中的约束。
+Groth16 等非通用的证明系统中使用 rank-1 constraint system (R1CS) 作为 intermediate representation 来对电路进行抽象表示。PlonK 是基于 gate 而不是基于 R1CS 的，所以从 R1CS 转译不会那么高效。比如说，R1CS 中加法门电路的开销比较低，但在 PlonK 中则不是如此。
+
+R1CS 形如 ([[WZC+ 18]](https://eprint.iacr.org/2018/691.pdf) 和 [[CWC+ 21]](https://eprint.iacr.org/2021/651.pdf) 有对其进行形式化定义):
+<!-- 
+$$\sum_{i\in [N]}(a_{i,j}\ x_i) \cdot \sum_{i\in [N]}(b_{i,j}\ x_i) = \sum_{i\in [N]}(c_{i,j}\ x_i)$$
+ -->
+<img src="https://latex.codecogs.com/svg.image?\sum_{i\in&space;[N]}(a_{i,j}\&space;x_i)&space;\cdot&space;\sum_{i\in&space;[N]}(b_{i,j}\&space;x_i)&space;=&space;\sum_{i\in&space;[N]}(c_{i,j}\&space;x_i)" title="\sum_{i\in [N]}(a_{i,j}\ x_i) \cdot \sum_{i\in [N]}(b_{i,j}\ x_i) = \sum_{i\in [N]}(c_{i,j}\ x_i)" />
+
+PlonK 则形如：
+<!-- 
+$$(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_i \cdot (x_{a_i} x_{b_i}) + (q_C)_i = 0$$
+ -->
+<img src="https://latex.codecogs.com/svg.image?(q_L)_i&space;\cdot&space;x_{a_i}&space;&plus;&space;(q_R)_i&space;\cdot&space;x_{b_i}&space;&plus;&space;(q_O)_i&space;\cdot&space;x_{c_i}&space;&plus;&space;(q_M)_i&space;\cdot&space;(x_{a_i}&space;x_{b_i})&space;&plus;&space;(q_C)_i&space;=&space;0" title="(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_i \cdot (x_{a_i} x_{b_i}) + (q_C)_i = 0" />
+
+PlonK focuses on constant fan-in circuits, and its linear constraints can be reduced to a permutation check, which can be more simply combined than general linear constraints. [From AIRs to RAPs - how PLONK-style arithmetization works](https://hackmd.io/@aztec-network/plonk-arithmetiization-air#How-does-all-this-relate-to-R1CS) discusses the advantages and disadvantages of them. In a word, PlonK is more flexible (e.g., it allows constraints of degree larger than two, comparing to R1CS) and allows writing application-specific programs.
+
+Therefore, it'd be more efficient if constructing from gates in PlonK, instead of transpiling from R1CS.
 
 
 ## PlonK 的性能还有提升空间
