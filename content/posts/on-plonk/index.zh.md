@@ -60,4 +60,4 @@ PlonK 对于想要改造并使用 Halo-style recursion 其实也挺友好，因�
 
 ## Polynomial commitment layer 的优化
 
-[SHPLONK](https://eprint.iacr.org/2020/081.pdf) 是对 polynomial commitment layer 的优化，能结合在 PlonK 上使用，达到更好的 proof size 和 prover run time。别的一些论文也有对 polynomial commitment 进行的优化。但他们的问题是，他们需要的 cryptographic primitives 普遍在 Ethereum 上还没有。
+[SHPLONK](https://eprint.iacr.org/2020/081.pdf) 是对 polynomial commitment layer 的优化，能结合在 PlonK 上使用，达到减小 proof 体积和证明所需要的时间。别的一些论文也有对 polynomial commitment 进行的优化。（或者，如果你采用受 FRI 启发、用了 List Polynomial Commitment 的 [REDSHIFT](https://eprint.iacr.org/2019/1400.pdf) 的话，就可以将 PlonK 变成一个 zkSTARK。虽然会增加 proof 体积，但能减少证明所需要的时间，并免除可信设置。）
