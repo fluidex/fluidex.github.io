@@ -44,9 +44,9 @@ $$(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_
  -->
 <img src="https://latex.codecogs.com/svg.image?(q_L)_i&space;\cdot&space;x_{a_i}&space;&plus;&space;(q_R)_i&space;\cdot&space;x_{b_i}&space;&plus;&space;(q_O)_i&space;\cdot&space;x_{c_i}&space;&plus;&space;(q_M)_i&space;\cdot&space;(x_{a_i}&space;x_{b_i})&space;&plus;&space;(q_C)_i&space;=&space;0" title="(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_i \cdot (x_{a_i} x_{b_i}) + (q_C)_i = 0" />
 
-PlonK focuses on constant fan-in circuits, and its linear constraints can be reduced to a permutation check, which can be more simply combined than general linear constraints. [From AIRs to RAPs - how PLONK-style arithmetization works](https://hackmd.io/@aztec-network/plonk-arithmetiization-air#How-does-all-this-relate-to-R1CS) discusses the advantages and disadvantages of them. In a word, PlonK is more flexible (e.g., it allows constraints of degree larger than two, comparing to R1CS) and allows writing application-specific programs.
+PlonK 着重于固定输入数的电路，且它的线性约束可以归约到一个 permutation check（置换检查），比起一般的线性约束，结合起来简单很多。[From AIRs to RAPs - how PLONK-style arithmetization works](https://hackmd.io/@aztec-network/plonk-arithmetiization-air#How-does-all-this-relate-to-R1CS) 讨论了 R1CS 和 PlonK 中 gate 约束的优缺点。简单来说，PlonK 更加灵活（比如说它可以支持高次的约束）并使得针对应用写专用电路成为可能。
 
-Therefore, it'd be more efficient if constructing from gates in PlonK, instead of transpiling from R1CS.
+所以，如果采用 PlonK 的话，从 gates 构造会比从 R1CS 转译实现起来高效很多。
 
 
 ## PlonK 的性能还有提升空间
