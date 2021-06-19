@@ -19,7 +19,7 @@ Readers can gain a basic idea on the relationships between each layer from https
 
 ## The origin of PlonK
 
-Out of the desire for a universal, programmable SNARK, [AZTEC](https://aztec.network/) invents and promotes the industry use of [PlonK](https://eprint.iacr.org/2019/953.pdf). PlonK is flexible to build application-specific constraints, so that it strikes a balance between theoretical properties and engineering needs. Vitalik also wrote an awesome article explaining PlonK: [Understanding PLONK](https://vitalik.ca/general/2019/09/22/plonk.html). You may also find some useful resources on https://github.com/Fluidex/awesome-plonk.
+Out of the desire for a universal, programmable zkSNARK, [AZTEC](https://aztec.network/) invents and promotes the industry use of [PlonK](https://eprint.iacr.org/2019/953.pdf). PlonK is flexible to build application-specific constraints, so that it strikes a balance between theoretical properties and engineering needs. Vitalik also wrote an awesome article explaining PlonK: [Understanding PLONK](https://vitalik.ca/general/2019/09/22/plonk.html). You may also find some useful resources on https://github.com/Fluidex/awesome-plonk.
 
 PlonK has been popular since it went published. [zkSync](https://zksync.io/), [Dusk Network](https://dusk.network/), [Mina](https://minaprotocol.com/), [Mir](https://mirprotocol.org/), and [Zcash's Halo 2](https://zcash.github.io/halo2/concepts/arithmetization.html), are projects using PlonK or its variants.
 
