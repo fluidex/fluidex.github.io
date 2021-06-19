@@ -4,6 +4,8 @@ date: 2021-06-15
 tags: [technical]
 ---
 
+_致谢：感谢 Ariel Gabizon, Daira Hopwood, Kobi Gurkan, Pratyush Mishra 给我们提供的宝贵意见！（名字按字母序排序）_
+
 ## Proof System 的三个 layer
 
 + Aggregation layer
