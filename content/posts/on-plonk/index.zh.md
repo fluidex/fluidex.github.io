@@ -6,16 +6,15 @@ tags: [technical]
 
 _致谢：感谢 Ariel Gabizon, Daira Hopwood, Kobi Gurkan, Pratyush Mishra 给我们提供的宝贵意见！（名字按字母序排序）_
 
-## Proof System 的三个 layer
+在这篇文章中，我们简要阐述了优化 PlonK 的三个方向。PlonK 是一个 polynomial interactive oracle proofs (IOP) zkSNARK system。其他非 IOP 的 zkSNARK system 也存在，参见 [A Survey of Progress in Succinct Zero-Knowledge Proofs](https://telaviv2019.scalingbitcoin.org/files/a-survey-of-progress-in-succinct-zero-knowledge-proofs-towards-trustless-snarks.pptx)。
 
-+ Aggregation layer
-+ Interactive oracle proofs (IOP) layer (PlonK 在这里)
-+ KCA / Polynomial commitment layer
+## Polynomial IOP zkSNARK system 的三个 layer
 
-各部分之间的关系可以参见 https://electriccoin.co/blog/explaining-halo-2/ (虽然讲的是 Halo 2，但对于理解层级关系有帮助)。
++ Accumulation layer: _用于 Recursive Proof Composition （递归证明）_
++ IOP layer: _PlonK 的核心_
++ Polynomial commitment layer: _快速验证多项式_
 
-![](https://electriccoin.co/wp-content/uploads/2020/09/Halo-puzzle-03-scaled.jpg)
-图片来自：https://electriccoin.co/blog/explaining-halo-2/
+https://electriccoin.co/blog/explaining-halo-2/ 是一篇有助于理解各层级之间关系的很好的文章（虽然讲的是 Halo 2，但对于理解层级关系亦有帮助），在此不再赘述。
 
 
 ## PlonK 的源起
