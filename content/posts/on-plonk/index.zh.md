@@ -64,15 +64,15 @@ PlonK 着重于固定输入数的电路，且它的线性约束可以归约到�
 AZTEC 的 Turbo-PlonK 就是在 PlonK 的基础上加上 custom gate，然后再在此之上实现 PLookup 就是 AZTEC 的 Ultra-PlonK。
 
 
-## Recursive Proof
+## Accumulation layer 的优化
 
-Recursive-SNARK 的良好特性也被人注意到，越来越多协议想要使用。Recursion 这一特性应该可以认为是从 [Halo](https://eprint.iacr.org/2019/1021.pdf) 中开始发展起来的。
+Recursive-SNARK 的良好特性也被人注意到，越来越多协议想要使用。使用 recursive proof composition 你可以将多个 proof 归集到一个 proof 中，一次性对所有 proof 进行证明/验证，并保持证明的简洁性。
+
+[Halo](https://eprint.iacr.org/2019/1021.pdf) 可以说是第一个有实践意义的 recursive 零知识证明协议，启发了很多后续的工作。[[BCMS20]](https://eprint.iacr.org/2020/499.pdf) 对其进行了形式化、扩展，并将其命名为 "accumulation scheme"。
 
 PlonK 对于想要改造并使用 Halo-style recursion 其实也挺友好，因为可以用 custom gate 来做 Halo 中的 prime field operations（质数域算术运算）。
 
-但值得注意的是，Ethereum 目前支持的/将来将要支持的 pairing-friendly curve（BN254, BLS12-381...），都不是 Halo-friendly 的。这将导致 verify 时的 gas 耗费过高。
-
-这属于 aggregation layer 的优化。
+这属于 accumulation layer 的优化。
 
 ## Polynomial commitment layer 的优化
 
