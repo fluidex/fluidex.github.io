@@ -48,20 +48,20 @@ PlonK 着重于固定输入数的电路，且它的线性约束可以归约到�
 
 所以，如果采用 PlonK 的话，从 gates 构造会比从 R1CS 转译实现起来高效很多。
 
+在此基础上，PlonK 的性能还有提升的空间，比如我们可以从前面提到的 3 个 layer 来进行优化。
 
-## PlonK 的性能还有提升空间
 
-在此基础上，PlonK 的性能还有提升的空间。
+## IOP layer 的优化
 
-如果使用了 custom gate，就可以自定义 bit arithmetic operations，包括 EC point addition、Poseidon hashes、Pedersen hashes、8-bit 逻辑异或。这一切运算会变得很高效。可以将 custom gate 理解为小 gadget。
+在 IOP layer，我们可以使用 custom gate，以进行自定义 bit arithmetic operations，包括 EC point addition、Poseidon hashes、Pedersen hashes、8-bit 逻辑异或。这一切会使得运算变得很高效。
 
-[PLookup](https://eprint.iacr.org/2020/315.pdf) (PlonK with lookup table) 找到了一种方式在 PlonK 的电路中高效实现 lookup table （的访问）。然后就可以构建 dynamic memory，对需要使用 vectors、dynamic array 的场景极为有利。
+[Plookup](https://eprint.iacr.org/2020/315.pdf) (PlonK with lookup table) is a further optimization. It enables lookup table in PlonK circuits, so that you can precompute a lookup table of the legitimate (input, output) combinations, and prove a witness existing in the table, instead of proving the witness itself. This means we can use lookup tables to help the computations that were SNARK-unfriendly originally. For example, without lookup tables, SNARKs is not friendly to bit operations: because we will have to compute bit-by-bit; but with lookup tables, we can now store the result of an 8-bit operation in a table to lookup and access, avoiding computing bit-by-bit again. (You can think of it as compute 8 bits at a time.)
 
-简单的理解就是，SNARK 本身对于位运算并不友好：你需要一个个 bit 地操作。但 lookup tables 就可以解决这个问题：你不必再每一位每一位地运算，你可以比如说将你的 8-bit 的计算结果储存在一个大表中进行查找，这样就可以一次运算 8-bit 而不必每一 bit 每一 bit 地运算。
+[Plookup](https://eprint.iacr.org/2020/315.pdf) (PlonK with lookup table) 是通过 custom 实现的进一步的优化。Plookup 找到了一种方式在 PlonK 的电路中高效实现 lookup table，你可以预先计算一个 lookup table，并证明一个 witness 在这个表中，而不需要再去证明这个 witness 本身。这样 lookup tables 就可以用来改善原本是 SNARK-unfriendly 的计算。简单来说，SNARK 本身对于位运算并不友好：你需要一个个 bit 地操作。但 lookup tables 就可以解决这个问题：你不必再每一位每一位地运算，你可以比如说将你的 8-bit 的计算结果储存在一个大表中进行查找，这样就可以一次运算 8-bit 而不必每一 bit 每一 bit 地运算。
 
-由于这个原因，lookup tables 可以用来改善原本是 SNARK-unfriendly 的计算。
+Plookup 还可以用于实现动态内存（vector / 动态数组），对于更灵活的电路编程模型大有裨益：比如实现零知识证明电路虚拟机，可以用于证明执行了指令及执行的正确性，以支持智能合约。
 
-AZTEC 的 Turbo-PlonK 就是在 PlonK 的基础上加上 custom gate，然后再在此之上实现 PLookup 就是 AZTEC 的 Ultra-PlonK。
+AZTEC 的 Turbo-PlonK 就是在 PlonK 的基础上加上 custom gate，然后再在此之上实现 Plookup 就是 AZTEC 的 Ultra-PlonK。AZTEC 的 benchmarks([[1]](https://medium.com/aztec-protocol/plonk-benchmarks-2-5x-faster-than-groth16-on-mimc-9e1009f96dfe), [[2]](https://medium.com/aztec-protocol/plonk-benchmarks-ii-5x-faster-than-groth16-on-pedersen-hashes-ea5285353db0), [[3]](https://medium.com/aztec-protocol/aztecs-zk-zk-rollup-looking-behind-the-cryptocurtain-2b8af1fca619), [[4]](https://www.youtube.com/watch?v=Vdlc1CmRYRY&t=1560s)) 表明他们通过 custom gates and Plookup 得到了很可观的性能提升。
 
 
 ## Accumulation layer 的优化
