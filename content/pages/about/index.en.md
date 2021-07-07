@@ -44,7 +44,7 @@ Based on our understanding of governance philosophy above, FluiDex will not issu
 Fluidex project was launched at the end of 2020. It is expected that the MVP/demo will be completed in Q2 of 2021, and the mainnet launch will probably start in Q4 of 2021.
 
 __Update 2021.04.15:__
-The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million at a valuation of US$7-10 million.
+The project may soon launch a seed round of equity financing, and is looking for raising a total amount (with previous rounds altogether) of around US$1 million, at a valuation of US$7-10 million.
 
 ## Contact
 

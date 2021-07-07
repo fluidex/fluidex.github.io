@@ -56,7 +56,7 @@ In the past few months, Fluidex has raised a total of more than US$500,000 from 
 The money is sufficient for our current development. We are not seeking further financing for the time being.
 
 __Update 2021.04.15:__
-The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million at a valuation of US$7-10 million.
+The project may soon launch a seed round of equity financing, and is looking for raising a total amount (with previous rounds altogether) of around US$1 million, at a valuation of US$7-10 million.
 
 # Technical contribution to other projects
 
