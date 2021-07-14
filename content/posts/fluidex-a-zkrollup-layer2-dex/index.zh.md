@@ -68,4 +68,4 @@ Twitter: <https://twitter.com/fluid_dex>
 
 公众号: 搜索 "Fluidex".
 
-创始人邮箱：mycinbrin@gmail.com
+邮箱：z@fluidex.io
