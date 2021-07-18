@@ -33,7 +33,7 @@ Gateway 接受从 Website / Mobile APP / 客户交易机器人发送来的交易
 
 ### 撮合引擎
 
-[dingir exchange](https://github.com/Fluidex/dingir-exchange) 是一个高性能交易所撮合引擎。它在内存中完成用户订单的撮合。我们使用  BTreeMap[^2] 来实现 Orderbook ，因为撮合引擎订单簿既需要 Key-Value 查询（查询订单信息），也需要有序遍历（撮合），这要求一种类似 AVL Tree / Skip List 这类有序关联数组，我们考虑到现代 CPU 的缓存特性，使用了对缓存更有好的 BTreeMap。
+[dingir exchange](https://github.com/Fluidex/dingir-exchange) 是一个高性能交易所撮合引擎。它在内存中完成用户订单的撮合。我们使用 BTreeMap[^2] 来实现 Orderbook，因为撮合引擎订单簿既需要 Key-Value 查询（查询订单信息），也需要有序遍历（撮合），这要求一种类似 AVL Tree / Skip List 这类有序关联数组，我们考虑到现代 CPU 的缓存特性，使用了对缓存更有好的 BTreeMap。
 
 服务状态的持久化通过定期 dump 和 operation log 实现。服务通过定期的 fork 后，新进程会进行全局状态的持久化。比起 stop-world and deep-copy 的方式，fork 提供了更好的请求延迟指标。此外，所有的写请求作为 operation logs 被**批量地**（否则会给数据库造成很大的压力）追加写入数据库中。全局状态定期持久化 + operation log 两种持久化方式结合在一起，即使在最坏的宕机情况下，也仅仅需要回滚几秒的交易。
 

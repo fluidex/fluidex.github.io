@@ -11,11 +11,11 @@ description: "Building the first fully open-source zk-rollup orderbook dex in th
 
 ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of a few teams that are developing a ZK-Rollup system from scratch instead of forking, Fluidex decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
 
-Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced backend architecture, aming at guiding more developers into the ZK-Rollup ecosystem.
+Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced back-end architecture, aming at guiding more developers into the ZK-Rollup ecosystem.
 
 ## Overall Architecture
 
-The diagram below shows the overall architecture of Fluidex's backend. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages into L2 blocks. After L2 blocks are proved by prover cluster, they will be published onto chain.
+The diagram below shows the overall architecture of Fluidex's back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages into L2 blocks. After L2 blocks are proved by prover cluster, they will be published onto chain.
 
 <p align="center">
   <img src="Fluidex Architecture.svg" width="600" >
@@ -26,11 +26,12 @@ We will now first introduce the functionalities and responsibilities of each sub
 ## Submodules
 
 ### Gateway
-Gateway accepts transaction requests sent from Website, Mobile APP or customer trading robots, and wires them to different specific services modules after routing. Gateway will also update the internal market quotation and commission status and push them to the requester in a format suitable for the recipients1. Considering that Envoy has good performance in functional and dynamic configuration, we use Envoy as the gateway component of the system. Besides, since Fluidex uses GRPC extensively in one-way RPC and two-way Streaming, it is important that Envoy also has excellent support for GRPC.
+
+Gateway is to accept order requests from front-end or quant trading bots, and to route them to different micro-services. Gateway will also update the internal market kline and orderbook, push them to the ticker subscribers[^1] in a desired format. We choose Envoy for our gateway because of its performance and flexibility in configuration. Besides, it is also important that Envoy has excellent support for GRPC, since Fluidex uses GRPC extensively in unary RPC and bidirectional streaming RPC.
 
 ### Matching Engine
-Dingir exchange is a high-performance exchange matching engine. It matches user orders in memory. We use BTreeMap2 to implement Orderbook, because the matching engine order book requires both Key-Value query (query order information) and in-order traversal (matching) that needs an ordered associative array like AVL Tree / Skip List. Considering the caching characteristics of modern CPUs, we use BTreeMap that is more friendly to caching.
 
+[dingir exchange](https://github.com/Fluidex/dingir-exchange) is a high-performance exchange matching engine. It matches user orders in RAM. We use BTreeMap[^2] for our orderbook, because it requires both Key-Value query (for order details) and in-order traversal (matching), this means that it needs an ordered associative array like AVL Tree / Skip List. Moreover, BTreeMap can benefit from modern CPUs' cache ability.
 
 The persistence of the service status is achieved through regular dump and operation log. After the service passes a regular fork, the new process will persist the global state. Compared with stop-world and deep-copy methods, fork provides better request latency indicators. In addition, all write requests are written to the database in batches as operation logs (otherwise they will cause a lot of pressure on the database). The combination of the two persistence methods - “global state regular persistence” and “operation log” – ensures that even in the worst cases of downtime, only a few seconds of transactions need to be rolled back.
 
