@@ -4,7 +4,7 @@ date: 2021-07-14 20:00:00
 tags: [technical]
 ---
 
-Abstract: 本文将介绍 Fluidex 团队开源的 ZK-Rollup DEX 后端的架构设计。
+摘要：本文将介绍 Fluidex 团队开源的 ZK-Rollup DEX 后端的架构设计。
 
 
 > The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign of slowing down.
