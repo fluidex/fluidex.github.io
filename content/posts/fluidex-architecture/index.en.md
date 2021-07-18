@@ -39,9 +39,9 @@ High, low, open, close and volume are queried from TimescaleDB, a time series da
 
 ### Rollup State Manager
 
-In a ZK-Rollup system, the smart contract only needs to store the Merkle root of the global state instead of all the states. The maintenance of the Merkle tree is done by the off-chain Rollup State Manager. Rollup State Manager receives each completed transaction from the message queue and updates it on the Merkle tree. For multiple transactions, L2 Blocks are generated in batches.
+In a ZK-Rollup system, the smart contract only needs to store the Merkle root of the global state instead of all the states. The maintenance of the Merkle tree is done by the off-chain Rollup State Manager. Rollup State Manager receives finished orders and other operations (e.g., withdrawal, transfer...) from the message queue and update the Merkle tree. Operations are packed into L2 Blocks.
 
-Rollup will periodically dump checkpoints which contain the offset of the message queue. When the service restarts, the system will load the state of Merkle tree from the last checkpoint, seek the corresponding offset in the message queue of the last state, and reprocess the transactions in the message queue.
+Rollup will periodically dump checkpoints including message queue offset. When the system restarts, it will load the state of Merkle tree from the last checkpoint, seek the corresponding offset in the message queue, and reprocess the messages in the message queue to recover the latest state.
 
 ### Proving Cluster
 
