@@ -2,34 +2,33 @@
 title: "A Dive into Fluidex's Architecture"
 date: 2021-07-14 20:00:00
 tags: [technical]
+description: "Building the first fully open-source zk-rollup orderbook dex in the world."
 ---
-
-Abstract: Fluidex is building the first fully open-source zk-rollup orderbook DEX in the world. In this article we explain the backend architecture of  fluidex.
-
 
 > The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign of slowing down.
 > 
 > -- [Dragonfly Research](https://medium.com/dragonfly-research/im-worried-nobody-will-care-about-rollups-554bc743d4f1)
 
----
+ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of a few teams that are developing a ZK-Rollup system from scratch instead of forking, Fluidex decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
 
+Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced backend architecture, aming at guiding more developers into the ZK-Rollup ecosystem.
 
-ZK-Rollup, with its superior security and decentralization, is considered to be the most important long-term Layer 2 capacity expansion scheme by Ethereum founder Vitalik and many other people. However, the technological advantages of ZK-Rollup come with the high barriers to entry – very few relevant projects are currently available in the market, be it a technological infrastructure or a user-end product. As one of the few teams in the world that are independently developing a complete ZK-Rollup system, Fluidex is willing to share some of its own experience and outcomes with the industry to promote the expansion of the ZK-Rollup ecological boundary.
+## Overall Architecture
 
-Before moving on, we recommend our readers to check out the article “ZK-Rollup development experience sharing, Part I”, in which we gave a summative introduction to the ZK-Rollup. As the second part of this “development experience-sharing” series, today’s article will focus on the Fluidex ZK-Rollup DEX back-end architecture which was open to the public only recently.
+The diagram below shows the overall architecture of Fluidex's backend. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages into L2 blocks. After L2 blocks are proved by prover cluster, they will be published onto chain.
 
+<p align="center">
+  <img src="Fluidex Architecture.svg" width="600" >
+</p>
 
-General Architecture
-The figure below is the general architecture of the Fluidex back-end. In a nutshell, users send transaction requests (including order commission and AMM requests) to the matching engine, and the matching engine sends all completed transactions to the message queue. The Rollup module then updates the transactions on the Merkle tree and packs the messages into L2 Blocks. After L2 Blocks are generated and proved by Prover Cluster, they are eventually published on the chain.
+We will now first introduce the functionalities and responsibilities of each submodule, and then summarize the design principles of a ZK-Rollup system.
 
-We will now first introduce the functions of each service module and then summarize the general principles in the design of the ZK-Rollup system.
+## Submodules
 
-Functions of the Service Modules
-
- Gateway
+### Gateway
 Gateway accepts transaction requests sent from Website, Mobile APP or customer trading robots, and wires them to different specific services modules after routing. Gateway will also update the internal market quotation and commission status and push them to the requester in a format suitable for the recipients1. Considering that Envoy has good performance in functional and dynamic configuration, we use Envoy as the gateway component of the system. Besides, since Fluidex uses GRPC extensively in one-way RPC and two-way Streaming, it is important that Envoy also has excellent support for GRPC.
 
-Matching Engine
+### Matching Engine
 Dingir exchange is a high-performance exchange matching engine. It matches user orders in memory. We use BTreeMap2 to implement Orderbook, because the matching engine order book requires both Key-Value query (query order information) and in-order traversal (matching) that needs an ordered associative array like AVL Tree / Skip List. Considering the caching characteristics of modern CPUs, we use BTreeMap that is more friendly to caching.
 
 
@@ -37,34 +36,33 @@ The persistence of the service status is achieved through regular dump and opera
 
 The calculation of market quotation is completed through TimescaleDB time series database. Completed transactions are counted by buckets at predetermined time intervals in TimescaleDB to generate K-lines.
 
-Rollup State Manager
+### Rollup State Manager
 In the ZK Rollup system, the contract on the chain only needs to store the Merkle root of the global state instead of complete system state information. The maintenance of the Merkle tree is carried out by the Rollup State Manager under the chain. Rollup State Manager receives each completed transaction from the message queue and updates it on the Merkle tree. For multiple transactions, L2 Blocks are generated in batches.
 
 
 Rollup will periodically dump checkpoints which contain the offset of the message queue. When the service restarts, the system will load the state of Merkle tree from the last checkpoint, seek the corresponding offset in the message queue of the last state, and reprocess the transactions in the message queue.
 
-Proving Cluster
+### Proving Cluster
 After the L2 blocks are generated by the Rollup State Manager, a corresponding cryptographic certificate is required before the contract can be verified and uploaded to the chain. This requires a proof cluster to provide a lot of computing power. In addition, since the transaction volume of DEX may vary considerably in different periods of time, this proof cluster must be highly scalable and elastic.
 
 To meet these requirements, we adopt the Master-Workers architecture, which is comprised of a stateful Master node that manages the meta-information of the certification task, and many stateless worker nodes that obtain tasks from the Master and return them to the Master after certification. Similar to POW mining, since the amount of calculation for ZK-Rollup verification is much smaller than that of the proof, in the long run, we will able to switch to a more "trustless" architecture. In ideal cases, external nodes that do not require permissions (Miners) can join and exit the proof cluster freely, while the verification nodes can quickly confirm that the miners have completed the calculations honestly and did not commit evil.
 
 At present, Proving Cluster provides two different deployment methods - stand-alone Docker Compose and K8S - that can both support local development/debugging and formal production deployment at the same time.
 
-Principles of Design
-CQRS and Global Message Bus
+## Design Principles of 
+### CQRS and Global Message Bus
 The status update of the Rollup system requires strong consistency and extreme accuracy – not even the slightest error. All status update operations are preferably traceable and replayable. To provide such reliable status update, we adopted the CQRS design pattern. All write operations to the global state are synchronized by Message Queue. Specifically, we use Kafka as the global message bus. The Rollup system uses the message queue as the ground truth, obtains each notification for status update from the message queue, and executes it on the global Merkle Tree.
 
-Memory-centric Data Organization
+### Memory-centric Data Organization
 Ordinary Internet services use databases as the ground truth of data. They usually acquire the scalability and scalability of the overall system through data fragmentation and statelessness of services.
 
 To the contrary, our ZK-Rollup system includes many services that have to maintain a large number of complex data structures in memory (such as the Rollup and Matching Engine services that maintains the Merkle Tree and Orderbook respectively). This requires an architectural design centered on memory data. As a result, many of our design principles may be inconsistent with the 12 Factor revered by some Internet business but are closer in nature to the game server developers.
 
-Single Technology Stack
+### Single Technology Stack
 Due to the excellent features of the Rust language in type safety and ownership checking, as well as the performance that is not inferior to C++, Rust has become the first choice for many cryptographic libraries, and the ecology has become increasingly prosperous. Therefore, it is not surprising that our Rollup State Manager and Prover Cluster are developed in Rust language. Besides, since a unified technology stack can greatly reduce frictions both in terms of teamwork and technology management, other service modules in the system are also implemented in Rust language at present.
 
-Codes & Operations
-By today, Fluidex-backend has been open-sourced on Github. Currently, only native startup is supported. Please refer to the Github code library page for more descriptions and guidelines.
+## Source codes
+Fluidex-backend has been open-sourced on Github and please refer to https://github.com/Fluidex/fluidex-backend. (Currently only with instructions on how to run it as a local cluster.) 
 
-    1. “Grpc->websocket” has not been realized yet.
-https://doc.rust-lang.org/stable/std/collections
-/struct.BTreeMap.html
+[^1]: "grpc->websocket" not implemented yet.
+[^2]: https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html

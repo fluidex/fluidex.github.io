@@ -1,5 +1,5 @@
 ---
-title: "打磨第一个完全开源的 ZK-Rollup DEX: Fluidex 的架构介绍"
+title: "打磨第一个完全开源的 ZK-Rollup DEX: Fluidex 架构介绍"
 date: 2021-07-14 20:00:00
 tags: [technical]
 ---
@@ -13,8 +13,7 @@ tags: [technical]
 
 ZK-Rollup 以其出色的去中心化和安全性优势，被包括 Ethereum 创始人 Vitalik 在内的很多人认为是长期最重要的 Layer 2 扩容方案。但另一方面，技术优势的反面恰恰是高门槛，无论是技术基础设施，还是用户可见的产品，相关项目实际上都屈指可数。[Fluidex](https://github.com/Fluidex) 作为全世界少数几个在独立开发完整 ZK-Rollup 系统的团队，希望能够持续分享一些自己的经验和成果，和业界一起共同推动 ZK-Rollup 生态边界的不断扩张。
 
-
-我们曾在  [ZK-Rollup 开发经验分享 Part I](https://www.fluidex.io/zh/blog/zkrollup-intro1/) 中对 ZK-Rollup 做了一个概括的介绍，读者可以先从这篇文章获得更多的背景知识。作为“开发经验分享”系列文章的第二篇，本文将会介绍我们团队 [近期开源的 ZK-Rollup DEX 后端](https://github.com/Fluidex/fluidex-backend) 的整体架构，希望帮到更多的开发者，能够为 ZK-Rollup 的大规模应用出一份力。
+我们曾在 [ZK-Rollup 开发经验分享 Part I](/zh/blog/zkrollup-intro1/) 中对 ZK-Rollup 做了一个概括的介绍，读者可以先从这篇文章获得更多的背景知识。作为“开发经验分享”系列文章的第二篇，本文将会介绍我们团队 [近期开源的 ZK-Rollup DEX 后端](https://github.com/Fluidex/fluidex-backend) 的整体架构，希望帮到更多的开发者，能够为 ZK-Rollup 的大规模应用出一份力。
 
 ## 整体架构
 
@@ -46,7 +45,6 @@ ZK Rollup 系统中，链上合约只需要储存全局状态的 Merkle root，�
 
 Rollup 定时 dump 出 checkpoint，checkpoint 中会包含消息队列的 offset。服务重启时，加载上一次  checkpoint 的 Merkle tree 状态，并且 seek 到上次状态对应的消息队列 offset，之后重新处理消息队列中的交易。
 
-
 ### Proving Cluster
 
 L2 blocks 被 Rollup State Manager 生成后，上链被合约验证时还需要一份对应的密码学证明。这需要一个证明集群来提供大量算力。此外，由于 DEX 业务不同时段的交易量可能变化很大，因此这个证明集群必须是高拓展性和高弹性的。
@@ -57,11 +55,9 @@ L2 blocks 被 Rollup State Manager 生成后，上链被合约验证时还需要
 
 ## 通用架构设计原则
 
-
 ### CQRS & 全局消息总线
 
 Rollup 系统的状态更新需要确保强一致性，不能允许分毫的误差。所有的状态更新操作，最好是可追溯可重放的。我们采用了 [CQRS](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs) 设计模式来提供这种可靠的状态更新。**所有对于全局状态的写操作，都由 Message Queue 完成同步。** 具体地，我们使用 Kafka 作为全局消息总线。Rollup 系统以 message queue 作为 ground truth，从 message queue 中获得每一个表示状态更新的消息，将其在全局的Merkle Tree 上执行。
-
 
 ### 以内存为中心的数据组织
 
