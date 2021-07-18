@@ -11,11 +11,11 @@ description: "Building the first fully open-source zk-rollup orderbook dex in th
 
 ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of a few teams that are developing a ZK-Rollup system from scratch instead of forking, Fluidex decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
 
-Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced back-end architecture, aming at guiding more developers into the ZK-Rollup ecosystem.
+Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced back-end architecture, aiming at guiding more developers into the ZK-Rollup ecosystem.
 
 ## Overall Architecture
 
-The diagram below shows the overall architecture of Fluidex's back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages into L2 blocks. After L2 blocks are proved by prover cluster, they will be published onto chain.
+The diagram below shows the overall architecture of Fluidex's back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages into L2 blocks. After L2 blocks being proved by prover-cluster, they will be published onto chain.
 
 <p align="center">
   <img src="Fluidex Architecture.svg" width="600" >
@@ -27,15 +27,15 @@ We will now first introduce the functionalities and responsibilities of each sub
 
 ### Gateway
 
-Gateway is to accept order requests from front-end or quant trading bots, and to route them to different micro-services. Gateway will also update the internal market kline and orderbook, push them to the ticker subscribers[^1] in a desired format. We choose Envoy for our gateway because of its performance and flexibility in configuration. Besides, it is also important that Envoy has excellent support for GRPC, since Fluidex uses GRPC extensively in unary RPC and bidirectional streaming RPC.
+Gateway is to accept order requests from front-end or quant trading bots, and to route them to different micro-services. Gateway will also update the internal market k-line and orderbook, push them to the ticker subscribers[^1] in a desired format. We choose Envoy for our gateway because of its performance and flexibility in configuration. Besides, it is also important that Envoy has excellent support for GRPC, since Fluidex uses GRPC extensively in unary RPC and bidirectional streaming RPC.
 
 ### Matching Engine
 
-[dingir exchange](https://github.com/Fluidex/dingir-exchange) is a high-performance exchange matching engine. It matches user orders in RAM. We use BTreeMap[^2] for our orderbook, because it requires both Key-Value query (for order details) and in-order traversal (matching), this means that it needs an ordered associative array like AVL Tree / Skip List. Moreover, BTreeMap can benefit from modern CPUs' cache ability.
+[dingir exchange](https://github.com/Fluidex/dingir-exchange) is a high-performance exchange matching engine. It matches user orders in RAM. We use BTreeMap[^2] for our orderbook, because it requires both Key-Value query (for order details) and in-order traversal (for order matching), this means that it needs an ordered associative array like AVL Tree / Skip List. Moreover, BTreeMap can benefit from modern CPUs' cache architecture.
 
-The persistence of the service status is achieved through regular dump and operation log. After the service passes a regular fork, the new process will persist the global state. Compared with stop-world and deep-copy methods, fork provides better request latency indicators. In addition, all write requests are written to the database in batches as operation logs (otherwise they will cause a lot of pressure on the database). The combination of the two persistence methods - “global state regular persistence” and “operation log” – ensures that even in the worst cases of downtime, only a few seconds of transactions need to be rolled back.
+The persistence of the global state is achieved by periodical dumps and operation logs. By periodical process [forks](https://en.wikipedia.org/wiki/Fork_(system_call)), which has lower latency than "stop-world" and than "deep-copy", the new child process persists the global state. In addition, all user requests are persisted into the database in batches (otherwise leading to heavy database pressure) as operation logs. The combination of the two persistence mechanisms ensures that if the system suddenly goes down, the system state can be quickly recovered.
 
-The calculation of market quotation is completed through TimescaleDB time series database. Completed transactions are counted by buckets at predetermined time intervals in TimescaleDB to generate K-lines.
+The calculation of market quotation is completed through TimescaleDB time series database. Completed transactions are counted by buckets at predetermined time intervals in TimescaleDB to generate K-line.
 
 ### Rollup State Manager
 In the ZK Rollup system, the contract on the chain only needs to store the Merkle root of the global state instead of complete system state information. The maintenance of the Merkle tree is carried out by the Rollup State Manager under the chain. Rollup State Manager receives each completed transaction from the message queue and updates it on the Merkle tree. For multiple transactions, L2 Blocks are generated in batches.
