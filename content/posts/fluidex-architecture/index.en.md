@@ -35,10 +35,11 @@ Gateway is to accept order requests from front-end or quant trading bots, and to
 
 The persistence of the global state is achieved by periodical dumps and operation logs. By periodical process [forks](https://en.wikipedia.org/wiki/Fork_(system_call)), which has lower latency than "stop-world" and than "deep-copy", the new child process persists the global state. In addition, all user requests are persisted into the database in batches (otherwise leading to heavy database pressure) as operation logs. The combination of the two persistence mechanisms ensures that if the system suddenly goes down, the system state can be quickly recovered.
 
-The calculation of market quotation is completed through TimescaleDB time series database. Completed transactions are counted by buckets at predetermined time intervals in TimescaleDB to generate K-line.
+High, low, open, close and volume are queried from TimescaleDB, a time series database, to generate K-line.
 
 ### Rollup State Manager
-In the ZK Rollup system, the contract on the chain only needs to store the Merkle root of the global state instead of complete system state information. The maintenance of the Merkle tree is carried out by the Rollup State Manager under the chain. Rollup State Manager receives each completed transaction from the message queue and updates it on the Merkle tree. For multiple transactions, L2 Blocks are generated in batches.
+
+In a ZK-Rollup system, the smart contract only needs to store the Merkle root of the global state instead of complete system state information. The maintenance of the Merkle tree is carried out by the Rollup State Manager under the chain. Rollup State Manager receives each completed transaction from the message queue and updates it on the Merkle tree. For multiple transactions, L2 Blocks are generated in batches.
 
 
 Rollup will periodically dump checkpoints which contain the offset of the message queue. When the service restarts, the system will load the state of Merkle tree from the last checkpoint, seek the corresponding offset in the message queue of the last state, and reprocess the transactions in the message queue.
@@ -59,10 +60,10 @@ Ordinary Internet services use databases as the ground truth of data. They usual
 
 To the contrary, our ZK-Rollup system includes many services that have to maintain a large number of complex data structures in memory (such as the Rollup and Matching Engine services that maintains the Merkle Tree and Orderbook respectively). This requires an architectural design centered on memory data. As a result, many of our design principles may be inconsistent with the 12 Factor revered by some Internet business but are closer in nature to the game server developers.
 
-### Single Technology Stack
+### Focused Technology Stack
 Due to the excellent features of the Rust language in type safety and ownership checking, as well as the performance that is not inferior to C++, Rust has become the first choice for many cryptographic libraries, and the ecology has become increasingly prosperous. Therefore, it is not surprising that our Rollup State Manager and Prover Cluster are developed in Rust language. Besides, since a unified technology stack can greatly reduce frictions both in terms of teamwork and technology management, other service modules in the system are also implemented in Rust language at present.
 
-## Source codes
+## Source Codes
 Fluidex-backend has been open-sourced on Github and please refer to https://github.com/Fluidex/fluidex-backend. (Currently only with instructions on how to run it as a local cluster.) 
 
 [^1]: "grpc->websocket" not implemented yet.
