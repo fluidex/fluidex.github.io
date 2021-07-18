@@ -7,11 +7,11 @@ tags: [technical]
 Abstract: Fluidex is building the first fully open-source zk-rollup orderbook DEX in the world. In this article we explain the backend architecture of  fluidex.
 
 
----
+> The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign of slowing down.
+> 
+> -- [Dragonfly Research](https://medium.com/dragonfly-research/im-worried-nobody-will-care-about-rollups-554bc743d4f1)
 
-Abstract: This article will introduce the back-end architecture design of the open-source ZK-Rollup DEX created by the Fluidex team.
-“The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign of slowing down.”
-— Dragonfly Research
+---
 
 
 ZK-Rollup, with its superior security and decentralization, is considered to be the most important long-term Layer 2 capacity expansion scheme by Ethereum founder Vitalik and many other people. However, the technological advantages of ZK-Rollup come with the high barriers to entry – very few relevant projects are currently available in the market, be it a technological infrastructure or a user-end product. As one of the few teams in the world that are independently developing a complete ZK-Rollup system, Fluidex is willing to share some of its own experience and outcomes with the industry to promote the expansion of the ZK-Rollup ecological boundary.
