@@ -57,11 +57,11 @@ At present, prover cluster provides two different deployment styles - via Docker
 
 The status update of a rollup system requires extremely strict consistency and accuracy – not even a slightest error is allowed. All status update operations should be traceable and recorded. To provide such reliable status updates, we adopt the CQRS design pattern. All writes to the global state are synchronized by a message queue. Specifically, we use Kafka as the global message bus. The rollup system uses the message queue as the ground truth, receives notifications for status updates from the message queue, and update the global Merkle tree correspondingly.
 
-### Memory-centric Data Organization
+### Memory-centric Data Maintenance
 
-Conventional Internet services use databases for data ground truth. They usually acquire the scalability and scalability of the overall system through data fragmentation and statelessness of services.
+Conventional Internet services use databases for their data ground truths. They usually acquire the scalability and scalability of the overall system through data sharding and stateless services.
 
-To the contrary, our ZK-Rollup system includes many services that have to maintain a large number of complex data structures in memory (such as the Rollup and Matching Engine services that maintains the Merkle Tree and Orderbook respectively). This requires an architectural design centered on memory data. As a result, many of our design principles may be inconsistent with the 12 Factor revered by some Internet business but are closer in nature to the game server developers.
+However, our ZK-Rollup system consists of many services that have to maintain a large number of complex data structures in memory (such as the rollup and the matching engine that maintains the Merkle tree and orderbook respectively). This requires an memory-centric architecture design. As a result, our design principles may differ from the 12 Factor revered by some Internet business, but are closer to game server developments.
 
 ### Unified Technology Stack
 
