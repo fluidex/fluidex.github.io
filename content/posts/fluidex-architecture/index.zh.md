@@ -17,7 +17,7 @@ ZK-Rollup 以其出色的去中心化和安全性优势，被包括 Ethereum 创
 
 ## 整体架构
 
-下图是 Fluidex 后端的整体架构图。概括地说，用户把交易请求（包括订单委托和 AMM 请求）发送到撮合引擎，撮合引擎将所有完成的交易发送到消息队列，Rollup 模块将消息队列中的交易在 Merkle tree 上更新，打包成 L2 Blocks。之后  L2 Blocks  由 Prover Cluster 生成证明，就可以最终被发布在链上。
+下图是 Fluidex 后端的整体架构图。概括地说，用户把交易请求（包括订单委托和 AMM 请求）发送到撮合引擎，撮合引擎将所有完成的交易发送到消息队列，Rollup 模块将消息队列中的交易在 Merkle tree 上更新，打包成 L2 blocks。之后  l2 blocks  由 prover cluster 生成证明，就可以最终被发布在链上。
 
 <p align="center">
   <img src="Fluidex Architecture.svg" width="600" >
@@ -29,11 +29,11 @@ ZK-Rollup 以其出色的去中心化和安全性优势，被包括 Ethereum 创
 
 ### Gateway
 
-Gateway 接受从 Website / Mobile APP / 客户交易机器人发送来的交易请求，路由之后发送到不同的具体服务。Gateway 也会将内部的行情和委托状态更新，变成适配于请求方的格式推送给请求方[^1]。 考虑到 Envoy 在性能/动态配置等方面都有良好表现，我们使用 Envoy 作为系统的网关组件。此外，Fluidex 内部大量使用 GRPC 来完成单向的 RPC 和 双向的 Streaming，Envoy 对 GRPC 也有出色的支持。
+Gateway 接受从 网页端 / 移动端 / 客户交易机器人发送来的交易请求，路由之后发送到不同的具体服务。Gateway 也会将内部的行情和委托状态更新，变成适配于请求方的格式推送给请求方[^1]。 考虑到 Envoy 在性能/动态配置等方面都有良好表现，我们使用 Envoy 作为系统的网关组件。此外，Fluidex 内部大量使用 GRPC 来完成单向的 RPC 和 双向的 streaming，Envoy 对 GRPC 也有出色的支持。
 
 ### 撮合引擎
 
-[dingir exchange](https://github.com/Fluidex/dingir-exchange) 是一个高性能交易所撮合引擎。它在内存中完成用户订单的撮合。我们使用 BTreeMap[^2] 来实现 Orderbook，因为撮合引擎订单簿既需要 Key-Value 查询（查询订单信息），也需要有序遍历（撮合），这要求一种类似 AVL Tree / Skip List 这类有序关联数组，我们考虑到现代 CPU 的缓存特性，使用了对缓存更有好的 BTreeMap。
+[dingir exchange](https://github.com/Fluidex/dingir-exchange) 是一个高性能交易所撮合引擎。它在内存中完成用户订单的撮合。我们使用 BTreeMap[^2] 来实现 Orderbook，因为撮合引擎订单簿既需要 key-value 查询（查询订单信息），也需要有序遍历（撮合），这要求一种类似 AVL tree / skip list 这类有序关联数组，我们考虑到现代 CPU 的缓存特性，使用了对缓存更有好的 BTreeMap。
 
 服务状态的持久化通过定期 dump 和 operation log 实现。服务通过定期的 fork 后，新进程会进行全局状态的持久化。比起 stop-world and deep-copy 的方式，fork 提供了更好的请求延迟指标。此外，所有的写请求作为 operation logs 被**批量地**（否则会给数据库造成很大的压力）追加写入数据库中。全局状态定期持久化 + operation log 两种持久化方式结合在一起，即使在最坏的宕机情况下，也仅仅需要回滚几秒的交易。
 
