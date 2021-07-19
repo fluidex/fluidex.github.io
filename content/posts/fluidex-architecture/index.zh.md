@@ -45,13 +45,13 @@ ZK Rollup 系统中，链上合约只需要储存全局状态的 Merkle root，�
 
 Rollup 定时 dump 出 checkpoint，checkpoint 中会包含消息队列的 offset。服务重启时，加载上一次  checkpoint 的 Merkle tree 状态，并且 seek 到上次状态对应的消息队列 offset，之后重新处理消息队列中的交易。
 
-### Proving Cluster
+### Prover Cluster
 
 L2 blocks 被 rollup state manager 生成后，上链被合约验证时还需要一份对应的密码学证明。这需要一个证明集群来提供大量算力。此外，由于 DEX 业务不同时段的交易量可能变化很大，因此这个证明集群必须是高拓展性和高弹性的。
 
 我们采用了 Master-Worker 架构。一个有状态的 master 节点管理证明任务的元信息，众多无状态的 worker 节点从 master 获取任务，证明完成后向 master 提交。和 PoW 挖矿相似， 长远来看，由于 ZK-Rollup 验证的计算量远远小于证明的计算量，这使得我们未来能够转换到一种更加“无信任”的架构，即外部的无需可节点（矿工）可以自由的加入和退出证明集群，验证节点能够快速确认矿工诚实地完成了计算，没有作恶。
 
-目前 proving cluster 提供单机 Docker Compose 和 K8S 两种不同部署方式，能够同时支持本地开发调试和正式生产部署。
+目前 prover cluster 提供单机 Docker Compose 和 K8S 两种不同部署方式，能够同时支持本地开发调试和正式生产部署。
 
 ## 通用架构设计原则
 
