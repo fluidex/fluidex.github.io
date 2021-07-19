@@ -59,9 +59,9 @@ The status update of a rollup system requires extremely strict consistency and a
 
 ### Memory-centric Data Maintenance
 
-Conventional Internet services use databases for their data ground truths. They usually acquire the scalability and scalability of the overall system through data sharding and stateless services.
+Conventional Internet services use databases for their data ground truths. They usually achieve their systems' scalability and resilience through data sharding and stateless services.
 
-However, our ZK-Rollup system consists of many services that have to maintain a large number of complex data structures in memory (such as the rollup and the matching engine that maintains the Merkle tree and orderbook respectively). This requires an memory-centric architecture design. As a result, our design principles may differ from the 12 Factor revered by some Internet business, but are more similar to game server developments.
+However, our ZK-Rollup system consists of many services that have to maintain a large number of complex data structures in memory (such as the rollup and the matching engine that maintains the Merkle tree and orderbook respectively). This requires an memory-centric architecture design. As a result, our design principles may differ from the [12 Factor](https://12factor.net/) recommended in many Internet business, but are more similar to game server developments.
 
 ### Unified Technology Stack
 
