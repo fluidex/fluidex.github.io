@@ -11,23 +11,23 @@ description: "Building the first fully open-source zk-rollup orderbook DEX in th
 
 ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of the a few teams that are developing a ZK-Rollup system from scratch instead of forking, Fluidex decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
 
-Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced back-end architecture, aiming at guiding more developers into the ZK-Rollup ecosystem.
+Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize a ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced back-end architecture, aiming at guiding more developers into the ZK-Rollup ecosystem.
 
 ## Overall Architecture
 
-The diagram below shows the overall architecture of Fluidex's back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages into L2 blocks. After L2 blocks being proved by prover-cluster, they will be published onto chain.
+The diagram below shows the overall architecture of Fluidex's back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages (after some format conversions) into L2 blocks. After L2 blocks being proved by prover-cluster, they will be published onto chain.
 
 <p align="center">
   <img src="Fluidex Architecture.svg" width="600" >
 </p>
 
-We will now first introduce the functionalities and responsibilities of each submodule, and then summarize the design principles of a ZK-Rollup system.
+We will now first introduce the functionalities and responsibilities of each submodule, and then summarize the design principles of our system.
 
 ## Submodules
 
 ### Gateway
 
-Gateway is to accept order requests from front-end or quant trading bots, and to route them to different micro-services. Gateway will also update the internal market k-line and orderbook, push them to the ticker subscribers[^1] in a desired format. We choose Envoy for our gateway because of its performance and flexibility in configuration. Besides, it is also important that Envoy has excellent support for GRPC, since Fluidex uses GRPC extensively in unary RPC and bidirectional streaming RPC.
+Gateway is to accept order requests from front-end or quant trading bots, and to route them into different micro-services. Gateway will also push the up-to-date internal market k-line and orderbook information to the ticker subscribers[^1] in a desired format. Given the excellent performance and flexibility in configuration, we choose Envoy for our gateway. Besides, note that Fluidex uses GRPC extensively in unary RPC and bidirectional streaming RPC, Envoy's excellent support for GRPC can fulfill our requirements.
 
 ### Matching Engine
 
