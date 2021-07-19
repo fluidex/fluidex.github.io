@@ -63,9 +63,9 @@ Ordinary Internet services use databases as the ground truth of data. They usual
 
 To the contrary, our ZK-Rollup system includes many services that have to maintain a large number of complex data structures in memory (such as the Rollup and Matching Engine services that maintains the Merkle Tree and Orderbook respectively). This requires an architectural design centered on memory data. As a result, many of our design principles may be inconsistent with the 12 Factor revered by some Internet business but are closer in nature to the game server developers.
 
-### Dedicated Technology Stack
+### Unified Technology Stack
 
-Thanks to Rust's type safety and ownership checks, as well as the performance comparable with C++, Rust has become the first choice for many cryptographic libraries, and the ecology has become increasingly prosperous. Therefore, it is not surprising that our Rollup State Manager and Prover Cluster are developed in Rust language. Besides, since a unified technology stack can greatly reduce frictions both in terms of teamwork and technology management, other service modules in the system are also implemented in Rust language at present.
+Thanks to Rust's type safety and ownership checks, as well as the performance comparable with C++, Rust has become the first choice for many cryptographic libraries, and the ecology has been exploding. Therefore, it is not surprising that we choose Rust for our rollup state manager and prover cluster. Besides, since a unified technology stack can greatly reduce our team's cooperation overhead, other modules are also implemented in Rust language.
 
 ## Source Codes
 
