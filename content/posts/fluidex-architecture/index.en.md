@@ -65,11 +65,11 @@ However, our ZK-Rollup system consists of many services that have to maintain a 
 
 ### Unified Technology Stack
 
-Thanks to Rust's type safety and ownership checks, as well as the performance comparable with C++, Rust has become the first choice for many cryptographic libraries, and the ecology has been exploding. Therefore, it is not surprising that we choose Rust for our rollup state manager and prover cluster. Besides, since a unified technology stack can greatly reduce our team's cooperation overhead, other modules are also implemented in Rust language.
+Thanks to Rust's type safety and ownership checks, as well as the performance comparable with C++, Rust has become the first choice for many cryptographic libraries, and the ecosystem has been exploding. Therefore, it is not surprising that we choose Rust for our rollup state manager and prover cluster. Besides, since a unified technology stack can greatly reduce our team's cooperation overhead, other modules are also implemented in Rust.
 
 ## Source Codes
 
 Fluidex-backend has been open-sourced on Github and please refer to https://github.com/Fluidex/fluidex-backend. (Currently only with instructions on how to run it as a local cluster.) 
 
-[^1]: "grpc->websocket" not implemented yet.
+[^1]: using "grpc->websocket" but not implemented yet.
 [^2]: https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html
