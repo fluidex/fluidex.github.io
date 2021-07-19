@@ -37,7 +37,7 @@ Fludiex 提供订单簿和 AMM 混合交易模式。普通用户可以使用 AMM
 
 Fluidex 使用 [自己提出的 Differential AMM 算法](https://www.fluidex.io/en/blog/damm/)，能够极大地提升资本利用效率和交易盘口深度，并且无缝融合 AMM 与订单簿。此外，Fluidex 也将扮演外部流动性映射角色，能够使用外部 DEX / CEX 增强自身的流动性。
 
-### 无需可上币
+### 无许可上币
 
 任何代币发行方能够向 Fluidex 提交自己的代币。Fluidex 会自动增加这个交易币种。此外，代币发行方可以通过设置自己的 AMM 参数，灵活调整交易对的流动性分布，满足普通自动做市 / 单边代币拍卖等多种不同场景需求。
 
@@ -62,7 +62,7 @@ Fluidex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 
 CEO: [张卓](https://www.linkedin.com/in/zhuo-zhang-75340152/)。毕业于清华大学计算机系，曾任人工智能独角兽依图科技的语音识别负责人，曾负责 IOST 公链的研发。
 
-CTO: [林浩宇](https://www.linkedin.com/in/haoyu-lin-239474123/)。VRF-mining, RandChain, fair-atomic-swap 共同发明人。ZenGo 研究员。曾负责比原链研发。
+CTO: [林浩宇](https://www.linkedin.com/in/haoyu-lin-239474123/)。[VRF-mining](https://vrf-mining.github.io/), [RandChain](https://eprint.iacr.org/2020/1033.pdf), [fair-atomic-swap](https://dl.acm.org/doi/10.1145/3318041.3355460) 共同发明人。ZenGo 研究员。曾负责比原链研发。
 
 
 # 联系方式
