@@ -54,4 +54,4 @@ Medium: <https://fluid-dex.medium.com>
 
 Twitter: <https://twitter.com/fluid_dex>
 
-Founder's email: mycinbrin@gmail.com
+Email: z@fluidex.io
