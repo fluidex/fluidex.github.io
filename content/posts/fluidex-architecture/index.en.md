@@ -55,11 +55,11 @@ At present, prover cluster provides two different deployment styles - via Docker
 
 ### CQRS and Global Message Bus
 
-The status update of the Rollup system requires strong consistency and extreme accuracy – not even the slightest error. All status update operations are preferably traceable and replayable. To provide such reliable status update, we adopted the CQRS design pattern. All write operations to the global state are synchronized by Message Queue. Specifically, we use Kafka as the global message bus. The Rollup system uses the message queue as the ground truth, obtains each notification for status update from the message queue, and executes it on the global Merkle Tree.
+The status update of a rollup system requires extremely strict consistency and accuracy – not even a slightest error is allowed. All status update operations should be traceable and recorded. To provide such reliable status updates, we adopt the CQRS design pattern. All writes to the global state are synchronized by a message queue. Specifically, we use Kafka as the global message bus. The rollup system uses the message queue as the ground truth, receives notifications for status updates from the message queue, and update the global Merkle tree correspondingly.
 
 ### Memory-centric Data Organization
 
-Ordinary Internet services use databases as the ground truth of data. They usually acquire the scalability and scalability of the overall system through data fragmentation and statelessness of services.
+Conventional Internet services use databases for data ground truth. They usually acquire the scalability and scalability of the overall system through data fragmentation and statelessness of services.
 
 To the contrary, our ZK-Rollup system includes many services that have to maintain a large number of complex data structures in memory (such as the Rollup and Matching Engine services that maintains the Merkle Tree and Orderbook respectively). This requires an architectural design centered on memory data. As a result, many of our design principles may be inconsistent with the 12 Factor revered by some Internet business but are closer in nature to the game server developers.
 
