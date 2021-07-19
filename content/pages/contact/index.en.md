@@ -11,4 +11,4 @@ Medium: <https://fluid-dex.medium.com>
 
 Twitter: <https://twitter.com/fluid_dex>
 
-Founder's email: <mailto:mycinbrin@gmail.com>
+Email: <mailto:z@fluidex.io>

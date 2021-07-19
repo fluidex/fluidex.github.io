@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
+    "gh-pages": "^3.2.3",
     "i18next": "^20.2.4",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
@@ -33,6 +34,7 @@
     "react-i18next": "^11.8.15",
     "react-kawaii": "^0.17.0",
     "react-select": "^4.3.1",
+    "replace-in-file": "^6.2.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -49,6 +51,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && node scripts/cleanup-helmet.js && gh-pages -d public -b gh-pages"
+    "deploy": "gatsby build --prefix-paths && node scripts/cleanup-helmet.js && npx gh-pages -d public -b gh-pages"
   }
 }
