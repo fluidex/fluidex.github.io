@@ -55,7 +55,7 @@ At present, prover cluster provides two different deployment styles - via Docker
 
 ### CQRS and Global Message Bus
 
-The status update of a rollup system requires extremely strict consistency and accuracy – not even a slightest error is allowed. All status update operations should be traceable and recorded. To provide such reliable status updates, we adopt the CQRS design pattern. All writes to the global state are synchronized by a message queue. Specifically, we use Kafka as the global message bus. The rollup system uses the message queue as the ground truth, receives notifications for status updates from the message queue, and update the global Merkle tree correspondingly.
+The status update of a rollup system requires extremely strict consistency and accuracy – not even a slightest error is allowed. All status update operations should be traceable and recorded. To provide such reliable status updates, we adopt the [CQRS](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs) design pattern. **All writes to the global state are synchronized by a message queue.** Specifically, we use Kafka as the global message bus. The rollup system uses the message queue for the ground truth, receives notifications for status updates from the message queue, and update the global Merkle tree accordingly.
 
 ### Memory-centric Data Maintenance
 
