@@ -2,14 +2,14 @@
 title: "A Dive into Fluidex's Architecture"
 date: 2021-07-14 20:00:00
 tags: [technical]
-description: "Building the first fully open-source zk-rollup orderbook dex in the world."
+description: "Building the first fully open-source zk-rollup orderbook DEX in the world."
 ---
 
 > The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign of slowing down.
 > 
 > -- [Dragonfly Research](https://medium.com/dragonfly-research/im-worried-nobody-will-care-about-rollups-554bc743d4f1)
 
-ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of a few teams that are developing a ZK-Rollup system from scratch instead of forking, Fluidex decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
+ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of the a few teams that are developing a ZK-Rollup system from scratch instead of forking, Fluidex decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
 
 Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our recently open-sourced back-end architecture, aiming at guiding more developers into the ZK-Rollup ecosystem.
 
@@ -61,7 +61,7 @@ The status update of a rollup system requires extremely strict consistency and a
 
 Conventional Internet services use databases for their data ground truths. They usually acquire the scalability and scalability of the overall system through data sharding and stateless services.
 
-However, our ZK-Rollup system consists of many services that have to maintain a large number of complex data structures in memory (such as the rollup and the matching engine that maintains the Merkle tree and orderbook respectively). This requires an memory-centric architecture design. As a result, our design principles may differ from the 12 Factor revered by some Internet business, but are closer to game server developments.
+However, our ZK-Rollup system consists of many services that have to maintain a large number of complex data structures in memory (such as the rollup and the matching engine that maintains the Merkle tree and orderbook respectively). This requires an memory-centric architecture design. As a result, our design principles may differ from the 12 Factor revered by some Internet business, but are more similar to game server developments.
 
 ### Unified Technology Stack
 
