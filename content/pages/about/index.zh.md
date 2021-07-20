@@ -1,7 +1,7 @@
 ---
-title: "FluiDex: 基于 ZK-Rollup 的专业去中心化交易所"
-date: 2020-11-28
-tags: [introduction]
+title: "关于我们"
+profile_image: "/media/profile-image.jpg"
+template: "about-template"
 ---
 
 
