@@ -10,7 +10,7 @@ FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。
 
 # 技术 
 
-Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 [1/100 以下](/zh/blog/zkrollup-intro1/)。同时提供等价于 Layer1 的安全性。
+FluiDex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 [1/100 以下](/zh/blog/zkrollup-intro1/)。同时提供等价于 Layer1 的安全性。
 
 
 # 特性
@@ -23,7 +23,7 @@ Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能
 
 ### 无延迟的交易
 
-在 Layer1 交易所中，交易需要被打包到块中，才能算作完成[附注1]。 Fluidex 作为 Layer2 交易所，用户的交易订单会被立刻处理，用户能够在一秒之内确认自己的订单状态。
+在 Layer1 交易所中，交易需要被打包到块中，才能算作完成[附注1]。 FluiDex 作为 Layer2 交易所，用户的交易订单会被立刻处理，用户能够在一秒之内确认自己的订单状态。
 
 ### 低成本
 
@@ -31,24 +31,24 @@ Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能
 
 ### 专业的交易服务
 
-Fluidex 提供订单簿和 AMM 混合交易模式。普通用户可以使用 AMM 页面或者订单簿页面完成交易，职业交易者可以使用交易 API 完成行情更新和交易委托。专业流动性提供者 (LP)，可以使用 limit / market / post-only / IOC / stoploss order 等丰富的交易种类，并且获得做市商返佣。
+FluiDex 提供订单簿和 AMM 混合交易模式。普通用户可以使用 AMM 页面或者订单簿页面完成交易，职业交易者可以使用交易 API 完成行情更新和交易委托。专业流动性提供者 (LP)，可以使用 limit / market / post-only / IOC / stoploss order 等丰富的交易种类，并且获得做市商返佣。
 
 ### 灵活高效的流动性算法
 
-Fluidex 使用 [自己提出的 Differential AMM 算法](/zh/blog/damm/)，能够极大地提升资本利用效率和交易盘口深度，并且无缝融合 AMM 与订单簿。此外，Fluidex 也将扮演外部流动性映射角色，能够使用外部 DEX / CEX 增强自身的流动性。
+FluiDex 使用 [自己提出的 Differential AMM 算法](/zh/blog/damm/)，能够极大地提升资本利用效率和交易盘口深度，并且无缝融合 AMM 与订单簿。此外，FluiDex 也将扮演外部流动性映射角色，能够使用外部 DEX / CEX 增强自身的流动性。
 
 ### 无许可上币
 
-任何代币发行方能够向 Fluidex 提交自己的代币并增加这个交易币种。此外，代币发行方可以通过设置自己的 AMM 参数，灵活调整交易对的流动性分布，满足普通自动做市 / 单边代币拍卖等多种不同场景需求。
+任何代币发行方能够向 FluiDex 提交自己的代币并增加这个交易币种。此外，代币发行方可以通过设置自己的 AMM 参数，灵活调整交易对的流动性分布，满足普通自动做市 / 单边代币拍卖等多种不同场景需求。
 
 <!--
 # 项目历史
 
-Fluidex 在 2021 年初启动，我们曾写过[打造一个最好的非托管交易所的初心](https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/)。
+FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管交易所的初心](https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/)。
 
-2021.Q1 Fluidex 开源了 PLONK DSL 工具包 [Plonkit](https://github.com/Fluidex/plonkit) 和 Circom 开发工具包 [Snarkit](https://www.fluidex.io/en/blog/the-motivation-of-snarkit/)。
+2021.Q1 FluiDex 开源了 PLONK DSL 工具包 [Plonkit](https://github.com/Fluidex/plonkit) 和 Circom 开发工具包 [Snarkit](https://www.fluidex.io/en/blog/the-motivation-of-snarkit/)。
 
-2021.Q2 Fluidex 开源了[后端代码](https://github.com/Fluidex/fluidex-backend)，这将是第一个完全开源的 ZK-Rollup DEX 项目。我们希望能够和社区携手努力，共同推动去中心化世界的边界。
+2021.Q2 FluiDex 开源了[后端代码](https://github.com/Fluidex/fluidex-backend)，这将是第一个完全开源的 ZK-Rollup DEX 项目。我们希望能够和社区携手努力，共同推动去中心化世界的边界。
 
 # Roadmap
 

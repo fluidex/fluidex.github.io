@@ -6,7 +6,9 @@ template: "about-template"
 
 FluiDex is a ZK-Rollup Layer2 DEX on Ethereum.
 
-# What is FluiDex
+# Technology
+
+Fluidex is 
 
 If you are familiar with cutting-edge blockchain technology, you can easily understand that FluiDex is a Layer 2 decentralized exchange on Ethereum. We use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. To our best knowledge, we are the first order-book exchange on Ethereum using PLONK-based validity proof.
 
