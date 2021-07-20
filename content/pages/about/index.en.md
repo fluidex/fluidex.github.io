@@ -8,16 +8,25 @@ template: "about-template"
 
 ## Technology
 
-Fluidex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on Ethereum. It [can save the cost of each transaction to 1/100](/en/blog/zkrollup-intro1/) and offer the same security level as layer 1.
+Fluidex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on Ethereum. It [can save the cost of each transaction to 1/100](/en/blog/zkrollup-intro1/) while still offering the same security level as layer 1.
 
 
 ## Features
 
 ### Uncompromising security
 
+Fluidex uses Zero-knowledge Proof schemes so that users don't need to trust the exchange being ethical, the Math/Cryptography behind it can guarantee that users' funds always stay "SAFU". The exchange has no way to steal users' funds or creat unauthorized orders. Even in the worst case that the exchange shuts down, users can still withdraw their funds safely.
+
+
 ### Trading without latency
 
+In a DEX on layer 1, users need to interact with smart contracts and only after a...
+
+
 ### Lower costs
+
+ZK-Rollup compresses transaction data so as to lower average gas fee.
+
 
 ### Professional trading experience
 
@@ -50,4 +59,4 @@ Wechat Official Account: "FluiDex"
 
 ## Footnote
 
-[1]: We would like to save the effort of discussing chain re-organization for now. Becaue that's what Layer1 should consider and handle.
+[1]: We would like to save the effort of discussing chain re-organization for now. Becaue that's what layer 1 should consider and handle.
