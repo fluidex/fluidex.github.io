@@ -8,13 +8,9 @@ template: "about-template"
 
 ## Technology
 
-Fluidex is 
+Fluidex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on Ethereum. It [can save the cost of each transaction to 1/100](/en/blog/zkrollup-intro1/) and offer the same security level as layer 1.
 
-If you are familiar with cutting-edge blockchain technology, you can easily understand that FluiDex is a Layer 2 decentralized exchange on Ethereum. We use PLONK-based zkrollup technology to achieve high-performance transactions, while being able to reduce the cost of each transaction to less than 1% of normal L1 transaction. To our best knowledge, we are the first order-book exchange on Ethereum using PLONK-based validity proof.
-
-For those who are not familiar with these buzzy words, FluiDex is a crypto asset exchange similar to Coinbase or Binance, but non-custodial. The good thing is that your assets are absolutely "SAFU". You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The bad thing is that it will be a bit less friendly to use, for example, transaction fees will be a bit higher in some cases.
-
-## Why build FluiDex
+## Features
 
 “Build a safe, professional and easy-to-use digital asset trading platform" is our long-term vision.
 
@@ -63,3 +59,7 @@ Twitter: <https://twitter.com/fluid_dex>
 Email: <mailto:contact@fluidex.io> or <mailto:z@fluidex.io> 
 
 Wechat Official Account: "FluiDex"
+
+## Footnote
+
+[1]: We would like to save the effort of discussing chain re-organization for now. Becaue that's what Layer1 should consider and handle.
