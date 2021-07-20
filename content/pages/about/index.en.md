@@ -46,6 +46,13 @@ Fluidex project was launched at the end of 2020. It is expected that the MVP/dem
 __Update 2021.04.15:__
 The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million at a valuation of US$7-10 million.
 
+## Co-founders
+
+CEO: [Zhuo Zhang](https://www.linkedin.com/in/zhuo-zhang-75340152/). CS, THU. Previously Speech Recognition Team Lead in [YITUTech](https://www.yitutech.com/), and Tech Lead in [IOST](https://iost.io/).
+
+CTO: [Haoyu LIN](https://www.linkedin.com/in/haoyu-lin-239474123/). Co-author oc [VRF-mining](https://vrf-mining.github.io/), [RandChain](https://eprint.iacr.org/2020/1033.pdf) and [fair-atomic-swap](https://dl.acm.org/doi/10.1145/3318041.3355460). Researcher in [ZenGo-X](https://zengo.com/research/).
+
+
 ## Contact
 
 Website: <https://www.fluidex.io/>

@@ -61,7 +61,7 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 
 CEO: [张卓](https://www.linkedin.com/in/zhuo-zhang-75340152/)。毕业于清华大学计算机系，曾任人工智能独角兽依图科技的语音识别负责人，曾负责 IOST 公链的研发。
 
-CTO: [林浩宇](https://www.linkedin.com/in/haoyu-lin-239474123/)。[VRF-mining](https://vrf-mining.github.io/), [RandChain](https://eprint.iacr.org/2020/1033.pdf), [fair-atomic-swap](https://dl.acm.org/doi/10.1145/3318041.3355460) 共同发明人。ZenGo 研究员。曾负责比原链研发。
+CTO: [林浩宇](https://www.linkedin.com/in/haoyu-lin-239474123/)。[VRF-mining](https://vrf-mining.github.io/), [RandChain](https://eprint.iacr.org/2020/1033.pdf), [fair-atomic-swap](https://dl.acm.org/doi/10.1145/3318041.3355460) 共同发明人。[ZenGo-X](https://zengo.com/research/) 研究员。曾负责比原链研发。
 
 
 ## 联系方式
