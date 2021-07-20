@@ -30,6 +30,9 @@ ZK-Rollup compresses transaction data so as to have lower average gas fee.
 
 ### Professional trading experience
 
+FluiDex is a orderbook AMM-hybrid DEX. A retail user may choose to trade through orderbook webpage or AMM webpage. A quant trader / market maker / Liquidity Provider (LP) may choose to monitor the tickers and place/cancel orders via APIs. FluiDex provides professional trading experience, for example it supports limit / market / post-only / IOC / stoploss... order types, and market maker can gain rebates.
+
+
 ### Flexible and 
 
 ### Permissionless listing
