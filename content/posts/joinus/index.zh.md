@@ -29,7 +29,7 @@ FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将�
 1. 使用 Solidity 语言开发以太坊上的智能合约
 2. 开发零知识证明电路系统，包括具体的交易所业务编码和 DSL 的持续改进
 
-我们相关开源代码库：[Fludiex 零知识证明电路](https://github.com/Fluidex/circuits) 和 [一个 Plonk DSL 工具包](https://github.com/Fluidex/plonkit) 。
+我们相关开源代码库：[Fluidex 零知识证明电路](https://github.com/Fluidex/circuits) 和 [一个 Plonk DSL 工具包](https://github.com/Fluidex/plonkit) 。
 
 技能需求：熟悉区块链/智能合约等基础知识；对区块链相关技术有强烈兴趣；
 
