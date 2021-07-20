@@ -20,12 +20,12 @@ Fluidex uses Zero-knowledge Proof schemes so that users don't need to trust the 
 
 ### Trading without latency
 
-In a DEX on layer 1, users need to interact with smart contracts and only after a...
+In a DEX on layer 1, users need to interact with smart contracts and a trade is viewed valid only after it's included in a block and submitted on chain. However, FluiDex offers a CEX-ish trading experince and can process users' orders immediately. Users don't need to wait to know whether a trade succeed or not.
 
 
 ### Lower costs
 
-ZK-Rollup compresses transaction data so as to lower average gas fee.
+ZK-Rollup compresses transaction data so as to have lower average gas fee.
 
 
 ### Professional trading experience
@@ -59,4 +59,4 @@ Wechat Official Account: "FluiDex"
 
 ## Footnote
 
-[1]: We would like to save the effort of discussing chain re-organization for now. Becaue that's what layer 1 should consider and handle.
+[1]: We would like to save the effort of discussing chain re-organizations for now. Becaue that's what layer 1 should consider and handle.
