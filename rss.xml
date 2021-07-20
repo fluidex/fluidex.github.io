@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Fluidex]]></title><description><![CDATA[The website of the Fluidex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 20 Jul 2021 02:47:25 GMT</lastBuildDate><item><title><![CDATA[Fluidex]]></title><description><![CDATA[FluiDex Fluidex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup. Checkout this…]]></description><link>https://www.fluidex.io/en/index/</link><guid isPermaLink="false">https://www.fluidex.io/en/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Fluidex]]></title><description><![CDATA[The website of the Fluidex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 20 Jul 2021 02:49:49 GMT</lastBuildDate><item><title><![CDATA[关于我们]]></title><description><![CDATA[FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。 技术 Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 1/10…]]></description><link>https://www.fluidex.io/zh/about/</link><guid isPermaLink="false">https://www.fluidex.io/zh/about/</guid><content:encoded>&lt;p&gt;FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。&lt;/p&gt;
+&lt;h1&gt;技术&lt;/h1&gt;
+&lt;p&gt;Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 &lt;a href=&quot;/zh/blog/zkrollup-intro1/&quot;&gt;1/100 以下&lt;/a&gt;。同时提供等价于 Layer1 的安全性。&lt;/p&gt;
+&lt;h1&gt;特性&lt;/h1&gt;
+&lt;h3&gt;不妥协的安全性&lt;/h3&gt;
+&lt;p&gt;零知识证明技术会保护用户资产的绝对安全。用户无需信任交易所的道德，只需要信任数学和代码。&lt;/p&gt;
+&lt;p&gt;交易所作恶可行性为0，无法偷走用户的钱，也无法做恶意的交易。即使在最坏可能性下，交易所意外关停，用户也可以取回自己拥有的资产。&lt;/p&gt;
+&lt;h3&gt;无延迟的交易&lt;/h3&gt;
+&lt;p&gt;在 Layer1 交易所中，交易需要被打包到块中，才能算作完成[附注1]。 Fluidex 作为 Layer2 交易所，用户的交易订单会被立刻处理，用户能够在一秒之内确认自己的订单状态。&lt;/p&gt;
+&lt;h3&gt;低成本&lt;/h3&gt;
+&lt;p&gt;用户不需要支付 Layer1 昂贵的 GAS 费即可完成交易。对于资金量小和交易频繁的交易者极为友好。&lt;/p&gt;
+&lt;h3&gt;专业的交易服务&lt;/h3&gt;
+&lt;p&gt;Fludiex 提供订单簿和 AMM 混合交易模式。普通用户可以使用 AMM 页面或者订单簿页面完成交易，职业交易者可以使用交易 API 完成行情更新和交易委托。专业流动性提供者 (LP)，可以使用 limit / market / post-only / IOC / stoploss order 等丰富的交易种类，并且获得做市商返佣。&lt;/p&gt;
+&lt;h3&gt;灵活高效的流动性算法&lt;/h3&gt;
+&lt;p&gt;Fluidex 使用 &lt;a href=&quot;/zh/blog/damm/&quot;&gt;自己提出的 Differential AMM 算法&lt;/a&gt;，能够极大地提升资本利用效率和交易盘口深度，并且无缝融合 AMM 与订单簿。此外，Fluidex 也将扮演外部流动性映射角色，能够使用外部 DEX / CEX 增强自身的流动性。&lt;/p&gt;
+&lt;h3&gt;无许可上币&lt;/h3&gt;
+&lt;p&gt;任何代币发行方能够向 Fluidex 提交自己的代币并增加这个交易币种。此外，代币发行方可以通过设置自己的 AMM 参数，灵活调整交易对的流动性分布，满足普通自动做市 / 单边代币拍卖等多种不同场景需求。&lt;/p&gt;
+&lt;!--
+# 项目历史
+
+Fluidex 在 2021 年初启动，我们曾写过[打造一个最好的非托管交易所的初心](https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/)。
+
+2021.Q1 Fluidex 开源了 PLONK DSL 工具包 [Plonkit](https://github.com/Fluidex/plonkit) 和 Circom 开发工具包 [Snarkit](https://www.fluidex.io/en/blog/the-motivation-of-snarkit/)。
+
+2021.Q2 Fluidex 开源了[后端代码](https://github.com/Fluidex/fluidex-backend)，这将是第一个完全开源的 ZK-Rollup DEX 项目。我们希望能够和社区携手努力，共同推动去中心化世界的边界。
+
+# Roadmap
+
+2021.Q4 测试网部署
+
+2022.Q1 主网上线
+主网
+--&gt;
+&lt;h1&gt;创始团队&lt;/h1&gt;
+&lt;p&gt;CEO: &lt;a href=&quot;https://www.linkedin.com/in/zhuo-zhang-75340152/&quot;&gt;张卓&lt;/a&gt;。毕业于清华大学计算机系，曾任人工智能独角兽依图科技的语音识别负责人，曾负责 IOST 公链的研发。&lt;/p&gt;
+&lt;p&gt;CTO: &lt;a href=&quot;https://www.linkedin.com/in/haoyu-lin-239474123/&quot;&gt;林浩宇&lt;/a&gt;。&lt;a href=&quot;https://vrf-mining.github.io/&quot;&gt;VRF-mining&lt;/a&gt;, &lt;a href=&quot;https://eprint.iacr.org/2020/1033.pdf&quot;&gt;RandChain&lt;/a&gt;, &lt;a href=&quot;https://dl.acm.org/doi/10.1145/3318041.3355460&quot;&gt;fair-atomic-swap&lt;/a&gt; 共同发明人。ZenGo 研究员。曾负责比原链研发。&lt;/p&gt;
+&lt;h1&gt;联系方式&lt;/h1&gt;
+&lt;p&gt;官网：&lt;a href=&quot;https://www.fluidex.io/&quot;&gt;https://www.fluidex.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram 技术群: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;邮箱：&lt;a href=&quot;mailto:contact@fluidex.io&quot;&gt;contact@fluidex.io&lt;/a&gt; 和 &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;公众号: 搜索 “Fluidex”.&lt;/p&gt;
+&lt;h1&gt;附注&lt;/h1&gt;
+&lt;p&gt;[1]: 暂不考虑链重组。因为这个因素对于 Layer1 Layer2 相同。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex]]></title><description><![CDATA[FluiDex Fluidex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup. Checkout this…]]></description><link>https://www.fluidex.io/en/index/</link><guid isPermaLink="false">https://www.fluidex.io/en/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
 &lt;p&gt;Fluidex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup.&lt;/p&gt;
 &lt;p&gt;Checkout &lt;a href=&quot;/en/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;this article&lt;/a&gt; for more info.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fluidex]]></title><description><![CDATA[FluiDex FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见这里。]]></description><link>https://www.fluidex.io/zh/index/</link><guid isPermaLink="false">https://www.fluidex.io/zh/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
 &lt;p&gt;FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Contact]]></title><description><![CDATA[Contact Telegram: https://t.me/fluid_dex Medium: https://fluid-dex.medium.com Twitter: https://twitter.com/fluid_dex Email: z@fluidex.io]]></description><link>https://www.fluidex.io/en/contact/</link><guid isPermaLink="false">https://www.fluidex.io/en/contact/</guid><content:encoded>&lt;h2&gt;Contact&lt;/h2&gt;
@@ -1118,51 +1162,7 @@ The project may soon launch a seed round of equity financing, and is looking for
 &lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Email: z@fluidex.io&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex: 基于 ZK-Rollup 的专业去中心化交易所]]></title><description><![CDATA[FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。 技术 Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 1/10…]]></description><link>https://www.fluidex.io/zh/about/</link><guid isPermaLink="false">https://www.fluidex.io/zh/about/</guid><pubDate>Sat, 28 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。&lt;/p&gt;
-&lt;h1&gt;技术&lt;/h1&gt;
-&lt;p&gt;Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 &lt;a href=&quot;/zh/blog/zkrollup-intro1/&quot;&gt;1/100 以下&lt;/a&gt;。同时提供等价于 Layer1 的安全性。&lt;/p&gt;
-&lt;h1&gt;特性&lt;/h1&gt;
-&lt;h3&gt;不妥协的安全性&lt;/h3&gt;
-&lt;p&gt;零知识证明技术会保护用户资产的绝对安全。用户无需信任交易所的道德，只需要信任数学和代码。&lt;/p&gt;
-&lt;p&gt;交易所作恶可行性为0，无法偷走用户的钱，也无法做恶意的交易。即使在最坏可能性下，交易所意外关停，用户也可以取回自己拥有的资产。&lt;/p&gt;
-&lt;h3&gt;无延迟的交易&lt;/h3&gt;
-&lt;p&gt;在 Layer1 交易所中，交易需要被打包到块中，才能算作完成[附注1]。 Fluidex 作为 Layer2 交易所，用户的交易订单会被立刻处理，用户能够在一秒之内确认自己的订单状态。&lt;/p&gt;
-&lt;h3&gt;低成本&lt;/h3&gt;
-&lt;p&gt;用户不需要支付 Layer1 昂贵的 GAS 费即可完成交易。对于资金量小和交易频繁的交易者极为友好。&lt;/p&gt;
-&lt;h3&gt;专业的交易服务&lt;/h3&gt;
-&lt;p&gt;Fludiex 提供订单簿和 AMM 混合交易模式。普通用户可以使用 AMM 页面或者订单簿页面完成交易，职业交易者可以使用交易 API 完成行情更新和交易委托。专业流动性提供者 (LP)，可以使用 limit / market / post-only / IOC / stoploss order 等丰富的交易种类，并且获得做市商返佣。&lt;/p&gt;
-&lt;h3&gt;灵活高效的流动性算法&lt;/h3&gt;
-&lt;p&gt;Fluidex 使用 &lt;a href=&quot;/zh/blog/damm/&quot;&gt;自己提出的 Differential AMM 算法&lt;/a&gt;，能够极大地提升资本利用效率和交易盘口深度，并且无缝融合 AMM 与订单簿。此外，Fluidex 也将扮演外部流动性映射角色，能够使用外部 DEX / CEX 增强自身的流动性。&lt;/p&gt;
-&lt;h3&gt;无许可上币&lt;/h3&gt;
-&lt;p&gt;任何代币发行方能够向 Fluidex 提交自己的代币并增加这个交易币种。此外，代币发行方可以通过设置自己的 AMM 参数，灵活调整交易对的流动性分布，满足普通自动做市 / 单边代币拍卖等多种不同场景需求。&lt;/p&gt;
-&lt;!--
-# 项目历史
-
-Fluidex 在 2021 年初启动，我们曾写过[打造一个最好的非托管交易所的初心](https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/)。
-
-2021.Q1 Fluidex 开源了 PLONK DSL 工具包 [Plonkit](https://github.com/Fluidex/plonkit) 和 Circom 开发工具包 [Snarkit](https://www.fluidex.io/en/blog/the-motivation-of-snarkit/)。
-
-2021.Q2 Fluidex 开源了[后端代码](https://github.com/Fluidex/fluidex-backend)，这将是第一个完全开源的 ZK-Rollup DEX 项目。我们希望能够和社区携手努力，共同推动去中心化世界的边界。
-
-# Roadmap
-
-2021.Q4 测试网部署
-
-2022.Q1 主网上线
-主网
---&gt;
-&lt;h1&gt;创始团队&lt;/h1&gt;
-&lt;p&gt;CEO: &lt;a href=&quot;https://www.linkedin.com/in/zhuo-zhang-75340152/&quot;&gt;张卓&lt;/a&gt;。毕业于清华大学计算机系，曾任人工智能独角兽依图科技的语音识别负责人，曾负责 IOST 公链的研发。&lt;/p&gt;
-&lt;p&gt;CTO: &lt;a href=&quot;https://www.linkedin.com/in/haoyu-lin-239474123/&quot;&gt;林浩宇&lt;/a&gt;。&lt;a href=&quot;https://vrf-mining.github.io/&quot;&gt;VRF-mining&lt;/a&gt;, &lt;a href=&quot;https://eprint.iacr.org/2020/1033.pdf&quot;&gt;RandChain&lt;/a&gt;, &lt;a href=&quot;https://dl.acm.org/doi/10.1145/3318041.3355460&quot;&gt;fair-atomic-swap&lt;/a&gt; 共同发明人。ZenGo 研究员。曾负责比原链研发。&lt;/p&gt;
-&lt;h1&gt;联系方式&lt;/h1&gt;
-&lt;p&gt;官网：&lt;a href=&quot;https://www.fluidex.io/&quot;&gt;https://www.fluidex.io/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Telegram 技术群: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;邮箱：&lt;a href=&quot;mailto:contact@fluidex.io&quot;&gt;contact@fluidex.io&lt;/a&gt; 和 &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;公众号: 搜索 “Fluidex”.&lt;/p&gt;
-&lt;h1&gt;附注&lt;/h1&gt;
-&lt;p&gt;[1]: 暂不考虑链重组。因为这个因素对于 Layer1 Layer2 相同。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex: 基于 ZK-Rollup 的专业去中心化交易所]]></title><description><![CDATA[FluiDex 是什么 对于熟悉前沿技术的人来说，FluiDex 是一个在以太坊上的 Layer2 去中心化交易所。我们将使用基于 PLONK 的 zkrollup 技术来实现高性能交易，同时能够将每笔交易的成本压缩到传统去中心化交易所的 1/10…]]></description><link>https://www.fluidex.io/zh/blog/fluidex-a-zkrollup-layer2-dex/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/fluidex-a-zkrollup-layer2-dex/</guid><pubDate>Sat, 28 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;FluiDex 是什么&lt;/h1&gt;
+&lt;p&gt;Email: z@fluidex.io&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex: 基于 ZK-Rollup 的专业去中心化交易所]]></title><description><![CDATA[FluiDex 是什么 对于熟悉前沿技术的人来说，FluiDex 是一个在以太坊上的 Layer2 去中心化交易所。我们将使用基于 PLONK 的 zkrollup 技术来实现高性能交易，同时能够将每笔交易的成本压缩到传统去中心化交易所的 1/10…]]></description><link>https://www.fluidex.io/zh/blog/fluidex-a-zkrollup-layer2-dex/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/fluidex-a-zkrollup-layer2-dex/</guid><pubDate>Sat, 28 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;FluiDex 是什么&lt;/h1&gt;
 &lt;p&gt;对于熟悉前沿技术的人来说，FluiDex 是一个在以太坊上的 Layer2 去中心化交易所。我们将使用基于 PLONK 的 zkrollup 技术来实现高性能交易，同时能够将每笔交易的成本压缩到传统去中心化交易所的 1/100 以下。我们将会是以太坊上第一个使用 PLONK 的基于 validity proof 的订单簿交易所。&lt;/p&gt;
 &lt;p&gt;对于普通大众来说，FluiDex 是一个类似 Coinbase 或者 火币 的加密资产交易所，优点是你的资产绝对安全，你不需要信任交易所创始人有道德或守法律，你只需要信任密码学和代码。缺点是会更不好用一些，例如交易费用在一些情况下会更高。&lt;/p&gt;
 &lt;h1&gt;为什么要做 FluiDex&lt;/h1&gt;
