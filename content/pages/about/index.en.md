@@ -60,4 +60,4 @@ Twitter: <https://twitter.com/fluid_dex>
 
 Email: <mailto:contact@fluidex.io> or <mailto:z@fluidex.io> 
 
-Wechat Official Account: FluiDex
+Wechat Official Account: "FluiDex"

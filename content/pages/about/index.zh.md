@@ -31,7 +31,7 @@ Fluidex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能
 
 ### 专业的交易服务
 
-Fludiex 提供订单簿和 AMM 混合交易模式。普通用户可以使用 AMM 页面或者订单簿页面完成交易，职业交易者可以使用交易 API 完成行情更新和交易委托。专业流动性提供者 (LP)，可以使用 limit / market / post-only / IOC / stopless order 等丰富的交易种类，并且获得做市商返佣。
+Fluidex 提供订单簿和 AMM 混合交易模式。普通用户可以使用 AMM 页面或者订单簿页面完成交易，职业交易者可以使用交易 API 完成行情更新和交易委托。专业流动性提供者 (LP)，可以使用 limit / market / post-only / IOC / stoploss order 等丰富的交易种类，并且获得做市商返佣。
 
 ### 灵活高效的流动性算法
 
@@ -78,7 +78,6 @@ Twitter: <https://twitter.com/fluid_dex>
 邮箱：<mailto:contact@fluidex.io> 和 <mailto:z@fluidex.io> 
 
 公众号: 搜索 "FluiDex".
-
 
 
 # 附注
