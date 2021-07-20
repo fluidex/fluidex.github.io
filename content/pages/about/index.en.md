@@ -25,7 +25,7 @@ In a DEX on layer 1, users need to interact with smart contracts and a trade is 
 
 ### Lower costs
 
-ZK-Rollup compresses transaction data so as to have lower average gas fee.
+ZK-Rollup compresses transaction data so as to have lower average gas fee. User don't need to pay high transaction fee as on layer 1, which is quite friendly to retail users and frequent traders.
 
 
 ### Professional trading experience
