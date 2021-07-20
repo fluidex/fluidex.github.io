@@ -33,14 +33,17 @@ ZK-Rollup compresses transaction data so as to have lower average gas fee. User 
 FluiDex is a orderbook AMM-hybrid DEX. A retail user may choose to trade through orderbook webpage or AMM webpage. A quant trader / market maker / Liquidity Provider (LP) may choose to monitor the tickers and place/cancel orders via APIs. FluiDex provides professional trading experience, for example it supports limit / market / post-only / IOC / stoploss... order types, and market maker can gain rebates.
 
 
-### Flexible and 
+### Flexible and efficient AMM algorithm
 
 ### Permissionless listing
+
+Anyone can list a ERC20 token on FluiDex permissionlessly. And a project team can adjust liquidity distribution by AMM parameters, for 
+automated market making (AMM) or initial DEX offering (IDO).
 
 
 ## Co-founders
 
-CEO: [Zhuo Zhang](https://www.linkedin.com/in/zhuo-zhang-75340152/). CS, THU. Previously Speech Recognition Team Lead in [YITUTech](https://www.yitutech.com/), and Tech Lead in [IOST](https://iost.io/).
+CEO: [Zhuo ZHANG](https://www.linkedin.com/in/zhuo-zhang-75340152/). CS, THU. Previously Speech Recognition Team Lead in [YITUTech](https://www.yitutech.com/), and Tech Lead in [IOST](https://iost.io/).
 
 CTO: [Haoyu LIN](https://www.linkedin.com/in/haoyu-lin-239474123/). Co-author oc [VRF-mining](https://vrf-mining.github.io/), [RandChain](https://eprint.iacr.org/2020/1033.pdf) and [fair-atomic-swap](https://dl.acm.org/doi/10.1145/3318041.3355460). Researcher in [ZenGo-X](https://zengo.com/research/).
 
