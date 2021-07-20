@@ -35,6 +35,9 @@ FluiDex is a orderbook AMM-hybrid DEX. A retail user may choose to trade through
 
 ### Flexible and efficient AMM algorithm
 
+FluiDex uses the [Differential AMM](/en/blog/damm/) we propose, which can noticeably increase the capital efficiency and optimize orderbook depth, can can support both orderbook and AMM seamlessly. FluiDex team itself can also brigde external liquidity from other DEXs/CEXs, to offer better liquidity.
+
+
 ### Permissionless listing
 
 Anyone can list a ERC20 token on FluiDex permissionlessly. And a project team can adjust liquidity distribution by AMM parameters, for 
