@@ -1,19 +1,18 @@
 ---
-title: "FluiDex: 基于 ZK-Rollup 的专业去中心化交易所"
-date: 2020-11-28
-tags: [introduction]
+title: "关于我们"
+profile_image: '/media/profile-image.jpg'
+template: "about-template"
 ---
 
+**FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。**
 
-FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。
 
-
-# 技术 
+## 技术 
 
 FluiDex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 [1/100 以下](/zh/blog/zkrollup-intro1/)。同时提供等价于 Layer1 的安全性。
 
 
-# 特性
+## 特性
 
 ### 不妥协的安全性
 
@@ -42,7 +41,7 @@ FluiDex 使用 [自己提出的 Differential AMM 算法](/zh/blog/damm/)，能�
 任何代币发行方能够向 FluiDex 提交自己的代币并增加这个交易币种。此外，代币发行方可以通过设置自己的 AMM 参数，灵活调整交易对的流动性分布，满足普通自动做市 / 单边代币拍卖等多种不同场景需求。
 
 <!--
-# 项目历史
+## 项目历史
 
 FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管交易所的初心](https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/)。
 
@@ -50,7 +49,7 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 
 2021.Q2 FluiDex 开源了[后端代码](https://github.com/Fluidex/fluidex-backend)，这将是第一个完全开源的 ZK-Rollup DEX 项目。我们希望能够和社区携手努力，共同推动去中心化世界的边界。
 
-# Roadmap
+## Roadmap
 
 2021.Q4 测试网部署
 
@@ -58,14 +57,14 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 主网
 -->
 
-# 创始团队
+## 创始团队
 
 CEO: [张卓](https://www.linkedin.com/in/zhuo-zhang-75340152/)。毕业于清华大学计算机系，曾任人工智能独角兽依图科技的语音识别负责人，曾负责 IOST 公链的研发。
 
 CTO: [林浩宇](https://www.linkedin.com/in/haoyu-lin-239474123/)。[VRF-mining](https://vrf-mining.github.io/), [RandChain](https://eprint.iacr.org/2020/1033.pdf), [fair-atomic-swap](https://dl.acm.org/doi/10.1145/3318041.3355460) 共同发明人。ZenGo 研究员。曾负责比原链研发。
 
 
-# 联系方式
+## 联系方式
 
 官网：<https://www.fluidex.io/>
 
@@ -80,7 +79,7 @@ Twitter: <https://twitter.com/fluid_dex>
 公众号: 搜索 "FluiDex".
 
 
-# 附注
+## 附注
 
 [1]: 暂不考虑链重组。因为这个因素对于 Layer1 Layer2 相同。
 

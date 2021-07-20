@@ -4,9 +4,9 @@ profile_image: '/media/profile-image.jpg'
 template: "about-template"
 ---
 
-FluiDex is a ZK-Rollup Layer2 DEX on Ethereum.
+**FluiDex is a ZK-Rollup Layer2 DEX on Ethereum.**
 
-# Technology
+## Technology
 
 Fluidex is 
 
@@ -14,7 +14,7 @@ If you are familiar with cutting-edge blockchain technology, you can easily unde
 
 For those who are not familiar with these buzzy words, FluiDex is a crypto asset exchange similar to Coinbase or Binance, but non-custodial. The good thing is that your assets are absolutely "SAFU". You don’t need to trust the team of the exchange to be ethical or law-abiding. You only need to trust cryptography and code. The bad thing is that it will be a bit less friendly to use, for example, transaction fees will be a bit higher in some cases.
 
-# Why build FluiDex
+## Why build FluiDex
 
 “Build a safe, professional and easy-to-use digital asset trading platform" is our long-term vision.
 
@@ -30,27 +30,27 @@ So why hasn't the order book decentralized exchange exploded in the past few yea
 
 In summary, the development of a decentralized economy has brought up more and more traders and trading needs, and order book exchanges can better meet the needs of professional traders. In the past a few years, the development of cryptography technology has made it possible for high-performance, low-cost and secure order book transactions. In a word, it is exactly the right time to build FluiDex.
 
-# Similar products and projects
+## Similar products and projects
 
 1. Traditional centralized exchange. For quite a lot, maybe more than half, of the people, this type of exchange is good enough. However, for some people who have high requirements for fund security & anonymity, the hidden danger of black swan always exists in centralized exchanges. Even for a big exchange like OKEx, it happened not long ago that the exchange was unable to withdraw the coin because the founder lost contact for more than a month.
 2. Algorithmic automated market making exchange. A typical example is Uniswap, which sets the price of buying and selling assets by always ensuring that the number of asset A \* the number of asset B == the fixed value. In the previous paragraph, we explain that such exchanges are not enough for professional traders.
 3. Order book exchange based on optimistic rollup technology. This type of exchange has high performance and is easy to develop, but it has two major disadvantages. The first is that withdrawing from such exchanges requires confirmation time of weeks, which is completely unacceptable for most of the traders. Second, the security of optimistic rollup is not as good as "as safe as L1" zk rollup.
 4. Other products with similar technical decisions, such as diversifi and loopring. Yes, in a nutshell, FluiDex will compete head-to-head with them. That there are already one or two players in a potential big market, is not a reason why new players should not enter. It is not true that since OKEx is running well, Binance should not start a business. In addition, FluiDex and these projects will have some different decisions both in technology and product. For example, from a technical perspective, we will use PLONK as the protocol of zero-knowledge proof, which will bring faster product iteration, from a product perspective, we are likely to implement permissionless token listing.
 
-# About Decentralized Governance & Token
+## About Decentralized Governance & Token
 
 I believe that our exchange is a traditional "centralized" exchange, with a only difference that we're non-custodial. There are many interpretations of "decentralization", the decentralization of assets, the decentralization of control ("governance"), and even the decentralization of teams. Based on our vision, the decentralization of assets (ie, the self-custody of assets) is the must-have. But, at least today, we believe that decentralization of governance is neither necessary nor sufficient for building a great product. Any product team should investigate users and markets, but no team should decide the future of product only base on users' votes. Customers and shareholders are two kinds of people. You should not force or expect customers to become shareholders. For the FluiDex team, “the customer is always right“, but there will be no so-called "decentralized" governance in the future. The decision-making power of the future of the product will always be in the hands of the management team, and users will vote for our success or failure with their feet.
 
 Based on our understanding of governance philosophy above, FluiDex will not issue "governance tokens" in the foreseeable future, but we are not against to issue tokens with dividend rights for fundraising. For example, it is entirely possible for us to issue a token and buy back this token with 10% of the monthly gross profit for the next 3 years.
 
-# Project status & schedule & financing
+## Project status & schedule & financing
 
 Fluidex project was launched at the end of 2020. It is expected that the MVP/demo will be completed in Q2 of 2021, and the mainnet launch will probably start in Q4 of 2021.
 
 __Update 2021.04.15:__
 The project may soon launch a seed round of equity financing, and is looking for raising a total amount of around US$1 million at a valuation of US$7-10 million.
 
-# Contact
+## Contact
 
 Website: <https://www.fluidex.io/>
 
