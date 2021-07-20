@@ -77,7 +77,7 @@ Twitter: <https://twitter.com/fluid_dex>
 
 邮箱：<mailto:contact@fluidex.io> 和 <mailto:z@fluidex.io> 
 
-公众号: 搜索 "Fluidex".
+公众号: 搜索 "FluiDex".
 
 
 
