@@ -51,7 +51,7 @@ To meet these requirements, we adopt the Master-Worker architecture, which consi
 
 At present, prover cluster provides two different deployment styles - via Docker Compose and via K8S - to support local development/debugging and production environment deployment.
 
-## Design Principles of the Fluidex Back-end
+## The Design Principles of Fluidex Back-end
 
 ### CQRS and Global Message Bus
 
