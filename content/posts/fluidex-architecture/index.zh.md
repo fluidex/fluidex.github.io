@@ -1,26 +1,26 @@
 ---
-title: "打磨第一个完全开源的 ZK-Rollup DEX: Fluidex 架构介绍"
+title: "打磨第一个完全开源的 ZK-Rollup DEX: FluiDex 架构介绍"
 date: 2021-07-14 20:00:00
 tags: [technical]
 ---
 
-摘要：本文将介绍 Fluidex 团队开源的 ZK-Rollup DEX 后端的架构设计。
+摘要：本文将介绍 FluiDex 团队开源的 ZK-Rollup DEX 后端的架构设计。
 
 
 > The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign of slowing down.
 > 
 > -- [Dragonfly Research](https://medium.com/dragonfly-research/im-worried-nobody-will-care-about-rollups-554bc743d4f1)
 
-ZK-Rollup 以其出色的去中心化和安全性优势，被包括 Ethereum 创始人 Vitalik 在内的很多人认为是长期最重要的 Layer 2 扩容方案。但另一方面，技术优势的反面恰恰是高门槛，无论是技术基础设施，还是用户可见的产品，相关项目实际上都屈指可数。[Fluidex](https://github.com/Fluidex) 作为全世界少数几个在独立开发完整 ZK-Rollup 系统的团队，希望能够持续分享一些自己的经验和成果，和业界一起共同推动 ZK-Rollup 生态边界的不断扩张。
+ZK-Rollup 以其出色的去中心化和安全性优势，被包括 Ethereum 创始人 Vitalik 在内的很多人认为是长期最重要的 Layer 2 扩容方案。但另一方面，技术优势的反面恰恰是高门槛，无论是技术基础设施，还是用户可见的产品，相关项目实际上都屈指可数。[FluiDex](https://github.com/fluidex) 作为全世界少数几个在独立开发完整 ZK-Rollup 系统的团队，希望能够持续分享一些自己的经验和成果，和业界一起共同推动 ZK-Rollup 生态边界的不断扩张。
 
-我们曾在 [ZK-Rollup 开发经验分享 Part I](/zh/blog/zkrollup-intro1/) 中对 ZK-Rollup 做了一个概括的介绍，读者可以先从这篇文章获得更多的背景知识。作为“开发经验分享”系列文章的第二篇，本文将会介绍我们团队 [近期开源的 ZK-Rollup DEX 后端](https://github.com/Fluidex/fluidex-backend) 的整体架构，希望帮到更多的开发者，能够为 ZK-Rollup 的大规模应用出一份力。
+我们曾在 [ZK-Rollup 开发经验分享 Part I](/zh/blog/zkrollup-intro1/) 中对 ZK-Rollup 做了一个概括的介绍，读者可以先从这篇文章获得更多的背景知识。作为“开发经验分享”系列文章的第二篇，本文将会介绍我们团队 [近期开源的 ZK-Rollup DEX 后端](https://github.com/fluidex/fluidex-backend) 的整体架构，希望帮到更多的开发者，能够为 ZK-Rollup 的大规模应用出一份力。
 
 ## 整体架构
 
-下图是 Fluidex 后端的整体架构图。概括地说，用户把交易请求（包括订单委托和 AMM 请求）发送到撮合引擎，撮合引擎将所有完成的交易发送到消息队列，Rollup 模块将消息队列中的交易在 Merkle tree 上更新，打包成 L2 blocks。之后  l2 blocks  由 prover cluster 生成证明，就可以最终被发布在链上。
+下图是 FluiDex 后端的整体架构图。概括地说，用户把交易请求（包括订单委托和 AMM 请求）发送到撮合引擎，撮合引擎将所有完成的交易发送到消息队列，Rollup 模块将消息队列中的交易在 Merkle tree 上更新，打包成 L2 blocks。之后  l2 blocks  由 prover cluster 生成证明，就可以最终被发布在链上。
 
 <p align="center">
-  <img src="Fluidex Architecture.svg" width="600" >
+  <img src="FluiDex Architecture.svg" width="600" >
 </p>
 
 我们将先分模块地介绍每个服务模块的作用，最后介绍 ZK-Rollup 系统设计的一般原则。
@@ -29,11 +29,11 @@ ZK-Rollup 以其出色的去中心化和安全性优势，被包括 Ethereum 创
 
 ### Gateway
 
-Gateway 接受从 网页端 / 移动端 / 客户交易机器人发送来的交易请求，路由之后发送到不同的具体服务。Gateway 也会将内部的行情和委托状态更新，变成适配于请求方的格式推送给请求方[^1]。 考虑到 Envoy 在性能/动态配置等方面都有良好表现，我们使用 Envoy 作为系统的网关组件。此外，Fluidex 内部大量使用 GRPC 来完成单向的 RPC 和 双向的 streaming，Envoy 对 GRPC 也有出色的支持。
+Gateway 接受从 网页端 / 移动端 / 客户交易机器人发送来的交易请求，路由之后发送到不同的具体服务。Gateway 也会将内部的行情和委托状态更新，变成适配于请求方的格式推送给请求方[^1]。 考虑到 Envoy 在性能/动态配置等方面都有良好表现，我们使用 Envoy 作为系统的网关组件。此外，FluiDex 内部大量使用 GRPC 来完成单向的 RPC 和 双向的 streaming，Envoy 对 GRPC 也有出色的支持。
 
 ### 撮合引擎
 
-[dingir exchange](https://github.com/Fluidex/dingir-exchange) 是一个高性能交易所撮合引擎。它在内存中完成用户订单的撮合。我们使用 BTreeMap[^2] 来实现 Orderbook，因为撮合引擎订单簿既需要 key-value 查询（查询订单信息），也需要有序遍历（撮合），这要求一种类似 AVL tree / skip list 这类有序关联数组，我们考虑到现代 CPU 的缓存特性，使用了对缓存更友好的 BTreeMap。
+[dingir exchange](https://github.com/fluidex/dingir-exchange) 是一个高性能交易所撮合引擎。它在内存中完成用户订单的撮合。我们使用 BTreeMap[^2] 来实现 Orderbook，因为撮合引擎订单簿既需要 key-value 查询（查询订单信息），也需要有序遍历（撮合），这要求一种类似 AVL tree / skip list 这类有序关联数组，我们考虑到现代 CPU 的缓存特性，使用了对缓存更友好的 BTreeMap。
 
 服务状态的持久化通过定期 dump 和 operation log 实现。服务通过定期的 fork 后，新进程会进行全局状态的持久化。比起 stop-world and deep-copy 的方式，fork 提供了更好的请求延迟指标。此外，所有的写请求作为 operation logs 被**批量地**（否则会给数据库造成很大的压力）追加写入数据库中。全局状态定期持久化 + operation log 两种持久化方式结合在一起，即使在最坏的宕机情况下，也仅仅需要回滚几秒的交易。
 
@@ -71,7 +71,7 @@ Rollup 系统的状态更新需要确保强一致性，不能允许分毫的误�
 
 ## 代码 & 运行
 
-目前 Fluidex-backend 已经 [开源到 Github](https://github.com/Fluidex/fluidex-backend)。目前仅支持本机启动。具体的代码说明和运行方式见 Github 代码库页面 。
+目前 FluiDex-backend 已经 [开源到 Github](https://github.com/fluidex/fluidex-backend)。目前仅支持本机启动。具体的代码说明和运行方式见 Github 代码库页面 。
 
 [^1]: grpc->websocket, 目前尚未实现
 [^2]: https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html

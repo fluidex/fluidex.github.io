@@ -41,7 +41,7 @@ tags: [introduction]
 
 # 项目状态 & 时间表 & 融资
 
-Fluidex 项目在 2020 年底启动，预期在 2021 年 Q2 完成最小 Demo 开发，在 2021 年 Q4 能够部署主网。
+FluiDex 项目在 2020 年底启动，预期在 2021 年 Q2 完成最小 Demo 开发，在 2021 年 Q4 能够部署主网。
 
 Update 2021.04.15:
 项目可能很快会启动种子轮股权融资，期待按照 700-1000 万美元的估值获得总额 100 万美元左右融资。
@@ -56,7 +56,7 @@ CTO: 林浩宇。VRF-mining, RandChain, fair-atomic-swap 共同发明人。ZenGo
 
 # 招聘
 
-我们正在招聘全职/兼职/实习工程师。完整的招聘信息在 [we are hiring](https://github.com/Fluidex/we_are_hiring)。我们的开源项目在 [Fluidex](https://github.com/Fluidex) 下面，目前有 [零知识证明工具包 Plonkit](https://github.com/Fluidex/plonkit)，[交易所撮合引擎 dingir-exchange](https://github.com/Fluidex/dingir-exchange)，[零知识证明电路 DSL 代码](https://github.com/Fluidex/circuits)。我们团队 Base 在北京，希望新成员尽量在北京，但也可以接受 remote 工作。
+我们正在招聘全职/兼职/实习工程师。完整的招聘信息在 [we are hiring](https://github.com/fluidex/we_are_hiring)。我们的开源项目在 [FluiDex](https://github.com/fluidex) 下面，目前有 [零知识证明工具包 Plonkit](https://github.com/fluidex/plonkit)，[交易所撮合引擎 dingir-exchange](https://github.com/fluidex/dingir-exchange)，[零知识证明电路 DSL 代码](https://github.com/fluidex/circuits)。我们团队 Base 在北京，希望新成员尽量在北京，但也可以接受 remote 工作。
 
 # 联系方式
 
@@ -66,6 +66,6 @@ Medium: <https://fluid-dex.medium.com>
 
 Twitter: <https://twitter.com/fluid_dex>
 
-公众号: 搜索 "Fluidex".
+公众号: 搜索 "FluiDex".
 
 邮箱：z@fluidex.io

@@ -1,6 +1,6 @@
 ---
 template: "index-template"
-title: "Fluidex"
+title: "FluiDex"
 ---
 
 # FluiDex

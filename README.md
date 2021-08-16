@@ -1,6 +1,6 @@
 # fluidex.github.io
 
-Fluidex blog using gatsby.
+FluiDex blog using gatsby.
 
 ## local dev
 ```bash

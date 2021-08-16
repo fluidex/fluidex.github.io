@@ -1,5 +1,5 @@
 ---
-title: "A Dive into Fluidex's Architecture"
+title: "A Dive into FluiDex's Architecture"
 date: 2021-07-14 20:00:00
 tags: [technical]
 description: "Building the first fully open-source zk-rollup orderbook DEX in the world."
@@ -9,16 +9,16 @@ description: "Building the first fully open-source zk-rollup orderbook DEX in th
 > 
 > -- [Dragonfly Research](https://medium.com/dragonfly-research/im-worried-nobody-will-care-about-rollups-554bc743d4f1)
 
-ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of the a few teams that are developing a ZK-Rollup system from scratch instead of forking, [Fluidex](https://github.com/Fluidex) decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
+ZK-Rollup, with its terrific security and decentralization properties, is believed as the most important Layer 2 scaling solution in the long term. However, the nice features of ZK-Rollup come with a cost of technical difficulties, in terms of both cryptography and engineering. No wonder why there are only a few relevant devtools or user-end products out there. As one of the a few teams that are developing a ZK-Rollup system from scratch instead of forking, [FluiDex](https://github.com/fluidex) decides to share some of our experience and outcomes with the industry, to help explode the ZK-Rollup ecosystem.
 
-Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize a ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our [recently open-sourced back-end architecture](https://github.com/Fluidex/fluidex-backend), aiming at guiding more developers into the ZK-Rollup ecosystem.
+Before moving on, we recommend our readers to check out the article ["ZK-Rollup development experience sharing, Part I"](/en/blog/zkrollup-intro1/), in which we talk about how to develop and optimize a ZK-Rollup. As the second part of this “development experience-sharing” series, this article focuses on our [recently open-sourced back-end architecture](https://github.com/fluidex/fluidex-backend), aiming at guiding more developers into the ZK-Rollup ecosystem.
 
 ## Overall Architecture
 
-The diagram below shows the overall architecture of Fluidex's back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages (after some format conversions) into L2 blocks. After L2 blocks being proved by our prover cluster, they will be published onto chain.
+The diagram below shows the overall architecture of FluiDex's back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users' orders, users' balances...) on the Merkle tree and packs the messages (after some format conversions) into L2 blocks. After L2 blocks being proved by our prover cluster, they will be published onto chain.
 
 <p align="center">
-  <img src="Fluidex Architecture.svg" width="600" >
+  <img src="FluiDex Architecture.svg" width="600" >
 </p>
 
 We will now first introduce the functionalities and responsibilities of each submodule, and then summarize the design principles of our system.
@@ -27,11 +27,11 @@ We will now first introduce the functionalities and responsibilities of each sub
 
 ### Gateway
 
-Gateway is to accept order requests from front-end or quant trading bots, and to route them into different micro-services. Gateway will also push the up-to-date internal market k-line and orderbook information to the ticker subscribers[^1] in a desired format. Given the excellent performance and configuration flexibility, we choose Envoy for our gateway. Besides, note that Fluidex uses GRPC extensively including both unary RPC and bidirectional streaming RPC, Envoy's excellent support for GRPC can fulfill our requirements.
+Gateway is to accept order requests from front-end or quant trading bots, and to route them into different micro-services. Gateway will also push the up-to-date internal market k-line and orderbook information to the ticker subscribers[^1] in a desired format. Given the excellent performance and configuration flexibility, we choose Envoy for our gateway. Besides, note that FluiDex uses GRPC extensively including both unary RPC and bidirectional streaming RPC, Envoy's excellent support for GRPC can fulfill our requirements.
 
 ### Matching Engine
 
-[dingir exchange](https://github.com/Fluidex/dingir-exchange) is a high-performance exchange matching engine. It stores and matches user orders in RAM in real time. We use BTreeMap[^2] for our orderbook, because it requires both key-value query (for order details) and in-order traversal (for order matching), which means that it needs an ordered associative array like AVL tree / skip list. Moreover, BTreeMap can benefit from modern CPUs' cache architecture.
+[dingir exchange](https://github.com/fluidex/dingir-exchange) is a high-performance exchange matching engine. It stores and matches user orders in RAM in real time. We use BTreeMap[^2] for our orderbook, because it requires both key-value query (for order details) and in-order traversal (for order matching), which means that it needs an ordered associative array like AVL tree / skip list. Moreover, BTreeMap can benefit from modern CPUs' cache architecture.
 
 The persistence of the global state is achieved by periodical dumps and operation logs. By periodical [process forks](https://en.wikipedia.org/wiki/Fork_(system_call)), which has lower latency than "stop-world" and than "deep-copy", the new child process persists the global state. In addition, all user requests are persisted into the database in batches (otherwise leading to heavy database pressure) as operation logs. The combination of the two persistence mechanisms ensures that if the system suddenly goes down, the system state can be quickly recovered.
 
@@ -51,7 +51,7 @@ To meet these requirements, we adopt the Master-Worker architecture, which consi
 
 At present, prover cluster provides two different deployment styles - via Docker Compose and via K8S - to support local development/debugging and production environment deployment.
 
-## The Design Principles of Fluidex Back-end
+## The Design Principles of FluiDex Back-end
 
 ### CQRS and Global Message Bus
 
@@ -69,7 +69,7 @@ Thanks to Rust's type safety and ownership checks, as well as the performance co
 
 ## Source Codes
 
-Fluidex-backend has been open-sourced on Github and please refer to https://github.com/Fluidex/fluidex-backend. (Currently only with instructions on how to run it as a local cluster.) 
+FluiDex-backend has been open-sourced on Github and please refer to https://github.com/fluidex/fluidex-backend. (Currently only with instructions on how to run it as a local cluster.) 
 
 [^1]: using "grpc->websocket" but not implemented yet.
 [^2]: https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html

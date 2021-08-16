@@ -1,5 +1,5 @@
 ---
-title: "About Fluidex"
+title: "About FluiDex"
 profile_image: '/media/profile-image.jpg'
 template: "about-template"
 ---
@@ -8,14 +8,14 @@ template: "about-template"
 
 ## Technology
 
-Fluidex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on Ethereum. It [can save the cost of each transaction to 1/100](/en/blog/zkrollup-intro1/) while still offering the same security level as layer 1.
+FluiDex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on Ethereum. It [can save the cost of each transaction to 1/100](/en/blog/zkrollup-intro1/) while still offering the same security level as layer 1.
 
 
 ## Features
 
 ### Uncompromising security
 
-Fluidex uses Zero-knowledge Proof schemes so that users don't need to trust the exchange being ethical, the Math/Cryptography behind it can guarantee that users' funds always stay "SAFU". The exchange has no way to steal users' funds or creat unauthorized orders. Even in the worst case that the exchange shuts down, users can still withdraw their funds safely.
+FluiDex uses Zero-knowledge Proof schemes so that users don't need to trust the exchange being ethical, the Math/Cryptography behind it can guarantee that users' funds always stay "SAFU". The exchange has no way to steal users' funds or creat unauthorized orders. Even in the worst case that the exchange shuts down, users can still withdraw their funds safely.
 
 
 ### Trading without latency
