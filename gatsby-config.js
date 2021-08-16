@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Fluidex`,
+    title: `FluiDex`,
     author: {
-      name: `Fluidex Team`,
+      name: `FluiDex Team`,
       summary: `The first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup.`,
     },
-    description: `The website of the Fluidex team.`,
+    description: `The website of the FluiDex team.`,
     siteUrl: `https://www.fluidex.io/`,
     social: {
       twitter: `fluid_dex`,
@@ -13,7 +13,7 @@ module.exports = {
     socialLinks: [
       {
         name: "github",
-        url: "https://github.com/Fluidex",
+        url: "https://github.com/fluidex",
       },
       {
         name: "telegram",
@@ -158,8 +158,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Fluidex`,
-        short_name: `Fluidex`,
+        name: `FluiDex`,
+        short_name: `FluiDex`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

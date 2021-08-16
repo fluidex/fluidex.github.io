@@ -150,19 +150,19 @@ DAMM 所有相关参数含义：
 
 即在方程组中，已知 price0 depth0, 和 quote0，base0，需要计算做市价格范围和其他所有剩余参数。
 
-具体求解见： <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39>
+具体求解见： <https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39>
 
 ### 给定盘口价格深度，和做市价格范围
 
 即在方程组中，已知 price0 depth0, 和 lowPrice（可以为 0），highPrice（可以为  Infinity），需要计算出初始做市资金量和其他所有剩余参数。
 
-具体求解见：<https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53>
+具体求解见：<https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53>
 
 ### 给定做市价格范围，和初始做市资金量
 
 此种情况最为复杂。实际上等价于解一个二元二次方程。通过解这个方程我们也可以得到所有剩余参数。
 
-具体求解：<https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72>
+具体求解：<https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72>
 
 从上面三种应用场景可以看到 DAMM 具有极大的灵活性。灵活性一方面体现在，不同的场景可能有不同的做市需求和不同的初始条件，在以上三种不同的初始条件情况下，我们都能求解出一个正确的 DAMM 策略。灵活性另一方面体现在，**我们可以通过价格范围或初始资金量，任意调节做市资金效率**。
 
@@ -173,7 +173,7 @@ DAMM 所有相关参数含义：
 
 ## 从 AMM 到 orderbook 的转化
 
-将 AMM 曲线分段近似，就可以得到一份离散化 orderbook。在 [参考实现代码](https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156) 中，我们可以指定价格 interval 和 order 数量，通过计算 base delta 和 quote delta，得到订单大小和平均价格。
+将 AMM 曲线分段近似，就可以得到一份离散化 orderbook。在 [参考实现代码](https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156) 中，我们可以指定价格 interval 和 order 数量，通过计算 base delta 和 quote delta，得到订单大小和平均价格。
 
 ## 数学等价性
 

@@ -150,19 +150,19 @@ Here are the three scenarios corresponding to three initial conditions:
 
 That is, in the equations, given `price0`, `depth0`, and `quote0`, `base0`, we then want to calculate market-making price range and other parameters.
 
-For step-by-step solution please refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39>
+For step-by-step solution please refer to: <https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39>
 
 ### Given price and depth (A), and market-making price range (B)
 
 That is, in the equations, given `price0`, `depth0`, and `lowPrice` (could be 0), `highPrice` (could be inifinity), need to calculate initial amount and other parameters.
 
-For step-by-step solution please refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53>
+For step-by-step solution please refer to: <https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53>
 
 ### Given market-making price range (B), and initial amounts (C)
 
 This is the most complex scenario. Actually it is equivalent to solving a binary quadratic equation. By solving the equation we could get all other parameters.
 
-For step-by-step solution please refer to: <https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72>
+For step-by-step solution please refer to: <https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72>
 
 From the above three scenarios, we could see that DAMM has great flexibility. On the one hand, different scenarios may have different requirements and different initial conditions. Under the above three initial conditions, we are still able to solve a correct DAMM strategy. On the other hand, **we can abitrarily adjust capital efficiency through the price range or initial amount**.
 
@@ -170,7 +170,7 @@ From the above three scenarios, we could see that DAMM has great flexibility. On
 
 ## Converting AAM to orderbook
 
-By approximating the AMM curve section by section, we can get a discretized orderbook. In our [reference implementation](https://github.com/Fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156), we could specify price interval and the number of orders, and get order size and average price by calculating BASE_DELTA and QUOTE_DELTA.
+By approximating the AMM curve section by section, we can get a discretized orderbook. In our [reference implementation](https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156), we could specify price interval and the number of orders, and get order size and average price by calculating BASE_DELTA and QUOTE_DELTA.
 
 ## Mathematical equivalance
 

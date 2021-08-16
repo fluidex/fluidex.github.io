@@ -14,7 +14,7 @@ _致谢：感谢 barryWhiteHat、Jordi Baylina、Koh Wei Jie 给我们提供的�
 
 本文会分享一些 ZK-Rollup 开发中的经验。撰写本文的动机在于，互联网有大量高质量的资料介绍 ZK-SNARK （零知识证明）理论本身，这些文章会介绍详细的密码学细节，另一些不太偏向技术的文章则会展望 ZK-Rollup 的作用和前景。较少见有文章会深入地介绍 ZK-Rollup 到底是怎么提升性能的？一个完整的 ZK-Rollup 系统是长什么样的？ZK-Rollup 系统中有什么少被人讨论但是重要的常识经验吗？
 
-[Fluidex 团队](https://github.com/Fluidex/) 作为全世界少数几个在独立开发完整 ZK-Rollup 系统的团队，希望能够分享一些自己在开发 ZK-Rollup 系统中的经验，能够反哺业界的其他参与者。我们想分享一些重要但是很少被谈到的话题，比如 ZK-Rollup 系统的性能瓶颈在哪里，它的成本又是如何构成的等。
+[FluiDex 团队](https://github.com/fluidex/) 作为全世界少数几个在独立开发完整 ZK-Rollup 系统的团队，希望能够分享一些自己在开发 ZK-Rollup 系统中的经验，能够反哺业界的其他参与者。我们想分享一些重要但是很少被谈到的话题，比如 ZK-Rollup 系统的性能瓶颈在哪里，它的成本又是如何构成的等。
 
 ## ZK-SNARK& ZK-Rollup 概述
 
@@ -105,7 +105,7 @@ ZK-Rollup 系统至少需要以下几个组件：
 1. 链上智能合约：负责验证 Merkle tree 的每次状态更新都是有效的，维护正确的 merkle tree root；在 Rollup 系统完全停机时，能够保证用户可以直接调用合约提取自己应有的资产；协调 L1 和 L2，保证用户向合约的充值能被及时处理并被更新在 Merkle tree 中。
 2. Prover Cluster：对每个 L2 Block 做大量密码学计算获得 zksnark proof。通常需要一个大规模集群，会占用了系统中超过 99% 的计算资源。
 3. State Manager：维护完整的 merkle tree。对于每个 tx，更新 merkle tree 并且为 prover cluster 提供必要的数据（如 merkle proof）。
-4. 其他业务模块：如 L2 浏览器；此外，不同的具体 Rollup 系统还会有自己专门的业务模块，如 Fluidex 会有一个[订单簿撮合引擎](https://github.com/Fluidex/dingir-exchange)，从用户的委托订单生成匹配的交易，发送给 State Manager。
+4. 其他业务模块：如 L2 浏览器；此外，不同的具体 Rollup 系统还会有自己专门的业务模块，如 FluiDex 会有一个[订单簿撮合引擎](https://github.com/fluidex/dingir-exchange)，从用户的委托订单生成匹配的交易，发送给 State Manager。
 
 ## ZK-Rollup 的 TPS 能力上限
 
@@ -125,11 +125,11 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 这是一个很少被讨论但是至关重要的角度，**真实 ZK-Rollup 系统的性能上限实际上更被这个模块限制，而不是上面讨论的证明速度和 gas 限制**。
 
-容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense account\_balance merkle tree (如下图所示) ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 次 merkle proof 的验证，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [Fluidex 团队的测试结果](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算（每个test的树深度为20，故每个hash操作是57ms / 100 / 20 ~= 30us），则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
+容纳较多用户和资产对于 Merkle tree 的深度有一定要求。假设使用 binary dense account\_balance merkle tree (如下图所示) ，我们打算容纳 1 Million 用户和 1000 种资产，则需要的 merkle tree 深度为 30。对于每笔交易，假设会导致 5-10 次 merkle proof 的验证，则总计约需要 200 次 hash。ZK-Rollup Merkle tree 中的 hash 出于 zksnark 证明性能考虑，不会使用 sha3 等普通 hash，而会使用 poseidon / rescue 等适用于 zksnark 的 hash 方式。按照 [FluiDex 团队的测试结果](https://github.com/fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326)，单次 poseidon hash 按照 30us 计算（每个test的树深度为20，故每个hash操作是57ms / 100 / 20 ~= 30us），则从 Merkle tree 角度估算的 ZK-Rollup 系统性能上限为 1 / 0.00003 / 200 = 160 TPS。
 
 ![](/media/account-merkle-tree.png)
 
-因此，必须实现 merkle tree 的 [并行更新](https://github.com/Fluidex/state_keeper/blob/a255043cbe7c899c6a8d9cc46b170a40f20623c9/src/types/merkle_tree.rs#L127)， ZK-Rollup 的 TPS 才会突破 100-300 这个层次。和 zksnark proving 可以完美分布式多机多核并行不同，使用并行加速 merkle tree 的更新需要较精细的代码控制，而且非常难以实现多机分布式加速。这也是个工程上的挑战。
+因此，必须实现 merkle tree 的 [并行更新](https://github.com/fluidex/state_keeper/blob/a255043cbe7c899c6a8d9cc46b170a40f20623c9/src/types/merkle_tree.rs#L127)， ZK-Rollup 的 TPS 才会突破 100-300 这个层次。和 zksnark proving 可以完美分布式多机多核并行不同，使用并行加速 merkle tree 的更新需要较精细的代码控制，而且非常难以实现多机分布式加速。这也是个工程上的挑战。
 
 上面推算的 100-300 TPS，接近不少实际运行中的 ZK-Rollup 系统的真实性能上限。
 
@@ -137,7 +137,7 @@ ZK-Rollup 系统至少需要以下几个组件：
 
 ### ZK-Rollup 一般需要几千个 CPU cores 做 proving
 
-我仍然拿 Fluidex 的 [PLONK](https://github.com/fluidex/awesome-plonk) [电路](https://github.com/Fluidex/circuits) 作为一个典型 ZK-Rollup 系统的例子。在我们最新的一次性能测试中，每个包含 100 个交易的 L2 Block 的单次电路证明需要在 24core 服务器上消耗约 20min。因此如果需要达到 100 TPS 的性能，需要大约 300 台 EC2 c5.12xlarge，这意味着每小时 500 USD 左右的成本。此时每个 Layer 2 tx 链下计算成本为 0.001 USD。不过目前我们做性能优化的投入还很少，预计未来有较多提升空间。
+我仍然拿 FluiDex 的 [PLONK](https://github.com/fluidex/awesome-plonk) [电路](https://github.com/fluidex/circuits) 作为一个典型 ZK-Rollup 系统的例子。在我们最新的一次性能测试中，每个包含 100 个交易的 L2 Block 的单次电路证明需要在 24core 服务器上消耗约 20min。因此如果需要达到 100 TPS 的性能，需要大约 300 台 EC2 c5.12xlarge，这意味着每小时 500 USD 左右的成本。此时每个 Layer 2 tx 链下计算成本为 0.001 USD。不过目前我们做性能优化的投入还很少，预计未来有较多提升空间。
 
 ### 链上的 gas 成本比链下服务器成本至少高两个数量级
 
@@ -175,7 +175,7 @@ function binaryOp(op, arg1, arg2) {
 <!---
 这里有必要说吗？
 
-在零知识证明电路中，最重要的元素是所谓“约束”，即我们要求一个多项式的值为0。在电路中常会有不同的模块，例如充值/转账等，他们各自有不同的约束条件，https://github.com/Fluidex/circuits/blob/aaa488149c293b1e847c732e93f9841d5715d141/src/lib/binary_merkle_tree.circom#L76
+在零知识证明电路中，最重要的元素是所谓“约束”，即我们要求一个多项式的值为0。在电路中常会有不同的模块，例如充值/转账等，他们各自有不同的约束条件，https://github.com/fluidex/circuits/blob/aaa488149c293b1e847c732e93f9841d5715d141/src/lib/binary_merkle_tree.circom#L76
 
 -->
 
@@ -187,7 +187,7 @@ function binaryOp(op, arg1, arg2) {
 
 如果用传统开发来类比，ethsnarks / bellman 更像是汇编，circom 是 C 语言，ZoKrates 是 Python。但是 ZoKrates 的工具链又没有真的成熟到 Python 解释器的程度，因此我们宁愿用 C 来作为唯一的开发语言，也不想自己同时维护 Python 代码和 CPython 解释器代码。
 
-不过，Circom 本质上还是一种 R1CS 的 DSL，但是 Fluidex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 custom gate / plookup / aggregation & recursion 等特性。
+不过，Circom 本质上还是一种 R1CS 的 DSL，但是 FluiDex 实际使用了 PLONK proof system，因此我们有可能未来会对 Circom 做较大的改动，来更好的支持 PLONK 的 custom gate / plookup / aggregation & recursion 等特性。
 
 ### 处理充提的复杂性
 
@@ -222,7 +222,7 @@ Hermez 中为了防止因为逻辑考虑不完善而导致资金被盗，设计�
 
 开发中的 ZK-Rollup 项目：
 
-+ [fluidex](https://github.com/Fluidex): 开源了电路代码，State Manager，交易所撮合引擎。 使用 PLONK 机制，电路代码使用 circom，链下代码使用 Rust。
++ [fluidex](https://github.com/fluidex): 开源了电路代码，State Manager，交易所撮合引擎。 使用 PLONK 机制，电路代码使用 circom，链下代码使用 Rust。
 
 使用 zksnark 技术但是不属于 ZK-Rollup 的项目：
 

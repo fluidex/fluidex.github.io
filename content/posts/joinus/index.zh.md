@@ -1,5 +1,5 @@
 ---
-title: "Fluidex 招聘"
+title: "FluiDex 招聘"
 date: 2021-03-04
 tags: []
 ---
@@ -29,7 +29,7 @@ FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将�
 1. 使用 Solidity 语言开发以太坊上的智能合约
 2. 开发零知识证明电路系统，包括具体的交易所业务编码和 DSL 的持续改进
 
-我们相关开源代码库：[Fluidex 零知识证明电路](https://github.com/Fluidex/circuits) 和 [一个 Plonk DSL 工具包](https://github.com/Fluidex/plonkit) 。
+我们相关开源代码库：[FluiDex 零知识证明电路](https://github.com/fluidex/circuits) 和 [一个 Plonk DSL 工具包](https://github.com/fluidex/plonkit) 。
 
 技能需求：熟悉区块链/智能合约等基础知识；对区块链相关技术有强烈兴趣；
 
@@ -39,7 +39,7 @@ FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将�
 
 ### 高级 Rust 后端工程师
 
-工作内容：设计开发我们的交易所后端，如撮合，行情，交易历史，数据统计等功能。目前我们的代码是开源的，可以去看一下我们的日常开发内容 <https://github.com/Fluidex/dingir-exchange> 。
+工作内容：设计开发我们的交易所后端，如撮合，行情，交易历史，数据统计等功能。目前我们的代码是开源的，可以去看一下我们的日常开发内容 <https://github.com/fluidex/dingir-exchange> 。
 
 技能需求：有常见后端开发技能，如数据库，消息队列，缓存，非阻塞 IO 等。熟悉 Rust 语言。
 
@@ -65,7 +65,7 @@ FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将�
 
 工作内容：和全职部分相同。对于实习生，我们不需要有相关的经验，但是期待你能在几周内上手一个陌生领域。
 
-能力要求：学习能力强（英文是日常技术读写语言，善用搜索引擎，拥有一定的技术广度，能够举一反三猜出陌生领域的要点），有计算机的基础知识（系统编程语言如 C/C++，Linux 常用命令行，脚本语言如 JS/Python），有基本的数学敏锐度。举个例子，这个 [commit](https://github.com/Fluidex/plonkit/pull/2/commits/de055afb6a4f49f4d1ee1bd10cead7e3f204d84d) 修复了一个 solidity 语言实现的有限域 batch 除法的 bug。我们对实习生能力的预期是，在我们指导下，你能速成 solidity 基本语法，再速成一下有限域除法，然后通过 backtrace 看出 bug 原因并且修复。
+能力要求：学习能力强（英文是日常技术读写语言，善用搜索引擎，拥有一定的技术广度，能够举一反三猜出陌生领域的要点），有计算机的基础知识（系统编程语言如 C/C++，Linux 常用命令行，脚本语言如 JS/Python），有基本的数学敏锐度。举个例子，这个 [commit](https://github.com/fluidex/plonkit/pull/2/commits/de055afb6a4f49f4d1ee1bd10cead7e3f204d84d) 修复了一个 solidity 语言实现的有限域 batch 除法的 bug。我们对实习生能力的预期是，在我们指导下，你能速成 solidity 基本语法，再速成一下有限域除法，然后通过 backtrace 看出 bug 原因并且修复。
 
 报酬：100-150 每小时。一般来说大部分人实际拿到的，更接近于这个取值范围的左边而非右边。当然，如果实习生工作几周后，表现非常出色，报酬甚至不局限在这个范围内。
 

@@ -19,7 +19,7 @@ https://electriccoin.co/blog/explaining-halo-2/ 是一篇有助于理解各层�
 
 ## PlonK 的源起
 
-出于对通用的、可编程的 zkSNARK 的需要，[AZTEC](https://aztec.network/) 发明并推动了 [PlonK](https://eprint.iacr.org/2019/953.pdf)。PlonK 能用于灵活地构建专用的约束，在理论和工程之间取得了极好的平衡。V 神 的 [Understanding PLONK](https://vitalik.ca/general/2019/09/22/plonk.html) 一文是 PlonK 很好的入门文章，更多的资料也可以访问 https://github.com/Fluidex/awesome-plonk 。
+出于对通用的、可编程的 zkSNARK 的需要，[AZTEC](https://aztec.network/) 发明并推动了 [PlonK](https://eprint.iacr.org/2019/953.pdf)。PlonK 能用于灵活地构建专用的约束，在理论和工程之间取得了极好的平衡。V 神 的 [Understanding PLONK](https://vitalik.ca/general/2019/09/22/plonk.html) 一文是 PlonK 很好的入门文章，更多的资料也可以访问 https://github.com/fluidex/awesome-plonk 。
 
 PlonK 面世之后很受欢迎，[zkSync](https://zksync.io/)、[Dusk Network](https://dusk.network/)、[Mina](https://minaprotocol.com/)、[Mir](https://mirprotocol.org/) 和 [Zcash's Halo 2](https://zcash.github.io/halo2/concepts/arithmetization.html) 都在使用 PlonK 或者 PlonK 的变种。
 

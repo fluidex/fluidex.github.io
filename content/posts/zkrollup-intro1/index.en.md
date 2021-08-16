@@ -14,7 +14,7 @@ Currently, major expectations on blockchain technology are further scaling, high
 
 In this series of posts, we will share our experience on developing a ZK-Rollup system. The motivation of these posts is that, currently there are many high quality resources introducing the cryptography behind ZK-SNARK, with a lot of math details. In the meantime, there are also many non-technical blogs looking into the impact and prospect of ZK-Rollup. Very few will dive into questions like, how does ZK-Rollup boost performance exactly? Or, how does a complete ZK-Rollup system look like? Or, is there any important but usually overlooked details in a ZK-Rollup system?
 
-[Fluidex](https://github.com/Fluidex/), as one of the very few teams that are independently developing a ZK-Rollup system from scratch, is happy to share some experience gained from ZK-Rollup system development. We hope this could benefit other developers in the field. We will talk about some important but rarely mentioned topics, like where the performance bottleneck is in a ZK-Rollup system, where does the economic cost lie, etc.
+[FluiDex](https://github.com/fluidex/), as one of the very few teams that are independently developing a ZK-Rollup system from scratch, is happy to share some experience gained from ZK-Rollup system development. We hope this could benefit other developers in the field. We will talk about some important but rarely mentioned topics, like where the performance bottleneck is in a ZK-Rollup system, where does the economic cost lie, etc.
 
 ## Overview of ZK-SNARK & ZK-Rollup
 
@@ -114,7 +114,7 @@ One ZK-Rollup system needs at least the following modules:
 
 2. Prover Cluster: To do immense cryptographic calculations to generate ZK-SNARK proof for each L2 Block. Usually a large-scale cluster is required, which consumes more than 99% of the computing resources in the system.
 3. State Manager: To maintain the complete merkle tree. For each transaction, it updates the merkle tree and provides necessary data for Prover Cluster (e.g., merkle proof).
-4. Other Business Modules: like a L2 browser. Besides, each Rollup system has their own specialized business modules. For example, Fluidex has a [order matching engine](https://github.com/Fluidex/dingir-exchange), which generates matched transactions from users' orders, then sends them to the State Manager.
+4. Other Business Modules: like a L2 browser. Besides, each Rollup system has their own specialized business modules. For example, FluiDex has a [order matching engine](https://github.com/fluidex/dingir-exchange), which generates matched transactions from users' orders, then sends them to the State Manager.
 
 ## TPS limit of ZK-Rollup
 
@@ -144,9 +144,9 @@ To support a large number of users and assets, we need the Merkle Tree to have a
 _(In a transfer-oriented zkRollup, You could indeed combine account leaf and token leaf to reduce the merkle tree depth. However, for building a DEX a account_balance tree might still be more preferable, and since we are focusing on discussing the performance on updating the merkle tree, without the loss of generality, it's fine to discuss the model as account_balance tree here.)_
  -->
 
-For performance considerations, we won't use normal hash like SHA3 in a ZK-Rollup merkle tree. Instead, we'll use a more ZK-SNARK compatible one like poseidon or rescue. According to [test results from Fluidex](https://github.com/Fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326), each poseidon hash takes about 30us (tree depth of each test is 20, thus, each hash would be 57ms / 100 / 20 ~= 30us). So estimating from merkle tree perspective, the limit of a ZK-Rollup system would be 1 / 0.00003 / 200 = 160 TPS.
+For performance considerations, we won't use normal hash like SHA3 in a ZK-Rollup merkle tree. Instead, we'll use a more ZK-SNARK compatible one like poseidon or rescue. According to [test results from FluiDex](https://github.com/fluidex/state_keeper/blob/a80c40015984886b68a295a810c64a682ba13135/src/types/merkle_tree.rs#L326), each poseidon hash takes about 30us (tree depth of each test is 20, thus, each hash would be 57ms / 100 / 20 ~= 30us). So estimating from merkle tree perspective, the limit of a ZK-Rollup system would be 1 / 0.00003 / 200 = 160 TPS.
 
-Therefore, [parallel updating](https://github.com/Fluidex/state_keeper/blob/a255043cbe7c899c6a8d9cc46b170a40f20623c9/src/types/merkle_tree.rs#L127) on the merkle tree is essential to break through the 100-300 TPS level. Unlike computing ZK-SNARK proofs, which could be parallelized completely, to parallelize merkle tree updates requires more discretion, and is very hard to apply distributed computing on it. This is also a technical challenge.
+Therefore, [parallel updating](https://github.com/fluidex/state_keeper/blob/a255043cbe7c899c6a8d9cc46b170a40f20623c9/src/types/merkle_tree.rs#L127) on the merkle tree is essential to break through the 100-300 TPS level. Unlike computing ZK-SNARK proofs, which could be parallelized completely, to parallelize merkle tree updates requires more discretion, and is very hard to apply distributed computing on it. This is also a technical challenge.
 
 The 100-300 TPS calculated above is close to many real-world ZK-Rollup system's actual performance upper-bound.
 
@@ -154,7 +154,7 @@ The 100-300 TPS calculated above is close to many real-world ZK-Rollup system's 
 
 ### ZK-Rollup normally needs thousands of CPU cores for proving
 
-Let's still take [PLONK](https://github.com/fluidex/awesome-plonk) [circuits](https://github.com/Fluidex/circuits) used by Fluidex as a typical ZK-Rollup case. In our latest test, for each L2 Block with 100 transactions, it takes ~20min to run a proof on a 24 core server. To reach 100 TPS performance, we will need ~300 EC2 c5.12xlarge instances, which costs ~500 USD/h. This means each Layer 2 transaction will cost 0.001 USD in off-chain calculations. Note that we haven't invested a lot on performance optimization yet, we expect there'll be a lot to improve here in the future.
+Let's still take [PLONK](https://github.com/fluidex/awesome-plonk) [circuits](https://github.com/fluidex/circuits) used by FluiDex as a typical ZK-Rollup case. In our latest test, for each L2 Block with 100 transactions, it takes ~20min to run a proof on a 24 core server. To reach 100 TPS performance, we will need ~300 EC2 c5.12xlarge instances, which costs ~500 USD/h. This means each Layer 2 transaction will cost 0.001 USD in off-chain calculations. Note that we haven't invested a lot on performance optimization yet, we expect there'll be a lot to improve here in the future.
 
 ### On-chain gas cost much higher than off-chain server cost
 
@@ -200,7 +200,7 @@ In comparison, developing with ethsnarks and bellman is of lower efficiency. Als
 
 As an analogy,  ethsnarks / bellman is like assembly language in traditional development, while cirom is like C, and ZoKrates is like Python. However, ZoKrates toolchain is not as mature as Python interpreter. That's why we'd rather use "C" (cirom in this case) as the our development language, instead of maintaining both "Python" (ZoKrates in this case) code and "CPython interpreter" (ZoKrates interpreter in this case) code.
 
-However, Circom is essentially still a R1CS DSL. Fluidex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation & recursion, etc.
+However, Circom is essentially still a R1CS DSL. FluiDex actually uses PLONK proof system. We probably would make major changes on Circom to better utilize PLONK, including supports for custom gate, plookup, aggregation & recursion, etc.
 
 ### It's not easy to handle deposit / withdrawal
 
@@ -234,7 +234,7 @@ ZK-Rollup projects launched:
 
 ZK-Rollup projects under developing:
 
-+ [fluidex](https://github.com/Fluidex): circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, and Rust for off-chain code.
++ [fluidex](https://github.com/fluidex): circuits, state manager, and matching engine in open sourced. It uses PLONK protocol, circom for circuits, and Rust for off-chain code.
 
 Non ZK-Rollup projects that use ZK-SNARK:
 
@@ -243,4 +243,4 @@ Non ZK-Rollup projects that use ZK-SNARK:
 
 ## About Us
 
-We are the development team of [Fluidex: A Layer 2 ZK-Rollup DEX on Ethereum](/en/blog/fluidex-a-zkrollup-layer2-dex/).
+We are the development team of [FluiDex: A Layer 2 ZK-Rollup DEX on Ethereum](/en/blog/fluidex-a-zkrollup-layer2-dex/).

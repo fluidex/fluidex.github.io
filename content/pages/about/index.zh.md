@@ -45,9 +45,9 @@ FluiDex 使用 [自己提出的 Differential AMM 算法](/zh/blog/damm/)，能�
 
 FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管交易所的初心](https://www.fluidex.io/en/blog/fluidex-a-zkrollup-layer2-dex/)。
 
-2021.Q1 FluiDex 开源了 PLONK DSL 工具包 [Plonkit](https://github.com/Fluidex/plonkit) 和 Circom 开发工具包 [Snarkit](https://www.fluidex.io/en/blog/the-motivation-of-snarkit/)。
+2021.Q1 FluiDex 开源了 PLONK DSL 工具包 [Plonkit](https://github.com/fluidex/plonkit) 和 Circom 开发工具包 [Snarkit](https://www.fluidex.io/en/blog/the-motivation-of-snarkit/)。
 
-2021.Q2 FluiDex 开源了[后端代码](https://github.com/Fluidex/fluidex-backend)，这将是第一个完全开源的 ZK-Rollup DEX 项目。我们希望能够和社区携手努力，共同推动去中心化世界的边界。
+2021.Q2 FluiDex 开源了[后端代码](https://github.com/fluidex/fluidex-backend)，这将是第一个完全开源的 ZK-Rollup DEX 项目。我们希望能够和社区携手努力，共同推动去中心化世界的边界。
 
 ## Roadmap
 
