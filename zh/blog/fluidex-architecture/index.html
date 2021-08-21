@@ -98,7 +98,7 @@ data-styled.g43[id="post-template__PostPagination-afk1br-4"]{content:"ijTjwt,"}/
 <h2>整体架构</h2>
 <p>下图是 FluiDex 后端的整体架构图。概括地说，用户把交易请求（包括订单委托和 AMM 请求）发送到撮合引擎，撮合引擎将所有完成的交易发送到消息队列，Rollup 模块将消息队列中的交易在 Merkle tree 上更新，打包成 L2 blocks。之后  l2 blocks  由 prover cluster 生成证明，就可以最终被发布在链上。</p>
 <p align="center">
-  <img src="FluiDex Architecture.svg" width="600">
+  <img src="/08029b15199d30179156deadc002f90b/FluiDex Architecture.svg" width="600">
 </p>
 <p>我们将先分模块地介绍每个服务模块的作用，最后介绍 ZK-Rollup 系统设计的一般原则。</p>
 <h2>各服务介绍</h2>

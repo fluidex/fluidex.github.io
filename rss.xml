@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FluiDex]]></title><description><![CDATA[The website of the FluiDex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 21 Aug 2021 09:50:31 GMT</lastBuildDate><item><title><![CDATA[About FluiDex]]></title><description><![CDATA[FluiDex is a ZK-Rollup Layer2 DEX on Ethereum. Technology FluiDex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on…]]></description><link>https://www.fluidex.io/en/about/</link><guid isPermaLink="false">https://www.fluidex.io/en/about/</guid><content:encoded>&lt;p&gt;&lt;strong&gt;FluiDex is a ZK-Rollup Layer2 DEX on Ethereum.&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FluiDex]]></title><description><![CDATA[The website of the FluiDex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 21 Aug 2021 09:53:54 GMT</lastBuildDate><item><title><![CDATA[About FluiDex]]></title><description><![CDATA[FluiDex is a ZK-Rollup Layer2 DEX on Ethereum. Technology FluiDex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on…]]></description><link>https://www.fluidex.io/en/about/</link><guid isPermaLink="false">https://www.fluidex.io/en/about/</guid><content:encoded>&lt;p&gt;&lt;strong&gt;FluiDex is a ZK-Rollup Layer2 DEX on Ethereum.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2&gt;Technology&lt;/h2&gt;
 &lt;p&gt;FluiDex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on Ethereum. It &lt;a href=&quot;/en/blog/zkrollup-intro1/&quot;&gt;can save the cost of each transaction to 1/100&lt;/a&gt; while still offering the same security level as layer 1.&lt;/p&gt;
 &lt;h2&gt;Features&lt;/h2&gt;
@@ -26,7 +26,11 @@ automated market making (AMM) or initial DEX offering (IDO).&lt;/p&gt;
 &lt;p&gt;Email: &lt;a href=&quot;mailto:contact@fluidex.io&quot;&gt;contact@fluidex.io&lt;/a&gt; or &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;Wechat Official Account: “FluiDex”&lt;/p&gt;
 &lt;h2&gt;Footnote&lt;/h2&gt;
-&lt;p&gt;[1]: We would like to save the effort of discussing chain re-organizations for now. Becaue that’s what layer 1 should consider and handle.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[关于我们]]></title><description><![CDATA[FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。 技术 FluiDex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 1/10…]]></description><link>https://www.fluidex.io/zh/about/</link><guid isPermaLink="false">https://www.fluidex.io/zh/about/</guid><content:encoded>&lt;p&gt;&lt;strong&gt;FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[1]: We would like to save the effort of discussing chain re-organizations for now. Becaue that’s what layer 1 should consider and handle.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Contact]]></title><description><![CDATA[Contact Telegram: https://t.me/fluid_dex Medium: https://fluid-dex.medium.com Twitter: https://twitter.com/fluid_dex Email: z@fluidex.io]]></description><link>https://www.fluidex.io/en/contact/</link><guid isPermaLink="false">https://www.fluidex.io/en/contact/</guid><content:encoded>&lt;h2&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Email: &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[关于我们]]></title><description><![CDATA[FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。 技术 FluiDex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 1/10…]]></description><link>https://www.fluidex.io/zh/about/</link><guid isPermaLink="false">https://www.fluidex.io/zh/about/</guid><content:encoded>&lt;p&gt;&lt;strong&gt;FluiDex 是一个以太坊上的 ZK-Rollup Layer2 去中心化交易所。&lt;/strong&gt;&lt;/p&gt;
 &lt;h2&gt;技术&lt;/h2&gt;
 &lt;p&gt;FluiDex 使用基于 PLONK 的 ZK-Rollup 技术，在以太坊上实现高性能的去中心化交易，每笔交易的成本会被压缩到传统 Layer1 去中心化交易所的 &lt;a href=&quot;/zh/blog/zkrollup-intro1/&quot;&gt;1/100 以下&lt;/a&gt;。同时提供等价于 Layer1 的安全性。&lt;/p&gt;
 &lt;h2&gt;特性&lt;/h2&gt;
@@ -70,18 +74,14 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 &lt;p&gt;邮箱：&lt;a href=&quot;mailto:contact@fluidex.io&quot;&gt;contact@fluidex.io&lt;/a&gt; 和 &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;公众号: 搜索 “FluiDex”.&lt;/p&gt;
 &lt;h2&gt;附注&lt;/h2&gt;
-&lt;p&gt;[1]: 暂不考虑链重组。因为这个因素对于 Layer1 Layer2 相同。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Contact]]></title><description><![CDATA[Contact Telegram: https://t.me/fluid_dex Medium: https://fluid-dex.medium.com Twitter: https://twitter.com/fluid_dex Email: z@fluidex.io]]></description><link>https://www.fluidex.io/en/contact/</link><guid isPermaLink="false">https://www.fluidex.io/en/contact/</guid><content:encoded>&lt;h2&gt;Contact&lt;/h2&gt;
+&lt;p&gt;[1]: 暂不考虑链重组。因为这个因素对于 Layer1 Layer2 相同。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[联系我们]]></title><description><![CDATA[联系我们 Telegram: https://t.me/fluid_dex Medium: https://fluid-dex.medium.com Twitter: https://twitter.com/fluid_dex Email: z@fluidex.io]]></description><link>https://www.fluidex.io/zh/contact/</link><guid isPermaLink="false">https://www.fluidex.io/zh/contact/</guid><content:encoded>&lt;h2&gt;联系我们&lt;/h2&gt;
 &lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Email: &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[联系我们]]></title><description><![CDATA[联系我们 Telegram: https://t.me/fluid_dex Medium: https://fluid-dex.medium.com Twitter: https://twitter.com/fluid_dex Email: z@fluidex.io]]></description><link>https://www.fluidex.io/zh/contact/</link><guid isPermaLink="false">https://www.fluidex.io/zh/contact/</guid><content:encoded>&lt;h2&gt;联系我们&lt;/h2&gt;
-&lt;p&gt;Telegram: &lt;a href=&quot;https://t.me/fluid_dex&quot;&gt;https://t.me/fluid_dex&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Medium: &lt;a href=&quot;https://fluid-dex.medium.com&quot;&gt;https://fluid-dex.medium.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Twitter: &lt;a href=&quot;https://twitter.com/fluid_dex&quot;&gt;https://twitter.com/fluid_dex&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Email: &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex]]></title><description><![CDATA[FluiDex FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见这里。]]></description><link>https://www.fluidex.io/zh/index/</link><guid isPermaLink="false">https://www.fluidex.io/zh/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
-&lt;p&gt;FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex]]></title><description><![CDATA[FluiDex FluiDex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup. Checkout this…]]></description><link>https://www.fluidex.io/en/index/</link><guid isPermaLink="false">https://www.fluidex.io/en/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
+&lt;p&gt;Email: &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex]]></title><description><![CDATA[FluiDex FluiDex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup. Checkout this…]]></description><link>https://www.fluidex.io/en/index/</link><guid isPermaLink="false">https://www.fluidex.io/en/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
 &lt;p&gt;FluiDex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup.&lt;/p&gt;
-&lt;p&gt;Checkout &lt;a href=&quot;/en/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;this article&lt;/a&gt; for more info.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Dive into FluiDex's Architecture]]></title><description><![CDATA[The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign…]]></description><link>https://www.fluidex.io/en/blog/fluidex-architecture/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/fluidex-architecture/</guid><pubDate>Wed, 14 Jul 2021 20:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;Checkout &lt;a href=&quot;/en/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;this article&lt;/a&gt; for more info.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex]]></title><description><![CDATA[FluiDex FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见这里。]]></description><link>https://www.fluidex.io/zh/index/</link><guid isPermaLink="false">https://www.fluidex.io/zh/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
+&lt;p&gt;FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Dive into FluiDex's Architecture]]></title><description><![CDATA[The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign…]]></description><link>https://www.fluidex.io/en/blog/fluidex-architecture/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/fluidex-architecture/</guid><pubDate>Wed, 14 Jul 2021 20:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign of slowing down.&lt;/p&gt;
 &lt;p&gt;— &lt;a href=&quot;https://medium.com/dragonfly-research/im-worried-nobody-will-care-about-rollups-554bc743d4f1&quot;&gt;Dragonfly Research&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -90,7 +90,7 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 &lt;h2&gt;Overall Architecture&lt;/h2&gt;
 &lt;p&gt;The diagram below shows the overall architecture of FluiDex’s back-end. In a nutshell, users send order requests to the matching engine, and the matching engine sends all the finished orders to the message queue. The rollup module then updates the states (users’ orders, users’ balances…) on the Merkle tree and packs the messages (after some format conversions) into L2 blocks. After L2 blocks being proved by our prover cluster, they will be published onto chain.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;FluiDex Architecture.svg&quot; width=&quot;600&quot;&gt;
+  &lt;img src=&quot;/08029b15199d30179156deadc002f90b/FluiDex Architecture.svg&quot; width=&quot;600&quot;&gt;
 &lt;/p&gt;
 &lt;p&gt;We will now first introduce the functionalities and responsibilities of each submodule, and then summarize the design principles of our system.&lt;/p&gt;
 &lt;h2&gt;Submodules&lt;/h2&gt;
@@ -139,7 +139,7 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 &lt;h2&gt;整体架构&lt;/h2&gt;
 &lt;p&gt;下图是 FluiDex 后端的整体架构图。概括地说，用户把交易请求（包括订单委托和 AMM 请求）发送到撮合引擎，撮合引擎将所有完成的交易发送到消息队列，Rollup 模块将消息队列中的交易在 Merkle tree 上更新，打包成 L2 blocks。之后  l2 blocks  由 prover cluster 生成证明，就可以最终被发布在链上。&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;FluiDex Architecture.svg&quot; width=&quot;600&quot;&gt;
+  &lt;img src=&quot;/08029b15199d30179156deadc002f90b/FluiDex Architecture.svg&quot; width=&quot;600&quot;&gt;
 &lt;/p&gt;
 &lt;p&gt;我们将先分模块地介绍每个服务模块的作用，最后介绍 ZK-Rollup 系统设计的一般原则。&lt;/p&gt;
 &lt;h2&gt;各服务介绍&lt;/h2&gt;
@@ -319,7 +319,140 @@ $$(q_L)_i \cdot x_{a_i} + (q_R)_i \cdot x_{b_i} + (q_O)_i \cdot x_{c_i} + (q_M)_
 &lt;h2&gt;算法设计研究&lt;/h2&gt;
 &lt;p&gt;我们完成了&lt;a href=&quot;/zh/blog/damm/&quot;&gt;《Differential AMM: 一种基于微观指标设计的灵活 AMM 算法》&lt;/a&gt;。这是一种从微观指标（如盘口中间价和盘口深度）入手的灵活 AMM 设计，AMM 资金池的创建者能够任意调整设定 自动做市价格范围/流动性深度/做市资金量/资金效率 等指标。我们还给出了 DAMM 转化为订单簿的参考代码实现。FluiDex 最终完成版本中将会集成 DAMM，每种交易对的流动性都由 Orderbook 和 AMM 混合而成 。&lt;/p&gt;
 &lt;h2&gt;社区交流&lt;/h2&gt;
-&lt;p&gt;在 4 月 20 日的 上海前沿技术研讨会 以零知识证明为专题。FluiDex 创始人张卓和安比实验室创始人郭宇，Mina 亚洲技术大使姚翔分别做了题目《ZK-Rollup 工程实践》《ZKCP+ 零知识证明与公平数据交易协议》和 《Snapps架构和应用》三场分享。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Differential AMM: 一种基于微观指标设计的灵活 AMM 算法]]></title><description><![CDATA[摘要： 本文提出了一种基于微观指标设计的、和常函数做市商（CFMM）算法等效的 AMM 算法。当给定三组参数（盘口价格深度、做市价格范围、初始做市资金量）中的其中两组时，第三组可以通过公式方便地求解出来。 AMM…]]></description><link>https://www.fluidex.io/zh/blog/damm/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/damm/</guid><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt; 本文提出了一种基于微观指标设计的、和常函数做市商（CFMM）算法等效的 AMM 算法。当给定三组参数（盘口价格深度、做市价格范围、初始做市资金量）中的其中两组时，第三组可以通过公式方便地求解出来。&lt;/p&gt;
+&lt;p&gt;在 4 月 20 日的 上海前沿技术研讨会 以零知识证明为专题。FluiDex 创始人张卓和安比实验室创始人郭宇，Mina 亚洲技术大使姚翔分别做了题目《ZK-Rollup 工程实践》《ZKCP+ 零知识证明与公平数据交易协议》和 《Snapps架构和应用》三场分享。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Differential AMM: a highly flexible AMM algorithm based on micro indicators]]></title><description><![CDATA[TL;DR: We propose a Differential Automated Market Makers strategy equivalent to Constant-Function Market Makers (CFMM) strategy, yet…]]></description><link>https://www.fluidex.io/en/blog/damm/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/damm/</guid><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; We propose a Differential Automated Market Makers strategy equivalent to Constant-Function Market Makers (CFMM) strategy, yet described using micro indicators. The one of three parameter sets (A. price and depth, B. price range, and C. initial amounts) can be solved while the other two are given. &lt;/p&gt;
+&lt;p&gt;Automatic Market-Making (AMM) strategies are usually defined by macro indicators. Macro indicators refer to indicators that describe the total amount, including the base amount (BA) and the quote amount (QA) of the trading tokens in the AMM pool. For example, the most common AMM algorithm - the Constant Product Algorithm - requires the product of BA and QA to be equal both before and after each transaction. But in fact, for a real-world trader, micro indicators are more informative for each trade decision making. Micro indicators refer to indicators that characterize market changes, or marginal effects of transactions, such as current market price and market depth. The market price describes the average deal price of a relatively small-volume transaction in the current state, and the market depth describes the largest potential trading volume within an offered price. In plain language, assume that the price of ETH is now 3450 USDT, if I want to buy as much ETH as possible at a price not exceeding 3451, the amount of ETH I could buy can be regarded as the market depth.&lt;/p&gt;
+&lt;p&gt;From the orderbook perspective, both price and depth are more intuitive than macro indicators. We here try to design a better AMM algorithm based on these two micro indicators. &lt;/p&gt;
+&lt;h1&gt;Mathematical Background - The relationship between macro and micro indicators&lt;/h1&gt;
+&lt;p&gt;In this section, we will explain the relationship between the micro indicators (price and depth) and the base/quote amount (pool size). As we will see, the formulas of price and depth can both be derived from the base/quote amount formulas by several derivative/inverse function transformations.&lt;/p&gt;
+&lt;p&gt;Assume that base amount and quote amount in AMM pool satisfy the following relationship:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Obviously, we have quote &gt; 0, base &gt; 0. f is monotonically decreasing, i.e., f’ &amp;#x3C; 0 (as in each trade in an AMM pool, a token is turned into another token; if the amount of one token increases, the other will of course decrease).&lt;/p&gt;
+&lt;p&gt;By definition, price is the absolute value of the derivative of f (as f’ is negative, it’s actually the reverse value of f’):&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;price = abs(f&amp;#39;(base)) = -f&amp;#39;(base)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Normally we require the price, -f’, to be monotonically decreasing, i.e., the smaller the base amount, the higher the price. Thus, f” &gt; 0. In a word, a reasonable f should be: a convex downward and monotonically decreasing function defined in the first quadrant.&lt;/p&gt;
+&lt;p&gt;Correspondingly, market depth is actually the derivative of base amount w.r.t. price.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;depth = f2&amp;#39;(price)
+f2 = Inverse(f&amp;#39;) &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Where &lt;code class=&quot;language-text&quot;&gt;Inverse&lt;/code&gt; means inverse function.&lt;/p&gt;
+&lt;p&gt;In the above formula, f2 is the inverse function of the price function, and its derivative is the function of depth w.r.t. price.&lt;/p&gt;
+&lt;p&gt;That concludes the relationship between market price/depth and base/quote function.&lt;/p&gt;
+&lt;h1&gt;Mathematical Background - Solving&lt;/h1&gt;
+&lt;p&gt;For a creator of AMM pool, they care the most about the initial price (price0) and initial depth (depth0). From mathematic perspective, they need to give an AMM function of the form &lt;code class=&quot;language-text&quot;&gt;quote = f(base)&lt;/code&gt;, so that there’s a coordinate satisfying &lt;code class=&quot;language-text&quot;&gt;price = price0&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;depth = depth0&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In other words, they need to solve the following equation:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Given depth0, price0,
+f is the function describing the relationship between base and quote amount, quote = f(base). Find a f that satisfies:
+
+* There&amp;#39;s base0, such that f&amp;#39;(base0) = price0
+* (Inverse(f&amp;#39;))&amp;#39;(price0) = depth0
+
+Additionally, it&amp;#39;s required that f &amp;gt; 0, f&amp;#39; &amp;lt; 0 and f&amp;#39;&amp;#39; &amp;gt; 0, that is, f is a convex downward and monotonically decreasing function defined in the first quadrant.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Actually, as the above equations has too few constraints, there are infinite number of solutions. f could be a reciprocal function, a more general hyperbolic function, an exponential function, or a power function. However in the next section, we will see that if we specify a certain form of f and limit its coefficients, we may be able to determine a unique solution.&lt;/p&gt;
+&lt;h3&gt;One of the solutions - when f is a translated reciprocal function&lt;/h3&gt;
+&lt;p&gt;If f is a reciprocal function in form of:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or equivalently, using multiple variables:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vQuote = C / vBase
+vQoute = quote + QUOTE_DELTA
+vBase = base + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;where &lt;code class=&quot;language-text&quot;&gt;C&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; are positive constants.&lt;/p&gt;
+&lt;p&gt;When f is in this form, the price and depth could be derived as:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;price = -f&amp;#39;(base) = C / (vBase**2) = vQuote / vBase
+depth = vBase**2 / (2 * vQuote)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;According to the condition that at &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt;, the depth is &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, it can be solved as:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;C = vBase0 * vQuote0 = 4 * price0**3 * depth0**2
+vQuote0 = 2 * price0**2 * depth0 = quote0 + QUOTE_DELTA
+vBase0 = 2 * price0 * depth0 = base0 + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So finally, the AMM function &lt;code class=&quot;language-text&quot;&gt;quote = f(base)&lt;/code&gt; will be:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA,&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;where &lt;code class=&quot;language-text&quot;&gt;C = 4 * price0**3 * depth0**2&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; are random constants.&lt;/p&gt;
+&lt;p&gt;To conclude, we demonstrated that if specifying f as an reciprocal function, an unique solution of f could be obtained from price and depth. Although f can actually be any types of functions, for simplicity and without the loss of generality, we will use reciprocal function as our AMM function in the rest of the post.&lt;/p&gt;
+&lt;h1&gt;Formula definition of Differential AMM&lt;/h1&gt;
+&lt;p&gt;Synthesizing all the derivations in the previous section, we can get the complete definition of Differential AMM:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Terminology:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;price0&lt;/td&gt;
+&lt;td&gt;initial market price&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;depth0&lt;/td&gt;
+&lt;td&gt;initial market depth&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;lowPrice&lt;/td&gt;
+&lt;td&gt;the lowest automatic market-making price, minimum is 0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;highPrice&lt;/td&gt;
+&lt;td&gt;the highest automatic market-making price, maximum is positive inifinite&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;quote0&lt;/td&gt;
+&lt;td&gt;initial actual quote amount&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;base0&lt;/td&gt;
+&lt;td&gt;initial actual base amount&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;QUOTE_DELTA&lt;/td&gt;
+&lt;td&gt;virtual quote amount&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BASE_DELTA&lt;/td&gt;
+&lt;td&gt;virtual base amount&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;constant product&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vQoute0&lt;/td&gt;
+&lt;td&gt;initial total quote amount, including actual and virtual&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vBase0&lt;/td&gt;
+&lt;td&gt;initial total base amount, including actual and virtual&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Relationships between the parameters:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(1) C = 4 * price0**3 * depth0**2
+(2) lowPrice = QUOTE_DELTA**2 / C
+(3) highPrice = C / BASE_DELTA**2
+(4) price0 = vQuote0 / vBase0
+(5) depth0 = vBase**2 / (2 * vQuote)
+(6) vQoute0 = 2 * price0**2 * depth0
+(7) vBase0 = 2 * price0 * depth0
+(8) vQoute0 = quote0 + QUOTE_DELTA
+(9) vBase0 = base0 + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note1: Among the above formulas, (4)(5) and (6)(7) are equivalent.&lt;/p&gt;
+&lt;p&gt;Note2: With the same &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, the smaller &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt; are, the larger &lt;code class=&quot;language-text&quot;&gt;base0&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;quote0&lt;/code&gt; are. That is, when providing the same market liquidity, a greater amount of fund will lead to a lower so-called “capital efficiency”, but a wider market-making price range (i.e., from &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt;). Extremely, when &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt; are both 0, &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; will be 0 and &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt; will be inifinite. In this situation, DAMM degenerates into Constant Product AMM. We could adjust capital efficiency arbitrarily by adjusting &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In reality, for the following 3 groups of parameters, (A) depth price, (B) lowPrice highPrice, (C) quote0 base0, given any two groups, the third group, as well as the complete market-making function could be derived.&lt;/p&gt;
+&lt;p&gt;Here are the three scenarios corresponding to three initial conditions:&lt;/p&gt;
+&lt;h3&gt;Given price and depth (A), and initial amounts (C)&lt;/h3&gt;
+&lt;p&gt;That is, in the equations, given &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;quote0&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;base0&lt;/code&gt;, we then want to calculate market-making price range and other parameters.&lt;/p&gt;
+&lt;p&gt;For step-by-step solution please refer to: &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39&quot;&gt;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Given price and depth (A), and market-making price range (B)&lt;/h3&gt;
+&lt;p&gt;That is, in the equations, given &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; (could be 0), &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt; (could be inifinity), need to calculate initial amount and other parameters.&lt;/p&gt;
+&lt;p&gt;For step-by-step solution please refer to: &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53&quot;&gt;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Given market-making price range (B), and initial amounts (C)&lt;/h3&gt;
+&lt;p&gt;This is the most complex scenario. Actually it is equivalent to solving a binary quadratic equation. By solving the equation we could get all other parameters.&lt;/p&gt;
+&lt;p&gt;For step-by-step solution please refer to: &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72&quot;&gt;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From the above three scenarios, we could see that DAMM has great flexibility. On the one hand, different scenarios may have different requirements and different initial conditions. Under the above three initial conditions, we are still able to solve a correct DAMM strategy. On the other hand, &lt;strong&gt;we can abitrarily adjust capital efficiency through the price range or initial amount&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1&gt;Miscellaneous&lt;/h1&gt;
+&lt;h2&gt;Converting AAM to orderbook&lt;/h2&gt;
+&lt;p&gt;By approximating the AMM curve section by section, we can get a discretized orderbook. In our &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156&quot;&gt;reference implementation&lt;/a&gt;, we could specify price interval and the number of orders, and get order size and average price by calculating BASE&lt;em&gt;DELTA and QUOTE&lt;/em&gt;DELTA.&lt;/p&gt;
+&lt;h2&gt;Mathematical equivalance&lt;/h2&gt;
+&lt;p&gt;It’s easy to see that DAMM is mathematically equivalent to the market maker algorithm (x + a)(y + b) = k. The difference is that we interpret it in a micro perspective way, as well as possibilities to solve from different initial conditions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Differential AMM: 一种基于微观指标设计的灵活 AMM 算法]]></title><description><![CDATA[摘要： 本文提出了一种基于微观指标设计的、和常函数做市商（CFMM）算法等效的 AMM 算法。当给定三组参数（盘口价格深度、做市价格范围、初始做市资金量）中的其中两组时，第三组可以通过公式方便地求解出来。 AMM…]]></description><link>https://www.fluidex.io/zh/blog/damm/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/damm/</guid><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt; 本文提出了一种基于微观指标设计的、和常函数做市商（CFMM）算法等效的 AMM 算法。当给定三组参数（盘口价格深度、做市价格范围、初始做市资金量）中的其中两组时，第三组可以通过公式方便地求解出来。&lt;/p&gt;
 &lt;p&gt;AMM 策略通常使用宏观指标来定义，宏观指标是指描述总量的指标，包括 AMM 池中的交易币种数量(base amount)和计价币种数量(quote amount)等。例如，最常见的 AMM 做市算法——恒定乘积算法——要求 base 数量 和 quote 数量的乘积在每次交易前后相等。但是实际上对于每个具体交易者而言，微观指标对单次的交易行为更有意义。微观指标是指刻画变化，或者叫刻画边际效应的指标，如当前的买卖盘口价和盘口深度。盘口价格刻画了当前状态下做一笔小交易的平均成交价格，而盘口深度刻画了指定交易价格内最大的成交量。盘口深度可以通俗解释为，假设现在 ETH-USDT 价格为 3450，我希望以不超过 3451 的价格购买尽可能多的 ETH，我最多能买到多少 ETH？&lt;/p&gt;
 &lt;p&gt;盘口价格和盘口深度也是 orderbook 视角下更直观的指标。我们希望能从这两个微观指标出发，更好地理解和设计 AMM 算法。&lt;/p&gt;
 &lt;h1&gt;数学原理-宏观指标和微观指标的关系&lt;/h1&gt;
@@ -454,140 +587,7 @@ vBase0 = 2 * price0 * depth0 = base0 + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/d
 &lt;h2&gt;从 AMM 到 orderbook 的转化&lt;/h2&gt;
 &lt;p&gt;将 AMM 曲线分段近似，就可以得到一份离散化 orderbook。在 &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156&quot;&gt;参考实现代码&lt;/a&gt; 中，我们可以指定价格 interval 和 order 数量，通过计算 base delta 和 quote delta，得到订单大小和平均价格。&lt;/p&gt;
 &lt;h2&gt;数学等价性&lt;/h2&gt;
-&lt;p&gt;容易看出 DAMM 在数学上等价于 (x + a)(y + b) = k 的做市算法。不同之处在于我们给了很多的微观诠释，也指出了多种不同的从初识条件求解的可能性。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Differential AMM: a highly flexible AMM algorithm based on micro indicators]]></title><description><![CDATA[TL;DR: We propose a Differential Automated Market Makers strategy equivalent to Constant-Function Market Makers (CFMM) strategy, yet…]]></description><link>https://www.fluidex.io/en/blog/damm/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/damm/</guid><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; We propose a Differential Automated Market Makers strategy equivalent to Constant-Function Market Makers (CFMM) strategy, yet described using micro indicators. The one of three parameter sets (A. price and depth, B. price range, and C. initial amounts) can be solved while the other two are given. &lt;/p&gt;
-&lt;p&gt;Automatic Market-Making (AMM) strategies are usually defined by macro indicators. Macro indicators refer to indicators that describe the total amount, including the base amount (BA) and the quote amount (QA) of the trading tokens in the AMM pool. For example, the most common AMM algorithm - the Constant Product Algorithm - requires the product of BA and QA to be equal both before and after each transaction. But in fact, for a real-world trader, micro indicators are more informative for each trade decision making. Micro indicators refer to indicators that characterize market changes, or marginal effects of transactions, such as current market price and market depth. The market price describes the average deal price of a relatively small-volume transaction in the current state, and the market depth describes the largest potential trading volume within an offered price. In plain language, assume that the price of ETH is now 3450 USDT, if I want to buy as much ETH as possible at a price not exceeding 3451, the amount of ETH I could buy can be regarded as the market depth.&lt;/p&gt;
-&lt;p&gt;From the orderbook perspective, both price and depth are more intuitive than macro indicators. We here try to design a better AMM algorithm based on these two micro indicators. &lt;/p&gt;
-&lt;h1&gt;Mathematical Background - The relationship between macro and micro indicators&lt;/h1&gt;
-&lt;p&gt;In this section, we will explain the relationship between the micro indicators (price and depth) and the base/quote amount (pool size). As we will see, the formulas of price and depth can both be derived from the base/quote amount formulas by several derivative/inverse function transformations.&lt;/p&gt;
-&lt;p&gt;Assume that base amount and quote amount in AMM pool satisfy the following relationship:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Obviously, we have quote &gt; 0, base &gt; 0. f is monotonically decreasing, i.e., f’ &amp;#x3C; 0 (as in each trade in an AMM pool, a token is turned into another token; if the amount of one token increases, the other will of course decrease).&lt;/p&gt;
-&lt;p&gt;By definition, price is the absolute value of the derivative of f (as f’ is negative, it’s actually the reverse value of f’):&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;price = abs(f&amp;#39;(base)) = -f&amp;#39;(base)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Normally we require the price, -f’, to be monotonically decreasing, i.e., the smaller the base amount, the higher the price. Thus, f” &gt; 0. In a word, a reasonable f should be: a convex downward and monotonically decreasing function defined in the first quadrant.&lt;/p&gt;
-&lt;p&gt;Correspondingly, market depth is actually the derivative of base amount w.r.t. price.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;depth = f2&amp;#39;(price)
-f2 = Inverse(f&amp;#39;) &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Where &lt;code class=&quot;language-text&quot;&gt;Inverse&lt;/code&gt; means inverse function.&lt;/p&gt;
-&lt;p&gt;In the above formula, f2 is the inverse function of the price function, and its derivative is the function of depth w.r.t. price.&lt;/p&gt;
-&lt;p&gt;That concludes the relationship between market price/depth and base/quote function.&lt;/p&gt;
-&lt;h1&gt;Mathematical Background - Solving&lt;/h1&gt;
-&lt;p&gt;For a creator of AMM pool, they care the most about the initial price (price0) and initial depth (depth0). From mathematic perspective, they need to give an AMM function of the form &lt;code class=&quot;language-text&quot;&gt;quote = f(base)&lt;/code&gt;, so that there’s a coordinate satisfying &lt;code class=&quot;language-text&quot;&gt;price = price0&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;depth = depth0&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In other words, they need to solve the following equation:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Given depth0, price0,
-f is the function describing the relationship between base and quote amount, quote = f(base). Find a f that satisfies:
-
-* There&amp;#39;s base0, such that f&amp;#39;(base0) = price0
-* (Inverse(f&amp;#39;))&amp;#39;(price0) = depth0
-
-Additionally, it&amp;#39;s required that f &amp;gt; 0, f&amp;#39; &amp;lt; 0 and f&amp;#39;&amp;#39; &amp;gt; 0, that is, f is a convex downward and monotonically decreasing function defined in the first quadrant.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Actually, as the above equations has too few constraints, there are infinite number of solutions. f could be a reciprocal function, a more general hyperbolic function, an exponential function, or a power function. However in the next section, we will see that if we specify a certain form of f and limit its coefficients, we may be able to determine a unique solution.&lt;/p&gt;
-&lt;h3&gt;One of the solutions - when f is a translated reciprocal function&lt;/h3&gt;
-&lt;p&gt;If f is a reciprocal function in form of:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Or equivalently, using multiple variables:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vQuote = C / vBase
-vQoute = quote + QUOTE_DELTA
-vBase = base + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;where &lt;code class=&quot;language-text&quot;&gt;C&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; are positive constants.&lt;/p&gt;
-&lt;p&gt;When f is in this form, the price and depth could be derived as:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;price = -f&amp;#39;(base) = C / (vBase**2) = vQuote / vBase
-depth = vBase**2 / (2 * vQuote)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;According to the condition that at &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt;, the depth is &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, it can be solved as:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;C = vBase0 * vQuote0 = 4 * price0**3 * depth0**2
-vQuote0 = 2 * price0**2 * depth0 = quote0 + QUOTE_DELTA
-vBase0 = 2 * price0 * depth0 = base0 + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;So finally, the AMM function &lt;code class=&quot;language-text&quot;&gt;quote = f(base)&lt;/code&gt; will be:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA,&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;where &lt;code class=&quot;language-text&quot;&gt;C = 4 * price0**3 * depth0**2&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; are random constants.&lt;/p&gt;
-&lt;p&gt;To conclude, we demonstrated that if specifying f as an reciprocal function, an unique solution of f could be obtained from price and depth. Although f can actually be any types of functions, for simplicity and without the loss of generality, we will use reciprocal function as our AMM function in the rest of the post.&lt;/p&gt;
-&lt;h1&gt;Formula definition of Differential AMM&lt;/h1&gt;
-&lt;p&gt;Synthesizing all the derivations in the previous section, we can get the complete definition of Differential AMM:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;quote = f(base) = C / (base + BASE_DELTA) - QUOTE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Terminology:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Meaning&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;price0&lt;/td&gt;
-&lt;td&gt;initial market price&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;depth0&lt;/td&gt;
-&lt;td&gt;initial market depth&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;lowPrice&lt;/td&gt;
-&lt;td&gt;the lowest automatic market-making price, minimum is 0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;highPrice&lt;/td&gt;
-&lt;td&gt;the highest automatic market-making price, maximum is positive inifinite&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;quote0&lt;/td&gt;
-&lt;td&gt;initial actual quote amount&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;base0&lt;/td&gt;
-&lt;td&gt;initial actual base amount&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;QUOTE_DELTA&lt;/td&gt;
-&lt;td&gt;virtual quote amount&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;BASE_DELTA&lt;/td&gt;
-&lt;td&gt;virtual base amount&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;C&lt;/td&gt;
-&lt;td&gt;constant product&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;vQoute0&lt;/td&gt;
-&lt;td&gt;initial total quote amount, including actual and virtual&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;vBase0&lt;/td&gt;
-&lt;td&gt;initial total base amount, including actual and virtual&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Relationships between the parameters:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(1) C = 4 * price0**3 * depth0**2
-(2) lowPrice = QUOTE_DELTA**2 / C
-(3) highPrice = C / BASE_DELTA**2
-(4) price0 = vQuote0 / vBase0
-(5) depth0 = vBase**2 / (2 * vQuote)
-(6) vQoute0 = 2 * price0**2 * depth0
-(7) vBase0 = 2 * price0 * depth0
-(8) vQoute0 = quote0 + QUOTE_DELTA
-(9) vBase0 = base0 + BASE_DELTA&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Note1: Among the above formulas, (4)(5) and (6)(7) are equivalent.&lt;/p&gt;
-&lt;p&gt;Note2: With the same &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, the smaller &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt; are, the larger &lt;code class=&quot;language-text&quot;&gt;base0&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;quote0&lt;/code&gt; are. That is, when providing the same market liquidity, a greater amount of fund will lead to a lower so-called “capital efficiency”, but a wider market-making price range (i.e., from &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt;). Extremely, when &lt;code class=&quot;language-text&quot;&gt;QUOTE_DELTA&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;BASE_DELTA&lt;/code&gt; are both 0, &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; will be 0 and &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt; will be inifinite. In this situation, DAMM degenerates into Constant Product AMM. We could adjust capital efficiency arbitrarily by adjusting &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In reality, for the following 3 groups of parameters, (A) depth price, (B) lowPrice highPrice, (C) quote0 base0, given any two groups, the third group, as well as the complete market-making function could be derived.&lt;/p&gt;
-&lt;p&gt;Here are the three scenarios corresponding to three initial conditions:&lt;/p&gt;
-&lt;h3&gt;Given price and depth (A), and initial amounts (C)&lt;/h3&gt;
-&lt;p&gt;That is, in the equations, given &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;quote0&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;base0&lt;/code&gt;, we then want to calculate market-making price range and other parameters.&lt;/p&gt;
-&lt;p&gt;For step-by-step solution please refer to: &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39&quot;&gt;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L39&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Given price and depth (A), and market-making price range (B)&lt;/h3&gt;
-&lt;p&gt;That is, in the equations, given &lt;code class=&quot;language-text&quot;&gt;price0&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;depth0&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;lowPrice&lt;/code&gt; (could be 0), &lt;code class=&quot;language-text&quot;&gt;highPrice&lt;/code&gt; (could be inifinity), need to calculate initial amount and other parameters.&lt;/p&gt;
-&lt;p&gt;For step-by-step solution please refer to: &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53&quot;&gt;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L53&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Given market-making price range (B), and initial amounts (C)&lt;/h3&gt;
-&lt;p&gt;This is the most complex scenario. Actually it is equivalent to solving a binary quadratic equation. By solving the equation we could get all other parameters.&lt;/p&gt;
-&lt;p&gt;For step-by-step solution please refer to: &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72&quot;&gt;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L72&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;From the above three scenarios, we could see that DAMM has great flexibility. On the one hand, different scenarios may have different requirements and different initial conditions. Under the above three initial conditions, we are still able to solve a correct DAMM strategy. On the other hand, &lt;strong&gt;we can abitrarily adjust capital efficiency through the price range or initial amount&lt;/strong&gt;.&lt;/p&gt;
-&lt;h1&gt;Miscellaneous&lt;/h1&gt;
-&lt;h2&gt;Converting AAM to orderbook&lt;/h2&gt;
-&lt;p&gt;By approximating the AMM curve section by section, we can get a discretized orderbook. In our &lt;a href=&quot;https://github.com/fluidex/differential-amm/blob/673b2801c822bc5e75dc63f1def0204b8d57bb03/main.ts#L156&quot;&gt;reference implementation&lt;/a&gt;, we could specify price interval and the number of orders, and get order size and average price by calculating BASE&lt;em&gt;DELTA and QUOTE&lt;/em&gt;DELTA.&lt;/p&gt;
-&lt;h2&gt;Mathematical equivalance&lt;/h2&gt;
-&lt;p&gt;It’s easy to see that DAMM is mathematically equivalent to the market maker algorithm (x + a)(y + b) = k. The difference is that we interpret it in a micro perspective way, as well as possibilities to solve from different initial conditions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ZK-Rollup development experience sharing, Part I]]></title><description><![CDATA[Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks…]]></description><link>https://www.fluidex.io/en/blog/zkrollup-intro1/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/zkrollup-intro1/</guid><pubDate>Wed, 12 May 2021 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;容易看出 DAMM 在数学上等价于 (x + a)(y + b) = k 的做市算法。不同之处在于我们给了很多的微观诠释，也指出了多种不同的从初识条件求解的可能性。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ZK-Rollup development experience sharing, Part I]]></title><description><![CDATA[Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks…]]></description><link>https://www.fluidex.io/en/blog/zkrollup-intro1/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/zkrollup-intro1/</guid><pubDate>Wed, 12 May 2021 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Acknowledgement: we would like to thank barryWhiteHat, Jordi Baylina, Koh Wei Jie (in alphabetical order) for their insightful feedbacks.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Prerequisites: basic programming and blockchain knowledge, no cryptography background needed.&lt;/p&gt;
 &lt;p&gt;Currently, major expectations on blockchain technology are further scaling, higher performance and lower costs. In this post, we will dive into ZK-Rollup, which is one of the &lt;a href=&quot;https://ethereum.org/nl/developers/docs/layer-2-scaling/&quot;&gt;Ethereum layer 2 scaling solutions&lt;/a&gt;. It exquisitely applies a zero knowledge proof technique (known as ZK-SNARK) to reduce the on-chain costs, and thus, is able to improve Ethereum TPS considerably (~10x-100x). ZK-Rollup is considered as the most important Ethereum Layer 2 scaling solution in the long term by many people, including Vitalik, the founder of Ethereum.&lt;/p&gt;
 &lt;blockquote&gt;
