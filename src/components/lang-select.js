@@ -13,7 +13,11 @@ const LangSelect = ({ value }) => {
     if (path === "/") {
       navigate(`/${langKey}/index`);
     } else {
-      navigate(`/${langKey}/${path.split("/")[2]}`);
+      // Example: path === "/en/blog/fluidex-architecture/"
+      // path.split("/") === ["", "en", "blog", "fluidex-architecture", ""]
+      // path.split("/").slice(2) === ["blog", "fluidex-architecture", ""]
+      // path.split("/").slice(2).join("/") === "/blog/fluidex-architecture/"
+      navigate(`/${langKey}/${path.split("/").slice(2).join("/")}`);
     }
   };
 
@@ -28,19 +32,11 @@ const LangSelect = ({ value }) => {
   const options = [
     {
       value: "en",
-      label: (
-        <div style={{ display: "flex" }}>
-          English
-        </div>
-      ),
+      label: <div style={{ display: "flex" }}>English</div>,
     },
     {
       value: "zh",
-      label: (
-        <div style={{ display: "flex" }}>
-          简体中文
-        </div>
-      ),
+      label: <div style={{ display: "flex" }}>简体中文</div>,
     },
   ];
 
