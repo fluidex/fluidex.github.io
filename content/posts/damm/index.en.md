@@ -176,4 +176,4 @@ By approximating the AMM curve section by section, we can get a discretized orde
 
 It's easy to see that DAMM is mathematically equivalent to the market maker algorithm (x + a)(y + b) = k. The difference is that we interpret it in a micro perspective way, as well as possibilities to solve from different initial conditions.
 
-[^1]: Although Uniswap V3 also supports providing liquidity in a price range, but the base-quote ratio will be highly related to the price range, neither can they support single-side market making.
+[^1]: Although Uniswap V3 also supports providing liquidity in a price range, liquidity providers are not allowed to configure the base-quote ratio, neither can Uniswap V3 support single-side market making.
