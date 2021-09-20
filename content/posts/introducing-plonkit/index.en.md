@@ -40,6 +40,9 @@ The diagram below demonstrates a typical workflow of using plonkit:
 
 ![](plonkit.png)
 
+
+The ... script is also a good example...
+
 ## Acknowledgements
 Plonkit builds on top of [bellman_ce](https://github.com/matter-labs/bellman).
 
