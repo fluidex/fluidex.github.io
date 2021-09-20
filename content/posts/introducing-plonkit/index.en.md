@@ -5,7 +5,6 @@ tags: [technical]
 ---
 
 We are proudly to annouce that, FluiDex has received an [ESP grant](https://esp.ethereum.foundation/) from Ethereum Foundation for our [plonkit](https://github.com/fluidex/plonkit).
-
 And now, since this work gets completed, we would like to share more information about it.
 
 ## TL;DR
@@ -24,10 +23,30 @@ The functionalities of plonkit include:
 + Verifier Smart Contract Generation
 + Proof Aggregation
 
-## Architecture
-Plonkit builds on top of [bellman_ce](https://github.com/matter-labs/bellman).
+### Local SRS setup
+
+### Verification Key Generation
+
+### Proof Generation
+
+### Proof Verfication
+
+### Verifier Smart Contract Generation
+
+### Proof Aggregation
 
 ## Workflow / Usecase
-__TODO:__
+The diagram below demonstrates a typical workflow of using plonkit:
+
+![](plonkit.png)
+
+## Acknowledgements
+Plonkit builds on top of [bellman_ce](https://github.com/matter-labs/bellman).
+
+zkutil
+
+circom
+
+Thanks the great work of these teams/individuals!
 
 Try out plonkit [here](https://github.com/fluidex/plonkit) and have fun!
