@@ -6,7 +6,7 @@ description: "When PLONK and Circom meet each other."
 ---
 
 We are proudly to annouce that, FluiDex has received an [ESP grant](https://esp.ethereum.foundation/) from Ethereum Foundation for our [plonkit](https://github.com/fluidex/plonkit).
-And now, since this work gets completed, we would like to share more information about it.
+And since this work now gets completed, we would like to share more information about it.
 
 ## TL;DR
 Plonkit is a zkSNARK toolkit to work with [Circom](https://github.com/iden3/circom), a developer-friendly ZKP circuit language, in [PLONK proof system](https://eprint.iacr.org/2019/953.pdf). It allows generating proof, verifying and exporting verifier smart contract.
@@ -28,23 +28,36 @@ The functionalities of plonkit include:
 
 ### Local SRS setup
 
+__TODO:__
+
 ### Verification Key Generation
+
+Users can export a verification key for a circuit. The verification key is needed for future proof verification.
 
 ### Proof Generation
 
+A prover can generate a proof proving he knows a witness satisfying the circuit.
+
 ### Proof Verfication
+
+Proof verfication is to verified a proof using a verification key.
 
 ### Verifier Smart Contract Generation
 
+__TODO:__
+
 ### Proof Aggregation
+
+Plonkit wraps up [recursive_aggregation_circuit](https://github.com/matter-labs/recursive_aggregation_circuit) to achieve proof aggregation. Proof aggregation is based on "Recursive Proof Composition" described in [Halo](https://eprint.iacr.org/2019/1021.pdf) paper.
+
+__TODO:__
 
 ## Workflow / Usecase
 The diagram below demonstrates a typical workflow of using plonkit:
 
 ![](plonkit.png)
 
-
-The ... script is also a good example...
+The [test_poseidon_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh) script is also a comprehensive example of the whole workflow.
 
 ## Acknowledgements
 + Plonkit builds on top of the awesome libraries written by matter-labs:
