@@ -46,13 +46,15 @@ Proof verfication is to verified a proof using a verification key.
 
 ### Verifier Smart Contract Generation
 
-Users can generate a verifier smart contract based on a verification key. 
+Users can generate a verifier smart contract based on a verification key, then a proof can be verified on EVM using this smart contract.
 
 ### Proof Aggregation
 
 Plonkit wraps up [recursive_aggregation_circuit](https://github.com/matter-labs/recursive_aggregation_circuit) to achieve proof aggregation. Proof aggregation is based on "Recursive Proof Composition" described in [Halo](https://eprint.iacr.org/2019/1021.pdf) paper.
 
-__TODO:__
+Some points worth noting:
++ Unlike Halo we don't use cyclic curves but simulate base field operations, because on Ethereum we only have one curve (BN_254).
++ We aggregate multiple proof into an aggregated proof in one step, instead of iterating and aggregating one by one.
 
 ## Workflow / Usecase
 The diagram below demonstrates a typical workflow of using plonkit:
