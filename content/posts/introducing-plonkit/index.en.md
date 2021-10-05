@@ -28,7 +28,9 @@ The functionalities of plonkit include:
 
 ### Local SRS setup
 
-__TODO:__
+To export a verification key and to generate a proof (both explained later), we need a Structured-Reference-String. In [test_poseidon_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh), we provide a download link [^2] for a SRS file previously set up. According to [matter-labs](https://github.com/matter-labs/bellman/blob/f551a55d83d2ea604b2dbfe096fd9dcfdaedb189/src/kate_commitment/mod.rs#L1091*), this SRS file is parsed from [AZTEC's ignition setup](https://medium.com/aztec-protocol/aztec-announcing-our-ignition-ceremony-757850264cfe).
+
+For the convenience for testing, we add the support for genenrating SRS locally.
 
 ### Verification Key Generation
 
@@ -73,3 +75,4 @@ Try out plonkit [here](https://github.com/fluidex/plonkit) and have fun!
 
 
 [^1]: By the time of starting plonkit project, Circom/snarkJS didn't support PLONK but [it does now](https://blog.iden3.io/circom-snarkjs-plonk.html). Still, proving in plonkit is more efficient than in snarkJS (plonkit uses Rust and snarkJS uses JS, and their PLONK implementations are different), whereas snarkJS can be run in browsers but plonkit cannot.
+[^2]: Taken from https://github.com/matter-labs/zksync/blob/master/infrastructure/zk/src/run/run.ts#L77
