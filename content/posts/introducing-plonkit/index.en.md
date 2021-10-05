@@ -46,7 +46,7 @@ Proof verfication is to verified a proof using a verification key.
 
 ### Verifier Smart Contract Generation
 
-__TODO:__
+Users can generate a verifier smart contract based on a verification key. 
 
 ### Proof Aggregation
 
