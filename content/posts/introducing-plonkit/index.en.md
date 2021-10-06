@@ -28,7 +28,7 @@ The functionalities of plonkit include:
 
 ### Local SRS setup
 
-To export a verification key and to generate a proof (both explained later), we need a Structured-Reference-String. In [test_poseidon_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh), we provide a download link [^2] for a SRS file previously set up. According to [matter-labs](https://github.com/matter-labs/bellman/blob/f551a55d83d2ea604b2dbfe096fd9dcfdaedb189/src/kate_commitment/mod.rs#L1091*), this SRS file is parsed from [AZTEC's ignition setup](https://medium.com/aztec-protocol/aztec-announcing-our-ignition-ceremony-757850264cfe).
+To export a verification key and to generate a proof (both explained later), we need a Structured-Reference-String. In [test_poseidon_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh), we provide a download link [^2] for a SRS file previously set up. According to [matter-labs](https://github.com/matter-labs/bellman/blob/f551a55d83d2ea604b2dbfe096fd9dcfdaedb189/src/kate_commitment/mod.rs#L1090), this SRS file is parsed from [AZTEC's ignition setup](https://medium.com/aztec-protocol/aztec-announcing-our-ignition-ceremony-757850264cfe).
 
 For the convenience for testing, we add the support for genenrating SRS locally.
 
