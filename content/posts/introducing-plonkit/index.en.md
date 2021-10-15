@@ -52,9 +52,10 @@ Users can generate a verifier smart contract based on a verification key, then a
 
 Plonkit wraps up [recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit) to achieve proof aggregation. Proof aggregation is based on "Recursive Proof Composition" described in [Halo](https://eprint.iacr.org/2019/1021.pdf) paper.
 
-Some points worth noting:
-+ Unlike Halo, [recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit), and we, don't use cyclic curves but simulate base field operations, because on Ethereum we only have one curve (BN_254).
-+ [Recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit), and we, aggregate multiple proof into an aggregated proof in one step, instead of iterating and aggregating one by one.
+Some points worth noting (in the following explanations "we" stands for both "plonkit" and [recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit)):
++ Unlike Halo, we don't use cyclic curves but simulate base field operations [^3], because on Ethereum we only have one curve (BN_254).
++ We aggregate multiple proof into an aggregated proof in one step, instead of iterating and aggregating one by one.
++ We don't check the pairing in the circuit. Instead, we aggregate the pairing points and check the pairing in smart contract.
 
 ## Workflow / Usecase
 The diagram below demonstrates a typical workflow of using plonkit:
@@ -78,3 +79,4 @@ Try out plonkit [here](https://github.com/fluidex/plonkit) and have fun!
 
 [^1]: By the time of starting plonkit project, Circom/snarkJS didn't support PLONK but [it does now](https://blog.iden3.io/circom-snarkjs-plonk.html). Still, proving in plonkit is more efficient than in snarkJS (plonkit uses Rust and snarkJS uses JS, and their PLONK implementations are different), whereas snarkJS can be run in browsers but plonkit cannot.
 [^2]: Taken from https://github.com/matter-labs/zksync/blob/master/infrastructure/zk/src/run/run.ts#L77
+[^3]: We simulate base field elements as "limb"s.
