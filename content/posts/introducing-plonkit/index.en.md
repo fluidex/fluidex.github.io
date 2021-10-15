@@ -28,7 +28,7 @@ The functionalities of plonkit include:
 
 ### Local SRS setup
 
-To export a verification key and to generate a proof (both explained later), we need a Structured-Reference-String. In [test_poseidon_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh), we provide a download link [^2] for a SRS file previously set up. According to [matter-labs](https://github.com/matter-labs/bellman/blob/f551a55d83d2ea604b2dbfe096fd9dcfdaedb189/src/kate_commitment/mod.rs#L1090), this SRS file is parsed from [AZTEC's ignition setup](https://medium.com/aztec-protocol/aztec-announcing-our-ignition-ceremony-757850264cfe).
+To export a verification key and to generate a proof (both explained later), we need a Structured-Reference-String. In [test\_poseidon\_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh), we provide a download link [^2] for a SRS file previously set up. According to [matter-labs](https://github.com/matter-labs/bellman/blob/f551a55d83d2ea604b2dbfe096fd9dcfdaedb189/src/kate_commitment/mod.rs#L1090), this SRS file is parsed from [AZTEC's ignition setup](https://medium.com/aztec-protocol/aztec-announcing-our-ignition-ceremony-757850264cfe).
 
 For the convenience for testing, we add the support for genenrating SRS locally.
 
@@ -50,24 +50,24 @@ Users can generate a verifier smart contract based on a verification key, then a
 
 ### Proof Aggregation
 
-Plonkit wraps up [recursive_aggregation_circuit](https://github.com/matter-labs/recursive_aggregation_circuit) to achieve proof aggregation. Proof aggregation is based on "Recursive Proof Composition" described in [Halo](https://eprint.iacr.org/2019/1021.pdf) paper.
+Plonkit wraps up [recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit) to achieve proof aggregation. Proof aggregation is based on "Recursive Proof Composition" described in [Halo](https://eprint.iacr.org/2019/1021.pdf) paper.
 
 Some points worth noting:
-+ Unlike Halo we don't use cyclic curves but simulate base field operations, because on Ethereum we only have one curve (BN_254).
-+ We aggregate multiple proof into an aggregated proof in one step, instead of iterating and aggregating one by one.
++ Unlike Halo, [recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit), and we, don't use cyclic curves but simulate base field operations, because on Ethereum we only have one curve (BN_254).
++ [Recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit), and we, aggregate multiple proof into an aggregated proof in one step, instead of iterating and aggregating one by one.
 
 ## Workflow / Usecase
 The diagram below demonstrates a typical workflow of using plonkit:
 
 ![](plonkit.png)
 
-The [test_poseidon_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh) script is also a comprehensive example of the whole workflow.
+The [test\_poseidon\_plonk.sh](https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh) script is also a comprehensive example of the whole workflow.
 
 ## Acknowledgements
 + Plonkit builds on top of the awesome libraries written by matter-labs:
     * [bellman_ce](https://github.com/matter-labs/bellman)
-    * [solidity_plonk_verifier](https://github.com/matter-labs/solidity_plonk_verifier)
-    * [recursive_aggregation_circuit](https://github.com/matter-labs/recursive_aggregation_circuit)
+    * [solidity\_plonk\_verifier](https://github.com/matter-labs/solidity_plonk_verifier)
+    * [recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit)
 + Plonkit also borrows some "R1CSFile reader" codes from [zkUtil](https://github.com/poma/zkutil).
 + What is more, without the great effort of [Circom](https://github.com/iden3/circom), plonkit won't have the opportunity to bring a friendly ZKP circuit development experience to developers.
 
