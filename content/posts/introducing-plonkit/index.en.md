@@ -1,6 +1,6 @@
 ---
 title: "Introducing plonkit"
-date: 2021-10-14 20:00:00
+date: 2021-10-19 20:00:00
 tags: [technical]
 description: "When PLONK and Circom meet each other."
 ---
