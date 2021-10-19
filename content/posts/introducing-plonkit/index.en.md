@@ -70,7 +70,7 @@ The [test\_poseidon\_plonk.sh](https://github.com/fluidex/plonkit/blob/master/te
     * [solidity\_plonk\_verifier](https://github.com/matter-labs/solidity_plonk_verifier)
     * [recursive\_aggregation\_circuit](https://github.com/matter-labs/recursive_aggregation_circuit)
 + Plonkit also borrows some "R1CSFile reader" codes from [zkUtil](https://github.com/poma/zkutil).
-+ What is more, without the great effort of [Circom](https://github.com/iden3/circom), plonkit won't have the opportunity to bring a friendly ZKP circuit development experience to developers.
++ Furthermore, thanks to the great work and effort from the team behind [Circom](https://github.com/iden3/circom), developers can benefit from a friendly ZKP development language.
 
 Thanks the great work of these teams/individuals!
 
