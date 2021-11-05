@@ -5,8 +5,7 @@ tags: [technical]
 description: "When PLONK and Circom meet each other."
 ---
 
-We are proudly to annouce that, FluiDex has received an [ESP grant](https://esp.ethereum.foundation/) from Ethereum Foundation for our [plonkit](https://github.com/fluidex/plonkit).
-And since this work now gets completed, we would like to share more information about it.
+We are proud to annouce that, FluiDex has received an [ESP grant](https://blog.ethereum.org/2021/11/04/esp-allocation-update-q2-2021/) from Ethereum Foundation for our [plonkit](https://github.com/fluidex/plonkit). And since this work now gets completed, we would like to share more information about it.
 
 ## TL;DR
 Plonkit is a zkSNARK toolkit to work with [Circom](https://github.com/iden3/circom), a developer-friendly ZKP circuit language, in [PLONK proof system](https://eprint.iacr.org/2019/953.pdf). It allows generating proof, verifying and exporting verifier smart contract.

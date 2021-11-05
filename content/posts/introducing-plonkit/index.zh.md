@@ -4,7 +4,7 @@ date: 2021-10-19 20:00:00
 tags: [technical]
 ---
 
-我们很高兴地宣布，FluiDex 的 [plonkit](https://github.com/fluidex/plonkit) 最近得到了以太坊基金会 [ESP grant](https://esp.ethereum.foundation/) 的支持，我们将在这篇文章中介绍我们开发的这款零知识证明工具。
+我们很高兴地宣布，FluiDex 的 [plonkit](https://github.com/fluidex/plonkit) 最近得到了以太坊基金会 [ESP grant](https://blog.ethereum.org/2021/11/04/esp-allocation-update-q2-2021/) 的支持，我们将在这篇文章中介绍我们开发的这款零知识证明工具。
 
 ## 简介
 Plonkit 是一款配合 [Circom](https://github.com/iden3/circom) 使用的 [PLONK 协议](https://eprint.iacr.org/2019/953.pdf) 零知识证明工具。Circom 是一个开发者能轻易上手的零知识证明电路描述语言。Plonkit 目前支持了：生成 plonk 证明、验证 plonk 证明，以及生成验证合约以在 EVM 中进行验证。
