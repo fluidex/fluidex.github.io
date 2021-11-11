@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FluiDex]]></title><description><![CDATA[The website of the FluiDex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Nov 2021 07:36:31 GMT</lastBuildDate><item><title><![CDATA[About FluiDex]]></title><description><![CDATA[FluiDex is a ZK-Rollup Layer2 DEX on Ethereum. Technology FluiDex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on…]]></description><link>https://www.fluidex.io/en/about/</link><guid isPermaLink="false">https://www.fluidex.io/en/about/</guid><content:encoded>&lt;p&gt;&lt;strong&gt;FluiDex is a ZK-Rollup Layer2 DEX on Ethereum.&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FluiDex]]></title><description><![CDATA[The website of the FluiDex team.]]></description><link>https://www.fluidex.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 11 Nov 2021 10:49:45 GMT</lastBuildDate><item><title><![CDATA[About FluiDex]]></title><description><![CDATA[FluiDex is a ZK-Rollup Layer2 DEX on Ethereum. Technology FluiDex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on…]]></description><link>https://www.fluidex.io/en/about/</link><guid isPermaLink="false">https://www.fluidex.io/en/about/</guid><content:encoded>&lt;p&gt;&lt;strong&gt;FluiDex is a ZK-Rollup Layer2 DEX on Ethereum.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2&gt;Technology&lt;/h2&gt;
 &lt;p&gt;FluiDex aims at using PLONK-based ZK-Rollup to build a high-performance DEX on Ethereum. It &lt;a href=&quot;/en/blog/zkrollup-intro1/&quot;&gt;can save the cost of each transaction to 1/100&lt;/a&gt; while still offering the same security level as layer 1.&lt;/p&gt;
 &lt;h2&gt;Features&lt;/h2&gt;
@@ -81,105 +81,7 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 &lt;p&gt;Email: &lt;a href=&quot;mailto:z@fluidex.io&quot;&gt;z@fluidex.io&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex]]></title><description><![CDATA[FluiDex FluiDex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup. Checkout this…]]></description><link>https://www.fluidex.io/en/index/</link><guid isPermaLink="false">https://www.fluidex.io/en/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
 &lt;p&gt;FluiDex team is building the first permissionless layer2 orderbook DEX on Ethereum, powered by PLONK zk-rollup.&lt;/p&gt;
 &lt;p&gt;Checkout &lt;a href=&quot;/en/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;this article&lt;/a&gt; for more info.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FluiDex]]></title><description><![CDATA[FluiDex FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见这里。]]></description><link>https://www.fluidex.io/zh/index/</link><guid isPermaLink="false">https://www.fluidex.io/zh/index/</guid><content:encoded>&lt;h1&gt;FluiDex&lt;/h1&gt;
-&lt;p&gt;FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[plonkit]]></title><description><![CDATA[我们很高兴地宣布，FluiDex 的 plonkit 最近得到了以太坊基金会 ESP grant 的支持，我们将在这篇文章中介绍我们开发的这款零知识证明工具。 简介 Plonkit 是一款配合 Circom 使用的 PLONK 协议 零知识证明工具。Circom…]]></description><link>https://www.fluidex.io/zh/blog/introducing-plonkit/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/introducing-plonkit/</guid><pubDate>Tue, 19 Oct 2021 20:00:00 GMT</pubDate><content:encoded>&lt;p&gt;我们很高兴地宣布，FluiDex 的 &lt;a href=&quot;https://github.com/fluidex/plonkit&quot;&gt;plonkit&lt;/a&gt; 最近得到了以太坊基金会 &lt;a href=&quot;https://blog.ethereum.org/2021/11/04/esp-allocation-update-q2-2021/&quot;&gt;ESP grant&lt;/a&gt; 的支持，我们将在这篇文章中介绍我们开发的这款零知识证明工具。&lt;/p&gt;
-&lt;h2&gt;简介&lt;/h2&gt;
-&lt;p&gt;Plonkit 是一款配合 &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;Circom&lt;/a&gt; 使用的 &lt;a href=&quot;https://eprint.iacr.org/2019/953.pdf&quot;&gt;PLONK 协议&lt;/a&gt; 零知识证明工具。Circom 是一个开发者能轻易上手的零知识证明电路描述语言。Plonkit 目前支持了：生成 plonk 证明、验证 plonk 证明，以及生成验证合约以在 EVM 中进行验证。&lt;/p&gt;
-&lt;h2&gt;plonkit 的源起&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://eprint.iacr.org/2019/953.pdf&quot;&gt;PLONK&lt;/a&gt; 目前是性能最好（证明时间、证明体积）的零知识证明协议之一。&lt;a href=&quot;https://vitalik.ca/general/2019/09/22/plonk.html&quot;&gt;V 神在博客中解释道&lt;/a&gt;，受益于 “universal and updateable” setup， PLONK 比起 &lt;a href=&quot;https://eprint.iacr.org/2016/260.pdf&quot;&gt;Groth16&lt;/a&gt; 更安全，但性能上又没有太大损失。&lt;/p&gt;
-&lt;p&gt;但如果使用 C++/Rust/… 来编写零知识证明电路还是太麻烦，因为这需要编写大量的底层的约束。有一个思路可以解决这个问题，即使用 Circom 这门零知识证明电路 DSL 来开发电路。&lt;/p&gt;
-&lt;p&gt;为了使开发者能轻松地编写电路并使用 plonk 协议，我们开发了 plonkit。&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;h2&gt;plonkit 的功能&lt;/h2&gt;
-&lt;p&gt;Plonkit 的功能包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Structured-Reference-String (SRS) 的本地生成&lt;/li&gt;
-&lt;li&gt;Verification Key 的生成&lt;/li&gt;
-&lt;li&gt;Proof 的生成&lt;/li&gt;
-&lt;li&gt;Proof 的验证&lt;/li&gt;
-&lt;li&gt;生成验证合约&lt;/li&gt;
-&lt;li&gt;证明聚合&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Local SRS setup&lt;/h3&gt;
-&lt;p&gt;想要导出一个 verification key 和生成 proof（具体见下文中的解释），我们需要一个 Structured-Reference-String。在 &lt;a href=&quot;https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh&quot;&gt;test_poseidon_plonk.sh&lt;/a&gt; 中，我们提供了一个实现生成好的 SRS 的下载链接 &lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;。据 &lt;a href=&quot;https://github.com/matter-labs/bellman/blob/f551a55d83d2ea604b2dbfe096fd9dcfdaedb189/src/kate_commitment/mod.rs#L1090&quot;&gt;matter-labs&lt;/a&gt;，这个是由 &lt;a href=&quot;https://medium.com/aztec-protocol/aztec-announcing-our-ignition-ceremony-757850264cfe&quot;&gt;AZTEC 的 ignition setup&lt;/a&gt; 解析而来。&lt;/p&gt;
-&lt;p&gt;为了方便测试，我们添加了本地生成 SRS 的功能。&lt;/p&gt;
-&lt;h3&gt;Verification Key 的生成&lt;/h3&gt;
-&lt;p&gt;用户可以导出一个电路对应的 verification key。Verification key 需要在验证 proof 时使用。&lt;/p&gt;
-&lt;h3&gt;Proof 的生成&lt;/h3&gt;
-&lt;p&gt;用户可以生成一个 proof 来证明他知道能满足电路的信息。&lt;/p&gt;
-&lt;h3&gt;Proof 的验证&lt;/h3&gt;
-&lt;p&gt;Proof 的验证指的是使用电路对应的 verification key 来验证一个 proof。&lt;/p&gt;
-&lt;h3&gt;生成验证合约&lt;/h3&gt;
-&lt;p&gt;用户可以使用 plonkit 生成对一个电路的验证合约，这样就可以在 EVM 上验证一个 proof。&lt;/p&gt;
-&lt;h3&gt;证明聚合&lt;/h3&gt;
-&lt;p&gt;Plonkit 封装了 &lt;a href=&quot;https://github.com/matter-labs/recursive_aggregation_circuit&quot;&gt;recursive_aggregation_circuit&lt;/a&gt; 以支持证明聚合。核心思想是 &lt;a href=&quot;https://eprint.iacr.org/2019/1021.pdf&quot;&gt;Halo&lt;/a&gt; 这篇论文。证明聚合使得用户可以将多个证明压缩成一个，达到一个 proof 就能证明多个 proof 的效果。&lt;/p&gt;
-&lt;p&gt;值得注意的是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;由于以太坊虚拟机只支持 BN_254 一条曲线，所以我们无法像 Halo 中采用循环曲线，而是模拟了 base 域上的元素。&lt;/li&gt;
-&lt;li&gt;我们并不是循环迭代层层聚合多个 proof，而是将多个 proof 一次性聚合起来，所以是一个深度为 1 的聚合。&lt;/li&gt;
-&lt;li&gt;我们不直接在电路中验证 pairing，而是将群上的点聚合起来，在智能合约中再进行验证。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;plonkit 的使用流程&lt;/h2&gt;
-&lt;p&gt;下图展示了 plonkit 的使用流程：&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b83f1e0a8f618a8a753621d467492acf/7dd84/plonkit.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 39.87341772151899%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAD2EAAA9hAHVrK90AAACJUlEQVQoz01Sy4vSURQ+YxOIJOM0/YaKZtmQEtYsmiCFNmMRjS36AyqCGRI3Lgx0MTtBEREZxRciKKKiIj5ARcXH+AbxzagguFJCyUVtJIhf5wpFFy6H853Xd757IR6PM1KpFCMYDG7RNA25XA7W6zWYzWbIZrOMYrHIGA6H24vFArrdrq3dbtO9Xm8tkUgeVyqV15jzCgCYFEXtADnYENLpNEQiEUgkEhvs8vISHA4HYDOoVqtgsVhguVxCrVZ7gXkXmH+uVCo5Ho+H43a7d7HkJofDoQghCIVCR7FY7LnX6933+/1AQJ1OB1ar9RYOeJbJZI5dLteuQqGAcDi8iZMrFothPB5DIBAAjBMeTJPJBHB9ff0TA3Sz2bxA8IZUKmWjZTidzvfz+ZzGVWlcS0KaFAqF2yqV6kitVj8kvlAoBC6XC1qt9o5cLn9qMBjuEZ1OSqXSKep4QKgzmcxDtKxGo8HO5/NvUKe3yPQ+Yux6ve6czWb0dDr9hqu+7Pf7n1ksFoXaxlerFY3xHzAajb5jAl0ulxVYtC0QCPZJY9TwHTL/NZlMfuOwM8Iah/N9Pt8n1PHUaDTuIE6RGpTsGLEPyWTyBFqt1sfBYPAFhX7yVx9ybTbbQafTOUMW55h8SDCNRvMvLpPJADcDHo8HdrudaLiF7wGARURHsjr83xAZkG8COAyi0ShcXV1tfgCfz99DQ+n1+kcoy1eRSHQX/b0HeEjdH+dbR5RZJ2+cAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;plonkit&quot;
-        title=&quot;plonkit&quot;
-        src=&quot;/static/b83f1e0a8f618a8a753621d467492acf/f058b/plonkit.png&quot;
-        srcset=&quot;/static/b83f1e0a8f618a8a753621d467492acf/c26ae/plonkit.png 158w,
-/static/b83f1e0a8f618a8a753621d467492acf/6bdcf/plonkit.png 315w,
-/static/b83f1e0a8f618a8a753621d467492acf/f058b/plonkit.png 630w,
-/static/b83f1e0a8f618a8a753621d467492acf/40601/plonkit.png 945w,
-/static/b83f1e0a8f618a8a753621d467492acf/78612/plonkit.png 1260w,
-/static/b83f1e0a8f618a8a753621d467492acf/7dd84/plonkit.png 3732w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh&quot;&gt;test_poseidon_plonk.sh&lt;/a&gt; 脚本也是个很好的例子。&lt;/p&gt;
-&lt;h2&gt;致谢&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Plonkit 基于 matter-labs 开发的以下几个库:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/bellman&quot;&gt;bellman_ce&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/solidity_plonk_verifier&quot;&gt;solidity_plonk_verifier&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/recursive_aggregation_circuit&quot;&gt;recursive_aggregation_circuit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Plonkit 的 “R1CSFile reader” 部分源于 &lt;a href=&quot;https://github.com/poma/zkutil&quot;&gt;zkUtil&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;另外，&lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;Circom&lt;/a&gt; 使得开发者能方便地编写零知识证明电路，这也是 plonkit 的基石之一。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;感谢这些伟大的工作。&lt;/p&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&quot;fn-1&quot;&gt;
-&lt;p&gt;当我们开始开发 plonkit 时，Circom/snarkJS 还没支持 PLONK（&lt;a href=&quot;https://blog.iden3.io/circom-snarkjs-plonk.html&quot;&gt;现已支持&lt;/a&gt;）。plonkit 对比起 circom-snarkjs-plonk 会更高效（plonkit 采用 Rust 编写、 snarkJS 采用 JS 编写，而且我们的实现也不尽相同)，但 snarkJS 可以支持在浏览器中运行而 plonkit 暂时不能。&lt;/p&gt;
-&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
-&lt;/li&gt;
-&lt;li id=&quot;fn-2&quot;&gt;
-&lt;p&gt;来源：&lt;a href=&quot;https://github.com/matter-labs/zksync/blob/master/infrastructure/zk/src/run/run.ts#L77&quot;&gt;https://github.com/matter-labs/zksync/blob/master/infrastructure/zk/src/run/run.ts#L77&lt;/a&gt;&lt;/p&gt;
-&lt;a href=&quot;#fnref-2&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Introducing plonkit]]></title><description><![CDATA[We are proud to announce that, FluiDex has received an ESP grant from Ethereum Foundation for our plonkit. And since this work now gets…]]></description><link>https://www.fluidex.io/en/blog/introducing-plonkit/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/introducing-plonkit/</guid><pubDate>Tue, 19 Oct 2021 20:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We are proud to announce that, FluiDex has received an &lt;a href=&quot;https://blog.ethereum.org/2021/11/04/esp-allocation-update-q2-2021/&quot;&gt;ESP grant&lt;/a&gt; from Ethereum Foundation for our &lt;a href=&quot;https://github.com/fluidex/plonkit&quot;&gt;plonkit&lt;/a&gt;. And since this work now gets completed, we would like to share more information about it.&lt;/p&gt;
-&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;FluiDex Labs 致力于构建下一代专业的去中心化交易所。我们将在以太坊上使用 PLONK 零知识证明技术，开发高性能的订单簿数字资产现货交易所。完整的项目介绍见&lt;a href=&quot;/zh/blog/fluidex-a-zkrollup-layer2-dex/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Introducing plonkit]]></title><description><![CDATA[TL;DR Plonkit is a zkSNARK toolkit to work with Circom, a developer-friendly ZKP circuit language, in PLONK proof system. It allows…]]></description><link>https://www.fluidex.io/en/blog/introducing-plonkit/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/introducing-plonkit/</guid><pubDate>Tue, 19 Oct 2021 20:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;TL;DR&lt;/h2&gt;
 &lt;p&gt;Plonkit is a zkSNARK toolkit to work with &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;Circom&lt;/a&gt;, a developer-friendly ZKP circuit language, in &lt;a href=&quot;https://eprint.iacr.org/2019/953.pdf&quot;&gt;PLONK proof system&lt;/a&gt;. It allows generating proof, verifying and exporting verifier smart contract.&lt;/p&gt;
 &lt;h2&gt;The motivation of plonkit&lt;/h2&gt;
 &lt;p&gt;To date, &lt;a href=&quot;https://eprint.iacr.org/2019/953.pdf&quot;&gt;PLONK&lt;/a&gt; is one of the most performant zk-SNARKS proof systems in terms of proving time and proof size. &lt;a href=&quot;https://vitalik.ca/general/2019/09/22/plonk.html&quot;&gt;As explained by Vitalik Buterin&lt;/a&gt;, by being benefited from “universal and updateable” setup, PLONK is more secure when compared to &lt;a href=&quot;https://eprint.iacr.org/2016/260.pdf&quot;&gt;Groth16&lt;/a&gt;, without introducing much performance loss.&lt;/p&gt;
@@ -277,6 +179,102 @@ FluiDex 在 2021 年初启动，我们曾写过[打造一个最好的非托管�
 &lt;li id=&quot;fn-3&quot;&gt;
 &lt;p&gt;We simulate base field elements as “limb”s.&lt;/p&gt;
 &lt;a href=&quot;#fnref-3&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[plonkit]]></title><description><![CDATA[简介 Plonkit 是一款配合 Circom 使用的 PLONK 协议 零知识证明工具。Circom 是一个开发者能轻易上手的零知识证明电路描述语言。Plonkit 目前支持了：生成 plonk 证明、验证 plonk 证明，以及生成验证合约以在 EVM…]]></description><link>https://www.fluidex.io/zh/blog/introducing-plonkit/</link><guid isPermaLink="false">https://www.fluidex.io/zh/blog/introducing-plonkit/</guid><pubDate>Tue, 19 Oct 2021 20:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;简介&lt;/h2&gt;
+&lt;p&gt;Plonkit 是一款配合 &lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;Circom&lt;/a&gt; 使用的 &lt;a href=&quot;https://eprint.iacr.org/2019/953.pdf&quot;&gt;PLONK 协议&lt;/a&gt; 零知识证明工具。Circom 是一个开发者能轻易上手的零知识证明电路描述语言。Plonkit 目前支持了：生成 plonk 证明、验证 plonk 证明，以及生成验证合约以在 EVM 中进行验证。&lt;/p&gt;
+&lt;h2&gt;plonkit 的源起&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://eprint.iacr.org/2019/953.pdf&quot;&gt;PLONK&lt;/a&gt; 目前是性能最好（证明时间、证明体积）的零知识证明协议之一。&lt;a href=&quot;https://vitalik.ca/general/2019/09/22/plonk.html&quot;&gt;V 神在博客中解释道&lt;/a&gt;，受益于 “universal and updateable” setup， PLONK 比起 &lt;a href=&quot;https://eprint.iacr.org/2016/260.pdf&quot;&gt;Groth16&lt;/a&gt; 更安全，但性能上又没有太大损失。&lt;/p&gt;
+&lt;p&gt;但如果使用 C++/Rust/… 来编写零知识证明电路还是太麻烦，因为这需要编写大量的底层的约束。有一个思路可以解决这个问题，即使用 Circom 这门零知识证明电路 DSL 来开发电路。&lt;/p&gt;
+&lt;p&gt;为了使开发者能轻松地编写电路并使用 plonk 协议，我们开发了 plonkit。&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2&gt;plonkit 的功能&lt;/h2&gt;
+&lt;p&gt;Plonkit 的功能包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Structured-Reference-String (SRS) 的本地生成&lt;/li&gt;
+&lt;li&gt;Verification Key 的生成&lt;/li&gt;
+&lt;li&gt;Proof 的生成&lt;/li&gt;
+&lt;li&gt;Proof 的验证&lt;/li&gt;
+&lt;li&gt;生成验证合约&lt;/li&gt;
+&lt;li&gt;证明聚合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Local SRS setup&lt;/h3&gt;
+&lt;p&gt;想要导出一个 verification key 和生成 proof（具体见下文中的解释），我们需要一个 Structured-Reference-String。在 &lt;a href=&quot;https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh&quot;&gt;test_poseidon_plonk.sh&lt;/a&gt; 中，我们提供了一个实现生成好的 SRS 的下载链接 &lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;。据 &lt;a href=&quot;https://github.com/matter-labs/bellman/blob/f551a55d83d2ea604b2dbfe096fd9dcfdaedb189/src/kate_commitment/mod.rs#L1090&quot;&gt;matter-labs&lt;/a&gt;，这个是由 &lt;a href=&quot;https://medium.com/aztec-protocol/aztec-announcing-our-ignition-ceremony-757850264cfe&quot;&gt;AZTEC 的 ignition setup&lt;/a&gt; 解析而来。&lt;/p&gt;
+&lt;p&gt;为了方便测试，我们添加了本地生成 SRS 的功能。&lt;/p&gt;
+&lt;h3&gt;Verification Key 的生成&lt;/h3&gt;
+&lt;p&gt;用户可以导出一个电路对应的 verification key。Verification key 需要在验证 proof 时使用。&lt;/p&gt;
+&lt;h3&gt;Proof 的生成&lt;/h3&gt;
+&lt;p&gt;用户可以生成一个 proof 来证明他知道能满足电路的信息。&lt;/p&gt;
+&lt;h3&gt;Proof 的验证&lt;/h3&gt;
+&lt;p&gt;Proof 的验证指的是使用电路对应的 verification key 来验证一个 proof。&lt;/p&gt;
+&lt;h3&gt;生成验证合约&lt;/h3&gt;
+&lt;p&gt;用户可以使用 plonkit 生成对一个电路的验证合约，这样就可以在 EVM 上验证一个 proof。&lt;/p&gt;
+&lt;h3&gt;证明聚合&lt;/h3&gt;
+&lt;p&gt;Plonkit 封装了 &lt;a href=&quot;https://github.com/matter-labs/recursive_aggregation_circuit&quot;&gt;recursive_aggregation_circuit&lt;/a&gt; 以支持证明聚合。核心思想是 &lt;a href=&quot;https://eprint.iacr.org/2019/1021.pdf&quot;&gt;Halo&lt;/a&gt; 这篇论文。证明聚合使得用户可以将多个证明压缩成一个，达到一个 proof 就能证明多个 proof 的效果。&lt;/p&gt;
+&lt;p&gt;值得注意的是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;由于以太坊虚拟机只支持 BN_254 一条曲线，所以我们无法像 Halo 中采用循环曲线，而是模拟了 base 域上的元素。&lt;/li&gt;
+&lt;li&gt;我们并不是循环迭代层层聚合多个 proof，而是将多个 proof 一次性聚合起来，所以是一个深度为 1 的聚合。&lt;/li&gt;
+&lt;li&gt;我们不直接在电路中验证 pairing，而是将群上的点聚合起来，在智能合约中再进行验证。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;plonkit 的使用流程&lt;/h2&gt;
+&lt;p&gt;下图展示了 plonkit 的使用流程：&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b83f1e0a8f618a8a753621d467492acf/7dd84/plonkit.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.87341772151899%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAD2EAAA9hAHVrK90AAACJUlEQVQoz01Sy4vSURQ+YxOIJOM0/YaKZtmQEtYsmiCFNmMRjS36AyqCGRI3Lgx0MTtBEREZxRciKKKiIj5ARcXH+AbxzagguFJCyUVtJIhf5wpFFy6H853Xd757IR6PM1KpFCMYDG7RNA25XA7W6zWYzWbIZrOMYrHIGA6H24vFArrdrq3dbtO9Xm8tkUgeVyqV15jzCgCYFEXtADnYENLpNEQiEUgkEhvs8vISHA4HYDOoVqtgsVhguVxCrVZ7gXkXmH+uVCo5Ho+H43a7d7HkJofDoQghCIVCR7FY7LnX6933+/1AQJ1OB1ar9RYOeJbJZI5dLteuQqGAcDi8iZMrFothPB5DIBAAjBMeTJPJBHB9ff0TA3Sz2bxA8IZUKmWjZTidzvfz+ZzGVWlcS0KaFAqF2yqV6kitVj8kvlAoBC6XC1qt9o5cLn9qMBjuEZ1OSqXSKep4QKgzmcxDtKxGo8HO5/NvUKe3yPQ+Yux6ve6czWb0dDr9hqu+7Pf7n1ksFoXaxlerFY3xHzAajb5jAl0ulxVYtC0QCPZJY9TwHTL/NZlMfuOwM8Iah/N9Pt8n1PHUaDTuIE6RGpTsGLEPyWTyBFqt1sfBYPAFhX7yVx9ybTbbQafTOUMW55h8SDCNRvMvLpPJADcDHo8HdrudaLiF7wGARURHsjr83xAZkG8COAyi0ShcXV1tfgCfz99DQ+n1+kcoy1eRSHQX/b0HeEjdH+dbR5RZJ2+cAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;plonkit&quot;
+        title=&quot;plonkit&quot;
+        src=&quot;/static/b83f1e0a8f618a8a753621d467492acf/f058b/plonkit.png&quot;
+        srcset=&quot;/static/b83f1e0a8f618a8a753621d467492acf/c26ae/plonkit.png 158w,
+/static/b83f1e0a8f618a8a753621d467492acf/6bdcf/plonkit.png 315w,
+/static/b83f1e0a8f618a8a753621d467492acf/f058b/plonkit.png 630w,
+/static/b83f1e0a8f618a8a753621d467492acf/40601/plonkit.png 945w,
+/static/b83f1e0a8f618a8a753621d467492acf/78612/plonkit.png 1260w,
+/static/b83f1e0a8f618a8a753621d467492acf/7dd84/plonkit.png 3732w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/fluidex/plonkit/blob/master/test/test_poseidon_plonk.sh&quot;&gt;test_poseidon_plonk.sh&lt;/a&gt; 脚本也是个很好的例子。&lt;/p&gt;
+&lt;h2&gt;致谢&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Plonkit 基于 matter-labs 开发的以下几个库:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/bellman&quot;&gt;bellman_ce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/solidity_plonk_verifier&quot;&gt;solidity_plonk_verifier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/matter-labs/recursive_aggregation_circuit&quot;&gt;recursive_aggregation_circuit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Plonkit 的 “R1CSFile reader” 部分源于 &lt;a href=&quot;https://github.com/poma/zkutil&quot;&gt;zkUtil&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;另外，&lt;a href=&quot;https://github.com/iden3/circom&quot;&gt;Circom&lt;/a&gt; 使得开发者能方便地编写零知识证明电路，这也是 plonkit 的基石之一。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感谢这些伟大的工作。&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn-1&quot;&gt;
+&lt;p&gt;当我们开始开发 plonkit 时，Circom/snarkJS 还没支持 PLONK（&lt;a href=&quot;https://blog.iden3.io/circom-snarkjs-plonk.html&quot;&gt;现已支持&lt;/a&gt;）。plonkit 对比起 circom-snarkjs-plonk 会更高效（plonkit 采用 Rust 编写、 snarkJS 采用 JS 编写，而且我们的实现也不尽相同)，但 snarkJS 可以支持在浏览器中运行而 plonkit 暂时不能。&lt;/p&gt;
+&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-2&quot;&gt;
+&lt;p&gt;来源：&lt;a href=&quot;https://github.com/matter-labs/zksync/blob/master/infrastructure/zk/src/run/run.ts#L77&quot;&gt;https://github.com/matter-labs/zksync/blob/master/infrastructure/zk/src/run/run.ts#L77&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-2&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[A Dive into FluiDex's Architecture]]></title><description><![CDATA[The cryptography underlying zero knowledge proofs has undergone a Moore’s Law-like trajectory over the last few years, and it shows no sign…]]></description><link>https://www.fluidex.io/en/blog/fluidex-architecture/</link><guid isPermaLink="false">https://www.fluidex.io/en/blog/fluidex-architecture/</guid><pubDate>Wed, 14 Jul 2021 20:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
